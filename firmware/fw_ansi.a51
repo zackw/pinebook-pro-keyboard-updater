@@ -1028,7 +1028,7 @@ CSEG AT 007Bh
   040C 2D    		DB 02Dh ; '-'
   040D 86    		DB 086h 
   040E 7E    		DB 07Eh ; '~'
-  040F A7    		DB 0A7h 
+  040F A7    		DB 0A7h ; Special function reference?
   0410 5A    		DB 05Ah ; 'Z'
   0411 C5    		DB 0C5h 
   0412 D3    		DB 0D3h 
@@ -1065,7 +1065,7 @@ CSEG AT 007Bh
   0431 8B    		DB 08Bh 
   0432 C4    		DB 0C4h 
   0433 43    		DB 043h ; 'C'
-  0434 A5    		DB 0A5h 
+  0434 A5    		DB 0A5h ; Special function reference?
   0435 E5    		DB 0E5h 
   0436 24    		DB 024h ; '$'
   0437 C2    		DB 0C2h 
@@ -1787,9 +1787,9 @@ L0404:
   0821 00    		DB 000h 
   0822 00    		DB 000h 
   0823 02    		DB 002h 
-  0824 08    		DB 008h 
+  0824 08    		DB 008h
   0825 02    		DB 002h 
-  0826 40    		DB 040h ; '@'
+  0826 40    		DB 040h
   0827 00    		DB 000h 
   0828 00    		DB 000h 
   0829 00    		DB 000h 
@@ -1808,7 +1808,7 @@ L0404:
   0836 00    		DB 000h 
   0837 00    		DB 000h 
   0838 00    		DB 000h 
-  0839 07    		DB 007h
+  0839 07    		DB 007h ; KC_D
   083A 00    		DB 000h 
   083B 01    		DB 001h 
   083C 39    		DB 039h ; KC_CAPSLOCK
@@ -1816,7 +1816,7 @@ L0404:
   083E 04    		DB 004h ; KC_A
   083F 01    		DB 001h 
   0840 16    		DB 016h ; KC_S
-  0841 04    		DB 004h 
+  0841 04    		DB 004h ; KC_A
   0842 00    		DB 000h 
   0843 00    		DB 000h 
   0844 00    		DB 000h 
@@ -1862,25 +1862,25 @@ L0404:
   086C 15    		DB 015h ; KC_R
   086D 01    		DB 001h 
   086E 21    		DB 021h ; KC_4
-  086F 01    		DB 001h 
+  086F 01    		DB 001h ;
   0870 22    		DB 022h ; KC_5
-  0871 0C    		DB 00Ch 
+  0871 0C    		DB 00Ch ; KC_I
   0872 3C    		DB 03Ch ; KC_F3
-  0873 06    		DB 006h 
+  0873 06    		DB 006h ; KC_C
   0874 01    		DB 001h 
   0875 00    		DB 000h 
   0876 00    		DB 000h 
   0877 01    		DB 001h 
-  0878 0B    		DB 00Bh 
-  0879 0A    		DB 00Ah 
+  0878 0B    		DB 00Bh ; KC_H
+  0879 0A    		DB 00Ah ; KC_G
   087A 00    		DB 000h 
   087B 01    		DB 001h 
   087C 1C    		DB 01Ch ; KC_Y
   087D 01    		DB 001h 
   087E 23    		DB 023h ; KC_6
-  087F 0A    		DB 00Ah 
+  087F 0A    		DB 00Ah ; KC_G
   0880 01    		DB 001h 
-  0881 06    		DB 006h 
+  0881 06    		DB 006h ; KC_C
   0882 02    		DB 002h 
   0883 06    		DB 006h 
   0884 03    		DB 003h 
@@ -1921,41 +1921,41 @@ L0404:
   08A7 0A    		DB 00Ah 
   08A8 0C    		DB 00Ch 
   08A9 01    		DB 001h 
-  08AA 2F    		DB 02Fh ; '/'
+  08AA 2F    		DB 02Fh ; KC_LBRC
   08AB 00    		DB 000h 
   08AC 00    		DB 000h 
   08AD 01    		DB 001h 
-  08AE 2D    		DB 02Dh ; '-'
+  08AE 2D    		DB 02Dh ; KC_MINUS
   08AF 00    		DB 000h 
   08B0 00    		DB 000h 
-  08B1 07    		DB 007h 
-  08B2 03    		DB 003h 
-  08B3 07    		DB 007h 
-  08B4 04    		DB 004h 
+  08B1 07    		DB 007h ; KC_D 
+  08B2 03    		DB 003h
+  08B3 07    		DB 007h ; KC_D
+  08B4 04    		DB 004h ; KC_A
   08B5 01    		DB 001h 
-  08B6 05    		DB 005h 
+  08B6 05    		DB 005h ; KC_B
   08B7 01    		DB 001h 
-  08B8 36    		DB 036h ; '6'
+  08B8 36    		DB 036h ; KC_COMMA
   08B9 01    		DB 001h 
-  08BA 34    		DB 034h ; '4'
+  08BA 34    		DB 034h ; KC_APOS
   08BB 00    		DB 000h 
   08BC 00    		DB 000h 
   08BD 00    		DB 000h 
   08BE 00    		DB 000h 
   08BF 01    		DB 001h 
-  08C0 2E    		DB 02Eh ; '.'
+  08C0 2E    		DB 02Eh ; KC_EQUAL
   08C1 00    		DB 000h 
   08C2 00    		DB 000h 
-  08C3 07    		DB 007h 
-  08C4 05    		DB 005h 
+  08C3 07    		DB 007h ; KC_D
+  08C4 05    		DB 005h ; KC_B
   08C5 00    		DB 000h 
   08C6 00    		DB 000h 
   08C7 00    		DB 000h 
   08C8 00    		DB 000h 
   08C9 01    		DB 001h 
-  08CA 11    		DB 011h 
-  08CB 0A    		DB 00Ah 
-  08CC 0D    		DB 00Dh 
+  08CA 11    		DB 011h ; KC_N
+  08CB 0A    		DB 00Ah ; KC_G
+  08CC 0D    		DB 00Dh ; KC_J
   08CD 00    		DB 000h 
   08CE 00    		DB 000h 
   08CF 00    		DB 000h 
@@ -1965,7 +1965,7 @@ L0404:
   08D3 00    		DB 000h 
   08D4 00    		DB 000h 
   08D5 01    		DB 001h 
-  08D6 2C    		DB 02Ch ; ','
+  08D6 2C    		DB 02Ch ; KC_SPACE
   08D7 0A    		DB 00Ah 
   08D8 0E    		DB 00Eh 
   08D9 00    		DB 000h 
@@ -1973,7 +1973,7 @@ L0404:
   08DB 00    		DB 000h 
   08DC 00    		DB 000h 
   08DD 01    		DB 001h 
-  08DE 30    		DB 030h ; '0'
+  08DE 30    		DB 030h ; KC_RBRC
   08DF 00    		DB 000h 
   08E0 00    		DB 000h 
   08E1 07    		DB 007h 
@@ -2061,9 +2061,9 @@ L0404:
   0933 00    		DB 000h 
   0934 00    		DB 000h 
   0935 3A    		DB 03Ah ; KC_F1
-  0936 A5    		DB 0A5h ; special function?
+  0936 A5    		DB 0A5h ; special function? (sleep)
   0937 3B    		DB 03Bh ; KC_F2
-  0938 A6    		DB 0A6h ; special function?
+  0938 A6    		DB 0A6h ; special function? (brightness up)
   0939 3E    		DB 03Eh ; KC_F5
   093A 81    		DB 081h ; KC_VOLUME_DOWN
   093B 3D    		DB 03Dh ; KC_F4
@@ -2071,7 +2071,7 @@ L0404:
   093D 40    		DB 040h ; KC_F7
   093E FE    		DB 0FEh ; some screen function
   093F 3F    		DB 03Fh ; KC_F6
-  0940 80    		DB 080h ; KC_VOLUME_DOWN
+  0940 80    		DB 080h ; KC_VOLUME_UP
   0941 1D    		DB 01Dh ; KC_Z
   0942 64    		DB 064h ; KC_NUBS
   0943 42    		DB 042h ; KC_F9
@@ -7768,7 +7768,7 @@ L0284:
   2414 2F    		DB 02Fh ; '/'
   2415 2D    		DB 02Dh ; '-'
   2416 F8    		DB 0F8h 
-  2417 A6    		DB 0A6h 
+  2417 A6    		DB 0A6h ; Special function ref?
   2418 ED    		DB 0EDh 
   2419 0D    		DB 00Dh 
   241A BD    		DB 0BDh ; KC_BRIGHTNESS_UP

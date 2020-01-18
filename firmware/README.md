@@ -73,3 +73,8 @@ The current version of `fw_ansi_test.hex` can be flashed after compiling with
 `sudo ./updater flash-kb-ansi-test blah` (the third argument is a dummy), and
 replaces the caps lock key with escape, and has been tested successfully. It
 currently only works with ANSI keyboards.
+
+The keymap is also being written here for easier readability:
+https://docs.google.com/spreadsheets/d/147NwY3otNitE4M7xduihfY5SpRrhwBLPGwOp8qG5uA8/edit?usp=sharing
+- feel free to request access if you'd like to contribute additional data
+locations.
