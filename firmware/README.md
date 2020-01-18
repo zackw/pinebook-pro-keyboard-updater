@@ -62,3 +62,14 @@ The hex files provided by the manufacturer have been decompiled using `dis51`,
 and are included in this directory as well.
 
 The HID country code has been changed in the hex file by @salcedo here: https://github.com/salcedo/pinebook-pro-keyboard-updater/commit/cbcdc89c4fd519d81b10396ac58ea13921c9d387
+
+# Test Firmware
+
+The keymap section of the hex file has been identified and commenting has begun
+in `fw_ansi.a51`. Right now the edits to `fw_ansi_test.hex` have been manual
+using a tool like https://www.fischl.de/hex_checksum_calculator/?
+
+The current version of `fw_ansi_test.hex` can be flashed after compiling with
+`sudo ./updater flash-kb-ansi-test blah` (the third argument is a dummy), and
+replaces the caps lock key with escape, and has been tested successfully. It
+currently only works with ANSI keyboards.
