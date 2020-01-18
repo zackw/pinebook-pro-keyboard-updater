@@ -78,3 +78,10 @@ The keymap is also being written here for easier readability:
 https://docs.google.com/spreadsheets/d/147NwY3otNitE4M7xduihfY5SpRrhwBLPGwOp8qG5uA8/edit?usp=sharing
 - feel free to request access if you'd like to contribute additional data
 locations.
+
+# HID Descriptor
+
+It may be useful to use the HID Descriptor Tool to analyse those blocks in the
+file: https://www.usb.org/document-library/hid-descriptor-tool
+
+The .hid file can be loaded with this tool.
