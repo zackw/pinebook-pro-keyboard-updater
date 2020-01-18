@@ -1808,7 +1808,7 @@ L0404:
   0836 00    		DB 000h 
   0837 00    		DB 000h 
   0838 00    		DB 000h 
-  0839 07    		DB 007h ; KC_D
+  0839 07    		DB 007h ; KC_D unlikely
   083A 00    		DB 000h 
   083B 01    		DB 001h 
   083C 39    		DB 039h ; KC_CAPSLOCK
@@ -1816,7 +1816,7 @@ L0404:
   083E 04    		DB 004h ; KC_A
   083F 01    		DB 001h 
   0840 16    		DB 016h ; KC_S
-  0841 04    		DB 004h ; KC_A
+  0841 04    		DB 004h ; KC_A unlikely
   0842 00    		DB 000h 
   0843 00    		DB 000h 
   0844 00    		DB 000h 
@@ -1864,14 +1864,14 @@ L0404:
   086E 21    		DB 021h ; KC_4
   086F 01    		DB 001h ;
   0870 22    		DB 022h ; KC_5
-  0871 0C    		DB 00Ch ; KC_I
+  0871 0C    		DB 00Ch ; KC_I unlikely
   0872 3C    		DB 03Ch ; KC_F3
-  0873 06    		DB 006h ; KC_C
+  0873 06    		DB 006h ; KC_C unlikely
   0874 01    		DB 001h 
   0875 00    		DB 000h 
   0876 00    		DB 000h 
   0877 01    		DB 001h 
-  0878 0B    		DB 00Bh ; KC_H
+  0878 0B    		DB 00Bh ; KC_H unlikely
   0879 0A    		DB 00Ah ; KC_G
   087A 00    		DB 000h 
   087B 01    		DB 001h 
@@ -1917,9 +1917,9 @@ L0404:
   08A3 07    		DB 007h 
   08A4 02    		DB 002h 
   08A5 0A    		DB 00Ah 
-  08A6 0B    		DB 00Bh 
+  08A6 0B    		DB 00Bh ; KC_H 
   08A7 0A    		DB 00Ah 
-  08A8 0C    		DB 00Ch 
+  08A8 0C    		DB 00Ch ; KC_I unlikely
   08A9 01    		DB 001h 
   08AA 2F    		DB 02Fh ; KC_LBRC
   08AB 00    		DB 000h 
@@ -1928,9 +1928,9 @@ L0404:
   08AE 2D    		DB 02Dh ; KC_MINUS
   08AF 00    		DB 000h 
   08B0 00    		DB 000h 
-  08B1 07    		DB 007h ; KC_D 
+  08B1 07    		DB 007h ; KC_D unlikely
   08B2 03    		DB 003h
-  08B3 07    		DB 007h ; KC_D
+  08B3 07    		DB 007h ; KC_D unlikely
   08B4 04    		DB 004h ; KC_A
   08B5 01    		DB 001h 
   08B6 05    		DB 005h ; KC_B
@@ -1946,16 +1946,16 @@ L0404:
   08C0 2E    		DB 02Eh ; KC_EQUAL
   08C1 00    		DB 000h 
   08C2 00    		DB 000h 
-  08C3 07    		DB 007h ; KC_D
-  08C4 05    		DB 005h ; KC_B
+  08C3 07    		DB 007h ; KC_D unlikely
+  08C4 05    		DB 005h ; KC_B unlikely
   08C5 00    		DB 000h 
   08C6 00    		DB 000h 
   08C7 00    		DB 000h 
   08C8 00    		DB 000h 
   08C9 01    		DB 001h 
   08CA 11    		DB 011h ; KC_N
-  08CB 0A    		DB 00Ah ; KC_G
-  08CC 0D    		DB 00Dh ; KC_J
+  08CB 0A    		DB 00Ah ; KC_G unlikely
+  08CC 0D    		DB 00Dh ; KC_J unlikely
   08CD 00    		DB 000h 
   08CE 00    		DB 000h 
   08CF 00    		DB 000h 
@@ -2005,7 +2005,7 @@ L0404:
   08FB 07    		DB 007h 
   08FC 09    		DB 009h 
   08FD 01    		DB 001h 
-  08FE 28    		DB 028h ; '('
+  08FE 28    		DB 028h ; KC_ENTER
   08FF 01    		DB 001h 
   0900 31    		DB 031h ; '1'
   0901 07    		DB 007h 
