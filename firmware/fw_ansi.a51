@@ -905,7 +905,7 @@ CSEG AT 007Bh
   0391 57    		DB 057h ; 'W'
   0392 F4    		DB 0F4h 
   0393 6D    		DB 06Dh ; 'm'
-  0394 39    		DB 039h ; '9'
+  0394 39    		DB 039h ; '9' Capslock
   0395 25    		DB 025h ; '%'
   0396 29    		DB 029h ; ')'
   0397 7C    		DB 07Ch ; '|'
@@ -1772,7 +1772,7 @@ L0404:
   0811 121BFF		LCALL L0374
   0814 22    		RET
 
-  0815 00    		DB 000h 
+  0815 00    		DB 000h ; possible keymap
   0816 00    		DB 000h 
   0817 00    		DB 000h 
   0818 00    		DB 000h 
@@ -1803,19 +1803,19 @@ L0404:
   0831 00    		DB 000h 
   0832 00    		DB 000h 
   0833 02    		DB 002h 
-  0834 04    		DB 004h 
+  0834 04    		DB 004h
   0835 00    		DB 000h 
   0836 00    		DB 000h 
   0837 00    		DB 000h 
   0838 00    		DB 000h 
-  0839 07    		DB 007h 
+  0839 07    		DB 007h
   083A 00    		DB 000h 
   083B 01    		DB 001h 
-  083C 39    		DB 039h ; '9'
+  083C 39    		DB 039h ; KC_CAPSLOCK
   083D 01    		DB 001h 
-  083E 04    		DB 004h 
+  083E 04    		DB 004h ; KC_A
   083F 01    		DB 001h 
-  0840 16    		DB 016h 
+  0840 16    		DB 016h ; KC_S
   0841 04    		DB 004h 
   0842 00    		DB 000h 
   0843 00    		DB 000h 
@@ -1823,49 +1823,49 @@ L0404:
   0845 00    		DB 000h 
   0846 00    		DB 000h 
   0847 01    		DB 001h 
-  0848 06    		DB 006h 
+  0848 06    		DB 006h ; KC_C
   0849 01    		DB 001h 
-  084A 1B    		DB 01Bh 
+  084A 1B    		DB 01Bh ; KC_X
   084B 01    		DB 001h 
-  084C 07    		DB 007h 
+  084C 07    		DB 007h ; KC_D
   084D 01    		DB 001h 
-  084E 14    		DB 014h 
+  084E 14    		DB 014h ; KC_Q
   084F 01    		DB 001h 
-  0850 2B    		DB 02Bh ; '+'
+  0850 2B    		DB 02Bh ; KC_TAB
   0851 01    		DB 001h 
-  0852 1E    		DB 01Eh 
+  0852 1E    		DB 01Eh ; KC_1
   0853 01    		DB 001h 
-  0854 35    		DB 035h ; '5'
+  0854 35    		DB 035h ; KC_GRAVE
   0855 00    		DB 000h 
   0856 00    		DB 000h 
   0857 01    		DB 001h 
-  0858 09    		DB 009h 
+  0858 09    		DB 009h ; KC_F
   0859 01    		DB 001h 
-  085A 08    		DB 008h 
+  085A 08    		DB 008h ; KC_E
   085B 01    		DB 001h 
-  085C 1A    		DB 01Ah 
+  085C 1A    		DB 01Ah ; KC_W
   085D 01    		DB 001h 
-  085E 1F    		DB 01Fh 
+  085E 1F    		DB 01Fh ; KC_2
   085F 01    		DB 001h 
-  0860 20    		DB 020h ; ' '
+  0860 20    		DB 020h ; KC_3
   0861 06    		DB 006h 
   0862 00    		DB 000h 
   0863 09    		DB 009h 
-  0864 29    		DB 029h ; ')'
+  0864 29    		DB 029h ; KC_ESC
   0865 01    		DB 001h 
-  0866 19    		DB 019h 
+  0866 19    		DB 019h ; KC_V
   0867 01    		DB 001h 
-  0868 0A    		DB 00Ah 
+  0868 0A    		DB 00Ah ; KC_G
   0869 01    		DB 001h 
-  086A 17    		DB 017h 
+  086A 17    		DB 017h ; KC_T
   086B 01    		DB 001h 
-  086C 15    		DB 015h 
+  086C 15    		DB 015h ; KC_R
   086D 01    		DB 001h 
-  086E 21    		DB 021h ; '!'
+  086E 21    		DB 021h ; KC_4
   086F 01    		DB 001h 
-  0870 22    		DB 022h ; '"'
+  0870 22    		DB 022h ; KC_5
   0871 0C    		DB 00Ch 
-  0872 3C    		DB 03Ch ; '<'
+  0872 3C    		DB 03Ch ; KC_F3
   0873 06    		DB 006h 
   0874 01    		DB 001h 
   0875 00    		DB 000h 
@@ -1875,9 +1875,9 @@ L0404:
   0879 0A    		DB 00Ah 
   087A 00    		DB 000h 
   087B 01    		DB 001h 
-  087C 1C    		DB 01Ch 
+  087C 1C    		DB 01Ch ; KC_Y
   087D 01    		DB 001h 
-  087E 23    		DB 023h ; '#'
+  087E 23    		DB 023h ; KC_6
   087F 0A    		DB 00Ah 
   0880 01    		DB 001h 
   0881 06    		DB 006h 
@@ -2064,13 +2064,13 @@ L0404:
   0936 A5    		DB 0A5h 
   0937 3B    		DB 03Bh ; ';'
   0938 A6    		DB 0A6h 
-  0939 3E    		DB 03Eh ; '>'
+  0939 3E    		DB 03Eh ; KC_F5
   093A 81    		DB 081h 
-  093B 3D    		DB 03Dh ; '='
+  093B 3D    		DB 03Dh ; KC_F4
   093C 7F    		DB 07Fh 
-  093D 40    		DB 040h ; '@'
+  093D 40    		DB 040h ; KC_F7
   093E FE    		DB 0FEh 
-  093F 3F    		DB 03Fh ; '?'
+  093F 3F    		DB 03Fh ; KC_F6
   0940 80    		DB 080h 
   0941 1D    		DB 01Dh 
   0942 64    		DB 064h ; 'd'
@@ -2342,7 +2342,7 @@ L0335:
   0AB3 03    		DB 003h 
   0AB4 02    		DB 002h 
   0AB5 0B    		DB 00Bh 
-  0AB6 39    		DB 039h ; '9'
+  0AB6 39    		DB 039h ; '9' Capslock
   0AB7 24    		DB 024h ; '$'
   0AB8 20    		DB 020h ; ' '
   0AB9 60    		DB 060h ; '`'

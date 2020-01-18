@@ -905,7 +905,7 @@ CSEG AT 007Bh
   0391 57    		DB 057h ; 'W'
   0392 F4    		DB 0F4h 
   0393 6D    		DB 06Dh ; 'm'
-  0394 39    		DB 039h ; '9'
+  0394 39    		DB 039h ; '9' Capslock
   0395 25    		DB 025h ; '%'
   0396 29    		DB 029h ; ')'
   0397 7C    		DB 07Ch ; '|'
@@ -1772,7 +1772,7 @@ L0404:
   0811 121BFD		LCALL L0374
   0814 22    		RET
 
-  0815 00    		DB 000h 
+  0815 00    		DB 000h ; possible keymap
   0816 00    		DB 000h 
   0817 04    		DB 004h 
   0818 00    		DB 000h 
@@ -1797,9 +1797,9 @@ L0404:
   082B 02    		DB 002h 
   082C 02    		DB 002h 
   082D 01    		DB 001h 
-  082E 39    		DB 039h ; '9'
+  082E 39    		DB 039h ; '9' Capslock
   082F 01    		DB 001h 
-  0830 2B    		DB 02Bh ; '+'
+  0830 2B    		DB 02Bh ; '+' Tab
   0831 00    		DB 000h 
   0832 00    		DB 000h 
   0833 00    		DB 000h 
