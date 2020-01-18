@@ -55,3 +55,10 @@ down, and have the following mapping:
     P31: MIC_CUT
     P36: WIFI_CUT
     P37: CAM_CUT
+
+# Decompiling
+
+The hex files provided by the manufacturer have been decompiled using `dis51`, 
+and are included in this directory as well.
+
+The HID country code has been changed in the hex file by @salcedo here: https://github.com/salcedo/pinebook-pro-keyboard-updater/commit/cbcdc89c4fd519d81b10396ac58ea13921c9d387

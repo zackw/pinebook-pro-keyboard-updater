@@ -1,0 +1,10241 @@
+CSEG AT 0000h
+	LJMP L0001
+
+	DB 02h
+	DB 00h
+	DB 026h
+	DB 053h
+	DB 0A9h
+	DB 0FBh
+	DB 032h
+	DB 032h
+	DB 02h
+	DB 00h
+	DB 0Ah
+	DB 053h
+	DB 0A9h
+	DB 0DFh
+	DB 032h
+CSEG AT 0013h
+	DB 02h
+	DB 00h
+	DB 02Eh
+	DB 053h
+	DB 0A9h
+	DB 07Fh
+	DB 032h
+CSEG AT 001Bh
+	DB 02h
+	DB 024h
+	DB 038h
+	DB 02h
+	DB 03Fh
+	DB 00h
+	DB 022h
+CSEG AT 0023h
+	DB 02h
+	DB 00h
+	DB 046h
+	DB 0C2h
+	DB 0A8h
+	DB 032h
+CSEG AT 002Bh
+	DB 02h
+	DB 00h
+	DB 04Eh
+	DB 0C2h
+	DB 0AAh
+	DB 032h
+CSEG AT 0033h
+	DB 02h
+	DB 00h
+	DB 056h
+L0270:
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	RET
+
+	DB 02h
+	DB 024h
+	DB 053h
+	DB 0C2h
+	DB 0ACh
+	DB 032h
+CSEG AT 004Bh
+	DB 02h
+	DB 024h
+	DB 06Eh
+	DB 0C2h
+	DB 0ADh
+	DB 032h
+CSEG AT 0053h
+	DB 02h
+	DB 00h
+	DB 06h
+	DB 0C2h
+	DB 0AEh
+	DB 032h
+CSEG AT 005Bh
+	DB 02h
+	DB 024h
+	DB 089h
+L0422:
+	MOV 0F3h, R7
+	RET
+
+CSEG AT 0063h
+	DB 02h
+	DB 024h
+	DB 0A4h
+	DB 02h
+	DB 027h
+	DB 03Ah
+CSEG AT 006Bh
+	DB 02h
+	DB 00h
+	DB 0Eh
+	DB 02h
+	DB 027h
+	DB 03Ah
+CSEG AT 0073h
+	DB 02h
+	DB 024h
+	DB 0BFh
+CSEG AT 007Bh
+	DB 02h
+	DB 00h
+	DB 016h
+	DB 018h
+	DB 03h
+	DB 053h
+	DB 00h
+	DB 049h
+	DB 00h
+	DB 04Eh
+	DB 00h
+	DB 04Fh
+	DB 00h
+	DB 020h
+	DB 00h
+	DB 057h
+	DB 00h
+	DB 045h
+	DB 00h
+	DB 041h
+	DB 00h
+	DB 04Ch
+	DB 00h
+	DB 054h
+	DB 00h
+	DB 048h
+	DB 00h
+	DB 00h
+	DB 04h
+	DB 03h
+	DB 09h
+	DB 04h
+	DB 020h
+	DB 03h
+	DB 048h
+	DB 00h
+	DB 041h
+	DB 00h
+	DB 049h
+	DB 00h
+	DB 04Ch
+	DB 00h
+	DB 055h
+	DB 00h
+	DB 043h
+	DB 00h
+	DB 04Bh
+	DB 00h
+	DB 020h
+	DB 00h
+	DB 043h
+	DB 00h
+	DB 04Fh
+	DB 00h
+	DB 02Eh
+	DB 00h
+	DB 02Ch
+	DB 00h
+	DB 04Ch
+	DB 00h
+	DB 054h
+	DB 00h
+	DB 044h
+	DB 00h
+	DB 00h
+	DB 01Ah
+	DB 03h
+	DB 055h
+	DB 00h
+	DB 053h
+	DB 00h
+	DB 042h
+	DB 00h
+	DB 020h
+	DB 00h
+	DB 04Bh
+	DB 00h
+	DB 045h
+	DB 00h
+	DB 059h
+	DB 00h
+	DB 042h
+	DB 00h
+	DB 04Fh
+	DB 00h
+	DB 041h
+	DB 00h
+	DB 052h
+	DB 00h
+	DB 044h
+	DB 00h
+	DB 00h
+	DB 058h
+	DB 057h
+	DB 02Dh
+	DB 054h
+	DB 050h
+	DB 055h
+	DB 054h
+	DB 04Fh
+	DB 04Fh
+	DB 04Ch
+	DB 05Fh
+	DB 054h
+	DB 056h
+	DB 033h
+	DB 02Dh
+	DB 055h
+	DB 053h
+	DB 02Dh
+	DB 048h
+	DB 031h
+	DB 02Dh
+	DB 031h
+	DB 032h
+	DB 02Dh
+	DB 030h
+	DB 030h
+	DB 00h
+	DB 012h
+	DB 01h
+	DB 010h
+	DB 01h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 08h
+	DB 08Ah
+	DB 025h
+	DB 01Fh
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 01h
+	DB 02h
+	DB 00h
+	DB 01h
+	DB 05h
+	DB 01h
+	DB 09h
+	DB 06h
+	DB 0A1h
+	DB 01h
+	DB 05h
+	DB 07h
+	DB 019h
+	DB 0E0h
+	DB 029h
+	DB 0E7h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 01h
+	DB 075h
+	DB 01h
+	DB 095h
+	DB 08h
+	DB 081h
+	DB 02h
+	DB 095h
+	DB 01h
+	DB 075h
+	DB 08h
+	DB 081h
+	DB 01h
+	DB 095h
+	DB 03h
+	DB 075h
+	DB 01h
+	DB 05h
+	DB 08h
+	DB 019h
+	DB 01h
+	DB 029h
+	DB 03h
+	DB 091h
+	DB 02h
+	DB 095h
+	DB 05h
+	DB 075h
+	DB 01h
+	DB 091h
+	DB 01h
+	DB 095h
+	DB 06h
+	DB 075h
+	DB 08h
+	DB 015h
+	DB 00h
+	DB 026h
+	DB 0FFh
+	DB 00h
+	DB 05h
+	DB 07h
+	DB 019h
+	DB 00h
+	DB 02Ah
+	DB 0FFh
+	DB 00h
+	DB 081h
+	DB 00h
+	DB 0C0h
+	DB 05h
+	DB 01h
+	DB 09h
+	DB 02h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 01h
+	DB 09h
+	DB 01h
+	DB 0A1h
+	DB 00h
+	DB 05h
+	DB 09h
+	DB 019h
+	DB 01h
+	DB 029h
+	DB 03h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 01h
+	DB 095h
+	DB 03h
+	DB 075h
+	DB 01h
+	DB 081h
+	DB 02h
+	DB 095h
+	DB 01h
+	DB 075h
+	DB 05h
+	DB 081h
+	DB 03h
+	DB 05h
+	DB 01h
+	DB 09h
+	DB 030h
+	DB 09h
+	DB 031h
+	DB 015h
+	DB 081h
+	DB 025h
+	DB 07Fh
+	DB 075h
+	DB 08h
+	DB 095h
+	DB 02h
+	DB 081h
+	DB 06h
+	DB 0C0h
+	DB 0C0h
+	DB 05h
+	DB 0Dh
+	DB 09h
+	DB 05h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 01Eh
+	DB 09h
+	DB 022h
+	DB 0A1h
+	DB 02h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 01h
+	DB 09h
+	DB 047h
+	DB 09h
+	DB 042h
+	DB 095h
+	DB 02h
+	DB 075h
+	DB 01h
+	DB 081h
+	DB 02h
+	DB 095h
+	DB 01h
+	DB 075h
+	DB 02h
+	DB 025h
+	DB 03h
+	DB 09h
+	DB 051h
+	DB 081h
+	DB 02h
+	DB 09h
+	DB 054h
+	DB 025h
+	DB 07h
+	DB 095h
+	DB 01h
+	DB 075h
+	DB 03h
+	DB 081h
+	DB 02h
+	DB 05h
+	DB 09h
+	DB 09h
+	DB 01h
+	DB 025h
+	DB 01h
+	DB 075h
+	DB 01h
+	DB 095h
+	DB 01h
+	DB 081h
+	DB 02h
+	DB 05h
+	DB 01h
+	DB 015h
+	DB 00h
+	DB 026h
+	DB 078h
+	DB 05h
+	DB 075h
+	DB 010h
+	DB 055h
+	DB 0Eh
+	DB 065h
+	DB 011h
+	DB 09h
+	DB 030h
+	DB 035h
+	DB 00h
+	DB 046h
+	DB 0E0h
+	DB 01h
+	DB 095h
+	DB 01h
+	DB 081h
+	DB 02h
+	DB 026h
+	DB 092h
+	DB 03h
+	DB 046h
+	DB 040h
+	DB 01h
+	DB 09h
+	DB 031h
+	DB 081h
+	DB 02h
+	DB 0C0h
+	DB 0A1h
+	DB 02h
+	DB 055h
+	DB 0Ch
+	DB 066h
+	DB 01h
+	DB 010h
+	DB 047h
+	DB 0FFh
+	DB 0FFh
+	DB 00h
+	DB 00h
+	DB 027h
+	DB 0FFh
+	DB 0FFh
+	DB 00h
+	DB 00h
+	DB 075h
+	DB 010h
+	DB 095h
+	DB 01h
+	DB 05h
+	DB 0Dh
+	DB 09h
+	DB 056h
+	DB 081h
+	DB 02h
+	DB 05h
+	DB 0Dh
+	DB 085h
+	DB 01Fh
+	DB 09h
+	DB 055h
+	DB 09h
+	DB 059h
+	DB 075h
+	DB 04h
+	DB 095h
+	DB 02h
+	DB 025h
+	DB 0Fh
+	DB 0B1h
+	DB 02h
+	DB 05h
+	DB 0Dh
+	DB 085h
+	DB 025h
+	DB 09h
+	DB 060h
+	DB 075h
+	DB 01h
+	DB 095h
+	DB 01h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 01h
+	DB 0B1h
+	DB 02h
+	DB 095h
+	DB 07h
+	DB 0B1h
+	DB 03h
+	DB 06h
+	DB 00h
+	DB 0FFh
+	DB 085h
+	DB 020h
+	DB 09h
+	DB 0C5h
+	DB 015h
+	DB 00h
+	DB 026h
+	DB 0FFh
+	DB 00h
+	DB 075h
+	DB 08h
+	DB 096h
+	DB 00h
+	DB 01h
+	DB 0B1h
+	DB 02h
+	DB 0C0h
+	DB 0C0h
+	DB 05h
+	DB 0Dh
+	DB 09h
+	DB 0Eh
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 022h
+	DB 09h
+	DB 022h
+	DB 0A1h
+	DB 02h
+	DB 09h
+	DB 052h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 0Ah
+	DB 075h
+	DB 08h
+	DB 095h
+	DB 01h
+	DB 0B1h
+	DB 02h
+	DB 0C0h
+	DB 09h
+	DB 022h
+	DB 0A1h
+	DB 00h
+	DB 085h
+	DB 023h
+	DB 09h
+	DB 057h
+	DB 09h
+	DB 058h
+	DB 075h
+	DB 01h
+	DB 095h
+	DB 02h
+	DB 025h
+	DB 01h
+	DB 0B1h
+	DB 02h
+	DB 095h
+	DB 06h
+	DB 0B1h
+	DB 03h
+	DB 0C0h
+	DB 0C0h
+	DB 06h
+	DB 01h
+	DB 00h
+	DB 09h
+	DB 080h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 02h
+	DB 025h
+	DB 01h
+	DB 015h
+	DB 00h
+	DB 075h
+	DB 01h
+	DB 0Ah
+	DB 081h
+	DB 00h
+	DB 0Ah
+	DB 082h
+	DB 00h
+	DB 0Ah
+	DB 083h
+	DB 00h
+	DB 095h
+	DB 03h
+	DB 081h
+	DB 06h
+	DB 095h
+	DB 05h
+	DB 081h
+	DB 01h
+	DB 0C0h
+	DB 06h
+	DB 0Ch
+	DB 00h
+	DB 09h
+	DB 01h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 03h
+	DB 025h
+	DB 01h
+	DB 015h
+	DB 00h
+	DB 075h
+	DB 01h
+	DB 0Ah
+	DB 0B5h
+	DB 00h
+	DB 0Ah
+	DB 0B6h
+	DB 00h
+	DB 0Ah
+	DB 06Fh
+	DB 00h
+	DB 0Ah
+	DB 070h
+	DB 00h
+	DB 0Ah
+	DB 0E2h
+	DB 00h
+	DB 0Ah
+	DB 0A2h
+	DB 00h
+	DB 0Ah
+	DB 0E9h
+	DB 00h
+	DB 0Ah
+	DB 0EAh
+	DB 00h
+	DB 095h
+	DB 08h
+	DB 081h
+	DB 02h
+	DB 0Ah
+	DB 083h
+	DB 01h
+	DB 0Ah
+	DB 094h
+	DB 01h
+	DB 0Ah
+	DB 086h
+	DB 01h
+	DB 0Ah
+	DB 088h
+	DB 01h
+	DB 0Ah
+	DB 08Ah
+	DB 01h
+	DB 0Ah
+	DB 092h
+	DB 01h
+	DB 0Ah
+	DB 0B7h
+	DB 00h
+	DB 0Ah
+	DB 0CDh
+	DB 00h
+	DB 095h
+	DB 08h
+	DB 081h
+	DB 02h
+	DB 0Ah
+	DB 021h
+	DB 02h
+	DB 0Ah
+	DB 023h
+	DB 02h
+	DB 0Ah
+	DB 024h
+	DB 02h
+	DB 0Ah
+	DB 025h
+	DB 02h
+	DB 0Ah
+	DB 026h
+	DB 02h
+	DB 0Ah
+	DB 027h
+	DB 02h
+	DB 0Ah
+	DB 02Ah
+	DB 02h
+	DB 0Ah
+	DB 0B1h
+	DB 02h
+	DB 095h
+	DB 08h
+	DB 081h
+	DB 02h
+	DB 0C0h
+	DB 05h
+	DB 01h
+	DB 09h
+	DB 0Ch
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 09h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 01h
+	DB 09h
+	DB 0C6h
+	DB 095h
+	DB 01h
+	DB 075h
+	DB 01h
+	DB 081h
+	DB 06h
+	DB 075h
+	DB 07h
+	DB 081h
+	DB 03h
+	DB 0C0h
+	DB 06h
+	DB 00h
+	DB 0FFh
+	DB 09h
+	DB 01h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 06h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 0FFh
+	DB 01Ah
+	DB 01h
+	DB 00h
+	DB 02Ah
+	DB 0Fh
+	DB 04h
+	DB 075h
+	DB 08h
+	DB 096h
+	DB 0Fh
+	DB 04h
+	DB 0B1h
+	DB 02h
+	DB 0C0h
+	DB 06h
+	DB 00h
+	DB 0FFh
+	DB 09h
+	DB 01h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 05h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 0FFh
+	DB 019h
+	DB 01h
+	DB 029h
+	DB 05h
+	DB 075h
+	DB 08h
+	DB 095h
+	DB 05h
+	DB 0B1h
+	DB 02h
+	DB 0C0h
+	DB 020h
+	DB 0FCh
+	DB 028h
+	DB 0FEh
+	DB 084h
+	DB 040h
+	DB 0CBh
+	DB 09Ah
+	DB 087h
+	DB 0Dh
+	DB 0BEh
+	DB 057h
+	DB 03Ch
+	DB 0B6h
+	DB 070h
+	DB 09h
+	DB 088h
+	DB 07h
+	DB 097h
+	DB 02Dh
+	DB 02Bh
+	DB 0E3h
+	DB 038h
+	DB 034h
+	DB 0B6h
+	DB 06Ch
+	DB 0EDh
+	DB 0B0h
+	DB 0F7h
+	DB 0E5h
+	DB 09Ch
+	DB 0F6h
+	DB 0C2h
+	DB 02Eh
+	DB 084h
+	DB 01Bh
+	DB 0E8h
+	DB 0B4h
+	DB 051h
+	DB 078h
+	DB 043h
+	DB 01Fh
+	DB 028h
+	DB 04Bh
+	DB 07Ch
+	DB 02Dh
+	DB 053h
+	DB 0AFh
+	DB 0FCh
+	DB 047h
+	DB 070h
+	DB 01Bh
+	DB 059h
+	DB 06Fh
+	DB 074h
+	DB 043h
+	DB 0C4h
+	DB 0F3h
+	DB 047h
+	DB 018h
+	DB 053h
+	DB 01Ah
+	DB 0A2h
+	DB 0A1h
+	DB 071h
+	DB 0C7h
+	DB 095h
+	DB 0Eh
+	DB 031h
+	DB 055h
+	DB 021h
+	DB 0D3h
+	DB 0B5h
+	DB 01Eh
+	DB 0E9h
+	DB 0Ch
+	DB 0BAh
+	DB 0ECh
+	DB 0B8h
+	DB 089h
+	DB 019h
+	DB 03Eh
+	DB 0B3h
+	DB 0AFh
+	DB 075h
+	DB 081h
+	DB 09Dh
+	DB 053h
+	DB 0B9h
+	DB 041h
+	DB 057h
+	DB 0F4h
+	DB 06Dh
+	DB 039h
+	DB 025h
+	DB 029h
+	DB 07Ch
+	DB 087h
+	DB 0D9h
+	DB 0B4h
+	DB 098h
+	DB 045h
+	DB 07Dh
+	DB 0A7h
+	DB 026h
+	DB 09Ch
+	DB 065h
+	DB 03Bh
+	DB 085h
+	DB 068h
+	DB 089h
+	DB 0D7h
+	DB 03Bh
+	DB 0BDh
+	DB 0FFh
+	DB 014h
+	DB 067h
+	DB 0F2h
+	DB 02Bh
+	DB 0F0h
+	DB 02Ah
+	DB 041h
+	DB 054h
+	DB 0F0h
+	DB 0FDh
+	DB 02Ch
+	DB 066h
+	DB 07Ch
+	DB 0F8h
+	DB 0C0h
+	DB 08Fh
+	DB 033h
+	DB 013h
+	DB 03h
+	DB 0F1h
+	DB 0D3h
+	DB 0C1h
+	DB 0Bh
+	DB 089h
+	DB 0D9h
+	DB 01Bh
+	DB 062h
+	DB 0CDh
+	DB 051h
+	DB 0B7h
+	DB 080h
+	DB 0B8h
+	DB 0AFh
+	DB 03Ah
+	DB 010h
+	DB 0C1h
+	DB 08Ah
+	DB 05Bh
+	DB 0E8h
+	DB 08Ah
+	DB 056h
+	DB 0F0h
+	DB 08Ch
+	DB 0AAh
+	DB 0FAh
+	DB 035h
+	DB 0E9h
+	DB 042h
+	DB 0C4h
+	DB 0D8h
+	DB 055h
+	DB 0C3h
+	DB 038h
+	DB 0CCh
+	DB 02Bh
+	DB 053h
+	DB 05Ch
+	DB 069h
+	DB 052h
+	DB 0D5h
+	DB 0C8h
+	DB 073h
+	DB 02h
+	DB 038h
+	DB 07Ch
+	DB 073h
+	DB 0B6h
+	DB 041h
+	DB 0E7h
+	DB 0FFh
+	DB 05h
+	DB 0D8h
+	DB 02Bh
+	DB 079h
+	DB 09Ah
+	DB 0E2h
+	DB 034h
+	DB 060h
+	DB 08Fh
+	DB 0A3h
+	DB 032h
+	DB 01Fh
+	DB 09h
+	DB 078h
+	DB 062h
+	DB 0BCh
+	DB 080h
+	DB 0E3h
+	DB 0Fh
+	DB 0BDh
+	DB 065h
+	DB 020h
+	DB 08h
+	DB 013h
+	DB 0C1h
+	DB 0E2h
+	DB 0EEh
+	DB 053h
+	DB 02Dh
+	DB 086h
+	DB 07Eh
+	DB 0A7h
+	DB 05Ah
+	DB 0C5h
+	DB 0D3h
+	DB 07Dh
+	DB 098h
+	DB 0BEh
+	DB 031h
+	DB 048h
+	DB 01Fh
+	DB 0FBh
+	DB 0DAh
+	DB 0AFh
+	DB 0A2h
+	DB 0A8h
+	DB 06Ah
+	DB 089h
+	DB 0D6h
+	DB 0BFh
+	DB 0F2h
+	DB 0D3h
+	DB 032h
+	DB 02Ah
+	DB 09Ah
+	DB 0E4h
+	DB 0CFh
+	DB 017h
+	DB 0B7h
+	DB 0B8h
+	DB 0F4h
+	DB 0E1h
+	DB 033h
+	DB 08h
+	DB 024h
+	DB 08Bh
+	DB 0C4h
+	DB 043h
+	DB 0A5h
+	DB 0E5h
+	DB 024h
+	DB 0C2h
+	DB 09h
+	DB 02h
+	DB 03Bh
+	DB 00h
+	DB 02h
+	DB 01h
+	DB 00h
+	DB 0A0h
+	DB 032h
+	DB 09h
+	DB 04h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 03h
+	DB 01h
+	DB 01h
+	DB 00h
+	DB 09h
+	DB 021h
+	DB 010h
+	DB 01h
+	DB 00h
+	DB 01h
+	DB 022h
+	DB 041h
+	DB 00h
+	DB 07h
+	DB 05h
+	DB 081h
+	DB 03h
+	DB 08h
+	DB 00h
+	DB 0Ah
+	DB 09h
+	DB 04h
+	DB 01h
+	DB 00h
+	DB 01h
+	DB 03h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 09h
+	DB 021h
+	DB 010h
+	DB 01h
+	DB 00h
+	DB 01h
+	DB 022h
+	DB 0E7h
+	DB 01h
+	DB 07h
+	DB 05h
+	DB 082h
+	DB 03h
+	DB 08h
+	DB 00h
+	DB 0Ah
+	DB 0FFh
+	DB 013h
+	DB 063h
+	DB 0FFh
+	DB 019h
+	DB 08Eh
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 01Ch
+	DB 087h
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 023h
+	DB 0A5h
+	DB 0FFh
+	DB 0Ah
+	DB 090h
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 025h
+	DB 0Eh
+	DB 0FFh
+	DB 022h
+	DB 0C3h
+	DB 0FFh
+	DB 021h
+	DB 0A3h
+	DB 0FFh
+	DB 01Fh
+	DB 050h
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 0Bh
+	DB 0A4h
+	DB 0FFh
+	DB 01Ch
+	DB 03Ah
+	DB 0FFh
+	DB 021h
+	DB 048h
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 026h
+	DB 0ADh
+	DB 0FFh
+	DB 0Eh
+	DB 07Eh
+	DB 0FFh
+	DB 01Ah
+	DB 040h
+	DB 0FFh
+	DB 020h
+	DB 0EAh
+	DB 0FFh
+	DB 027h
+	DB 040h
+	DB 0FFh
+	DB 027h
+	DB 046h
+	DB 0FFh
+	DB 027h
+	DB 01h
+	DB 0FFh
+	DB 013h
+	DB 0EDh
+	DB 0FFh
+	DB 027h
+	DB 04Ch
+	DB 0FFh
+	DB 027h
+	DB 052h
+	DB 0FFh
+	DB 027h
+	DB 040h
+	DB 0FFh
+	DB 027h
+	DB 040h
+	DB 0FFh
+	DB 026h
+	DB 0B9h
+	DB 0FFh
+	DB 026h
+	DB 0C4h
+	DB 0FFh
+	DB 027h
+	DB 058h
+	DB 0FFh
+	DB 027h
+	DB 05Eh
+	DB 0FFh
+	DB 027h
+	DB 040h
+	DB 0FFh
+	DB 023h
+	DB 06h
+	DB 0FFh
+	DB 01Fh
+	DB 086h
+	DB 0FFh
+	DB 027h
+	DB 064h
+	DB 0FFh
+	DB 027h
+	DB 06Ah
+	DB 0FFh
+	DB 027h
+	DB 070h
+	DB 0FFh
+	DB 027h
+	DB 0Ah
+	DB 0FFh
+	DB 027h
+	DB 076h
+	DB 0FFh
+	DB 027h
+	DB 07Ch
+	DB 0FFh
+	DB 00h
+	DB 066h
+	DB 0FFh
+	DB 027h
+	DB 013h
+	DB 0FFh
+	DB 027h
+	DB 082h
+	DB 0FFh
+	DB 00h
+	DB 06Eh
+	DB 0FFh
+	DB 027h
+	DB 01Ch
+	DB 0FFh
+	DB 026h
+	DB 0E4h
+	DB 0FFh
+	DB 01Fh
+	DB 0BCh
+	DB 0FFh
+	DB 026h
+	DB 0EEh
+	DB 0FFh
+	DB 027h
+	DB 040h
+	DB 0FFh
+	DB 026h
+	DB 035h
+	DB 0FFh
+	DB 027h
+	DB 040h
+	DB 0FFh
+	DB 027h
+	DB 040h
+	DB 0FFh
+	DB 027h
+	DB 040h
+	DB 0FFh
+	DB 019h
+	DB 033h
+	DB 0FFh
+	DB 012h
+	DB 0D0h
+L0156:
+	MOV A, #85h
+	ADD A, 37h
+	MOV R0, A
+	MOV A, @R0
+	MOV R7, A
+	CLR C
+	SUBB A, #90h
+	JC L0157
+	LJMP L0158
+
+L0157:
+	MOV B, #2h
+	MOV A, R7
+	MUL AB
+	ADD A, #0Ah
+	MOV DPL, A
+	MOV A, B
+	ADDC A, #8h
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+	MOV 65h, A
+	MOV B, #2h
+	MOV A, R7
+	MUL AB
+	ADD A, #0Bh
+	MOV DPL, A
+	MOV A, B
+	ADDC A, #8h
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+	MOV 64h, A
+	MOV A, 65h
+	JNZ L0159
+	LJMP L0158
+
+L0159:
+	LCALL L0160
+	MOV A, 65h
+	CJNE A, #4h, L0161
+	JNB 0Ah, L0162
+	SETB 26h
+	SJMP L0161
+
+L0162:
+	CLR 26h
+L0161:
+	JB 0Ah, L0163
+	LJMP L0164
+
+L0163:
+	MOV A, 65h
+	CJNE A, #2h, L0217
+	MOV A, 64h
+	CJNE A, #8h, L0218
+	MOV R0, #0DBh
+	MOV @R0, #1h
+L0218:
+	LJMP L0166
+
+L0217:
+	MOV A, 65h
+	CJNE A, #1h, L0219
+	LJMP L0220
+
+L0219:
+	MOV A, 65h
+	CJNE A, #3h, L0221
+	LJMP L0222
+
+L0221:
+	MOV A, 65h
+	CJNE A, #5h, L0223
+	LJMP L0224
+
+L0223:
+	MOV A, 65h
+	XRL A, #6h
+	JNZ L0225
+	JNB 26h, L0226
+	LCALL L0192
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R5, A
+	CJNE A, #0FEh, L0227
+	JNB 24h, L0228
+	CLR 24h
+	RET
+
+L0228:
+	SETB 24h
+	RET
+
+L0227:
+	LJMP L0229
+
+L0226:
+	LCALL L0194
+	LJMP L0229
+
+L0225:
+	MOV A, 65h
+	XRL A, #7h
+	JZ L0230
+	LJMP L0231
+
+L0230:
+	JNB 26h, L0245
+	LCALL L0196
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R5, A
+	LJMP L0229
+
+L0245:
+	MOV R0, #0DBh
+	MOV A, @R0
+	JNZ L0246
+	LJMP L0247
+
+L0246:
+	LCALL L0197
+	CJNE A, #43h, L0248
+	MOV R7, #1h
+	SJMP L0249
+
+L0248:
+	MOV R7, #0h
+L0249:
+	MOV A, R7
+	JZ L0250
+	CLR A
+	MOV R0, #0DAh
+	MOV @R0, A
+	MOV R0, #0E0h
+	MOV A, @R0
+	MOV R7, A
+	JNB ACC.0, L0251
+	LCALL L0252
+	ANL A, #0FEh
+	MOV @R0, A
+	MOV 6Eh, #4h
+	SJMP L0253
+
+L0251:
+	LCALL L0275
+	ORL A, #1h
+	MOV @R0, A
+	MOV 6Eh, #6h
+L0253:
+	SETB 0C0h
+	SETB 0C1h
+	LCALL L0254
+	LCALL L0255
+L0250:
+	LCALL L0197
+	CJNE A, #44h, L0256
+	MOV R7, #1h
+	SJMP L0257
+
+L0256:
+	MOV R7, #0h
+L0257:
+	MOV A, R7
+	JZ L0258
+	MOV R0, #0DAh
+	MOV @R0, #1h
+	MOV R0, #0E0h
+	MOV A, @R0
+	MOV R7, A
+	JNB ACC.1, L0259
+	LCALL L0252
+	ANL A, #0FDh
+	MOV @R0, A
+	MOV 6Eh, #4h
+	SJMP L0260
+
+L0259:
+	LCALL L0275
+	ORL A, #2h
+	MOV @R0, A
+	MOV 6Eh, #6h
+L0260:
+	SETB 0C0h
+	SETB 0C1h
+	LCALL L0254
+	LCALL L0255
+L0258:
+	LCALL L0197
+	CJNE A, #45h, L0261
+	MOV R7, #1h
+	SJMP L0262
+
+L0261:
+	MOV R7, #0h
+L0262:
+	MOV A, R7
+	JNZ L0263
+	LJMP L0158
+
+L0263:
+	MOV R0, #0DAh
+	MOV @R0, #2h
+	MOV R0, #0E0h
+	MOV A, @R0
+	MOV R7, A
+	JNB ACC.2, L0264
+	LCALL L0252
+	ANL A, #0FBh
+	MOV @R0, A
+	MOV 6Eh, #4h
+	SJMP L0265
+
+L0264:
+	LCALL L0275
+	ORL A, #4h
+	MOV @R0, A
+	MOV 6Eh, #6h
+L0265:
+	SETB 0C0h
+	SETB 0C1h
+	LCALL L0266
+	MOV R5, #1h
+	MOV R7, #0A0h
+	LCALL L0267
+	MOV R5, #1h
+	CLR A
+	MOV R7, A
+	LCALL L0267
+	MOV R0, #0E0h
+	MOV A, @R0
+	MOV R7, A
+	MOV R5, #1h
+	LCALL L0267
+	LJMP L0255
+
+L0247:
+	LCALL L0197
+	MOV R5, A
+	LJMP L0229
+
+L0231:
+	MOV A, 65h
+	XRL A, #0Ah
+	JNZ L0232
+	JNB 26h, L0233
+	LCALL L0200
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R5, A
+	LJMP L0229
+
+L0233:
+	MOV A, 64h
+	ADD A, ACC
+	JNB 1Ah, L0234
+	LCALL L0235
+	SJMP L0236
+
+L0234:
+	ADD A, #4Ah
+	MOV DPL, A
+	CLR A
+	ADDC A, #9h
+L0236:
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R5, A
+	LJMP L0229
+
+L0232:
+	MOV A, 65h
+	XRL A, #9h
+	JNZ L0237
+	JNB 26h, L0238
+	MOV C, 0Ah
+	LJMP L0239
+
+L0238:
+	SJMP L0220
+
+L0237:
+	MOV A, 65h
+	XRL A, #0Ch
+	JZ L0240
+	LJMP L0158
+
+L0240:
+	JNB 26h, L0241
+L0242:
+	MOV A, 0E4h
+	JNB ACC.3, L0242
+	MOV A, 0E4h
+	ANL A, #3h
+	JNZ L0242
+	LCALL L0204
+	LCALL L0140
+L0243:
+	MOV A, 0E4h
+	JNB ACC.3, L0243
+	MOV A, 0E4h
+	ANL A, #3h
+	JNZ L0243
+	LCALL L0202
+	LJMP L0244
+
+L0241:
+	SJMP L0220
+
+L0164:
+	MOV A, 65h
+	CJNE A, #2h, L0165
+	MOV A, 64h
+	CJNE A, #8h, L0166
+	CLR A
+	MOV R0, #0DBh
+	MOV @R0, A
+L0166:
+	LCALL L0167
+	LJMP L0168
+
+L0165:
+	MOV A, 65h
+	CJNE A, #1h, L0170
+L0220:
+	LCALL L0167
+	LJMP L0171
+
+L0170:
+	MOV A, 65h
+	CJNE A, #3h, L0181
+L0222:
+	LCALL L0167
+	LJMP L0182
+
+L0181:
+	MOV A, 65h
+	CJNE A, #5h, L0186
+L0224:
+	LCALL L0167
+	LJMP L0187
+
+L0186:
+	MOV A, 65h
+	XRL A, #6h
+	JNZ L0191
+	LCALL L0192
+	LCALL L0193
+	LCALL L0172
+	LCALL L0194
+L0229:
+	MOV C, 0Ah
+	CLR A
+	RLC A
+	MOV R7, A
+	LJMP L0171
+
+L0191:
+	MOV A, 65h
+	XRL A, #7h
+	JNZ L0195
+	LCALL L0196
+	LCALL L0193
+	LCALL L0172
+	LCALL L0197
+	LCALL L0198
+	SJMP L0171
+
+L0195:
+	MOV A, 65h
+	XRL A, #0Ah
+	JNZ L0199
+	LCALL L0200
+	LCALL L0193
+	LCALL L0172
+	MOV A, 64h
+	ADD A, ACC
+	ADD A, #4Ah
+	MOV DPL, A
+	CLR A
+	ADDC A, #9h
+	LCALL L0193
+	SJMP L0171
+
+L0199:
+	MOV A, 65h
+	CJNE A, #9h, L0201
+	LCALL L0167
+	LCALL L0172
+	MOV C, 0Ah
+	CLR A
+L0239:
+	RLC A
+	MOV R7, A
+	MOV R5, #66h
+L0171:
+	LJMP L0172
+
+L0201:
+	MOV A, 65h
+	XRL A, #0Ch
+	JNZ L0158
+	MOV C, 0Ah
+	RLC A
+	MOV R7, A
+	MOV R5, 64h
+	LCALL L0172
+	LCALL L0202
+	LCALL L0140
+L0203:
+	MOV A, 0E4h
+	JNB ACC.3, L0203
+	MOV A, 0E4h
+	ANL A, #3h
+	JNZ L0203
+	LCALL L0204
+L0244:
+	LCALL L0140
+L0158:
+	RET
+
+L0254:
+	LCALL L0266
+	MOV R5, #1h
+	MOV R7, #0A0h
+	LCALL L0267
+	MOV R5, #1h
+	CLR A
+	MOV R7, A
+	LCALL L0267
+	MOV R0, #0E0h
+	MOV A, @R0
+	MOV R7, A
+	MOV R5, #1h
+	LCALL L0267
+	RET
+
+L0204:
+	MOV C, 0Ah
+	CLR A
+	RLC A
+	MOV R7, A
+	MOV R5, #8h
+	LCALL L0168
+	RET
+
+L0202:
+	MOV C, 0Ah
+	CLR A
+	RLC A
+	MOV R7, A
+	MOV R5, #13h
+	LCALL L0172
+	RET
+
+	DB 00h
+	DB 00h
+	DB 04h
+	DB 00h
+	DB 02h
+	DB 08h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 02h
+	DB 01h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 02h
+	DB 02h
+	DB 01h
+	DB 039h
+	DB 01h
+	DB 02Bh
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 064h
+	DB 01h
+	DB 04h
+	DB 01h
+	DB 014h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 035h
+	DB 09h
+	DB 029h
+	DB 00h
+	DB 00h
+	DB 02h
+	DB 04h
+	DB 01h
+	DB 01Dh
+	DB 01h
+	DB 016h
+	DB 01h
+	DB 01Ah
+	DB 01h
+	DB 01Eh
+	DB 00h
+	DB 00h
+	DB 06h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 01Bh
+	DB 01h
+	DB 07h
+	DB 01h
+	DB 08h
+	DB 01h
+	DB 01Fh
+	DB 00h
+	DB 00h
+	DB 06h
+	DB 01h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 06h
+	DB 01h
+	DB 09h
+	DB 01h
+	DB 015h
+	DB 01h
+	DB 020h
+	DB 00h
+	DB 00h
+	DB 0Ch
+	DB 03Ch
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 019h
+	DB 01h
+	DB 0Ah
+	DB 01h
+	DB 017h
+	DB 01h
+	DB 021h
+	DB 00h
+	DB 00h
+	DB 06h
+	DB 02h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 05h
+	DB 01h
+	DB 0Bh
+	DB 01h
+	DB 01Ch
+	DB 01h
+	DB 022h
+	DB 00h
+	DB 00h
+	DB 06h
+	DB 03h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 011h
+	DB 0Ah
+	DB 00h
+	DB 0Ah
+	DB 01h
+	DB 01h
+	DB 023h
+	DB 06h
+	DB 04h
+	DB 06h
+	DB 05h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 0Ah
+	DB 02h
+	DB 0Ah
+	DB 03h
+	DB 0Ah
+	DB 04h
+	DB 0Ah
+	DB 05h
+	DB 0Ah
+	DB 06h
+	DB 07h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 036h
+	DB 0Ah
+	DB 07h
+	DB 0Ah
+	DB 08h
+	DB 0Ah
+	DB 09h
+	DB 07h
+	DB 01h
+	DB 07h
+	DB 02h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 0Ah
+	DB 0Ah
+	DB 0Ah
+	DB 0Bh
+	DB 0Ah
+	DB 0Ch
+	DB 01h
+	DB 02Dh
+	DB 0Ah
+	DB 0Dh
+	DB 07h
+	DB 03h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 0Ah
+	DB 0Eh
+	DB 01h
+	DB 034h
+	DB 01h
+	DB 02Fh
+	DB 01h
+	DB 02Eh
+	DB 01h
+	DB 00h
+	DB 07h
+	DB 04h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 02Ch
+	DB 02h
+	DB 020h
+	DB 01h
+	DB 031h
+	DB 01h
+	DB 030h
+	DB 07h
+	DB 09h
+	DB 01h
+	DB 028h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 02h
+	DB 040h
+	DB 02h
+	DB 010h
+	DB 07h
+	DB 05h
+	DB 07h
+	DB 06h
+	DB 07h
+	DB 07h
+	DB 07h
+	DB 08h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 03Ah
+	DB 0A5h
+	DB 03Bh
+	DB 0A6h
+	DB 03Dh
+	DB 07Fh
+	DB 03Eh
+	DB 081h
+	DB 040h
+	DB 0FEh
+	DB 03Fh
+	DB 080h
+	DB 041h
+	DB 049h
+	DB 043h
+	DB 053h
+	DB 042h
+	DB 046h
+	DB 044h
+	DB 047h
+	DB 045h
+	DB 048h
+	DB 050h
+	DB 04Ah
+	DB 052h
+	DB 04Bh
+	DB 051h
+	DB 04Eh
+	DB 04Fh
+	DB 04Dh
+	DB 02Ah
+	DB 04Ch
+	DB 0Dh
+	DB 059h
+	DB 018h
+	DB 05Ch
+	DB 010h
+	DB 062h
+	DB 0Eh
+	DB 05Ah
+	DB 0Ch
+	DB 05Dh
+	DB 025h
+	DB 060h
+	DB 024h
+	DB 05Fh
+	DB 0Fh
+	DB 05Bh
+	DB 012h
+	DB 05Eh
+	DB 026h
+	DB 061h
+	DB 037h
+	DB 063h
+	DB 033h
+	DB 057h
+	DB 013h
+	DB 056h
+	DB 027h
+	DB 055h
+	DB 038h
+	DB 054h
+L0136:
+	MOV R0, #96h
+	MOV A, @R0
+	ADD A, #0Fh
+	JZ L0331
+	DEC A
+	JNZ L0332
+	LJMP L0333
+
+L0332:
+	ADD A, #0FEh
+	JNZ L0371
+	LJMP L0372
+
+L0371:
+	DEC A
+	JNZ L0377
+	LJMP L0378
+
+L0377:
+	DEC A
+	JNZ L0389
+	LJMP L0390
+
+L0389:
+	DEC A
+	JNZ L0391
+	LJMP L0392
+
+L0391:
+	ADD A, #0FAh
+	JNZ L0395
+	LJMP L0390
+
+L0395:
+	ADD A, #0Dh
+	JZ L0396
+	LJMP L0397
+
+L0396:
+	CLR EA
+	LCALL L0398
+	MOV R0, #0DDh
+	MOV A, R7
+	MOV @R0, A
+	SETB EA
+	XRL A, #0FAh
+	JNZ L0399
+	MOV R0, #0AEh
+	MOV A, @R0
+	MOV R0, #95h
+	JZ L0400
+	MOV @R0, #0E0h
+	CLR EA
+	LCALL L0338
+	MOV R2, #23h
+	MOV R1, #83h
+	MOV 69h, #2h
+	LCALL L0360
+	MOV DPTR, #02385h
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R7, A
+	MOV R3, #0h
+	MOV R2, #0h
+	MOV R1, #64h
+	MOV 69h, #0Ch
+	LCALL L0344
+	SETB EA
+	SJMP L0401
+
+L0400:
+	MOV @R0, #0D0h
+	SJMP L0401
+
+L0399:
+	MOV R0, #95h
+	MOV @R0, #0D0h
+L0401:
+	MOV R0, #96h
+	MOV @R0, #0F1h
+L0331:
+	CLR EA
+	LCALL L0402
+	LCALL L0335
+	CJNE R7, #0FAh, L0403
+	MOV @R0, #0E1h
+	SJMP L0404
+
+L0403:
+	MOV @R0, #0D1h
+L0404:
+	MOV R0, #96h
+	MOV @R0, #0F2h
+L0333:
+	CLR EA
+	LCALL L0334
+	LCALL L0335
+	CJNE R7, #0FAh, L0336
+	MOV @R0, #0E2h
+	SJMP L0337
+
+L0336:
+	MOV @R0, #0D2h
+	SJMP L0337
+
+L0372:
+	CLR EA
+	LCALL L0373
+	LCALL L0335
+	CJNE R7, #0FAh, L0374
+	MOV @R0, #0E4h
+	SJMP L0375
+
+L0374:
+	MOV @R0, #0D4h
+L0375:
+	SJMP L0337
+
+L0392:
+	CLR EA
+	MOV DPTR, #02385h
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R2, #23h
+	MOV R1, #7Ch
+	MOV DPTR, #0237Bh
+	LCALL L0393
+	LCALL L0360
+	LCALL L0335
+	CJNE R7, #0FAh, L0394
+	MOV @R0, #0E7h
+	SJMP L0337
+
+L0394:
+	MOV @R0, #0D7h
+L0337:
+	MOV R0, #96h
+	MOV @R0, #0FCh
+	RET
+
+L0378:
+	CLR EA
+	LCALL L0379
+	MOV A, R7
+	XRL A, #0FAh
+	JNZ L0380
+	MOV DPTR, #02385h
+	MOVC A, @A+DPTR
+	MOV R7, A
+	MOV R3, #0FFh
+	MOV R2, #23h
+	MOV R1, #80h
+	MOV DPTR, #0237Fh
+	CLR A
+	MOVC A, @A+DPTR
+	MOV 69h, A
+	LCALL L0360
+	CJNE R7, #0FAh, L0381
+	MOV R0, #0AEh
+	MOV A, @R0
+	MOV R0, #95h
+	CJNE A, #1h, L0382
+	MOV @R0, #0E5h
+	SJMP L0383
+
+L0382:
+	MOV @R0, #0D5h
+	SJMP L0383
+
+L0381:
+	SJMP L0380
+
+L0380:
+	MOV R0, #95h
+	MOV @R0, #0D5h
+L0383:
+	MOV R0, #96h
+	MOV @R0, #0FCh
+	SETB EA
+	RET
+
+L0390:
+	CLR A
+	MOV R0, #0AEh
+	MOV @R0, A
+	MOV R0, #96h
+	MOV @R0, #0FCh
+	MOV R0, #95h
+	MOV @R0, A
+L0397:
+	RET
+
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 080h
+	DB 060h
+	DB 09h
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 081h
+	DB 060h
+	DB 03h
+	DB 02h
+	DB 0Bh
+	DB 0A0h
+	DB 0E5h
+	DB 032h
+	DB 054h
+	DB 060h
+	DB 024h
+	DB 0E0h
+	DB 070h
+	DB 03h
+	DB 02h
+	DB 0Bh
+	DB 02Ch
+	DB 024h
+	DB 020h
+	DB 060h
+	DB 03h
+	DB 02h
+	DB 0Bh
+	DB 09Eh
+	DB 0E5h
+	DB 02Fh
+	DB 0B4h
+	DB 081h
+	DB 03h
+	DB 02h
+	DB 0Bh
+	DB 0A0h
+	DB 0E5h
+	DB 032h
+	DB 024h
+	DB 0FEh
+	DB 060h
+	DB 019h
+	DB 014h
+	DB 060h
+	DB 028h
+	DB 024h
+	DB 02h
+	DB 070h
+	DB 064h
+	DB 075h
+	DB 04Bh
+	DB 00h
+	DB 075h
+	DB 04Ch
+	DB 012h
+	DB 075h
+	DB 029h
+	DB 00h
+	DB 075h
+	DB 02Ah
+	DB 0F2h
+	DB 075h
+	DB 047h
+	DB 01h
+	DB 02h
+	DB 0Bh
+	DB 097h
+	DB 075h
+	DB 04Bh
+	DB 00h
+	DB 075h
+	DB 04Ch
+	DB 03Bh
+	DB 075h
+	DB 029h
+	DB 04h
+	DB 075h
+	DB 02Ah
+	DB 02Dh
+	DB 075h
+	DB 047h
+	DB 02h
+	DB 02h
+	DB 0Bh
+	DB 097h
+	DB 0E5h
+	DB 031h
+	DB 014h
+	DB 060h
+	DB 016h
+	DB 014h
+	DB 060h
+	DB 01Fh
+	DB 024h
+	DB 03h
+	DB 060h
+	DB 027h
+	DB 014h
+	DB 070h
+	DB 02Fh
+	DB 075h
+	DB 029h
+	DB 00h
+	DB 075h
+	DB 02Ah
+	DB 097h
+	DB 012h
+	DB 011h
+	DB 028h
+	DB 02h
+	DB 0Bh
+	DB 097h
+	DB 075h
+	DB 029h
+	DB 00h
+	DB 075h
+	DB 02Ah
+	DB 09Bh
+	DB 012h
+	DB 011h
+	DB 028h
+	DB 02h
+	DB 0Bh
+	DB 097h
+	DB 075h
+	DB 029h
+	DB 00h
+	DB 075h
+	DB 02Ah
+	DB 0BCh
+	DB 012h
+	DB 011h
+	DB 028h
+	DB 02h
+	DB 0Bh
+	DB 097h
+	DB 075h
+	DB 029h
+	DB 00h
+	DB 075h
+	DB 02Ah
+	DB 07Eh
+	DB 012h
+	DB 011h
+	DB 028h
+	DB 080h
+	DB 06Fh
+	DB 080h
+	DB 076h
+	DB 080h
+	DB 074h
+	DB 0E5h
+	DB 034h
+	DB 070h
+	DB 05h
+	DB 0E5h
+	DB 02Fh
+	DB 0B4h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 069h
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 02Dh
+	DB 0E5h
+	DB 032h
+	DB 024h
+	DB 0DEh
+	DB 060h
+	DB 014h
+	DB 04h
+	DB 070h
+	DB 022h
+	DB 075h
+	DB 04Bh
+	DB 00h
+	DB 075h
+	DB 04Ch
+	DB 09h
+	DB 075h
+	DB 029h
+	DB 04h
+	DB 075h
+	DB 02Ah
+	DB 03Fh
+	DB 075h
+	DB 047h
+	DB 03h
+	DB 080h
+	DB 042h
+	DB 075h
+	DB 04Bh
+	DB 00h
+	DB 075h
+	DB 04Ch
+	DB 041h
+	DB 075h
+	DB 029h
+	DB 01h
+	DB 075h
+	DB 02Ah
+	DB 04h
+	DB 075h
+	DB 047h
+	DB 04h
+	DB 080h
+	DB 031h
+	DB 080h
+	DB 038h
+	DB 0E5h
+	DB 033h
+	DB 064h
+	DB 01h
+	DB 070h
+	DB 02Eh
+	DB 0E5h
+	DB 032h
+	DB 024h
+	DB 0DEh
+	DB 060h
+	DB 014h
+	DB 04h
+	DB 070h
+	DB 023h
+	DB 075h
+	DB 04Bh
+	DB 00h
+	DB 075h
+	DB 04Ch
+	DB 09h
+	DB 075h
+	DB 029h
+	DB 04h
+	DB 075h
+	DB 02Ah
+	DB 058h
+	DB 075h
+	DB 047h
+	DB 05h
+	DB 080h
+	DB 0Fh
+	DB 075h
+	DB 04Bh
+	DB 01h
+	DB 075h
+	DB 04Ch
+	DB 0E7h
+	DB 075h
+	DB 029h
+	DB 01h
+	DB 075h
+	DB 02Ah
+	DB 045h
+	DB 075h
+	DB 047h
+	DB 06h
+	DB 02h
+	DB 015h
+	DB 076h
+	DB 080h
+	DB 04h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+	DB 012h
+	DB 025h
+	DB 09Ah
+	DB 050h
+	DB 03h
+	DB 02h
+	DB 0Ch
+	DB 0A4h
+	DB 0E5h
+	DB 034h
+	DB 070h
+	DB 01Fh
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 01Bh
+	DB 0E5h
+	DB 031h
+	DB 070h
+	DB 017h
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 02h
+	DB 0Fh
+	DB 0E5h
+	DB 02Bh
+	DB 054h
+	DB 07h
+	DB 0F5h
+	DB 0EAh
+	DB 075h
+	DB 049h
+	DB 02h
+	DB 075h
+	DB 0EBh
+	DB 01h
+	DB 02h
+	DB 0Ch
+	DB 07Dh
+	DB 02h
+	DB 0Ch
+	DB 0A4h
+	DB 0E5h
+	DB 031h
+	DB 064h
+	DB 05h
+	DB 070h
+	DB 01Bh
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 016h
+	DB 075h
+	DB 0EAh
+	DB 05h
+	DB 078h
+	DB 095h
+	DB 0E6h
+	DB 0F5h
+	DB 0EAh
+	DB 078h
+	DB 0AEh
+	DB 0E6h
+	DB 0F5h
+	DB 0EAh
+	DB 075h
+	DB 049h
+	DB 02h
+	DB 075h
+	DB 0EBh
+	DB 03h
+	DB 02h
+	DB 0Ch
+	DB 07Dh
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 06h
+	DB 021h
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 01Ch
+	DB 0E5h
+	DB 035h
+	DB 0B4h
+	DB 010h
+	DB 017h
+	DB 0E5h
+	DB 036h
+	DB 0B4h
+	DB 04h
+	DB 012h
+	DB 075h
+	DB 029h
+	DB 00h
+	DB 075h
+	DB 02Ah
+	DB 0D7h
+	DB 075h
+	DB 04Bh
+	DB 00h
+	DB 075h
+	DB 04Ch
+	DB 01Ah
+	DB 075h
+	DB 047h
+	DB 08h
+	DB 02h
+	DB 0Ch
+	DB 09Fh
+	DB 0E5h
+	DB 031h
+	DB 064h
+	DB 01Fh
+	DB 070h
+	DB 015h
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 010h
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 0Bh
+	DB 075h
+	DB 0EAh
+	DB 01Fh
+	DB 075h
+	DB 0EAh
+	DB 04h
+	DB 012h
+	DB 011h
+	DB 03Ch
+	DB 080h
+	DB 04Ch
+	DB 0E5h
+	DB 031h
+	DB 064h
+	DB 025h
+	DB 070h
+	DB 014h
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 0Fh
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 0Ah
+	DB 075h
+	DB 0EAh
+	DB 025h
+	DB 078h
+	DB 0D7h
+	DB 012h
+	DB 011h
+	DB 039h
+	DB 080h
+	DB 032h
+	DB 0E5h
+	DB 031h
+	DB 064h
+	DB 022h
+	DB 070h
+	DB 014h
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 0Fh
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 0Ah
+	DB 075h
+	DB 0EAh
+	DB 022h
+	DB 078h
+	DB 0BDh
+	DB 012h
+	DB 011h
+	DB 039h
+	DB 080h
+	DB 018h
+	DB 0E5h
+	DB 031h
+	DB 064h
+	DB 023h
+	DB 070h
+	DB 016h
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 011h
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 0Ch
+	DB 075h
+	DB 0EAh
+	DB 023h
+	DB 078h
+	DB 0D8h
+	DB 012h
+	DB 011h
+	DB 039h
+	DB 012h
+	DB 011h
+	DB 0Eh
+	DB 022h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 020h
+	DB 01Ch
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 017h
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 012h
+	DB 074h
+	DB 01h
+	DB 0F5h
+	DB 04Bh
+	DB 0F5h
+	DB 04Ch
+	DB 075h
+	DB 029h
+	DB 03h
+	DB 075h
+	DB 02Ah
+	DB 02Ch
+	DB 075h
+	DB 047h
+	DB 05h
+	DB 02h
+	DB 015h
+	DB 076h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+	DB 08Bh
+	DB 05Eh
+	DB 08Ah
+	DB 05Fh
+	DB 089h
+	DB 060h
+	DB 090h
+	DB 00h
+	DB 01h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 024h
+	DB 02Fh
+	DB 060h
+	DB 02Eh
+	DB 014h
+	DB 060h
+	DB 049h
+	DB 024h
+	DB 02h
+	DB 070h
+	DB 074h
+	DB 090h
+	DB 00h
+	DB 02h
+	DB 074h
+	DB 0A0h
+	DB 012h
+	DB 017h
+	DB 018h
+	DB 090h
+	DB 00h
+	DB 03h
+	DB 074h
+	DB 014h
+	DB 012h
+	DB 0Dh
+	DB 06Fh
+	DB 0EFh
+	DB 064h
+	DB 0FAh
+	DB 070h
+	DB 0Fh
+	DB 090h
+	DB 00h
+	DB 02h
+	DB 012h
+	DB 0Dh
+	DB 05Fh
+	DB 012h
+	DB 0Dh
+	DB 034h
+	DB 012h
+	DB 016h
+	DB 059h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 074h
+	DB 034h
+	DB 012h
+	DB 016h
+	DB 049h
+	DB 074h
+	DB 0A0h
+	DB 012h
+	DB 017h
+	DB 018h
+	DB 090h
+	DB 00h
+	DB 05h
+	DB 074h
+	DB 018h
+	DB 012h
+	DB 017h
+	DB 018h
+	DB 012h
+	DB 025h
+	DB 0D8h
+	DB 012h
+	DB 0Dh
+	DB 034h
+	DB 012h
+	DB 016h
+	DB 059h
+	DB 02h
+	DB 018h
+	DB 011h
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 074h
+	DB 0A0h
+	DB 012h
+	DB 016h
+	DB 049h
+	DB 074h
+	DB 04h
+	DB 012h
+	DB 017h
+	DB 018h
+	DB 090h
+	DB 00h
+	DB 05h
+	DB 074h
+	DB 0EEh
+	DB 012h
+	DB 0Dh
+	DB 06Fh
+	DB 0EFh
+	DB 064h
+	DB 0FAh
+	DB 070h
+	DB 012h
+	DB 090h
+	DB 00h
+	DB 03h
+	DB 012h
+	DB 0Dh
+	DB 083h
+	DB 090h
+	DB 00h
+	DB 04h
+	DB 012h
+	DB 0Dh
+	DB 083h
+	DB 090h
+	DB 00h
+	DB 05h
+	DB 012h
+	DB 0Dh
+	DB 05Fh
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 022h
+	DB 0ABh
+	DB 05Eh
+	DB 0AAh
+	DB 05Fh
+	DB 0A9h
+	DB 060h
+	DB 090h
+	DB 00h
+	DB 03h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 0FFh
+	DB 07Dh
+	DB 01h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 0ABh
+	DB 05Eh
+	DB 0AAh
+	DB 05Fh
+	DB 0A9h
+	DB 060h
+	DB 090h
+	DB 00h
+	DB 04h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 0FFh
+	DB 07Dh
+	DB 01h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 0ABh
+	DB 05Eh
+	DB 0AAh
+	DB 05Fh
+	DB 0A9h
+	DB 060h
+	DB 022h
+	DB 0ABh
+	DB 05Eh
+	DB 0AAh
+	DB 05Fh
+	DB 0A9h
+	DB 060h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 0FFh
+	DB 07Dh
+	DB 01h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 022h
+	DB 012h
+	DB 017h
+	DB 018h
+	DB 012h
+	DB 025h
+	DB 0D8h
+	DB 090h
+	DB 023h
+	DB 085h
+	DB 0E4h
+	DB 093h
+	DB 025h
+	DB 0E0h
+	DB 0FFh
+	DB 07Dh
+	DB 01h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 022h
+	DB 0ABh
+	DB 05Eh
+	DB 0AAh
+	DB 05Fh
+	DB 0A9h
+	DB 060h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 0FFh
+	DB 07Dh
+	DB 01h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 022h
+L0296:
+	MOV 65h, R7
+	MOV 66h, R5
+	CLR A
+	MOV 68h, A
+	MOV A, #71h
+	ADD A, 66h
+	MOV R0, A
+	MOV A, @R0
+	MOV 67h, A
+	CLR A
+	MOV R7, A
+L0303:
+	ORL 68h, #80h
+	MOV A, 68h
+	ADD A, ACC
+	INC A
+	MOV 68h, A
+	CLR 0Ah
+	MOV A, 67h
+	JNB ACC.7, L0298
+	SETB 0Ah
+L0298:
+	MOV A, 67h
+	ADD A, ACC
+	MOV 67h, A
+	MOV A, 65h
+	JB ACC.7, L0299
+	CJNE R7, #7h, L0300
+	CLR C
+	RET
+
+L0300:
+	MOV A, 65h
+	ADD A, ACC
+	MOV 65h, A
+	LJMP L0301
+
+L0299:
+	MOV A, 65h
+	ADD A, ACC
+	MOV 65h, A
+	MOV A, 66h
+	CLR C
+	SUBB A, #12h
+	JC L0304
+	SETB C
+	RET
+
+L0304:
+	INC 51h
+	MOV A, 51h
+	ANL A, #0Fh
+	MOV 51h, A
+	MOV A, 66h
+	RLC A
+	RLC A
+	RLC A
+	ANL A, #0F8h
+	ORL A, R7
+	MOV R6, A
+	MOV A, #85h
+	ADD A, 51h
+	MOV R0, A
+	MOV @R0, 6h
+	MOV A, 51h
+	LCALL L0277
+	MOV R6, A
+	JB 0Ah, L0305
+	MOV A, 51h
+	JNB ACC.3, L0306
+	MOV A, R6
+	CPL A
+	MOV R0, #84h
+	ANL A, @R0
+	MOV @R0, A
+	SJMP L0307
+
+L0306:
+	MOV A, R6
+	CPL A
+	MOV R0, #83h
+	ANL A, @R0
+	MOV @R0, A
+	SJMP L0307
+
+L0305:
+	MOV A, 51h
+	JNB ACC.3, L0312
+	MOV R0, #84h
+	SJMP L0313
+
+L0312:
+	MOV R0, #83h
+L0313:
+	MOV A, @R0
+	ORL A, R6
+	MOV @R0, A
+L0307:
+	MOV A, 51h
+	XRL A, 37h
+	JZ L0308
+	MOV A, R7
+	XRL A, #7h
+	JNZ L0301
+	CLR C
+	RET
+
+L0308:
+	MOV A, R7
+	CLR C
+	SUBB A, #7h
+	JNC L0309
+	MOV A, 68h
+	ADD A, ACC
+	MOV 68h, A
+	JNB CY, L0310
+	MOV R6, #1h
+	SJMP L0311
+
+L0310:
+	MOV R6, #0h
+L0311:
+	MOV A, R6
+	ADD A, 68h
+	MOV 68h, A
+	INC R7
+	SJMP L0308
+
+L0309:
+	MOV A, #71h
+	ADD A, 66h
+	MOV R0, A
+	MOV A, 68h
+	ANL A, @R0
+	MOV @R0, A
+	MOV A, #71h
+	ADD A, 66h
+	MOV R1, A
+	MOV A, #9Ch
+	ADD A, 66h
+	MOV R0, A
+	MOV A, 68h
+	CPL A
+	ANL A, @R0
+	ORL A, @R1
+	MOV @R1, A
+	DEC 51h
+	MOV A, 51h
+	ANL A, #0Fh
+	MOV 51h, A
+	SETB 9h
+	CLR C
+	RET
+
+L0301:
+	INC R7
+	MOV A, R7
+	CLR C
+	SUBB A, #8h
+	JNC L0302
+	LJMP L0303
+
+L0302:
+	SETB C
+	RET
+
+	DB 012h
+	DB 025h
+	DB 0AFh
+	DB 050h
+	DB 03h
+	DB 02h
+	DB 0Fh
+	DB 057h
+	DB 0E5h
+	DB 034h
+	DB 060h
+	DB 03h
+	DB 02h
+	DB 0Fh
+	DB 05Ah
+	DB 0E5h
+	DB 036h
+	DB 070h
+	DB 071h
+	DB 0E5h
+	DB 035h
+	DB 094h
+	DB 08h
+	DB 050h
+	DB 06Bh
+	DB 0E5h
+	DB 033h
+	DB 054h
+	DB 0FEh
+	DB 070h
+	DB 063h
+	DB 0E5h
+	DB 031h
+	DB 045h
+	DB 033h
+	DB 070h
+	DB 0Bh
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 02h
+	DB 06h
+	DB 075h
+	DB 048h
+	DB 012h
+	DB 02h
+	DB 0Fh
+	DB 035h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 05h
+	DB 0Fh
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 0Ah
+	DB 0E5h
+	DB 035h
+	DB 0B4h
+	DB 06h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 016h
+	DB 080h
+	DB 073h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 022h
+	DB 0Ah
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 016h
+	DB 080h
+	DB 064h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 023h
+	DB 0Ah
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 016h
+	DB 080h
+	DB 055h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 01Fh
+	DB 0Ah
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 016h
+	DB 080h
+	DB 046h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 025h
+	DB 0Ah
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 016h
+	DB 080h
+	DB 037h
+	DB 080h
+	DB 057h
+	DB 080h
+	DB 055h
+	DB 0E5h
+	DB 031h
+	DB 064h
+	DB 06h
+	DB 070h
+	DB 020h
+	DB 0E5h
+	DB 032h
+	DB 064h
+	DB 03h
+	DB 070h
+	DB 01Ah
+	DB 0E5h
+	DB 036h
+	DB 064h
+	DB 04h
+	DB 070h
+	DB 046h
+	DB 0E5h
+	DB 035h
+	DB 064h
+	DB 010h
+	DB 070h
+	DB 040h
+	DB 0E5h
+	DB 033h
+	DB 064h
+	DB 01h
+	DB 070h
+	DB 03Ah
+	DB 075h
+	DB 048h
+	DB 017h
+	DB 075h
+	DB 049h
+	DB 04h
+	DB 080h
+	DB 027h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 020h
+	DB 0Eh
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 03h
+	DB 09h
+	DB 075h
+	DB 048h
+	DB 016h
+	DB 075h
+	DB 049h
+	DB 04h
+	DB 0E4h
+	DB 080h
+	DB 014h
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 016h
+	DB 0E5h
+	DB 031h
+	DB 070h
+	DB 010h
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 02h
+	DB 0Bh
+	DB 075h
+	DB 048h
+	DB 012h
+	DB 075h
+	DB 049h
+	DB 05h
+	DB 0E4h
+	DB 012h
+	DB 011h
+	DB 01Ch
+	DB 022h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+	DB 075h
+	DB 06Fh
+	DB 05h
+	DB 012h
+	DB 023h
+	DB 048h
+	DB 078h
+	DB 0BAh
+	DB 0E6h
+	DB 070h
+	DB 03Bh
+	DB 0E5h
+	DB 03Eh
+	DB 060h
+	DB 05h
+	DB 078h
+	DB 0BDh
+	DB 0E6h
+	DB 070h
+	DB 014h
+	DB 078h
+	DB 0BCh
+	DB 0E6h
+	DB 060h
+	DB 02Dh
+	DB 012h
+	DB 010h
+	DB 01Ah
+	DB 0BFh
+	DB 0FBh
+	DB 03h
+	DB 02h
+	DB 010h
+	DB 014h
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 01Ch
+	DB 080h
+	DB 012h
+	DB 078h
+	DB 0BCh
+	DB 0E6h
+	DB 060h
+	DB 019h
+	DB 012h
+	DB 010h
+	DB 01Ah
+	DB 0BFh
+	DB 0FBh
+	DB 03h
+	DB 02h
+	DB 010h
+	DB 014h
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 01Fh
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 0D2h
+	DB 0AFh
+	DB 0E4h
+	DB 078h
+	DB 0BCh
+	DB 0F6h
+	DB 020h
+	DB 0B3h
+	DB 075h
+	DB 078h
+	DB 0BAh
+	DB 0E6h
+	DB 070h
+	DB 070h
+	DB 012h
+	DB 010h
+	DB 027h
+	DB 0BFh
+	DB 0FBh
+	DB 02h
+	DB 080h
+	DB 063h
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 055h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 012h
+	DB 00h
+	DB 036h
+	DB 0E5h
+	DB 03Eh
+	DB 060h
+	DB 05h
+	DB 078h
+	DB 0BDh
+	DB 0E6h
+	DB 070h
+	DB 05h
+	DB 075h
+	DB 06Fh
+	DB 05h
+	DB 080h
+	DB 03h
+	DB 075h
+	DB 06Fh
+	DB 015h
+	DB 07Bh
+	DB 00h
+	DB 07Ah
+	DB 00h
+	DB 079h
+	DB 0C2h
+	DB 085h
+	DB 06Fh
+	DB 069h
+	DB 07Fh
+	DB 010h
+	DB 012h
+	DB 019h
+	DB 0E8h
+	DB 0EFh
+	DB 064h
+	DB 0FAh
+	DB 070h
+	DB 023h
+	DB 078h
+	DB 0BEh
+	DB 0F6h
+	DB 08h
+	DB 0F6h
+	DB 0D2h
+	DB 0AFh
+	DB 0E5h
+	DB 03Eh
+	DB 0B4h
+	DB 01h
+	DB 014h
+	DB 078h
+	DB 0D7h
+	DB 0E6h
+	DB 070h
+	DB 012h
+	DB 078h
+	DB 0BDh
+	DB 0E6h
+	DB 070h
+	DB 05h
+	DB 012h
+	DB 022h
+	DB 027h
+	DB 080h
+	DB 08h
+	DB 012h
+	DB 012h
+	DB 035h
+	DB 080h
+	DB 03h
+	DB 012h
+	DB 022h
+	DB 078h
+	DB 012h
+	DB 010h
+	DB 027h
+	DB 0BFh
+	DB 0FBh
+	DB 02h
+	DB 080h
+	DB 07h
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 01Eh
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 0D2h
+	DB 0AFh
+	DB 022h
+	DB 0C2h
+	DB 0AFh
+	DB 012h
+	DB 025h
+	DB 0D8h
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 020h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 022h
+	DB 0C2h
+	DB 0AFh
+	DB 012h
+	DB 025h
+	DB 0D8h
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 020h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 022h
+	DB 08Fh
+	DB 010h
+	DB 08Dh
+	DB 011h
+	DB 08Bh
+	DB 012h
+	DB 0E4h
+	DB 0F5h
+	DB 017h
+	DB 0E5h
+	DB 0E7h
+	DB 030h
+	DB 0E3h
+	DB 06h
+	DB 0E5h
+	DB 0E7h
+	DB 054h
+	DB 03h
+	DB 060h
+	DB 05h
+	DB 012h
+	DB 027h
+	DB 02Ch
+	DB 080h
+	DB 0F0h
+	DB 030h
+	DB 024h
+	DB 03h
+	DB 02h
+	DB 010h
+	DB 0E9h
+	DB 078h
+	DB 0D8h
+	DB 0E6h
+	DB 0FFh
+	DB 054h
+	DB 03h
+	DB 070h
+	DB 03h
+	DB 02h
+	DB 010h
+	DB 0E9h
+	DB 078h
+	DB 0D2h
+	DB 0E6h
+	DB 054h
+	DB 018h
+	DB 060h
+	DB 07h
+	DB 0EFh
+	DB 030h
+	DB 0E1h
+	DB 03h
+	DB 075h
+	DB 017h
+	DB 01h
+	DB 0C2h
+	DB 0AFh
+	DB 075h
+	DB 0E5h
+	DB 01Eh
+	DB 078h
+	DB 0D8h
+	DB 0E6h
+	DB 030h
+	DB 0E0h
+	DB 04Ch
+	DB 0ABh
+	DB 013h
+	DB 0AAh
+	DB 014h
+	DB 0A9h
+	DB 015h
+	DB 0AEh
+	DB 02h
+	DB 0AFh
+	DB 01h
+	DB 0EFh
+	DB 04Eh
+	DB 060h
+	DB 03Eh
+	DB 0E5h
+	DB 011h
+	DB 0C4h
+	DB 054h
+	DB 0F0h
+	DB 0FFh
+	DB 0E5h
+	DB 017h
+	DB 0C4h
+	DB 033h
+	DB 033h
+	DB 033h
+	DB 054h
+	DB 080h
+	DB 04Fh
+	DB 0FFh
+	DB 0E5h
+	DB 012h
+	DB 025h
+	DB 0E0h
+	DB 025h
+	DB 0E0h
+	DB 04Fh
+	DB 045h
+	DB 010h
+	DB 045h
+	DB 016h
+	DB 0F5h
+	DB 0E5h
+	DB 090h
+	DB 00h
+	DB 01h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 0F5h
+	DB 0E5h
+	DB 012h
+	DB 016h
+	DB 0D2h
+	DB 0F5h
+	DB 0E5h
+	DB 090h
+	DB 00h
+	DB 03h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 0F5h
+	DB 0E5h
+	DB 090h
+	DB 00h
+	DB 02h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 054h
+	DB 0Fh
+	DB 0F5h
+	DB 0E5h
+	DB 080h
+	DB 015h
+	DB 0E5h
+	DB 017h
+	DB 0C4h
+	DB 033h
+	DB 033h
+	DB 033h
+	DB 054h
+	DB 080h
+	DB 044h
+	DB 01h
+	DB 0F5h
+	DB 0E5h
+	DB 0E4h
+	DB 0F5h
+	DB 0E5h
+	DB 0F5h
+	DB 0E5h
+	DB 0F5h
+	DB 0E5h
+	DB 0F5h
+	DB 0E5h
+	DB 0E4h
+	DB 0F5h
+	DB 0E5h
+	DB 0F5h
+	DB 0E5h
+	DB 0D2h
+	DB 0AFh
+	DB 075h
+	DB 0E6h
+	DB 08h
+	DB 043h
+	DB 0E7h
+	DB 01h
+	DB 0F5h
+	DB 03Ah
+	DB 0F5h
+	DB 045h
+	DB 022h
+	DB 053h
+	DB 0DBh
+	DB 0EFh
+	DB 0D2h
+	DB 013h
+	DB 0AFh
+	DB 048h
+	DB 0EFh
+	DB 075h
+	DB 0F0h
+	DB 03h
+	DB 0A4h
+	DB 024h
+	DB 0D7h
+	DB 0F5h
+	DB 082h
+	DB 0E4h
+	DB 034h
+	DB 04h
+	DB 0F5h
+	DB 083h
+	DB 074h
+	DB 01h
+	DB 093h
+	DB 0FAh
+	DB 074h
+	DB 02h
+	DB 093h
+	DB 0F9h
+	DB 022h
+	DB 075h
+	DB 049h
+	DB 02h
+	DB 075h
+	DB 0EBh
+	DB 01h
+	DB 043h
+	DB 0B9h
+	DB 010h
+	DB 075h
+	DB 0E9h
+	DB 06h
+	DB 043h
+	DB 0ECh
+	DB 01h
+	DB 022h
+	DB 075h
+	DB 049h
+	DB 01h
+	DB 0E4h
+	DB 0F5h
+	DB 0EBh
+	DB 043h
+	DB 0B9h
+	DB 08h
+	DB 075h
+	DB 0E9h
+	DB 01h
+	DB 043h
+	DB 0ECh
+	DB 01h
+	DB 022h
+	DB 085h
+	DB 02Ah
+	DB 082h
+	DB 085h
+	DB 029h
+	DB 083h
+	DB 0E4h
+	DB 093h
+	DB 075h
+	DB 04Bh
+	DB 00h
+	DB 0F5h
+	DB 04Ch
+	DB 075h
+	DB 047h
+	DB 07h
+	DB 022h
+	DB 0E6h
+	DB 0F5h
+	DB 0EAh
+	DB 075h
+	DB 049h
+	DB 02h
+	DB 075h
+	DB 0EBh
+	DB 02h
+	DB 022h
+	DB 014h
+	DB 0F5h
+	DB 082h
+	DB 08Ch
+	DB 083h
+	DB 0E4h
+	DB 093h
+	DB 0F5h
+	DB 0EAh
+	DB 0Fh
+	DB 022h
+	DB 0C3h
+	DB 0E5h
+	DB 04Eh
+	DB 094h
+	DB 08h
+	DB 0E5h
+	DB 04Dh
+	DB 094h
+	DB 00h
+	DB 022h
+	DB 075h
+	DB 04Ah
+	DB 08h
+	DB 074h
+	DB 0F8h
+	DB 025h
+	DB 04Eh
+	DB 0F5h
+	DB 04Eh
+	DB 074h
+	DB 0FFh
+	DB 035h
+	DB 04Dh
+	DB 0F5h
+	DB 04Dh
+	DB 022h
+	DB 0F5h
+	DB 083h
+	DB 074h
+	DB 01h
+	DB 093h
+	DB 0FAh
+	DB 074h
+	DB 02h
+	DB 093h
+	DB 0F9h
+	DB 02h
+	DB 017h
+	DB 03Ah
+	DB 0E4h
+	DB 093h
+	DB 042h
+	DB 04Fh
+	DB 075h
+	DB 048h
+	DB 0Fh
+	DB 075h
+	DB 049h
+	DB 01h
+	DB 0E4h
+	DB 022h
+	DB 043h
+	DB 0EFh
+	DB 04h
+	DB 053h
+	DB 0EFh
+	DB 0FEh
+	DB 022h
+	DB 0E5h
+	DB 036h
+	DB 045h
+	DB 035h
+	DB 045h
+	DB 034h
+	DB 022h
+	DB 05h
+	DB 02Ah
+	DB 0E5h
+	DB 02Ah
+	DB 0ACh
+	DB 029h
+	DB 022h
+L0114:
+	NOP
+	NOP
+	NOP
+	MOV A, 96h
+	JB ACC.1, L0115
+	JB ACC.2, L0116
+	JB ACC.3, L0116
+	JB ACC.0, L0116
+	SJMP L0115
+
+L0115:
+	MOV R0, #0FFh
+	CLR A
+L0117:
+	MOV @R0, A
+	DJNZ R0, L0117
+L0116:
+	MOV SP, #0E0h
+	LJMP L0118
+
+L0119:
+	LJMP L0130
+
+L0121:
+	CLR A
+	MOVC A, @A+DPTR
+	INC DPTR
+	MOV R0, A
+L0129:
+	CLR A
+	MOVC A, @A+DPTR
+	INC DPTR
+	JC L0127
+	MOV @R0, A
+	SJMP L0128
+
+L0127:
+	MOVX @R0, A
+L0128:
+	INC R0
+	DJNZ R7, L0129
+	SJMP L0124
+
+L0122:
+	CLR A
+	MOVC A, @A+DPTR
+	INC DPTR
+	MOV R0, A
+	ANL A, #7h
+	ADD A, #0Ch
+	XCH A, R0
+	CLR C
+	RLC A
+	SWAP A
+	ANL A, #0Fh
+	ORL A, #20h
+	XCH A, R0
+	MOVC A, @A+PC
+	JC L0125
+	CPL A
+	ANL A, @R0
+	SJMP L0126
+
+L0125:
+	ORL A, @R0
+L0126:
+	MOV @R0, A
+	DJNZ R7, L0122
+	SJMP L0124
+
+	DB 01h
+	DB 02h
+	DB 04h
+	DB 08h
+	DB 010h
+	DB 020h
+	DB 040h
+	DB 080h
+L0118:
+	MOV DPTR, #02176h
+L0124:
+	CLR A
+	MOV R6, #1h
+	MOVC A, @A+DPTR
+	JZ L0119
+	INC DPTR
+	MOV R7, A
+	ANL A, #3Fh
+	JNB ACC.5, L0120
+	ANL A, #1Fh
+	MOV R6, A
+	CLR A
+	MOVC A, @A+DPTR
+	INC DPTR
+	JZ L0120
+	INC R6
+L0120:
+	XCH A, R7
+	ANL A, #0C0h
+	ADD A, ACC
+	JZ L0121
+	JC L0122
+	CLR A
+	MOVC A, @A+DPTR
+	INC DPTR
+	MOV R2, A
+	CLR A
+	MOVC A, @A+DPTR
+	INC DPTR
+	MOV R0, A
+L0123:
+	CLR A
+	MOVC A, @A+DPTR
+	INC DPTR
+	XCH A, R0
+	XCH A, DPL
+	XCH A, R0
+	XCH A, R2
+	XCH A, DPH
+	XCH A, R2
+	MOVX @DPTR, A
+	INC DPTR
+	XCH A, R0
+	XCH A, DPL
+	XCH A, R0
+	XCH A, R2
+	XCH A, DPH
+	XCH A, R2
+	DJNZ R7, L0123
+	DJNZ R6, L0123
+	SJMP L0124
+
+	DB 078h
+	DB 0D2h
+	DB 0E6h
+	DB 0FFh
+	DB 054h
+	DB 07h
+	DB 0FEh
+	DB 070h
+	DB 05h
+	DB 0EFh
+	DB 054h
+	DB 018h
+	DB 060h
+	DB 078h
+	DB 0EEh
+	DB 0C3h
+	DB 094h
+	DB 01h
+	DB 050h
+	DB 07h
+	DB 078h
+	DB 0D2h
+	DB 0E6h
+	DB 054h
+	DB 018h
+	DB 060h
+	DB 06Bh
+	DB 078h
+	DB 0C4h
+	DB 0E6h
+	DB 0FEh
+	DB 0C4h
+	DB 013h
+	DB 013h
+	DB 054h
+	DB 02h
+	DB 0FFh
+	DB 078h
+	DB 0D2h
+	DB 0E6h
+	DB 054h
+	DB 07h
+	DB 0FDh
+	DB 0EEh
+	DB 012h
+	DB 016h
+	DB 01Eh
+	DB 075h
+	DB 014h
+	DB 00h
+	DB 075h
+	DB 015h
+	DB 0C2h
+	DB 0E6h
+	DB 0FEh
+	DB 0C4h
+	DB 013h
+	DB 054h
+	DB 01h
+	DB 0F5h
+	DB 016h
+	DB 012h
+	DB 010h
+	DB 034h
+	DB 078h
+	DB 0D2h
+	DB 0E6h
+	DB 0FEh
+	DB 054h
+	DB 07h
+	DB 0C3h
+	DB 094h
+	DB 02h
+	DB 040h
+	DB 03Bh
+	DB 078h
+	DB 0C8h
+	DB 012h
+	DB 016h
+	DB 015h
+	DB 075h
+	DB 014h
+	DB 00h
+	DB 075h
+	DB 015h
+	DB 0C6h
+	DB 012h
+	DB 012h
+	DB 0BCh
+	DB 094h
+	DB 03h
+	DB 040h
+	DB 029h
+	DB 078h
+	DB 0CCh
+	DB 012h
+	DB 016h
+	DB 015h
+	DB 075h
+	DB 014h
+	DB 00h
+	DB 075h
+	DB 015h
+	DB 0CAh
+	DB 012h
+	DB 012h
+	DB 0BCh
+	DB 094h
+	DB 04h
+	DB 040h
+	DB 017h
+	DB 078h
+	DB 0D0h
+	DB 012h
+	DB 016h
+	DB 015h
+	DB 075h
+	DB 014h
+	DB 00h
+	DB 075h
+	DB 015h
+	DB 0CEh
+	DB 0EEh
+	DB 0C4h
+	DB 013h
+	DB 054h
+	DB 01h
+	DB 0F5h
+	DB 016h
+	DB 0E4h
+	DB 0FDh
+	DB 012h
+	DB 010h
+	DB 034h
+	DB 022h
+	DB 0EEh
+	DB 0C4h
+	DB 013h
+	DB 054h
+	DB 01h
+	DB 0F5h
+	DB 016h
+	DB 0E4h
+	DB 0FDh
+	DB 012h
+	DB 010h
+	DB 034h
+	DB 078h
+	DB 0D2h
+	DB 0E6h
+	DB 0FEh
+	DB 054h
+	DB 07h
+	DB 0C3h
+	DB 022h
+	DB 0E5h
+	DB 02Fh
+	DB 0B4h
+	DB 06h
+	DB 01Fh
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 0CCh
+	DB 01Ah
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 0CCh
+	DB 015h
+	DB 0E5h
+	DB 035h
+	DB 0B4h
+	DB 0CCh
+	DB 010h
+	DB 0E5h
+	DB 036h
+	DB 0B4h
+	DB 0CCh
+	DB 0Bh
+	DB 07Bh
+	DB 00h
+	DB 07Ah
+	DB 00h
+	DB 079h
+	DB 02Fh
+	DB 012h
+	DB 0Ch
+	DB 0A8h
+	DB 080h
+	DB 06Bh
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 0EEh
+	DB 070h
+	DB 02Dh
+	DB 0E5h
+	DB 031h
+	DB 064h
+	DB 0CCh
+	DB 070h
+	DB 027h
+	DB 0E5h
+	DB 032h
+	DB 0B4h
+	DB 0CCh
+	DB 022h
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 0CCh
+	DB 01Dh
+	DB 0E5h
+	DB 034h
+	DB 0B4h
+	DB 0CCh
+	DB 018h
+	DB 0E5h
+	DB 035h
+	DB 0B4h
+	DB 0CCh
+	DB 013h
+	DB 0E5h
+	DB 036h
+	DB 0B4h
+	DB 0CCh
+	DB 0Eh
+	DB 07Bh
+	DB 00h
+	DB 07Ah
+	DB 00h
+	DB 079h
+	DB 02Fh
+	DB 012h
+	DB 0Ch
+	DB 0A8h
+	DB 0E4h
+	DB 0F5h
+	DB 049h
+	DB 080h
+	DB 038h
+	DB 07Dh
+	DB 01h
+	DB 0AFh
+	DB 02Fh
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 07Dh
+	DB 01h
+	DB 0AFh
+	DB 030h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 07Dh
+	DB 01h
+	DB 0AFh
+	DB 031h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 07Dh
+	DB 01h
+	DB 0AFh
+	DB 032h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 07Dh
+	DB 01h
+	DB 0AFh
+	DB 033h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 07Dh
+	DB 01h
+	DB 0AFh
+	DB 034h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 07Dh
+	DB 01h
+	DB 0AFh
+	DB 035h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 07Dh
+	DB 01h
+	DB 0AFh
+	DB 036h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 0E4h
+	DB 0F5h
+	DB 0B9h
+	DB 022h
+	DB 0E5h
+	DB 035h
+	DB 064h
+	DB 02h
+	DB 060h
+	DB 03h
+	DB 02h
+	DB 013h
+	DB 0E9h
+	DB 0E5h
+	DB 036h
+	DB 070h
+	DB 079h
+	DB 0E5h
+	DB 02Fh
+	DB 024h
+	DB 07Fh
+	DB 060h
+	DB 014h
+	DB 014h
+	DB 060h
+	DB 02Ah
+	DB 024h
+	DB 02h
+	DB 070h
+	DB 06Ah
+	DB 0E5h
+	DB 0A4h
+	DB 070h
+	DB 04h
+	DB 0F5h
+	DB 0EAh
+	DB 080h
+	DB 046h
+	DB 075h
+	DB 0EAh
+	DB 02h
+	DB 080h
+	DB 041h
+	DB 0E5h
+	DB 034h
+	DB 060h
+	DB 02h
+	DB 080h
+	DB 059h
+	DB 0E5h
+	DB 033h
+	DB 014h
+	DB 060h
+	DB 05h
+	DB 04h
+	DB 070h
+	DB 09h
+	DB 080h
+	DB 021h
+	DB 030h
+	DB 03h
+	DB 02h
+	DB 080h
+	DB 01Ch
+	DB 080h
+	DB 048h
+	DB 080h
+	DB 046h
+	DB 0E5h
+	DB 034h
+	DB 060h
+	DB 02h
+	DB 080h
+	DB 040h
+	DB 0E5h
+	DB 033h
+	DB 024h
+	DB 080h
+	DB 060h
+	DB 0Ch
+	DB 014h
+	DB 060h
+	DB 0Eh
+	DB 014h
+	DB 060h
+	DB 01Bh
+	DB 024h
+	DB 082h
+	DB 070h
+	DB 02Ch
+	DB 080h
+	DB 00h
+	DB 0E4h
+	DB 0F5h
+	DB 0EAh
+	DB 080h
+	DB 01Ch
+	DB 030h
+	DB 03h
+	DB 0Bh
+	DB 0E5h
+	DB 0E4h
+	DB 054h
+	DB 02h
+	DB 0C3h
+	DB 013h
+	DB 0F5h
+	DB 0EAh
+	DB 0E4h
+	DB 080h
+	DB 0Eh
+	DB 080h
+	DB 019h
+	DB 030h
+	DB 03h
+	DB 010h
+	DB 0E5h
+	DB 0E7h
+	DB 054h
+	DB 02h
+	DB 0C3h
+	DB 013h
+	DB 0F5h
+	DB 0EAh
+	DB 0E4h
+	DB 012h
+	DB 011h
+	DB 03Ah
+	DB 012h
+	DB 011h
+	DB 0Eh
+	DB 022h
+	DB 080h
+	DB 04h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+	DB 0E5h
+	DB 04Eh
+	DB 045h
+	DB 04Dh
+	DB 060h
+	DB 070h
+	DB 012h
+	DB 011h
+	DB 04Eh
+	DB 040h
+	DB 05h
+	DB 012h
+	DB 011h
+	DB 058h
+	DB 080h
+	DB 08h
+	DB 085h
+	DB 04Eh
+	DB 04Ah
+	DB 0E4h
+	DB 0F5h
+	DB 04Dh
+	DB 0F5h
+	DB 04Eh
+	DB 0E5h
+	DB 04Ah
+	DB 060h
+	DB 04Fh
+	DB 0E5h
+	DB 047h
+	DB 060h
+	DB 04Bh
+	DB 0E5h
+	DB 047h
+	DB 064h
+	DB 08h
+	DB 070h
+	DB 031h
+	DB 0E5h
+	DB 04Eh
+	DB 045h
+	DB 04Dh
+	DB 070h
+	DB 02Bh
+	DB 0FFh
+	DB 0E5h
+	DB 04Ah
+	DB 024h
+	DB 0FEh
+	DB 0FEh
+	DB 0EFh
+	DB 0C3h
+	DB 09Eh
+	DB 050h
+	DB 0Ch
+	DB 012h
+	DB 011h
+	DB 08Fh
+	DB 070h
+	DB 02h
+	DB 05h
+	DB 029h
+	DB 012h
+	DB 011h
+	DB 043h
+	DB 080h
+	DB 0EAh
+	DB 078h
+	DB 070h
+	DB 0E6h
+	DB 0FEh
+	DB 0C4h
+	DB 054h
+	DB 0Fh
+	DB 024h
+	DB 030h
+	DB 0F5h
+	DB 0EAh
+	DB 0EEh
+	DB 054h
+	DB 0Fh
+	DB 024h
+	DB 030h
+	DB 0F5h
+	DB 0EAh
+	DB 080h
+	DB 014h
+	DB 0E4h
+	DB 0FFh
+	DB 0EFh
+	DB 0C3h
+	DB 095h
+	DB 04Ah
+	DB 050h
+	DB 0Ch
+	DB 012h
+	DB 011h
+	DB 08Fh
+	DB 070h
+	DB 02h
+	DB 05h
+	DB 029h
+	DB 012h
+	DB 011h
+	DB 043h
+	DB 080h
+	DB 0EEh
+	DB 085h
+	DB 04Ah
+	DB 0EBh
+	DB 012h
+	DB 011h
+	DB 0Eh
+	DB 020h
+	DB 012h
+	DB 011h
+	DB 080h
+	DB 08h
+	DB 030h
+	DB 011h
+	DB 09h
+	DB 0C2h
+	DB 011h
+	DB 0E4h
+	DB 0F5h
+	DB 0EBh
+	DB 043h
+	DB 0ECh
+	DB 01h
+	DB 022h
+	DB 043h
+	DB 0ECh
+	DB 02h
+	DB 022h
+	DB 0E4h
+	DB 0F5h
+	DB 062h
+	DB 0E5h
+	DB 0DFh
+	DB 030h
+	DB 0E1h
+	DB 03h
+	DB 0E4h
+	DB 0F5h
+	DB 0DFh
+	DB 0E5h
+	DB 0DFh
+	DB 030h
+	DB 0E2h
+	DB 06Eh
+	DB 053h
+	DB 0DFh
+	DB 0FBh
+	DB 012h
+	DB 027h
+	DB 02Ch
+	DB 05h
+	DB 03Ah
+	DB 0AFh
+	DB 03Ah
+	DB 0EFh
+	DB 0C3h
+	DB 095h
+	DB 043h
+	DB 040h
+	DB 05Bh
+	DB 030h
+	DB 03h
+	DB 04Ch
+	DB 0E5h
+	DB 03Fh
+	DB 070h
+	DB 08h
+	DB 0E5h
+	DB 051h
+	DB 065h
+	DB 037h
+	DB 060h
+	DB 02h
+	DB 080h
+	DB 016h
+	DB 0E4h
+	DB 0FFh
+	DB 074h
+	DB 09Ch
+	DB 02Fh
+	DB 0F9h
+	DB 074h
+	DB 071h
+	DB 02Fh
+	DB 0F8h
+	DB 0E6h
+	DB 047h
+	DB 042h
+	DB 062h
+	DB 0Fh
+	DB 0BFh
+	DB 012h
+	DB 0F0h
+	DB 0E5h
+	DB 062h
+	DB 060h
+	DB 09h
+	DB 053h
+	DB 096h
+	DB 0BFh
+	DB 0E4h
+	DB 0F5h
+	DB 03Ah
+	DB 0D2h
+	DB 0ABh
+	DB 022h
+	DB 0E4h
+	DB 0F5h
+	DB 095h
+	DB 043h
+	DB 0F3h
+	DB 010h
+	DB 0E5h
+	DB 0A4h
+	DB 0B4h
+	DB 0FFh
+	DB 010h
+	DB 075h
+	DB 0A0h
+	DB 0FFh
+	DB 0E4h
+	DB 0F5h
+	DB 080h
+	DB 0F5h
+	DB 090h
+	DB 043h
+	DB 0B0h
+	DB 0Dh
+	DB 053h
+	DB 0B0h
+	DB 0CFh
+	DB 080h
+	DB 03h
+	DB 012h
+	DB 025h
+	DB 040h
+	DB 012h
+	DB 020h
+	DB 0BAh
+	DB 0E4h
+	DB 0F5h
+	DB 095h
+	DB 043h
+	DB 0F3h
+	DB 010h
+	DB 012h
+	DB 025h
+	DB 040h
+	DB 012h
+	DB 020h
+	DB 0BAh
+	DB 0D2h
+	DB 0ABh
+	DB 022h
+	DB 0E4h
+	DB 0F5h
+	DB 0DFh
+	DB 022h
+	DB 0C2h
+	DB 0AFh
+	DB 0E5h
+	DB 0EFh
+	DB 054h
+	DB 018h
+	DB 060h
+	DB 07h
+	DB 0E5h
+	DB 0EFh
+	DB 020h
+	DB 0E4h
+	DB 06Eh
+	DB 080h
+	DB 066h
+	DB 0E5h
+	DB 0EEh
+	DB 064h
+	DB 08h
+	DB 070h
+	DB 060h
+	DB 0AFh
+	DB 0EEh
+	DB 012h
+	DB 023h
+	DB 086h
+	DB 012h
+	DB 011h
+	DB 081h
+	DB 0E5h
+	DB 0EFh
+	DB 020h
+	DB 0E4h
+	DB 059h
+	DB 0E4h
+	DB 0F5h
+	DB 0B9h
+	DB 053h
+	DB 0DBh
+	DB 067h
+	DB 0F5h
+	DB 049h
+	DB 0F5h
+	DB 048h
+	DB 053h
+	DB 022h
+	DB 0F0h
+	DB 0F5h
+	DB 047h
+	DB 0F5h
+	DB 0E9h
+	DB 0F5h
+	DB 03Ah
+	DB 0E5h
+	DB 02Fh
+	DB 054h
+	DB 060h
+	DB 024h
+	DB 0E0h
+	DB 060h
+	DB 01Bh
+	DB 024h
+	DB 020h
+	DB 070h
+	DB 037h
+	DB 0E5h
+	DB 030h
+	DB 0C3h
+	DB 094h
+	DB 0Dh
+	DB 050h
+	DB 033h
+	DB 0AFh
+	DB 030h
+	DB 0EFh
+	DB 075h
+	DB 0F0h
+	DB 03h
+	DB 0A4h
+	DB 024h
+	DB 068h
+	DB 0F5h
+	DB 082h
+	DB 0E4h
+	DB 034h
+	DB 04h
+	DB 080h
+	DB 015h
+	DB 0E5h
+	DB 030h
+	DB 0C3h
+	DB 094h
+	DB 0Ch
+	DB 050h
+	DB 01Ch
+	DB 0AFh
+	DB 030h
+	DB 0EFh
+	DB 075h
+	DB 0F0h
+	DB 03h
+	DB 0A4h
+	DB 024h
+	DB 08Fh
+	DB 0F5h
+	DB 082h
+	DB 0E4h
+	DB 034h
+	DB 04h
+	DB 012h
+	DB 010h
+	DB 0FDh
+	DB 012h
+	DB 017h
+	DB 03Ah
+	DB 080h
+	DB 06h
+	DB 012h
+	DB 011h
+	DB 081h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 053h
+	DB 0EFh
+	DB 0FBh
+	DB 0D2h
+	DB 0AFh
+	DB 022h
+	DB 0AFh
+	DB 036h
+	DB 0EFh
+	DB 0FEh
+	DB 0ADh
+	DB 035h
+	DB 07Ch
+	DB 00h
+	DB 0E4h
+	DB 02Dh
+	DB 0FFh
+	DB 0ECh
+	DB 03Eh
+	DB 0FEh
+	DB 075h
+	DB 049h
+	DB 02h
+	DB 0F5h
+	DB 04Dh
+	DB 08Fh
+	DB 04Eh
+	DB 0E5h
+	DB 047h
+	DB 060h
+	DB 0Fh
+	DB 0C3h
+	DB 0E5h
+	DB 04Ch
+	DB 09Fh
+	DB 0E5h
+	DB 04Bh
+	DB 09Eh
+	DB 050h
+	DB 06h
+	DB 085h
+	DB 04Bh
+	DB 04Dh
+	DB 085h
+	DB 04Ch
+	DB 04Eh
+	DB 012h
+	DB 011h
+	DB 04Eh
+	DB 040h
+	DB 0Dh
+	DB 0E5h
+	DB 049h
+	DB 064h
+	DB 02h
+	DB 060h
+	DB 05h
+	DB 0E5h
+	DB 049h
+	DB 0B4h
+	DB 04h
+	DB 02h
+	DB 05h
+	DB 049h
+	DB 0E5h
+	DB 04Eh
+	DB 054h
+	DB 07h
+	DB 070h
+	DB 04h
+	DB 0D2h
+	DB 011h
+	DB 080h
+	DB 02h
+	DB 0C2h
+	DB 011h
+	DB 012h
+	DB 011h
+	DB 04Eh
+	DB 040h
+	DB 05h
+	DB 012h
+	DB 011h
+	DB 058h
+	DB 080h
+	DB 08h
+	DB 085h
+	DB 04Eh
+	DB 04Ah
+	DB 0E4h
+	DB 0F5h
+	DB 04Dh
+	DB 0F5h
+	DB 04Eh
+	DB 0E5h
+	DB 04Ah
+	DB 060h
+	DB 018h
+	DB 0E5h
+	DB 047h
+	DB 060h
+	DB 014h
+	DB 0E4h
+	DB 0FFh
+	DB 0EFh
+	DB 0C3h
+	DB 095h
+	DB 04Ah
+	DB 050h
+	DB 0Ch
+	DB 012h
+	DB 011h
+	DB 08Fh
+	DB 070h
+	DB 02h
+	DB 05h
+	DB 029h
+	DB 012h
+	DB 011h
+	DB 043h
+	DB 080h
+	DB 0EEh
+	DB 085h
+	DB 04Ah
+	DB 0EBh
+	DB 012h
+	DB 011h
+	DB 0Eh
+	DB 022h
+L0343:
+	MOV DPTR, #02385h
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R7, A
+	MOV R3, #0h
+	MOV R2, #0h
+	MOV R1, #0AEh
+	MOV 69h, #1h
+	RET
+
+L0384:
+	MOV DPTR, #02385h
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R2, #23h
+	MOV R1, #68h
+	MOV DPTR, #02367h
+L0393:
+	MOV R7, A
+	MOV R3, #0FFh
+	CLR A
+	MOVC A, @A+DPTR
+	MOV 69h, A
+	RET
+
+	DB 0E6h
+	DB 0FDh
+	DB 0C4h
+	DB 013h
+	DB 013h
+	DB 054h
+	DB 02h
+	DB 0FFh
+	DB 0EDh
+	DB 0C4h
+	DB 054h
+	DB 07h
+	DB 0FBh
+	DB 075h
+	DB 013h
+	DB 00h
+	DB 022h
+L0338:
+	MOV DPTR, #02385h
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R7, A
+	MOV R3, #0FFh
+	RET
+
+	DB 078h
+	DB 0C3h
+	DB 0E6h
+	DB 0C4h
+	DB 054h
+	DB 03h
+	DB 0F5h
+	DB 0E5h
+	DB 08h
+	DB 0E6h
+	DB 0F5h
+	DB 0E5h
+	DB 08h
+	DB 0E6h
+	DB 0F5h
+	DB 0E5h
+	DB 022h
+L0335:
+	MOV R0, #0DDh
+	MOV A, R7
+	MOV @R0, A
+	SETB EA
+	MOV R0, #95h
+	RET
+
+	DB 0ABh
+	DB 05Eh
+	DB 0AAh
+	DB 05Fh
+	DB 0A9h
+	DB 060h
+	DB 090h
+	DB 00h
+	DB 03h
+	DB 012h
+	DB 017h
+	DB 018h
+	DB 090h
+	DB 00h
+	DB 04h
+	DB 022h
+	DB 090h
+	DB 00h
+	DB 05h
+	DB 012h
+	DB 016h
+	DB 0EBh
+	DB 0FFh
+	DB 07Dh
+	DB 01h
+	DB 022h
+L0140:
+	MOV R0, #0E0h
+	MOV A, @R0
+	MOV R6, A
+	JNB ACC.0, L0205
+	CLR P3.1
+	SJMP L0206
+
+L0205:
+	SETB P3.1
+L0206:
+	MOV A, R6
+	JNB ACC.1, L0207
+	CLR P3.6
+	SJMP L0208
+
+L0207:
+	SETB P3.6
+L0208:
+	MOV A, R6
+	JNB ACC.2, L0209
+	CLR P3.7
+	SJMP L0210
+
+L0209:
+	SETB P3.7
+L0210:
+	MOV A, 0E4h
+	JNB ACC.3, L0211
+	MOV A, 0E4h
+	ANL A, #3h
+	JNZ L0211
+	JNB 22h, L0211
+	CLR 22h
+	MOV A, 96h
+	JNB ACC.4, L0212
+	ANL 96h, #0EFh
+	RET
+
+L0212:
+	CLR EA
+	MOV R0, #0AFh
+	MOV A, @R0
+	MOV 0E2h, A
+	CLR A
+	MOV 0E2h, A
+	JNB 8h, L0213
+	MOV R7, A
+L0214:
+	MOV 0E2h, #1h
+	INC R7
+	CJNE R7, #6h, L0214
+	SJMP L0215
+
+L0213:
+	CLR A
+	MOV R7, A
+L0216:
+	MOV A, #0B0h
+	ADD A, R7
+	MOV R0, A
+	MOV A, @R0
+	MOV 0E2h, A
+	INC R7
+	CJNE R7, #6h, L0216
+L0215:
+	SETB EA
+	MOV 0E3h, #8h
+	ORL 0E4h, #1h
+	MOV 3Dh, 3Ch
+	CLR A
+	MOV 3Ah, A
+	MOV 45h, A
+L0211:
+	RET
+
+L0363:
+	CJNE R3, #1h, L0365
+	MOV DPL, R1
+	MOV DPH, R2
+	MOVX A, @DPTR
+	RET
+
+L0365:
+	JNC L0366
+	MOV A, @R1
+	RET
+
+L0366:
+	CJNE R3, #0FEh, L0367
+	MOVX A, @R1
+	RET
+
+L0367:
+	MOV DPL, R1
+	MOV DPH, R2
+	CLR A
+	MOVC A, @A+DPTR
+	RET
+
+	DB 0BBh
+	DB 01h
+	DB 0Ch
+	DB 0E5h
+	DB 082h
+	DB 029h
+	DB 0F5h
+	DB 082h
+	DB 0E5h
+	DB 083h
+	DB 03Ah
+	DB 0F5h
+	DB 083h
+	DB 0E0h
+	DB 022h
+	DB 050h
+	DB 06h
+	DB 0E9h
+	DB 025h
+	DB 082h
+	DB 0F8h
+	DB 0E6h
+	DB 022h
+	DB 0BBh
+	DB 0FEh
+	DB 06h
+	DB 0E9h
+	DB 025h
+	DB 082h
+	DB 0F8h
+	DB 0E2h
+	DB 022h
+	DB 0E5h
+	DB 082h
+	DB 029h
+	DB 0F5h
+	DB 082h
+	DB 0E5h
+	DB 083h
+	DB 03Ah
+	DB 0F5h
+	DB 083h
+	DB 0E4h
+	DB 093h
+	DB 022h
+L0352:
+	MOV R0, A
+	CJNE R3, #1h, L0353
+	MOV A, DPL
+	ADD A, R1
+	MOV DPL, A
+	MOV A, DPH
+	ADDC A, R2
+	MOV DPH, A
+	MOV A, R0
+	MOVX @DPTR, A
+	RET
+
+L0353:
+	JNC L0354
+	MOV A, R1
+	ADD A, DPL
+	XCH A, R0
+	MOV @R0, A
+	RET
+
+L0354:
+	CJNE R3, #0FEh, L0355
+	MOV A, R1
+	ADD A, DPL
+	XCH A, R0
+	MOVX @R0, A
+L0355:
+	RET
+
+	DB 08Ah
+	DB 083h
+	DB 089h
+	DB 082h
+	DB 0E4h
+	DB 073h
+L0282:
+	LCALL L0316
+	MOV A, 26h
+	CLR C
+	SUBB A, #12h
+	JNC L0317
+	MOV A, 26h
+	MOV DPTR, #021EAh
+	MOVC A, @A+DPTR
+	MOV R7, A
+	CLR C
+	SUBB A, #4h
+	JNC L0318
+	MOV A, R7
+	XRL A, #2h
+	JZ L0318
+	MOV A, R7
+	JNZ L0319
+	LCALL L0320
+	MOV P0, A
+	SJMP L0321
+
+L0319:
+	MOV A, 26h
+	MOV DPTR, #021EAh
+	MOVC A, @A+DPTR
+	CJNE A, #1h, L0326
+	LCALL L0320
+	MOV P1, A
+	SJMP L0321
+
+L0326:
+	LCALL L0320
+	CJNE A, #0EFh, L0327
+	CLR P3.4
+	SETB P3.5
+	SJMP L0321
+
+L0327:
+	SETB P3.4
+	CLR P3.5
+L0321:
+	LCALL L0268
+	MOV 39h, P2
+	LCALL L0268
+	MOV A, 39h
+	CJNE A, P2, L0321
+	MOV R7, P2
+	LCALL L0322
+	MOV A, R7
+	CPL A
+	MOV 39h, A
+	CLR 0Fh
+	SJMP L0323
+
+L0318:
+	SETB 0Fh
+	SJMP L0323
+
+L0317:
+	SETB 0Fh
+L0323:
+	LJMP L0316
+
+L0197:
+	MOV A, 64h
+	ADD A, ACC
+	ADD A, #36h
+	MOV DPL, A
+	CLR A
+	ADDC A, #9h
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+	RET
+
+L0193:
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+L0198:
+	MOV R5, A
+	MOV C, 0Ah
+	CLR A
+	RLC A
+	MOV R7, A
+	RET
+
+L0167:
+	MOV C, 0Ah
+	CLR A
+	RLC A
+	MOV R7, A
+	MOV R5, 64h
+	RET
+
+L0194:
+	MOV A, 64h
+	ADD A, ACC
+	ADD A, #2Ah
+	MOV DPL, A
+	CLR A
+	ADDC A, #9h
+	MOV DPH, A
+	CLR A
+	MOVC A, @A+DPTR
+	MOV R5, A
+	RET
+
+L0200:
+	MOV A, 64h
+	ADD A, ACC
+L0235:
+	ADD A, #4Bh
+	MOV DPL, A
+	CLR A
+	ADDC A, #9h
+	RET
+
+L0275:
+	CLR A
+	MOV 6Ch, A
+	MOV 6Dh, A
+	MOV R0, #0E0h
+	MOV A, @R0
+	RET
+
+L0192:
+	MOV A, 64h
+	ADD A, ACC
+	ADD A, #2Bh
+	MOV DPL, A
+	CLR A
+	ADDC A, #9h
+	RET
+
+L0196:
+	MOV A, 64h
+	ADD A, ACC
+	ADD A, #37h
+	MOV DPL, A
+	CLR A
+	ADDC A, #9h
+	RET
+
+L0252:
+	CLR A
+	MOV 6Ch, A
+	MOV 6Dh, A
+	MOV A, R7
+	RET
+
+L0267:
+	CLR A
+	MOV 6Bh, A
+	MOV R6, A
+L0273:
+	MOV A, R7
+	JNB ACC.7, L0271
+	ORL 9Dh, #1h
+	SJMP L0272
+
+L0271:
+	ANL 9Dh, #0FEh
+	CLR P3.0
+L0272:
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	ORL 9Dh, #4h
+	MOV A, R7
+	ADD A, ACC
+	MOV R7, A
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	ANL 9Dh, #0FBh
+	CLR P3.2
+	INC R6
+	CJNE R6, #8h, L0273
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	ORL 9Dh, #1h
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	ORL 9Dh, #4h
+	LCALL L0268
+	MOV C, P3.0
+	CLR A
+	RLC A
+	MOV R5, A
+	ANL 9Dh, #0FBh
+	CLR P3.2
+	CJNE R5, #1h, L0274
+	MOV R7, #0FBh
+	RET
+
+L0274:
+	MOV R7, #0FAh
+	RET
+
+	DB 0E4h
+	DB 0F5h
+	DB 094h
+	DB 075h
+	DB 093h
+	DB 055h
+	DB 015h
+	DB 02Eh
+	DB 0E5h
+	DB 02Eh
+	DB 070h
+	DB 052h
+	DB 0E5h
+	DB 06Eh
+	DB 0D3h
+	DB 094h
+	DB 00h
+	DB 040h
+	DB 033h
+	DB 05h
+	DB 06Dh
+	DB 0E5h
+	DB 06Dh
+	DB 070h
+	DB 02h
+	DB 05h
+	DB 06Ch
+	DB 064h
+	DB 050h
+	DB 045h
+	DB 06Ch
+	DB 070h
+	DB 02Ch
+	DB 0F5h
+	DB 06Ch
+	DB 0F5h
+	DB 06Dh
+	DB 053h
+	DB 09Eh
+	DB 0F8h
+	DB 078h
+	DB 0DAh
+	DB 0E6h
+	DB 0FFh
+	DB 070h
+	DB 04h
+	DB 0B2h
+	DB 0C0h
+	DB 080h
+	DB 010h
+	DB 0EFh
+	DB 0B4h
+	DB 01h
+	DB 04h
+	DB 0B2h
+	DB 0C1h
+	DB 080h
+	DB 08h
+	DB 0EFh
+	DB 0B4h
+	DB 02h
+	DB 04h
+	DB 0B2h
+	DB 0C0h
+	DB 0B2h
+	DB 0C1h
+	DB 015h
+	DB 06Eh
+	DB 080h
+	DB 07h
+	DB 0E4h
+	DB 0F5h
+	DB 06Eh
+	DB 0F5h
+	DB 06Ch
+	DB 0F5h
+	DB 06Dh
+	DB 0D2h
+	DB 0Bh
+	DB 075h
+	DB 02Eh
+	DB 014h
+	DB 030h
+	DB 03h
+	DB 09h
+	DB 0E5h
+	DB 045h
+	DB 0D3h
+	DB 094h
+	DB 00h
+	DB 040h
+	DB 02h
+	DB 015h
+	DB 045h
+	DB 0D2h
+	DB 0Ch
+	DB 022h
+	DB 0C2h
+	DB 0AFh
+	DB 0E5h
+	DB 0EFh
+	DB 030h
+	DB 0E4h
+	DB 02h
+	DB 080h
+	DB 029h
+	DB 043h
+	DB 0EFh
+	DB 04h
+	DB 0E5h
+	DB 0EEh
+	DB 060h
+	DB 027h
+	DB 0E5h
+	DB 0EEh
+	DB 0C3h
+	DB 094h
+	DB 09h
+	DB 040h
+	DB 0Eh
+	DB 012h
+	DB 011h
+	DB 081h
+	DB 043h
+	DB 0ECh
+	DB 02h
+	DB 043h
+	DB 0EFh
+	DB 02h
+	DB 012h
+	DB 027h
+	DB 03Ah
+	DB 080h
+	DB 01Dh
+	DB 0AFh
+	DB 0EEh
+	DB 012h
+	DB 023h
+	DB 086h
+	DB 053h
+	DB 0EFh
+	DB 0FEh
+	DB 0E5h
+	DB 0EFh
+	DB 030h
+	DB 0E4h
+	DB 015h
+	DB 053h
+	DB 0DBh
+	DB 0F7h
+	DB 080h
+	DB 0Bh
+	DB 053h
+	DB 0EFh
+	DB 0FEh
+	DB 0E5h
+	DB 0EFh
+	DB 030h
+	DB 0E4h
+	DB 08h
+	DB 053h
+	DB 0DBh
+	DB 0F7h
+	DB 053h
+	DB 0EFh
+	DB 0FBh
+	DB 080h
+	DB 012h
+	DB 012h
+	DB 026h
+	DB 087h
+	DB 0EFh
+	DB 075h
+	DB 0F0h
+	DB 03h
+	DB 0A4h
+	DB 024h
+	DB 0C5h
+	DB 0F5h
+	DB 082h
+	DB 0E4h
+	DB 034h
+	DB 04h
+	DB 012h
+	DB 011h
+	DB 068h
+	DB 053h
+	DB 0EFh
+	DB 0FBh
+	DB 0D2h
+	DB 0AFh
+	DB 022h
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 05h
+	DB 070h
+	DB 031h
+	DB 0E5h
+	DB 030h
+	DB 0B4h
+	DB 075h
+	DB 018h
+	DB 0E5h
+	DB 034h
+	DB 045h
+	DB 033h
+	DB 045h
+	DB 032h
+	DB 045h
+	DB 031h
+	DB 070h
+	DB 022h
+	DB 0C2h
+	DB 0AFh
+	DB 074h
+	DB 05Ah
+	DB 075h
+	DB 0F0h
+	DB 0A5h
+	DB 012h
+	DB 00h
+	DB 01Eh
+	DB 0D2h
+	DB 0AFh
+	DB 080h
+	DB 014h
+	DB 0E5h
+	DB 030h
+	DB 0B4h
+	DB 0A0h
+	DB 06h
+	DB 078h
+	DB 095h
+	DB 076h
+	DB 0Bh
+	DB 080h
+	DB 09h
+	DB 0E5h
+	DB 030h
+	DB 0B4h
+	DB 0A1h
+	DB 04h
+	DB 078h
+	DB 096h
+	DB 0A6h
+	DB 031h
+	DB 0E5h
+	DB 02Fh
+	DB 0B4h
+	DB 023h
+	DB 04h
+	DB 078h
+	DB 0D8h
+	DB 0A6h
+	DB 030h
+	DB 0E5h
+	DB 02Fh
+	DB 0B4h
+	DB 025h
+	DB 06h
+	DB 078h
+	DB 0D7h
+	DB 0A6h
+	DB 030h
+	DB 080h
+	DB 0Dh
+	DB 0E5h
+	DB 02Fh
+	DB 0B4h
+	DB 022h
+	DB 08h
+	DB 078h
+	DB 0BDh
+	DB 0A6h
+	DB 030h
+	DB 078h
+	DB 0BCh
+	DB 076h
+	DB 01h
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 0E5h
+	DB 032h
+	DB 070h
+	DB 052h
+	DB 0E5h
+	DB 02Fh
+	DB 024h
+	DB 0FEh
+	DB 060h
+	DB 010h
+	DB 024h
+	DB 02h
+	DB 070h
+	DB 046h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 01h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 03h
+	DB 080h
+	DB 032h
+	DB 080h
+	DB 03Ch
+	DB 0E5h
+	DB 034h
+	DB 045h
+	DB 031h
+	DB 070h
+	DB 032h
+	DB 0E5h
+	DB 033h
+	DB 024h
+	DB 080h
+	DB 060h
+	DB 0Fh
+	DB 014h
+	DB 060h
+	DB 011h
+	DB 014h
+	DB 060h
+	DB 018h
+	DB 024h
+	DB 082h
+	DB 070h
+	DB 020h
+	DB 075h
+	DB 048h
+	DB 04h
+	DB 080h
+	DB 015h
+	DB 075h
+	DB 048h
+	DB 05h
+	DB 080h
+	DB 010h
+	DB 030h
+	DB 03h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 06h
+	DB 080h
+	DB 08h
+	DB 080h
+	DB 012h
+	DB 030h
+	DB 03h
+	DB 07h
+	DB 075h
+	DB 048h
+	DB 0Ah
+	DB 012h
+	DB 011h
+	DB 018h
+	DB 022h
+	DB 080h
+	DB 06h
+	DB 080h
+	DB 04h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+L0344:
+	MOV 65h, R7
+	MOV 66h, R3
+	MOV 67h, R2
+	MOV 68h, R1
+	LCALL L0266
+	MOV A, 65h
+	ADD A, ACC
+	ORL A, #1h
+	MOV R7, A
+	MOV R5, #1h
+	LCALL L0267
+	MOV A, R7
+	XRL A, #0FAh
+	JNZ L0347
+	MOV 6Ah, A
+L0350:
+	MOV A, 69h
+	DEC A
+	MOV R7, A
+	MOV A, 6Ah
+	CLR C
+	SUBB A, R7
+	JNC L0348
+	CLR A
+	MOV R7, A
+	LCALL L0349
+	INC 6Ah
+	SJMP L0350
+
+L0348:
+	MOV R7, #1h
+	LCALL L0349
+	SJMP L0359
+
+L0347:
+	LCALL L0255
+	MOV R7, #0FBh
+	RET
+
+L0359:
+	LCALL L0255
+	MOV R7, #0FAh
+	RET
+
+L0349:
+	LCALL L0351
+	MOV R3, 66h
+	MOV R2, 67h
+	MOV R1, 68h
+	MOV DPL, 6Ah
+	MOV DPH, #0h
+	MOV A, R7
+	LCALL L0352
+	RET
+
+	DB 012h
+	DB 025h
+	DB 0AFh
+	DB 040h
+	DB 04Fh
+	DB 012h
+	DB 011h
+	DB 088h
+	DB 070h
+	DB 048h
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 09h
+	DB 0E5h
+	DB 031h
+	DB 070h
+	DB 042h
+	DB 075h
+	DB 048h
+	DB 0Dh
+	DB 080h
+	DB 010h
+	DB 0E5h
+	DB 033h
+	DB 064h
+	DB 01h
+	DB 070h
+	DB 033h
+	DB 0E5h
+	DB 031h
+	DB 070h
+	DB 0Bh
+	DB 043h
+	DB 04Fh
+	DB 03h
+	DB 075h
+	DB 048h
+	DB 0Fh
+	DB 075h
+	DB 049h
+	DB 01h
+	DB 080h
+	DB 01Eh
+	DB 090h
+	DB 026h
+	DB 0A9h
+	DB 0E4h
+	DB 093h
+	DB 0B5h
+	DB 031h
+	DB 08h
+	DB 090h
+	DB 026h
+	DB 0A1h
+	DB 012h
+	DB 011h
+	DB 075h
+	DB 080h
+	DB 0Eh
+	DB 090h
+	DB 026h
+	DB 0AAh
+	DB 0E4h
+	DB 093h
+	DB 0B5h
+	DB 031h
+	DB 0Ah
+	DB 090h
+	DB 026h
+	DB 0A2h
+	DB 012h
+	DB 011h
+	DB 075h
+	DB 012h
+	DB 011h
+	DB 01Ch
+	DB 022h
+	DB 080h
+	DB 04h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+L0351:
+	CLR A
+	MOV 6Bh, A
+	ORL 9Dh, #1h
+	MOV R6, A
+L0356:
+	ORL 9Dh, #4h
+	MOV A, 6Bh
+	ADD A, ACC
+	MOV 6Bh, A
+	MOV C, P3.0
+	CLR A
+	RLC A
+	ORL 6Bh, A
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	ANL 9Dh, #0FBh
+	CLR P3.2
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	INC R6
+	CJNE R6, #8h, L0356
+	MOV A, R7
+	JZ L0357
+	ORL 9Dh, #1h
+	SJMP L0358
+
+L0357:
+	ANL 9Dh, #0FEh
+	CLR P3.0
+L0358:
+	LCALL L0268
+	ORL 9Dh, #4h
+	LCALL L0268
+	ANL 9Dh, #0FBh
+	CLR P3.2
+	MOV R7, 6Bh
+	RET
+
+L0172:
+	MOV A, R7
+	JZ L0173
+	CLR A
+	MOV R6, A
+L0176:
+	MOV A, #0B0h
+	ADD A, R6
+	MOV R0, A
+	MOV A, @R0
+	JNZ L0174
+	MOV A, #0B0h
+	ADD A, R6
+	MOV R0, A
+	MOV @R0, 5h
+	SETB 22h
+	RET
+
+L0174:
+	MOV A, #0B0h
+	ADD A, R6
+	MOV R0, A
+	MOV A, @R0
+	XRL A, R5
+	JZ L0175
+	INC R6
+	CJNE R6, #6h, L0176
+	RET
+
+L0173:
+	CLR A
+	MOV R6, A
+L0180:
+	MOV A, #0B0h
+	ADD A, R6
+	MOV R0, A
+	MOV A, @R0
+	XRL A, R5
+	JNZ L0177
+	MOV A, R6
+	CLR C
+	SUBB A, #5h
+	JNC L0178
+	MOV R7, 6h
+L0179:
+	MOV A, R7
+	CLR C
+	SUBB A, #5h
+	JNC L0178
+	MOV A, #0B1h
+	ADD A, R7
+	MOV R0, A
+	MOV A, @R0
+	MOV R4, A
+	MOV A, #0B0h
+	ADD A, R7
+	MOV R0, A
+	MOV @R0, 4h
+	INC R7
+	SJMP L0179
+
+L0178:
+	CLR A
+	MOV R0, #0B5h
+	MOV @R0, A
+	SETB 22h
+	RET
+
+L0177:
+	INC R6
+	CJNE R6, #6h, L0180
+L0175:
+	RET
+
+L0402:
+	LCALL L0338
+	MOV R2, #23h
+	MOV R1, #6Bh
+	MOV DPTR, #0236Ah
+	LCALL L0405
+	CJNE R7, #0FBh, L0406
+	MOV R7, #0FBh
+	RET
+
+L0406:
+	MOV R7, #5h
+	LCALL L0341
+	LCALL L0338
+	MOV R2, #23h
+	MOV R1, #6Fh
+	MOV DPTR, #0236Eh
+	LCALL L0405
+	CJNE R7, #0FBh, L0407
+	MOV R7, #0FBh
+	RET
+
+L0407:
+	LCALL L0343
+	LCALL L0344
+	MOV R0, #0DEh
+	MOV A, R7
+	MOV @R0, A
+	CJNE R7, #0FBh, L0408
+	MOV R7, #0FBh
+	RET
+
+L0408:
+	MOV R0, #0AEh
+	MOV A, @R0
+	XRL A, #55h
+	JZ L0409
+	MOV R7, #0FBh
+	RET
+
+L0409:
+	MOV R7, #0FAh
+	RET
+
+L0405:
+	CLR A
+	MOVC A, @A+DPTR
+	MOV 69h, A
+	LCALL L0360
+	MOV R0, #0DEh
+	MOV A, R7
+	MOV @R0, A
+	RET
+
+L0334:
+	LCALL L0338
+	MOV R2, #23h
+	MOV R1, #72h
+	MOV DPTR, #02371h
+	LCALL L0339
+	CJNE R7, #0FBh, L0340
+	MOV R7, #0FBh
+	RET
+
+L0340:
+	MOV R7, #19h
+	LCALL L0341
+	LCALL L0338
+	MOV R2, #23h
+	MOV R1, #76h
+	MOV DPTR, #02375h
+	LCALL L0339
+	CJNE R7, #0FBh, L0342
+	MOV R7, #0FBh
+	RET
+
+L0342:
+	LCALL L0343
+	LCALL L0344
+	MOV R0, #0DEh
+	MOV A, R7
+	MOV @R0, A
+	CJNE R7, #0FBh, L0345
+	MOV R7, #0FBh
+	RET
+
+L0345:
+	MOV R0, #0AEh
+	MOV A, @R0
+	XRL A, #55h
+	JZ L0346
+	MOV R7, #0FBh
+	RET
+
+L0346:
+	MOV R7, #0FAh
+	RET
+
+L0339:
+	CLR A
+	MOVC A, @A+DPTR
+	MOV 69h, A
+	LCALL L0360
+	MOV R0, #0DEh
+	MOV A, R7
+	MOV @R0, A
+	RET
+
+L0152:
+	JB 9h, L0281
+	LCALL L0282
+	JNB 0Fh, L0283
+	SJMP L0284
+
+L0283:
+	MOV A, 27h
+	JNZ L0286
+	MOV A, #71h
+	ADD A, 26h
+	MOV R0, A
+	MOV @R0, 39h
+	INC 26h
+	MOV A, 26h
+	CLR C
+	SUBB A, #12h
+	JNC L0287
+	RET
+
+L0287:
+	INC 27h
+	CLR A
+	MOV 26h, A
+	RET
+
+L0286:
+	MOV A, #71h
+	ADD A, 26h
+	MOV R0, A
+	MOV A, @R0
+	XRL A, 39h
+	JZ L0288
+	SJMP L0284
+
+L0288:
+	INC 26h
+	MOV A, 26h
+	CLR C
+	SUBB A, #12h
+	JNC L0289
+	RET
+
+L0289:
+	LCALL L0290
+	MOV 8h, C
+	JNB 8h, L0291
+	SJMP L0284
+
+L0291:
+	JB 9h, L0284
+	LCALL L0292
+L0284:
+	LCALL L0285
+L0281:
+	RET
+
+	DB 012h
+	DB 025h
+	DB 09Ah
+	DB 040h
+	DB 044h
+	DB 0E5h
+	DB 036h
+	DB 045h
+	DB 034h
+	DB 070h
+	DB 03Ch
+	DB 0E5h
+	DB 035h
+	DB 064h
+	DB 01h
+	DB 070h
+	DB 036h
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 09h
+	DB 0E5h
+	DB 031h
+	DB 070h
+	DB 030h
+	DB 085h
+	DB 03Ch
+	DB 0EAh
+	DB 080h
+	DB 021h
+	DB 0E5h
+	DB 033h
+	DB 064h
+	DB 01h
+	DB 070h
+	DB 021h
+	DB 090h
+	DB 026h
+	DB 0A9h
+	DB 093h
+	DB 0B5h
+	DB 031h
+	DB 07h
+	DB 078h
+	DB 098h
+	DB 0E6h
+	DB 0F5h
+	DB 0EAh
+	DB 080h
+	DB 0Dh
+	DB 090h
+	DB 026h
+	DB 0AAh
+	DB 0E4h
+	DB 093h
+	DB 0B5h
+	DB 031h
+	DB 09h
+	DB 078h
+	DB 099h
+	DB 0E6h
+	DB 0F5h
+	DB 0EAh
+	DB 012h
+	DB 011h
+	DB 08h
+	DB 022h
+	DB 080h
+	DB 04h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+	DB 0E5h
+	DB 036h
+	DB 045h
+	DB 035h
+	DB 045h
+	DB 032h
+	DB 070h
+	DB 03Fh
+	DB 0E5h
+	DB 02Fh
+	DB 070h
+	DB 0Ch
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 01h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 07h
+	DB 080h
+	DB 029h
+	DB 080h
+	DB 02Fh
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 02h
+	DB 070h
+	DB 027h
+	DB 0E5h
+	DB 034h
+	DB 045h
+	DB 031h
+	DB 070h
+	DB 021h
+	DB 0E5h
+	DB 033h
+	DB 054h
+	DB 07Fh
+	DB 060h
+	DB 01Bh
+	DB 030h
+	DB 03h
+	DB 018h
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 081h
+	DB 05h
+	DB 075h
+	DB 048h
+	DB 08h
+	DB 080h
+	DB 08h
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 082h
+	DB 07h
+	DB 075h
+	DB 048h
+	DB 0Bh
+	DB 012h
+	DB 011h
+	DB 018h
+	DB 022h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+L0134:
+	LCALL L0135
+	MOV R0, #0BAh
+	MOV @R0, #1h
+	CLR A
+	MOV R0, #0BEh
+	MOV @R0, A
+	INC R0
+	MOV @R0, A
+	MOV R0, #0C0h
+	MOV @R0, A
+	INC R0
+	MOV @R0, A
+L0139:
+	LCALL L0131
+	CLR P3.7
+	LCALL L0136
+	LCALL L0137
+	JB 3h, L0138
+	CLR A
+	MOV 21h, A
+	SJMP L0139
+
+L0138:
+	LCALL L0140
+	LCALL L0141
+	JNB 0Bh, L0142
+	CLR 0Bh
+	LCALL L0143
+	MOV A, 6Eh
+	JNZ L0139
+	LCALL L0144
+	SJMP L0139
+
+L0142:
+	JNB 0Ch, L0151
+	CLR 0Ch
+	LCALL L0152
+L0151:
+	LCALL L0153
+	SJMP L0139
+
+L0141:
+	MOV A, 0E7h
+	JNB ACC.3, L0328
+	MOV A, 0E7h
+	ANL A, #3h
+	JNZ L0328
+	MOV A, 45h
+	JNZ L0328
+	JNB 20h, L0329
+	CLR 20h
+	CLR EA
+	MOV 0E5h, #2h
+	MOV R0, #0B6h
+	MOV A, @R0
+	MOV 0E5h, A
+	MOV 0E6h, #2h
+	SJMP L0330
+
+L0329:
+	JNB 21h, L0328
+	CLR 21h
+	CLR EA
+	MOV 0E5h, #3h
+	MOV R0, #0B7h
+	MOV A, @R0
+	MOV 0E5h, A
+	INC R0
+	MOV A, @R0
+	MOV 0E5h, A
+	INC R0
+	MOV A, @R0
+	MOV 0E5h, A
+	MOV 0E6h, #4h
+L0330:
+	SETB EA
+	ORL 0E7h, #1h
+	CLR A
+	MOV 3Ah, A
+	MOV 45h, A
+L0328:
+	RET
+
+L0360:
+	MOV 65h, R7
+	MOV 66h, R3
+	MOV 67h, R2
+	MOV 68h, R1
+	LCALL L0266
+	MOV A, 65h
+	ADD A, ACC
+	MOV R7, A
+	MOV R5, #1h
+	LCALL L0267
+	CJNE R7, #0FAh, L0361
+L0364:
+	MOV R7, 69h
+	DEC 69h
+	MOV A, R7
+	JZ L0362
+	MOV R3, 66h
+	MOV R2, 67h
+	MOV R1, 68h
+	LCALL L0363
+	MOV R7, A
+	MOV R5, #1h
+	LCALL L0267
+	MOV A, #1h
+	ADD A, 68h
+	MOV 68h, A
+	CLR A
+	ADDC A, 67h
+	MOV 67h, A
+	SJMP L0364
+
+L0361:
+	LCALL L0255
+	MOV R7, #0FBh
+	RET
+
+L0362:
+	LCALL L0255
+	MOV R7, #0FAh
+	RET
+
+L0398:
+	MOV R7, #16h
+	LCALL L0341
+	CLR A
+	MOV R0, #0AEh
+	MOV @R0, A
+	MOV R0, #0DEh
+	MOV @R0, A
+L0412:
+	LCALL L0384
+	LCALL L0360
+	MOV R0, #0DFh
+	MOV A, R7
+	MOV @R0, A
+	CJNE R7, #0FBh, L0410
+	SJMP L0411
+
+L0410:
+	LCALL L0343
+	LCALL L0344
+	MOV R0, #0DFh
+	MOV A, R7
+	MOV @R0, A
+	CJNE R7, #0FBh, L0413
+	SJMP L0411
+
+L0413:
+	MOV R0, #0AEh
+	MOV A, @R0
+	JZ L0411
+	MOV R7, #0FAh
+	RET
+
+L0411:
+	MOV R7, #5h
+	LCALL L0341
+	MOV R0, #0DEh
+	INC @R0
+	MOV A, @R0
+	CLR C
+	SUBB A, #14h
+	JC L0412
+	MOV R7, #0FBh
+	RET
+
+L0379:
+	CLR A
+	MOV R0, #0AEh
+	MOV @R0, A
+	MOV R0, #0DEh
+	MOV @R0, A
+L0387:
+	LCALL L0384
+	LCALL L0360
+	MOV R0, #0DFh
+	MOV A, R7
+	MOV @R0, A
+	CJNE R7, #0FBh, L0385
+	SJMP L0386
+
+L0385:
+	LCALL L0343
+	LCALL L0344
+	MOV R0, #0DFh
+	MOV A, R7
+	MOV @R0, A
+	CJNE R7, #0FBh, L0388
+	SJMP L0386
+
+L0388:
+	MOV R0, #0AEh
+	MOV A, @R0
+	JZ L0386
+	MOV R7, #0FAh
+	RET
+
+L0386:
+	MOV R7, #5h
+	LCALL L0341
+	MOV R0, #0DEh
+	INC @R0
+	MOV A, @R0
+	CLR C
+	SUBB A, #8h
+	JC L0387
+	MOV R7, #0FBh
+	RET
+
+	DB 012h
+	DB 025h
+	DB 0D8h
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 020h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 0BFh
+	DB 0FBh
+	DB 02h
+	DB 080h
+	DB 01Ah
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 01Dh
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 012h
+	DB 00h
+	DB 036h
+	DB 012h
+	DB 025h
+	DB 0D8h
+	DB 07Dh
+	DB 01h
+	DB 07Fh
+	DB 021h
+	DB 012h
+	DB 018h
+	DB 011h
+	DB 0BFh
+	DB 0FBh
+	DB 08h
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 0E4h
+	DB 078h
+	DB 070h
+	DB 0F6h
+	DB 022h
+	DB 07Fh
+	DB 01h
+	DB 012h
+	DB 01Ah
+	DB 098h
+	DB 078h
+	DB 070h
+	DB 0A6h
+	DB 07h
+	DB 012h
+	DB 026h
+	DB 023h
+	DB 022h
+L0182:
+	MOV A, R5
+	ADD A, #50h
+	RRC A
+	RRC A
+	RRC A
+	ANL A, #1Fh
+	MOV R6, A
+	ANL 6h, #1Fh
+	INC R6
+	MOV A, R5
+	ANL A, #7h
+	MOV DPTR, #026A1h
+	MOVC A, @A+DPTR
+	MOV R3, A
+	MOV R4, A
+	MOV A, R7
+	JZ L0183
+	MOV A, #0B6h
+	ADD A, R6
+	MOV R0, A
+	MOV A, @R0
+	ANL A, R4
+	JNZ L0184
+	MOV A, #0B6h
+	ADD A, R6
+	MOV R0, A
+	MOV A, @R0
+	ORL A, R4
+	SJMP L0185
+
+L0183:
+	MOV A, #0B6h
+	ADD A, R6
+	MOV R0, A
+	MOV A, @R0
+	ANL A, R4
+	JZ L0184
+	MOV A, #0B6h
+	ADD A, R6
+	MOV R0, A
+	MOV A, R3
+	CPL A
+	ANL A, @R0
+L0185:
+	MOV @R0, A
+	SETB 21h
+L0184:
+	RET
+
+L0292:
+	CLR A
+	MOV 64h, A
+	MOV 64h, A
+L0295:
+	MOV A, #9Ch
+	ADD A, 64h
+	MOV R0, A
+	MOV A, @R0
+	MOV R7, A
+	MOV A, #71h
+	ADD A, 64h
+	MOV R0, A
+	MOV A, @R0
+	MOV R6, A
+	CJNE A, 7h, L0293
+	SJMP L0294
+
+L0293:
+	MOV A, R6
+	XRL A, R7
+	MOV R7, A
+	MOV R5, 64h
+	LCALL L0296
+	JNC L0297
+	RET
+
+L0297:
+	MOV A, #71h
+	ADD A, 64h
+	MOV R0, A
+	MOV A, @R0
+	MOV R7, A
+	MOV A, #9Ch
+	ADD A, 64h
+	MOV R0, A
+	MOV @R0, 7h
+L0294:
+	INC 64h
+	MOV A, 64h
+	CLR C
+	SUBB A, #12h
+	JC L0295
+	RET
+
+L0290:
+	CLR A
+	MOV R7, A
+	MOV R6, A
+L0315:
+	MOV A, #71h
+	ADD A, R6
+	MOV R0, A
+	MOV A, @R0
+	MOV R5, A
+	ANL A, R7
+	MOV R4, A
+	MOV A, R5
+	ORL 7h, A
+	MOV A, R4
+	JZ L0314
+	CLR C
+	RRC A
+	ANL A, #55h
+	MOV R5, A
+	MOV A, R4
+	ANL A, #55h
+	ADD A, R5
+	MOV R4, A
+	RRC A
+	RRC A
+	ANL A, #33h
+	MOV R5, A
+	MOV A, R4
+	ANL A, #33h
+	ADD A, R5
+	MOV R4, A
+	SWAP A
+	ANL A, #0Fh
+	MOV R5, A
+	MOV A, R4
+	ANL A, #0Fh
+	ADD A, R5
+	SETB C
+	SUBB A, #1h
+	JC L0314
+	SETB C
+	RET
+
+L0314:
+	INC R6
+	CJNE R6, #12h, L0315
+	CLR C
+	RET
+
+L0426:
+	CLR A
+	MOV 9Ah, A
+	MOV 9Bh, A
+	MOV 9Ch, A
+	MOV 9Dh, A
+	MOV 9Eh, #60h
+	MOV 0A4h, A
+	MOV 0A2h, A
+	MOV 0A3h, A
+	MOV 0A5h, A
+	ANL 0A6h, #0F8h
+	MOV P0, #0FFh
+	MOV P1, #0FFh
+	MOV P3, #0FFh
+	MOV P2, #0FFh
+	ORL 0C0h, #7h
+	MOV R0, #96h
+	MOV @R0, #0F0h
+	LCALL L0131
+	LCALL L0136
+	LCALL L0136
+	LJMP L0136
+
+	DB 030h
+	DB 03h
+	DB 02Fh
+	DB 012h
+	DB 011h
+	DB 088h
+	DB 045h
+	DB 032h
+	DB 045h
+	DB 031h
+	DB 070h
+	DB 026h
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 01h
+	DB 070h
+	DB 020h
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 08h
+	DB 075h
+	DB 048h
+	DB 09h
+	DB 075h
+	DB 049h
+	DB 01h
+	DB 080h
+	DB 0Ch
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 0Dh
+	DB 075h
+	DB 048h
+	DB 0Ch
+	DB 075h
+	DB 049h
+	DB 01h
+	DB 0E4h
+	DB 0F5h
+	DB 0EBh
+	DB 012h
+	DB 011h
+	DB 0Eh
+	DB 022h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+	DB 085h
+	DB 031h
+	DB 03Bh
+	DB 0E5h
+	DB 03Bh
+	DB 060h
+	DB 014h
+	DB 053h
+	DB 0E4h
+	DB 0FDh
+	DB 043h
+	DB 0E4h
+	DB 0Ch
+	DB 053h
+	DB 0E7h
+	DB 0FDh
+	DB 043h
+	DB 0E7h
+	DB 0Ch
+	DB 053h
+	DB 020h
+	DB 0F0h
+	DB 043h
+	DB 020h
+	DB 088h
+	DB 080h
+	DB 018h
+	DB 053h
+	DB 0E4h
+	DB 0F7h
+	DB 053h
+	DB 0E7h
+	DB 0F7h
+	DB 0E5h
+	DB 0F2h
+	DB 060h
+	DB 08h
+	DB 053h
+	DB 020h
+	DB 0F0h
+	DB 043h
+	DB 020h
+	DB 084h
+	DB 080h
+	DB 06h
+	DB 053h
+	DB 020h
+	DB 0F0h
+	DB 043h
+	DB 020h
+	DB 082h
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 0E5h
+	DB 04Fh
+	DB 054h
+	DB 03h
+	DB 0FFh
+	DB 0BFh
+	DB 03h
+	DB 014h
+	DB 0E4h
+	DB 0FFh
+	DB 074h
+	DB 098h
+	DB 02Fh
+	DB 0F8h
+	DB 0A6h
+	DB 032h
+	DB 074h
+	DB 09Ah
+	DB 02Fh
+	DB 0F8h
+	DB 0A6h
+	DB 032h
+	DB 0Fh
+	DB 0BFh
+	DB 02h
+	DB 0F0h
+	DB 080h
+	DB 017h
+	DB 0E5h
+	DB 04Fh
+	DB 030h
+	DB 0E0h
+	DB 0Ah
+	DB 078h
+	DB 098h
+	DB 0A6h
+	DB 032h
+	DB 078h
+	DB 09Ah
+	DB 0A6h
+	DB 032h
+	DB 080h
+	DB 08h
+	DB 078h
+	DB 099h
+	DB 0A6h
+	DB 032h
+	DB 078h
+	DB 09Bh
+	DB 0A6h
+	DB 032h
+	DB 02h
+	DB 027h
+	DB 03Ah
+L0427:
+	CLR A
+	MOV R7, A
+L0434:
+	MOV A, #2Fh
+	ADD A, R7
+	MOV R0, A
+	CLR A
+	MOV @R0, A
+	INC R7
+	CJNE R7, #8h, L0434
+	CLR A
+	MOV R0, #0AFh
+	MOV @R0, A
+	MOV R7, A
+L0435:
+	MOV A, #0B0h
+	ADD A, R7
+	MOV R0, A
+	CLR A
+	MOV @R0, A
+	INC R7
+	CJNE R7, #6h, L0435
+	CLR A
+	MOV R7, A
+L0436:
+	MOV A, #0B6h
+	ADD A, R7
+	MOV R0, A
+	CLR A
+	MOV @R0, A
+	INC R7
+	CJNE R7, #4h, L0436
+	CLR A
+	MOV 22h, A
+	MOV 21h, #20h
+	MOV 24h, A
+	MOV R0, #0E0h
+	MOV @R0, A
+	RET
+
+L0428:
+	CLR A
+	MOV 27h, A
+	MOV 26h, A
+	MOV R0, #84h
+	MOV @R0, A
+	DEC R0
+	MOV @R0, A
+	MOV 39h, A
+	MOV 38h, A
+	MOV 51h, A
+	MOV 37h, A
+	MOV 3Bh, A
+	MOV 3Fh, A
+	MOV 40h, A
+	MOV 41h, A
+	MOV 42h, A
+	MOV 43h, A
+	MOV 44h, A
+	MOV 45h, A
+	MOV R0, #70h
+	MOV @R0, A
+	MOV R0, #95h
+	MOV @R0, A
+	MOV R0, #0D7h
+	MOV @R0, A
+	MOV R0, #0D8h
+	MOV @R0, #3h
+	MOV R0, #0BDh
+	MOV @R0, A
+	RET
+
+L0448:
+	JNB 3h, L0449
+	CLR A
+	MOV 3Fh, A
+	MOV A, 0E4h
+	JNB ACC.0, L0450
+	ANL 0E4h, #0FEh
+L0450:
+	MOV A, 0E7h
+	JNB ACC.0, L0449
+	ANL 0E7h, #0FEh
+	MOV A, 38h
+	MOV DPTR, #026A9h
+	MOVC A, @A+DPTR
+	MOV 0E5h, A
+	MOV A, 38h
+	MOV DPTR, #026ABh
+	MOVC A, @A+DPTR
+	MOV R7, A
+L0452:
+	MOV A, R7
+	JZ L0451
+	CLR A
+	MOV 0E5h, A
+	DEC R7
+	SJMP L0452
+
+L0451:
+	ORL 0E7h, #1h
+L0449:
+	RET
+
+L0132:
+	MOV A, 96h
+	JNB ACC.1, L0414
+	SETB 1Bh
+	SJMP L0415
+
+L0414:
+	MOV A, 96h
+	JNB ACC.2, L0437
+	LCALL L0438
+	SJMP L0439
+
+L0437:
+	MOV A, 96h
+	JNB ACC.3, L0440
+	LCALL L0441
+	SJMP L0439
+
+L0440:
+	MOV A, 96h
+	JNB ACC.0, L0415
+	LCALL L0445
+	SJMP L0446
+
+L0415:
+	LCALL L0416
+L0439:
+	CLR A
+	MOV 96h, A
+L0446:
+	LJMP L0131
+
+	DB 043h
+	DB 0C0h
+	DB 067h
+	DB 0E4h
+	DB 0F5h
+	DB 0A6h
+	DB 0F5h
+	DB 0A3h
+	DB 0F5h
+	DB 0A2h
+	DB 0F5h
+	DB 0A5h
+	DB 0F5h
+	DB 03Ah
+	DB 0F5h
+	DB 045h
+	DB 085h
+	DB 0F3h
+	DB 028h
+	DB 0C2h
+	DB 0AFh
+	DB 053h
+	DB 096h
+	DB 08Eh
+	DB 012h
+	DB 027h
+	DB 02Ch
+	DB 043h
+	DB 087h
+	DB 02h
+	DB 075h
+	DB 08Eh
+	DB 055h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 043h
+	DB 0F3h
+	DB 020h
+	DB 07Fh
+	DB 01Ah
+	DB 012h
+	DB 023h
+	DB 0E2h
+	DB 053h
+	DB 0F3h
+	DB 0CFh
+	DB 022h
+	DB 012h
+	DB 025h
+	DB 0AFh
+	DB 040h
+	DB 027h
+	DB 012h
+	DB 011h
+	DB 088h
+	DB 045h
+	DB 032h
+	DB 070h
+	DB 01Eh
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 08h
+	DB 075h
+	DB 048h
+	DB 0Eh
+	DB 075h
+	DB 049h
+	DB 01h
+	DB 080h
+	DB 0Ch
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 0Bh
+	DB 075h
+	DB 048h
+	DB 010h
+	DB 075h
+	DB 049h
+	DB 01h
+	DB 0E4h
+	DB 012h
+	DB 011h
+	DB 01Ch
+	DB 022h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+L0373:
+	LCALL L0338
+	MOV R2, #23h
+	MOV R1, #79h
+	MOV DPTR, #02378h
+	CLR A
+	MOVC A, @A+DPTR
+	MOV 69h, A
+	LCALL L0360
+	MOV R0, #0DEh
+	MOV A, R7
+	MOV @R0, A
+	CJNE R7, #0FAh, L0376
+	LCALL L0343
+	LCALL L0344
+	MOV R0, #0DEh
+	MOV @R0, 7h
+	MOV R0, #0AEh
+	MOV A, @R0
+	CJNE A, #55h, L0376
+	MOV R7, #0FAh
+	RET
+
+L0376:
+	MOV R7, #0FBh
+	RET
+
+	DB 012h
+	DB 025h
+	DB 09Ah
+	DB 040h
+	DB 025h
+	DB 0E5h
+	DB 036h
+	DB 045h
+	DB 034h
+	DB 070h
+	DB 01Dh
+	DB 0E5h
+	DB 035h
+	DB 064h
+	DB 01h
+	DB 070h
+	DB 017h
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 05h
+	DB 085h
+	DB 03Eh
+	DB 0EAh
+	DB 080h
+	DB 08h
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 07h
+	DB 085h
+	DB 044h
+	DB 0EAh
+	DB 012h
+	DB 011h
+	DB 08h
+	DB 022h
+	DB 080h
+	DB 02h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+	DB 02h
+	DB 06Ch
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 06Eh
+	DB 00h
+	DB 01h
+	DB 0BBh
+	DB 00h
+	DB 01h
+	DB 0BCh
+	DB 00h
+	DB 02h
+	DB 0BEh
+	DB 00h
+	DB 00h
+	DB 02h
+	DB 0C0h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 0BAh
+	DB 00h
+	DB 01h
+	DB 0D8h
+	DB 03h
+	DB 01h
+	DB 0D7h
+	DB 00h
+	DB 0C1h
+	DB 028h
+	DB 01h
+	DB 0DCh
+	DB 00h
+	DB 01h
+	DB 0D9h
+	DB 00h
+	DB 01h
+	DB 0DBh
+	DB 00h
+	DB 01h
+	DB 0DAh
+	DB 00h
+	DB 00h
+	DB 030h
+	DB 03h
+	DB 026h
+	DB 0E5h
+	DB 036h
+	DB 045h
+	DB 034h
+	DB 070h
+	DB 020h
+	DB 0E5h
+	DB 035h
+	DB 064h
+	DB 01h
+	DB 070h
+	DB 01Ah
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 081h
+	DB 070h
+	DB 014h
+	DB 0E5h
+	DB 033h
+	DB 070h
+	DB 02h
+	DB 080h
+	DB 06h
+	DB 0E5h
+	DB 033h
+	DB 0B4h
+	DB 01h
+	DB 07h
+	DB 0E4h
+	DB 0F5h
+	DB 0EAh
+	DB 012h
+	DB 011h
+	DB 08h
+	DB 022h
+	DB 080h
+	DB 00h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+	DB 01h
+	DB 02h
+	DB 04h
+	DB 08h
+	DB 010h
+	DB 020h
+	DB 040h
+	DB 080h
+	DB 0FEh
+	DB 0FDh
+	DB 0FBh
+	DB 0F7h
+	DB 0EFh
+	DB 0DFh
+	DB 0BFh
+	DB 07Fh
+	DB 0FEh
+	DB 0FDh
+	DB 0FBh
+	DB 0F7h
+	DB 0EFh
+	DB 0DFh
+	DB 0BFh
+	DB 07Fh
+	DB 0EFh
+	DB 0DFh
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 01h
+	DB 01h
+	DB 01h
+	DB 01h
+	DB 01h
+	DB 01h
+	DB 01h
+	DB 03h
+	DB 03h
+L0441:
+	LCALL L0131
+	ORL 0C0h, #67h
+	MOV 9Eh, #60h
+	MOV 0F3h, #81h
+	LCALL L0270
+	LCALL L0442
+	MOV A, R7
+	JB ACC.5, L0443
+	MOV A, R7
+	JNB ACC.6, L0441
+L0443:
+	MOV 0F3h, #1h
+	MOV 9Eh, #60h
+	MOV R7, #62h
+	LCALL L0341
+	LCALL L0418
+	LJMP L0416
+
+	DB 0E5h
+	DB 0E7h
+	DB 030h
+	DB 0E3h
+	DB 06h
+	DB 0E5h
+	DB 0E7h
+	DB 054h
+	DB 03h
+	DB 060h
+	DB 05h
+	DB 012h
+	DB 027h
+	DB 02Ch
+	DB 080h
+	DB 0F0h
+	DB 020h
+	DB 024h
+	DB 015h
+	DB 0C2h
+	DB 0AFh
+	DB 075h
+	DB 0E5h
+	DB 01h
+	DB 012h
+	DB 016h
+	DB 02Fh
+	DB 0D2h
+	DB 0AFh
+	DB 075h
+	DB 0E6h
+	DB 04h
+	DB 043h
+	DB 0E7h
+	DB 01h
+	DB 0E4h
+	DB 0F5h
+	DB 03Ah
+	DB 0F5h
+	DB 045h
+	DB 022h
+L0144:
+	ANL 9Eh, #0F8h
+	MOV A, 2Bh
+	JNB ACC.0, L0145
+	CLR 0C1h
+	SETB 1Ah
+	SJMP L0146
+
+L0145:
+	SETB 0C1h
+	CLR 1Ah
+L0146:
+	MOV A, 2Bh
+	JNB ACC.1, L0147
+	CLR 0C0h
+	SJMP L0148
+
+L0147:
+	SETB 0C0h
+L0148:
+	MOV A, 2Bh
+	JNB ACC.2, L0149
+	CLR 0C2h
+	RET
+
+L0149:
+	SETB 0C2h
+	RET
+
+	DB 0E5h
+	DB 0E7h
+	DB 030h
+	DB 0E3h
+	DB 06h
+	DB 0E5h
+	DB 0E7h
+	DB 054h
+	DB 03h
+	DB 060h
+	DB 05h
+	DB 012h
+	DB 027h
+	DB 02Ch
+	DB 080h
+	DB 0F0h
+	DB 020h
+	DB 024h
+	DB 012h
+	DB 0C2h
+	DB 0AFh
+	DB 012h
+	DB 016h
+	DB 02Fh
+	DB 0D2h
+	DB 0AFh
+	DB 075h
+	DB 0E6h
+	DB 03h
+	DB 043h
+	DB 0E7h
+	DB 01h
+	DB 0E4h
+	DB 0F5h
+	DB 03Ah
+	DB 0F5h
+	DB 045h
+	DB 022h
+L0419:
+	CLR EA
+	LCALL L0131
+	ORL 9Eh, #60h
+	MOV 0F3h, #1h
+	MOV 20h, #1h
+	JNB 1Bh, L0420
+	MOV 0F3h, #41h
+	LCALL L0421
+	SETB 7h
+	SETB 1Bh
+	SETB 19h
+	CLR 18h
+	MOV R7, #0C2h
+	LCALL L0422
+L0420:
+	RET
+
+	DB 0E5h
+	DB 036h
+	DB 045h
+	DB 035h
+	DB 045h
+	DB 032h
+	DB 045h
+	DB 02Fh
+	DB 070h
+	DB 014h
+	DB 0E5h
+	DB 0F2h
+	DB 060h
+	DB 010h
+	DB 0E5h
+	DB 031h
+	DB 060h
+	DB 05h
+	DB 0E5h
+	DB 031h
+	DB 0B4h
+	DB 01h
+	DB 07h
+	DB 075h
+	DB 048h
+	DB 02h
+	DB 012h
+	DB 011h
+	DB 018h
+	DB 022h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+L0421:
+	CLR A
+	MOV 0F2h, A
+	MOV 3Ch, #7Dh
+	MOV 3Dh, #7Dh
+	MOV 3Eh, #1h
+	MOV R7, A
+L0423:
+	MOV A, #98h
+	ADD A, R7
+	MOV R0, A
+	CLR A
+	MOV @R0, A
+	MOV A, #9Ah
+	ADD A, R7
+	MOV R0, A
+	CLR A
+	MOV @R0, A
+	INC R7
+	CJNE R7, #2h, L0423
+	MOV 44h, #1h
+	RET
+
+	DB 085h
+	DB 046h
+	DB 0F2h
+	DB 0E4h
+	DB 0F5h
+	DB 03Bh
+	DB 053h
+	DB 0E4h
+	DB 0F7h
+	DB 053h
+	DB 0E7h
+	DB 0F7h
+	DB 0E5h
+	DB 0F2h
+	DB 060h
+	DB 08h
+	DB 053h
+	DB 020h
+	DB 0F0h
+	DB 043h
+	DB 020h
+	DB 084h
+	DB 080h
+	DB 06h
+	DB 053h
+	DB 020h
+	DB 0F0h
+	DB 043h
+	DB 020h
+	DB 082h
+	DB 02h
+	DB 027h
+	DB 03Ah
+L0160:
+	MOV A, 37h
+	JNB ACC.3, L0276
+	LCALL L0277
+	MOV R0, #84h
+	ANL A, @R0
+	MOV R7, A
+	SJMP L0278
+
+L0276:
+	MOV A, 37h
+	LCALL L0277
+	MOV R0, #83h
+	ANL A, @R0
+	MOV R7, A
+L0278:
+	MOV A, R7
+	JNZ L0279
+	CLR C
+	SJMP L0280
+
+L0279:
+	SETB C
+L0280:
+	MOV 0Ah, C
+	RET
+
+	DB 078h
+	DB 0BAh
+	DB 0E6h
+	DB 0B4h
+	DB 01h
+	DB 018h
+	DB 078h
+	DB 0C1h
+	DB 06h
+	DB 0E6h
+	DB 018h
+	DB 070h
+	DB 01h
+	DB 06h
+	DB 0D3h
+	DB 078h
+	DB 0C1h
+	DB 0E6h
+	DB 094h
+	DB 0D0h
+	DB 018h
+	DB 0E6h
+	DB 094h
+	DB 07h
+	DB 040h
+	DB 04h
+	DB 0E4h
+	DB 078h
+	DB 0BAh
+	DB 0F6h
+	DB 022h
+	DB 02h
+	DB 0A0h
+	DB 00h
+	DB 03h
+	DB 0A0h
+	DB 01h
+	DB 0AAh
+	DB 02h
+	DB 0A0h
+	DB 02h
+	DB 03h
+	DB 0A0h
+	DB 02h
+	DB 00h
+	DB 02h
+	DB 0A0h
+	DB 03h
+	DB 02h
+	DB 0A0h
+	DB 05h
+	DB 03h
+	DB 0A0h
+	DB 03h
+	DB 00h
+	DB 03h
+	DB 0A0h
+	DB 06h
+	DB 0EEh
+	DB 0A0h
+	DB 08h
+	DB 01Ah
+	DB 08Fh
+	DB 04Ah
+	DB 0E4h
+	DB 0FDh
+	DB 0FCh
+	DB 0EFh
+	DB 0FBh
+	DB 0C3h
+	DB 0EDh
+	DB 09Bh
+	DB 074h
+	DB 080h
+	DB 0F8h
+	DB 06Ch
+	DB 098h
+	DB 050h
+	DB 0Dh
+	DB 074h
+	DB 02Fh
+	DB 02Dh
+	DB 0F8h
+	DB 0A6h
+	DB 0EDh
+	DB 0Dh
+	DB 0BDh
+	DB 00h
+	DB 01h
+	DB 0Ch
+	DB 080h
+	DB 0E7h
+	DB 022h
+	DB 0E5h
+	DB 035h
+	DB 045h
+	DB 036h
+	DB 045h
+	DB 032h
+	DB 045h
+	DB 02Fh
+	DB 070h
+	DB 011h
+	DB 0E5h
+	DB 031h
+	DB 0C3h
+	DB 094h
+	DB 080h
+	DB 050h
+	DB 0Ah
+	DB 085h
+	DB 031h
+	DB 046h
+	DB 075h
+	DB 048h
+	DB 01h
+	DB 012h
+	DB 011h
+	DB 018h
+	DB 022h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+L0445:
+	MOV A, 96h
+	JNB ACC.4, L0447
+	MOV 45h, #19h
+	LCALL L0418
+L0447:
+	MOV A, 0F3h
+	ANL A, #0CAh
+	ORL A, #0C2h
+	MOV R7, A
+	LCALL L0422
+	LCALL L0448
+	ANL 96h, #8Eh
+	LJMP L0316
+
+L0341:
+	CLR EA
+	MOV 0D3h, #0FCh
+	MOV 0D4h, #0F0h
+	ANL 0DAh, #0F7h
+L0370:
+	MOV A, R7
+	JZ L0368
+L0369:
+	LCALL L0131
+	MOV A, 0DAh
+	JNB ACC.3, L0369
+	ANL 0DAh, #0F7h
+	DEC R7
+	SJMP L0370
+
+L0368:
+	RET
+
+	DB 0C2h
+	DB 0AFh
+	DB 043h
+	DB 0EFh
+	DB 04h
+	DB 012h
+	DB 026h
+	DB 087h
+	DB 0EFh
+	DB 075h
+	DB 0F0h
+	DB 03h
+	DB 0A4h
+	DB 024h
+	DB 0B3h
+	DB 0F5h
+	DB 082h
+	DB 0E4h
+	DB 034h
+	DB 04h
+	DB 012h
+	DB 011h
+	DB 068h
+	DB 053h
+	DB 0EFh
+	DB 0FBh
+	DB 0D2h
+	DB 0AFh
+	DB 022h
+L0153:
+	MOV A, 51h
+	CJNE A, 37h, L0154
+	CLR A
+	MOV 37h, A
+	MOV 51h, A
+	JNB 9h, L0155
+	CLR 9h
+	RET
+
+L0154:
+	INC 37h
+	MOV A, 37h
+	ANL A, #0Fh
+	MOV 37h, A
+	LCALL L0156
+L0155:
+	RET
+
+	DB 0C0h
+	DB 0E0h
+	DB 0C0h
+	DB 0F0h
+	DB 0C0h
+	DB 083h
+	DB 0C0h
+	DB 082h
+	DB 0C0h
+	DB 0D0h
+	DB 075h
+	DB 0D0h
+	DB 08h
+	DB 012h
+	DB 018h
+	DB 073h
+	DB 0D0h
+	DB 0D0h
+	DB 0D0h
+	DB 082h
+	DB 0D0h
+	DB 083h
+	DB 0D0h
+	DB 0F0h
+	DB 0D0h
+	DB 0E0h
+	DB 032h
+	DB 0C0h
+	DB 0E0h
+	DB 0C0h
+	DB 0F0h
+	DB 0C0h
+	DB 083h
+	DB 0C0h
+	DB 082h
+	DB 0C0h
+	DB 0D0h
+	DB 075h
+	DB 0D0h
+	DB 018h
+	DB 012h
+	DB 014h
+	DB 0F5h
+	DB 0D0h
+	DB 0D0h
+	DB 0D0h
+	DB 082h
+	DB 0D0h
+	DB 083h
+	DB 0D0h
+	DB 0F0h
+	DB 0D0h
+	DB 0E0h
+	DB 032h
+	DB 0C0h
+	DB 0E0h
+	DB 0C0h
+	DB 0F0h
+	DB 0C0h
+	DB 083h
+	DB 0C0h
+	DB 082h
+	DB 0C0h
+	DB 0D0h
+	DB 075h
+	DB 0D0h
+	DB 018h
+	DB 012h
+	DB 014h
+	DB 0F5h
+	DB 0D0h
+	DB 0D0h
+	DB 0D0h
+	DB 082h
+	DB 0D0h
+	DB 083h
+	DB 0D0h
+	DB 0F0h
+	DB 0D0h
+	DB 0E0h
+	DB 032h
+	DB 0C0h
+	DB 0E0h
+	DB 0C0h
+	DB 0F0h
+	DB 0C0h
+	DB 083h
+	DB 0C0h
+	DB 082h
+	DB 0C0h
+	DB 0D0h
+	DB 075h
+	DB 0D0h
+	DB 018h
+	DB 012h
+	DB 023h
+	DB 0FFh
+	DB 0D0h
+	DB 0D0h
+	DB 0D0h
+	DB 082h
+	DB 0D0h
+	DB 083h
+	DB 0D0h
+	DB 0F0h
+	DB 0D0h
+	DB 0E0h
+	DB 032h
+	DB 0C0h
+	DB 0E0h
+	DB 0C0h
+	DB 0F0h
+	DB 0C0h
+	DB 083h
+	DB 0C0h
+	DB 082h
+	DB 0C0h
+	DB 0D0h
+	DB 075h
+	DB 0D0h
+	DB 018h
+	DB 012h
+	DB 018h
+	DB 0D4h
+	DB 0D0h
+	DB 0D0h
+	DB 0D0h
+	DB 082h
+	DB 0D0h
+	DB 083h
+	DB 0D0h
+	DB 0F0h
+	DB 0D0h
+	DB 0E0h
+	DB 032h
+	DB 0C0h
+	DB 0E0h
+	DB 0C0h
+	DB 0F0h
+	DB 0C0h
+	DB 083h
+	DB 0C0h
+	DB 082h
+	DB 0C0h
+	DB 0D0h
+	DB 075h
+	DB 0D0h
+	DB 018h
+	DB 012h
+	DB 014h
+	DB 073h
+	DB 0D0h
+	DB 0D0h
+	DB 0D0h
+	DB 082h
+	DB 0D0h
+	DB 083h
+	DB 0D0h
+	DB 0F0h
+	DB 0D0h
+	DB 0E0h
+	DB 032h
+L0416:
+	MOV 9Dh, #0Dh
+	CLR A
+	MOV 2Bh, A
+	LCALL L0131
+	LCALL L0417
+	LCALL L0131
+	MOV R7, #6Eh
+	LCALL L0341
+	LCALL L0418
+	LJMP L0419
+
+L0187:
+	MOV A, R7
+	JZ L0188
+	MOV R0, #0B6h
+	MOV A, @R0
+	ANL A, R5
+	JNZ L0189
+	MOV A, @R0
+	ORL A, R5
+	SJMP L0190
+
+L0188:
+	MOV R0, #0B6h
+	MOV A, @R0
+	ANL A, R5
+	JZ L0189
+	MOV A, R5
+	CPL A
+	ANL A, @R0
+L0190:
+	MOV @R0, A
+	SETB 20h
+L0189:
+	RET
+
+	DB 0E5h
+	DB 035h
+	DB 0B4h
+	DB 01h
+	DB 010h
+	DB 0E5h
+	DB 036h
+	DB 070h
+	DB 0Ch
+	DB 0E5h
+	DB 02Fh
+	DB 0B4h
+	DB 080h
+	DB 07h
+	DB 085h
+	DB 03Bh
+	DB 0EAh
+	DB 012h
+	DB 011h
+	DB 08h
+	DB 022h
+	DB 012h
+	DB 026h
+	DB 0ADh
+	DB 022h
+L0322:
+	CLR A
+	MOV R6, A
+	MOV R5, A
+L0325:
+	MOV A, R6
+	ADD A, ACC
+	MOV R6, A
+	MOV A, R5
+	MOV DPTR, #021D0h
+	MOVC A, @A+DPTR
+	ANL A, R7
+	JZ L0324
+	ORL 6h, #1h
+L0324:
+	INC R5
+	CJNE R5, #8h, L0325
+	MOV R7, 6h
+	RET
+
+L0316:
+	CLR A
+	MOV 9Ch, A
+	MOV 9Bh, A
+	MOV 9Ah, A
+	ANL 9Dh, #0Dh
+	MOV P0, #0FFh
+	MOV P1, #0FFh
+	MOV P2, #0FFh
+	SETB P3.4
+	SETB P3.5
+	RET
+
+L0424:
+	CLR A
+	MOV IE, A
+	MOV 0A9h, A
+	MOV 0DCh, A
+	MOV 0DDh, A
+	MOV IP, A
+	MOV 0B9h, A
+	MOV 0DAh, A
+	MOV 0DBh, A
+	MOV 0DEh, A
+	MOV 0DFh, A
+	RET
+
+L0429:
+	MOV R7, #12h
+	MOV R0, #71h
+	CLR A
+L0430:
+	MOV @R0, A
+	INC R0
+	DJNZ R7, L0430
+	LCALL L0431
+	MOV R7, #10h
+	MOV R0, #85h
+	CLR A
+L0432:
+	MOV @R0, A
+	INC R0
+	DJNZ R7, L0432
+	RET
+
+L0269:
+	LCALL L0270
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	RET
+
+	DB 020h
+	DB 03h
+	DB 02h
+	DB 0D3h
+	DB 022h
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 0A1h
+	DB 060h
+	DB 08h
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 0A2h
+	DB 060h
+	DB 02h
+	DB 0D3h
+	DB 022h
+	DB 0C3h
+	DB 022h
+	DB 020h
+	DB 03h
+	DB 02h
+	DB 0D3h
+	DB 022h
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 021h
+	DB 060h
+	DB 08h
+	DB 0E5h
+	DB 02Fh
+	DB 064h
+	DB 022h
+	DB 060h
+	DB 02h
+	DB 0D3h
+	DB 022h
+	DB 0C3h
+	DB 022h
+L0444:
+	LCALL L0131
+	MOV 64h, 0C0h
+	LCALL L0268
+	MOV A, 64h
+	CJNE A, 0C0h, L0444
+	MOV A, 64h
+	ANL A, #60h
+	MOV R7, A
+	RET
+
+L0266:
+	ORL 9Dh, #5h
+	LCALL L0268
+	ANL 9Dh, #0FEh
+	CLR P3.0
+	LCALL L0269
+	ANL 9Dh, #0FBh
+	CLR P3.2
+	RET
+
+L0135:
+	MOV 2Eh, #14h
+	MOV 0D3h, #0CEh
+	ANL 0DAh, #0F7h
+	ANL 0DAh, #0FDh
+	MOV 0D4h, #0A0h
+	MOV IE, #88h
+	RET
+
+L0130:
+	CLR EA
+	ANL PSW, #0E7h
+	LCALL L0131
+	LCALL L0132
+	JNB 7h, L0133
+	LCALL L0134
+L0133:
+	RET
+
+L0442:
+	LCALL L0131
+	LCALL L0444
+	MOV 63h, R7
+	LCALL L0444
+	MOV A, 63h
+	CJNE A, 7h, L0442
+	MOV R7, A
+	RET
+
+L0255:
+	ANL 9Dh, #0FEh
+	CLR P3.0
+	LCALL L0268
+	ORL 9Dh, #4h
+	LCALL L0269
+	ORL 9Dh, #1h
+	RET
+
+	DB 0E5h
+	DB 049h
+	DB 0B4h
+	DB 04h
+	DB 0Ch
+	DB 0E5h
+	DB 02Fh
+	DB 054h
+	DB 07h
+	DB 0F5h
+	DB 02Bh
+	DB 030h
+	DB 013h
+	DB 03h
+	DB 012h
+	DB 027h
+	DB 03Ah
+	DB 022h
+L0168:
+	SETB 22h
+	MOV A, R7
+	JZ L0169
+	MOV R0, #0AFh
+	MOV A, @R0
+	ORL A, R5
+	MOV @R0, A
+	RET
+
+L0169:
+	MOV A, R5
+	CPL A
+	MOV R0, #0AFh
+	ANL A, @R0
+	MOV @R0, A
+	RET
+
+L0438:
+	LCALL L0131
+	LCALL L0417
+	LCALL L0421
+	MOV 20h, #82h
+	MOV R7, #0CAh
+	LJMP L0422
+
+L0417:
+	LCALL L0424
+	LCALL L0131
+	LCALL L0425
+	CLR A
+	MOV 95h, A
+	LJMP L0426
+
+L0320:
+	MOV A, 26h
+	MOV DPTR, #021D8h
+	MOVC A, @A+DPTR
+	RET
+
+L0277:
+	ANL A, #7h
+	MOV DPTR, #026A1h
+	MOVC A, @A+DPTR
+	RET
+
+	DB 0E5h
+	DB 049h
+	DB 0C3h
+	DB 094h
+	DB 06h
+	DB 040h
+	DB 03h
+	DB 0E4h
+	DB 0F5h
+	DB 049h
+	DB 0AFh
+	DB 049h
+	DB 022h
+L0137:
+	ORL 0DDh, #6h
+	ORL 0A9h, #5Bh
+	ORL IE, #80h
+	ANL PSW, #0E7h
+	RET
+
+	DB 01h
+	DB 02h
+	DB 04h
+	DB 08h
+	DB 010h
+	DB 020h
+	DB 040h
+	DB 080h
+	DB 03h
+	DB 02h
+	DB 03h
+	DB 01h
+	DB 043h
+	DB 0ECh
+	DB 02h
+	DB 043h
+	DB 0EFh
+	DB 02h
+	DB 0E4h
+	DB 0F5h
+	DB 049h
+	DB 0F5h
+	DB 0B9h
+	DB 022h
+	DB 053h
+	DB 0DBh
+	DB 0EFh
+	DB 0D2h
+	DB 013h
+	DB 0E4h
+	DB 0F5h
+	DB 047h
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 053h
+	DB 0DBh
+	DB 0EFh
+	DB 0D2h
+	DB 013h
+	DB 0E4h
+	DB 0F5h
+	DB 047h
+	DB 02h
+	DB 027h
+	DB 03Ah
+L0143:
+	MOV A, 3Ch
+	JZ L0150
+	DJNZ 3Dh, L0150
+	MOV 3Dh, 3Ch
+L0150:
+	RET
+
+L0431:
+	MOV R7, #12h
+	MOV R0, #9Ch
+	CLR A
+L0433:
+	MOV @R0, A
+	INC R0
+	DJNZ R7, L0433
+	RET
+
+	DB 085h
+	DB 031h
+	DB 03Eh
+	DB 078h
+	DB 0BCh
+	DB 076h
+	DB 01h
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 085h
+	DB 031h
+	DB 044h
+	DB 078h
+	DB 0BCh
+	DB 076h
+	DB 01h
+	DB 02h
+	DB 027h
+	DB 03Ah
+L0425:
+	LCALL L0427
+	LCALL L0428
+	LJMP L0429
+
+	DB 043h
+	DB 0ECh
+	DB 02h
+	DB 053h
+	DB 0EFh
+	DB 0FBh
+	DB 0D2h
+	DB 0AFh
+	DB 022h
+	DB 053h
+	DB 0E4h
+	DB 0FDh
+	DB 043h
+	DB 0E4h
+	DB 0Ch
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 053h
+	DB 0E7h
+	DB 0FDh
+	DB 043h
+	DB 0E7h
+	DB 0Ch
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 085h
+	DB 032h
+	DB 03Ch
+	DB 085h
+	DB 032h
+	DB 03Dh
+	DB 02h
+	DB 027h
+	DB 03Ah
+L0418:
+	MOV 0D4h, #0A0h
+	MOV IE, #88h
+	RET
+
+L0131:
+	CLR A
+	MOV 94h, A
+	MOV 93h, #55h
+	RET
+
+L0268:
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	RET
+
+	DB 0E4h
+	DB 0F5h
+	DB 049h
+	DB 0F5h
+	DB 0B9h
+	DB 022h
+	DB 053h
+	DB 0EFh
+	DB 0FBh
+	DB 0D2h
+	DB 0AFh
+	DB 022h
+	DB 012h
+	DB 010h
+	DB 0EFh
+	DB 02h
+	DB 017h
+	DB 03Ah
+	DB 012h
+	DB 010h
+	DB 0EAh
+	DB 02h
+	DB 017h
+	DB 03Ah
+	DB 012h
+	DB 010h
+	DB 0EAh
+	DB 02h
+	DB 017h
+	DB 03Ah
+	DB 012h
+	DB 010h
+	DB 0EFh
+	DB 02h
+	DB 017h
+	DB 03Ah
+	DB 012h
+	DB 010h
+	DB 0EFh
+	DB 02h
+	DB 017h
+	DB 03Ah
+	DB 0E4h
+	DB 0F5h
+	DB 0A4h
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 053h
+	DB 0EFh
+	DB 0FDh
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 053h
+	DB 0ECh
+	DB 0FDh
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 075h
+	DB 0A4h
+	DB 0FFh
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 043h
+	DB 0E4h
+	DB 0Eh
+	DB 02h
+	DB 027h
+	DB 03Ah
+	DB 043h
+	DB 0E7h
+	DB 0Eh
+	DB 02h
+	DB 027h
+	DB 03Ah
+L0285:
+	CLR A
+	MOV 27h, A
+	MOV 26h, A
+	RET
+
+CSEG AT 37FBh
+L0113:
+	LJMP L0114
+
+	DB 00h
+	DB 00h
+L0001:
+	MOV B, #0A5h
+	CLR EA
+	MOV 93h, #55h
+	MOV A, 96h
+	JB ACC.1, L0002
+	JNB ACC.2, L0003
+	MOV A, 20h
+	CJNE A, #41h, L0003
+	CJNE A, 24h, L0003
+	MOV A, 21h
+	CJNE A, #4Bh, L0003
+	MOV A, 22h
+	CJNE A, #49h, L0003
+	MOV A, 23h
+	CJNE A, #52h, L0003
+L0112:
+	AJMP L0004
+
+L0520:
+	MOV 9Eh, #60h
+	MOV 0C0h, #7Fh
+	MOV DPTR, #037FEh
+	CLR A
+	MOVC A, @A+DPTR
+	XRL A, #5Ah
+	JZ L0112
+L0003:
+	MOV DPTR, #037FBh
+	CLR A
+	MOVC A, @A+DPTR
+	CJNE A, #2h, L0112
+	CLR A
+	MOV B, A
+	MOV DPTR, #0000h
+	MOV SP, #7h
+	MOV PSW, A
+	LJMP L0113
+
+L0006:
+	MOV DPTR, #03FBAh
+	MOV R0, #20h
+	MOV R1, #6h
+	MOV A, B
+L0518:
+	CJNE A, #0A5h, L0518
+L0519:
+	CLR A
+	MOVC A, @A+DPTR
+	MOV @R0, A
+	INC R0
+	INC DPTR
+	DJNZ R1, L0519
+L0033:
+	CLR A
+	MOV 1Dh, A
+	MOV 1Eh, A
+	MOV 1Fh, A
+	MOV DPTR, #037FFh
+	MOVC A, @A+DPTR
+	MOV 27h, A
+	RET
+
+L0002:
+	ACALL L0006
+	MOV A, #14h
+L0521:
+	JB 0C5h, L0520
+	JNB 0C6h, L0520
+	DEC A
+	JNZ L0521
+	MOV 9Eh, A
+	MOV R0, A
+	MOV A, #14h
+L0528:
+	MOV 0C0h, #0DFh
+L0522:
+	DJNZ R0, L0522
+	JNB 0C6h, L0520
+	MOV 0C0h, #0BFh
+L0523:
+	DJNZ R0, L0523
+	JB 0C5h, L0520
+	MOV 0C0h, #0FFh
+L0524:
+	DJNZ R0, L0524
+	JNB 0C5h, L0520
+	CJNE A, #0Ah, L0525
+	MOV 1Dh, A
+L0525:
+	CJNE A, #11h, L0526
+	MOV 1Eh, #9h
+L0526:
+	CJNE A, #6h, L0527
+	MOV 1Fh, A
+L0527:
+	MOV 93h, #55h
+	DJNZ ACC, L0528
+L0529:
+	DJNZ R0, L0529
+	JB 0C5h, L0530
+	JB 0C6h, L0530
+	AJMP L0531
+
+L0530:
+	MOV SP, #27h
+	MOV 0C0h, #9Fh
+	MOV 12h, #5h
+	MOV R5, #37h
+	MOV R4, #0FEh
+	MOV A, #5Ah
+	ACALL L0501
+L0548:
+	CLR 0C5h
+	ACALL L0111
+	SETB 0C5h
+	ACALL L0111
+	JNB 0C5h, L0548
+L0004:
+	MOV 93h, #55h
+	MOV SP, #27h
+	CLR A
+	MOV PSW, A
+	MOV 9Eh, #60h
+	MOV 0C0h, #7Fh
+	MOV A, 96h
+	ANL A, #0Ah
+	JZ L0005
+	MOV 0F3h, #1h
+	ACALL L0006
+	ACALL L0007
+	MOV 0F3h, #0C2h
+L0005:
+	ACALL L0008
+	MOV 0F3h, #0CAh
+	MOV 94h, #3h
+L0018:
+	MOV A, 20h
+L0009:
+	CJNE A, #41h, L0009
+	XRL A, 24h
+L0010:
+	JNZ L0010
+L0011:
+	JB EA, L0011
+	MOV 93h, #55h
+	MOV A, 0DBh
+	JNB ACC.0, L0012
+	ANL 0DBh, #0FEh
+L0091:
+	MOV A, 0EFh
+	ANL A, #18h
+	JNZ L0013
+	ACALL L0014
+	CJNE R3, #8h, L0015
+	ORL 0EFh, #4h
+	ANL 0EFh, #0FEh
+	MOV A, 0EFh
+	JB ACC.4, L0015
+	ACALL L0016
+	ACALL L0017
+	JB 33h, L0015
+	ANL 0EFh, #0FBh
+	AJMP L0018
+
+L0013:
+	JB ACC.4, L0089
+	ORL 0EFh, #4h
+	ANL 0EFh, #0FEh
+L0015:
+	ORL 0ECh, #2h
+	ORL 0EFh, #2h
+	ACALL L0019
+L0089:
+	ANL 0EFh, #0FBh
+	AJMP L0018
+
+L0012:
+	JNB ACC.1, L0090
+	ANL 0DBh, #0FDh
+	AJMP L0091
+
+L0090:
+	JNB ACC.3, L0092
+	ANL 0DBh, #0F7h
+	ANL 0EFh, #0FBh
+	JB 30h, L0093
+	ACALL L0094
+	AJMP L0095
+
+L0093:
+	MOV A, 10h
+	CJNE A, #1h, L0102
+	MOV A, 0Ah
+	MOV 0F2h, A
+	JZ L0102
+L0102:
+	ACALL L0019
+L0095:
+	ANL 0EFh, #0FBh
+	AJMP L0018
+
+L0092:
+	JNB ACC.4, L0103
+	ANL 0DBh, #0EFh
+	MOV A, 0EFh
+	JB ACC.4, L0104
+	ORL 0EFh, #4h
+	JB 31h, L0105
+	MOV A, 0EEh
+	JNZ L0106
+L0105:
+	ANL 0EFh, #0FEh
+	ACALL L0019
+L0108:
+	ANL 0EFh, #0FBh
+	AJMP L0018
+
+L0104:
+	SETB 33h
+	AJMP L0015
+
+L0106:
+	ACALL L0014
+	ORL 0EFh, #4h
+	ANL 0EFh, #0FEh
+	ACALL L0107
+	AJMP L0108
+
+L0103:
+	AJMP L0018
+
+L0531:
+	CLR 0C6h
+	MOV 94h, #3h
+	MOV SP, #27h
+	ACALL L0008
+	MOV 12h, #5h
+L0534:
+	MOV 0C0h, #0FFh
+L0532:
+	MOV 93h, #55h
+	JB 0C5h, L0532
+	JNB 0C6h, L0533
+	CLR 0C6h
+L0535:
+	JB 0C5h, L0534
+	AJMP L0535
+
+L0533:
+	MOV A, #2h
+	ACALL L0536
+	CJNE A, #33h, L0537
+	ACALL L0538
+	MOV R4, A
+	ACALL L0538
+	MOV R5, A
+	CJNE R5, #5Ah, L0534
+	MOV A, R4
+	JNZ L0534
+	ACALL L0493
+	AJMP L0534
+
+L0537:
+	CJNE A, #55h, L0540
+	MOV R1, #8h
+	MOV R2, #8h
+L0541:
+	ACALL L0538
+	MOV @R1, A
+	INC R1
+	DJNZ R2, L0541
+	MOV R1, #8h
+	MOV R2, #8h
+L0542:
+	MOV A, @R1
+	ACALL L0468
+	INC R1
+	DJNZ R2, L0542
+	AJMP L0534
+
+L0540:
+	CJNE A, #66h, L0540
+	ACALL L0031
+L0543:
+	JNZ L0543
+	MOV R2, #8h
+L0547:
+	ACALL L0056
+	MOV 93h, #55h
+	SETB C
+	MOV 0C0h, #0FFh
+L0544:
+	JNB 0C5h, L0544
+L0545:
+	JB 0C5h, L0545
+	RLC A
+	MOV 0C6h, C
+	CLR C
+	JNZ L0544
+L0546:
+	JNB 0C5h, L0546
+	CLR 0C6h
+	DJNZ R2, L0547
+	AJMP L0534
+
+L0538:
+	MOV 0C0h, #0FFh
+	MOV A, #1h
+L0536:
+	JNB 0C5h, L0536
+L0539:
+	JB 0C5h, L0539
+	MOV C, 0C6h
+	RLC A
+	JNC L0536
+	CLR 0C6h
+	RET
+
+L0008:
+	CLR A
+	MOV 96h, A
+	MOV 0F2h, A
+	MOV 26h, A
+	MOV R0, #18h
+L0454:
+	MOV @R0, A
+	DJNZ R0, L0454
+	MOV IE, A
+	MOV 0A9h, A
+	MOV 0DCh, A
+	MOV 0DDh, A
+	MOV IP, A
+	MOV 0B9h, A
+	MOV 0DAh, A
+	MOV 0DBh, A
+	MOV 0DEh, A
+	MOV 0DFh, A
+	MOV 95h, A
+	MOV 9Ah, A
+	MOV 9Bh, A
+	MOV 9Ch, A
+	MOV 9Dh, A
+	DEC A
+	MOV P0, A
+	MOV P1, A
+	MOV P2, A
+	MOV P3, A
+	RET
+
+L0017:
+	MOV R3, #0h
+	MOV A, 8h
+	JNZ L0020
+	SETB 30h
+	MOV A, 9h
+	CJNE A, #5h, L0021
+	MOV A, #1h
+	AJMP L0022
+
+L0021:
+	CJNE A, #9h, L0023
+	MOV 22h, A
+	AJMP L0024
+
+L0020:
+	JB ACC.7, L0025
+	SETB 30h
+	MOV A, 9h
+	CJNE A, #0Ah, L0026
+L0024:
+	CLR A
+L0022:
+	MOV 0EBh, R3
+	MOV 10h, A
+	ORL 0ECh, #1h
+	RET
+
+L0026:
+	CJNE A, #9h, L0023
+	MOV A, 8h
+	CJNE A, #21h, L0023
+	MOV A, 0Bh
+	CJNE A, #2h, L0027
+	MOV A, #2h
+	AJMP L0022
+
+L0027:
+	CJNE A, #3h, L0023
+	ACALL L0028
+	CJNE A, #5h, L0029
+	CJNE R6, #6h, L0023
+	CJNE R7, #0h, L0023
+	MOV A, #4h
+	MOV R6, #4h
+	AJMP L0022
+
+L0029:
+	CJNE A, #6h, L0030
+	CJNE R6, #2h, L0023
+	CJNE R7, #8h, L0023
+	MOV A, #6h
+	MOV R6, #0h
+	AJMP L0022
+
+L0030:
+	CJNE A, #41h, L0023
+	CJNE A, 25h, L0023
+	ACALL L0031
+	JZ L0032
+	ACALL L0033
+L0032:
+	ACALL L0034
+	MOV A, #8h
+	AJMP L0022
+
+L0023:
+	SETB 33h
+	RET
+
+L0025:
+	SETB 31h
+	JB ACC.5, L0049
+	MOV A, 9h
+	CJNE A, #6h, L0023
+	MOV A, 0Bh
+	JNB ACC.5, L0050
+	SUBB A, #1Bh
+L0050:
+	JZ L0023
+	CJNE A, #8h, L0051
+L0051:
+	JNC L0023
+	RL A
+	MOV R0, A
+	MOV DPTR, #03FAAh
+	MOVC A, @A+DPTR
+	MOV R4, A
+	MOV R5, #3Fh
+	MOV A, R0
+	INC A
+	MOVC A, @A+DPTR
+	MOV R6, A
+	MOV R7, #0h
+	MOV A, 0Fh
+	JNZ L0052
+	CLR C
+	MOV A, R6
+	SUBB A, 0Eh
+	JC L0052
+	MOV A, 0Eh
+	MOV R6, A
+L0052:
+	MOV 12h, #41h
+	AJMP L0053
+
+L0049:
+	CJNE A, #0A1h, L0023
+	DJNZ 9h, L0023
+	MOV A, 0Bh
+	CJNE A, #3h, L0023
+	ACALL L0028
+	CJNE A, #5h, L0081
+	CJNE R6, #6h, L0023
+	CJNE R7, #0h, L0023
+	MOV R2, #4h
+L0086:
+	MOV A, 13h
+	CJNE A, #52h, L0023
+	MOV R3, #2h
+	MOV 0EAh, 12h
+	MOV 0EAh, #72h
+	DEC R6
+	DEC R6
+	AJMP L0082
+
+L0081:
+	CJNE A, #6h, L0085
+	CJNE R6, #2h, L0023
+	CJNE R7, #8h, L0023
+	MOV R2, #6h
+	AJMP L0086
+
+L0085:
+	CJNE A, #41h, L0023
+	CJNE A, 25h, L0023
+	ACALL L0031
+	JNZ L0023
+	AJMP L0053
+
+L0014:
+	MOV R0, #8h
+	MOV A, 0EEh
+	MOV R1, A
+	MOV R3, A
+	JZ L0087
+L0088:
+	MOV @R0, 0EDh
+	INC R0
+	DJNZ R1, L0088
+L0087:
+	RET
+
+L0094:
+	MOV A, 10h
+	JZ L0096
+	MOV A, R7
+	JNZ L0097
+	MOV A, R6
+	JZ L0098
+	CJNE A, #8h, L0097
+	SETB 34h
+L0097:
+	MOV A, 10h
+	CJNE A, #5h, L0099
+L0096:
+	RET
+
+L0098:
+	JBC 34h, L0101
+	RET
+
+L0101:
+	MOV R3, #0h
+	AJMP L0024
+
+L0099:
+	CJNE A, #7h, L0100
+	MOV R2, #8h
+	MOV R3, #0h
+L0082:
+	ACALL L0083
+	ACALL L0057
+	ACALL L0084
+	MOV A, #7h
+	AJMP L0022
+
+L0100:
+	CJNE A, #9h, L0096
+L0053:
+	ACALL L0054
+	MOV A, #9h
+	AJMP L0022
+
+L0054:
+	ACALL L0035
+	MOV R2, #8h
+	MOV R3, #0h
+L0057:
+	MOV A, R6
+	ORL A, R7
+	JZ L0055
+	MOV A, R2
+	JZ L0055
+	ACALL L0056
+	MOV 0EAh, A
+	INC R3
+	DJNZ R2, L0057
+L0055:
+	RET
+
+L0107:
+	MOV A, 10h
+	CJNE A, #2h, L0109
+	MOV A, 9h
+	CPL A
+	ANL A, 11h
+	JNB ACC.2, L0110
+	ANL 0F3h, #0F7h
+	MOV 9Eh, #60h
+	MOV 0C0h, #7Fh
+	ACALL L0033
+	ACALL L0008
+	MOV 0F3h, #1h
+	ACALL L0111
+	AJMP L0003
+
+L0110:
+	MOV 11h, 9h
+L0513:
+	RET
+
+L0109:
+	CJNE A, #4h, L0455
+	ACALL L0456
+	MOV R3, #0h
+	AJMP L0024
+
+L0455:
+	CJNE A, #6h, L0508
+	AJMP L0509
+
+L0508:
+	CJNE A, #8h, L0513
+	AJMP L0514
+
+L0016:
+	CLR A
+	ANL 0DBh, #67h
+	MOV 0E9h, A
+	ANL 0ECh, #0FDh
+	ANL 0EFh, #0FDh
+L0019:
+	CLR A
+	MOV 10h, A
+	MOV 12h, A
+	MOV 26h, A
+	SETB 37h
+	RET
+
+L0083:
+	MOV R4, 14h
+	MOV R5, 15h
+	RET
+
+L0028:
+	MOV R4, 0Ch
+	MOV R5, 0Dh
+	MOV R6, 0Eh
+	MOV R7, 0Fh
+	MOV A, 0Ah
+	MOV 12h, A
+L0457:
+	RET
+
+L0456:
+	MOV A, 8h
+	CJNE A, #5h, L0457
+	MOV A, 9h
+	CJNE A, #77h, L0458
+	AJMP L0459
+
+L0458:
+	MOV 13h, A
+L0459:
+	CJNE A, #52h, L0460
+	ACALL L0031
+	JZ L0461
+	MOV A, 0Bh
+	CJNE A, #0FCh, L0462
+	MOV 0Ah, #0h
+L0461:
+	MOV R4, 0Ah
+	MOV R5, 0Bh
+L0084:
+	MOV 14h, R4
+	MOV 15h, R5
+	RET
+
+L0462:
+	CLR A
+	MOV 13h, A
+	RET
+
+L0031:
+	MOV A, 27h
+	XRL A, #0A5h
+	RET
+
+L0460:
+	CJNE A, #57h, L0463
+	ACALL L0031
+	JNZ L0462
+	AJMP L0461
+
+L0463:
+	CJNE A, #56h, L0464
+	ACALL L0461
+	MOV A, R4
+	ORL A, R5
+	JNZ L0462
+	MOV 18h, A
+	RET
+
+L0464:
+	CJNE A, #77h, L0465
+	MOV A, 13h
+	CJNE A, #57h, L0457
+	ACALL L0083
+	MOV R2, #4h
+	MOV R1, #0Ah
+L0469:
+	MOV A, R6
+	ORL A, R7
+	JZ L0466
+	MOV A, 13h
+	CJNE A, #57h, L0467
+	MOV A, @R1
+	ACALL L0468
+L0488:
+	INC R1
+	DJNZ R2, L0469
+L0466:
+	AJMP L0084
+
+L0467:
+	ACALL L0056
+	XRL A, @R1
+	JZ L0487
+	MOV A, #0EEh
+	ORL 18h, A
+L0487:
+	SJMP L0488
+
+L0465:
+	CJNE A, #41h, L0489
+	MOV A, 0Ah
+	CJNE A, #4Bh, L0489
+	MOV A, 0Bh
+	CJNE A, #49h, L0489
+	MOV A, 0Ch
+	CJNE A, #52h, L0489
+	MOV A, 0Dh
+	CJNE A, #41h, L0489
+	MOV 25h, A
+L0489:
+	ANL A, #0DFh
+	CJNE A, #45h, L0490
+	MOV A, 0Ah
+	CJNE A, #45h, L0491
+	XRL 0Bh, #4Fh
+	XRL 0Ch, #4Ch
+	XRL 0Dh, #43h
+	ACALL L0492
+	AJMP L0493
+
+L0491:
+	CJNE A, #5Ah, L0503
+	MOV R4, #0FEh
+L0505:
+	MOV R5, #37h
+	MOV A, 0Bh
+	AJMP L0501
+
+L0503:
+	CJNE A, #0A5h, L0504
+	CJNE A, 27h, L0490
+	MOV R4, #0FFh
+	AJMP L0505
+
+L0504:
+	CJNE A, #0FFh, L0506
+	ACALL L0031
+	JNZ L0490
+	AJMP L0507
+
+L0506:
+	CJNE A, #5h, L0490
+L0492:
+	MOV 1Dh, 0Bh
+	MOV 1Eh, 0Ch
+	MOV 1Fh, 0Dh
+	RET
+
+L0490:
+	RET
+
+L0509:
+	MOV A, 13h
+	ANL A, #0FEh
+	CJNE A, #56h, L0510
+	JBC 37h, L0511
+	MOV A, R3
+	MOV R1, #8h
+L0512:
+	MOV R2, A
+	ACALL L0083
+	AJMP L0469
+
+L0511:
+	MOV A, 9h
+	XRL A, #20h
+	CJNE A, 13h, L0510
+	MOV A, 8h
+	CJNE A, #6h, L0510
+	MOV R1, #0Ah
+	MOV A, R3
+	CLR C
+	SUBB A, #2h
+	JNC L0512
+L0510:
+	MOV 13h, #0h
+	RET
+
+L0514:
+	MOV A, R3
+	JZ L0035
+	CJNE A, #8h, L0515
+L0515:
+	JC L0516
+	MOV A, #8h
+L0516:
+	MOV R2, A
+	MOV R1, #8h
+L0517:
+	MOV A, R6
+	ORL A, R7
+	JZ L0035
+	MOV A, @R1
+	ACALL L0468
+	INC R1
+	DJNZ R2, L0517
+L0035:
+	RET
+
+L0034:
+	ACALL L0031
+	JNZ L0035
+	MOV A, R5
+	CJNE A, #5Ah, L0035
+	MOV A, R4
+	CJNE A, #0FEh, L0036
+	MOV A, #55h
+	AJMP L0037
+
+L0036:
+	CJNE A, #0FFh, L0048
+L0507:
+	MOV A, #0AAh
+	AJMP L0037
+
+L0048:
+	ANL A, #3Ch
+	MOV 0F7h, A
+	MOV 0BEh, #0h
+	MOV 0BFh, #0h
+	MOV A, #0E6h
+L0037:
+	MOV 0B3h, A
+	MOV 93h, #55h
+	MOV 1Ch, #5h
+	MOV A, 12h
+	CJNE A, #5h, L0038
+L0046:
+	MOV 0B4h, 1Ch
+	MOV 1Ch, #0Ah
+	MOV 0B5h, 1Dh
+	MOV 0B6h, 1Eh
+	MOV A, 0B3h
+	CJNE A, #0E6h, L0039
+	MOV A, 0F7h
+	ADD A, #0C8h
+	JNC L0040
+	SJMP L0041
+
+L0042:
+	MOV A, 0BEh
+	CJNE A, #3h, L0043
+L0043:
+	JNC L0040
+	INC A
+	MOVC A, @A+PC
+	SJMP L0044
+
+	DB 038h
+	DB 00h
+L0044:
+	CJNE A, 0BFh, L0041
+	AJMP L0040
+
+L0039:
+	CJNE A, #6Eh, L0040
+	MOV A, 0F7h
+	JZ L0042
+	ADD A, #0C8h
+	JNC L0040
+	ADD A, #0F9h
+	JNC L0041
+	JNZ L0041
+	MOV A, 0BEh
+	ADD A, #41h
+	JNC L0041
+L0040:
+	MOV 0B7h, 1Fh
+	NOP
+	NOP
+	NOP
+	NOP
+L0041:
+	CLR A
+	MOV 0B3h, A
+	MOV 0B4h, A
+	MOV 0B5h, A
+	MOV 0B6h, A
+	MOV 0B7h, A
+L0047:
+	RET
+
+L0038:
+	CJNE A, #6h, L0045
+	AJMP L0046
+
+L0045:
+	CJNE A, #41h, L0047
+	AJMP L0046
+
+L0058:
+	MOV A, R6
+	JNZ L0080
+	DEC R7
+L0080:
+	DEC R6
+	RET
+
+L0495:
+	MOV R5, #0h
+	MOV R4, #1h
+	MOV A, #38h
+	ACALL L0501
+	MOV A, #0h
+	ACALL L0501
+	MOV R4, #0h
+	MOV A, #2h
+L0501:
+	MOV 0BFh, A
+	MOV 0F7h, R5
+	AJMP L0502
+
+L0468:
+	MOV 0BFh, A
+	MOV A, 12h
+	CJNE A, #41h, L0470
+	AJMP L0471
+
+L0470:
+	CJNE R5, #0FCh, L0480
+	MOV 0F7h, #3Fh
+	MOV A, R4
+	ORL A, #0C0h
+	MOV 0BEh, A
+	AJMP L0481
+
+L0480:
+	MOV A, R5
+	JNZ L0482
+	MOV A, R4
+	CJNE A, #3h, L0483
+L0483:
+	JNC L0471
+	MOV 0F7h, #37h
+	ADD A, #0FBh
+	MOV 0BEh, A
+	AJMP L0481
+
+L0482:
+	CJNE A, #0FFh, L0484
+	JNB 30h, L0471
+	MOV A, R4
+	JB ACC.7, L0471
+	AJMP L0478
+
+L0484:
+	CJNE A, #38h, L0485
+L0485:
+	JNC L0478
+	CJNE A, #37h, L0471
+	CJNE R4, #0FAh, L0486
+L0486:
+	JC L0471
+	CJNE R4, #0FAh, L0478
+L0471:
+	MOV A, R5
+	CJNE A, #40h, L0472
+L0472:
+	JNC L0473
+	MOV 0F7h, A
+L0502:
+	MOV 0BEh, R4
+L0481:
+	MOV A, #6Eh
+L0476:
+	ACALL L0037
+	MOV 0F7h, #0h
+L0478:
+	ACALL L0058
+	AJMP L0062
+
+L0474:
+	CJNE A, #0FEh, L0477
+	MOV A, R4
+	MOV R0, A
+	MOV A, 0BFh
+	MOV @R0, A
+	AJMP L0478
+
+L0477:
+	CJNE A, #0FDh, L0479
+	MOV A, R4
+	MOV R0, A
+	MOV 0F7h, #0h
+	MOV A, 0BFh
+	MOVX @R0, A
+L0479:
+	AJMP L0478
+
+L0473:
+	CJNE A, #0FFh, L0474
+	MOV A, R4
+	RLC A
+	MOV A, #5Ah
+	JC L0475
+	SWAP A
+L0475:
+	MOV 0BEh, R4
+	AJMP L0476
+
+L0059:
+	MOV A, DPH
+	JNZ L0068
+	MOV A, DPL
+	CJNE A, #3h, L0069
+L0069:
+	JNC L0070
+	MOV DPTR, #037FBh
+	AJMP L0071
+
+L0068:
+	CJNE A, #0FFh, L0072
+	JNB 31h, L0070
+	MOV A, DPL
+	JB ACC.7, L0070
+	AJMP L0073
+
+L0072:
+	CJNE A, #0FCh, L0074
+	MOV DPH, #3Fh
+	MOV A, R4
+	JNB ACC.7, L0075
+	ORL A, #0C0h
+	MOV DPL, A
+	AJMP L0076
+
+L0075:
+	ANL A, #3h
+	MOV R4, A
+	ADD A, #18h
+	MOV R0, A
+	AJMP L0077
+
+L0074:
+	CJNE A, #38h, L0078
+L0078:
+	JNC L0073
+	CJNE A, #37h, L0070
+	MOV A, DPL
+	CJNE A, #0FAh, L0079
+L0079:
+	JC L0070
+L0073:
+	MOV DPTR, #037FAh
+L0076:
+	CLR A
+L0071:
+	MOVC A, @A+DPTR
+	AJMP L0062
+
+L0056:
+	ACALL L0058
+	MOV DPL, R4
+	MOV DPH, R5
+	MOV A, 12h
+	CJNE A, #41h, L0059
+L0070:
+	MOV A, DPH
+	CJNE A, #40h, L0060
+L0060:
+	JNC L0061
+	CLR A
+	MOVC A, @A+DPTR
+	AJMP L0062
+
+L0061:
+	CJNE A, #0FFh, L0065
+	AJMP L0066
+
+L0065:
+	CJNE A, #0FEh, L0067
+	MOV R0, DPL
+L0077:
+	MOV A, @R0
+	AJMP L0062
+
+L0067:
+	CJNE A, #0FDh, L0062
+	MOV DPH, #0h
+L0066:
+	MOVX A, @DPTR
+L0062:
+	INC R4
+	CJNE R4, #0h, L0063
+	INC R5
+	CJNE R5, #0FDh, L0064
+	DEC R5
+L0064:
+	CJNE R5, #0h, L0063
+	DEC R5
+L0063:
+	RET
+
+L0111:
+	ACALL L0453
+L0453:
+	DJNZ R0, L0453
+	MOV 93h, #55h
+	DJNZ R1, L0453
+	RET
+
+L0007:
+	MOV R0, #6h
+	CLR A
+L0496:
+	MOV @R0, A
+	DJNZ R0, L0496
+	MOV R7, #40h
+	MOV 12h, #5h
+L0498:
+	ACALL L0056
+	ADD A, R1
+	MOV R1, A
+	JNC L0497
+	INC R2
+	CJNE R2, #0h, L0497
+	INC R3
+L0497:
+	MOV 93h, #55h
+	CJNE R5, #40h, L0498
+	MOV 1Bh, R1
+	MOV 1Ah, R2
+	MOV 19h, R3
+	MOV A, R1
+	ORL A, R2
+	ORL A, R3
+	JZ L0499
+	CJNE R3, #3Fh, L0500
+	CJNE R2, #0C0h, L0500
+L0499:
+	MOV 27h, #0A5h
+L0500:
+	RET
+
+	DB 0C2h
+	DB 0AFh
+	DB 053h
+	DB 0F3h
+	DB 0F7h
+	DB 075h
+	DB 093h
+	DB 055h
+	DB 075h
+	DB 081h
+	DB 027h
+	DB 0B4h
+	DB 05Ah
+	DB 0FDh
+	DB 0E4h
+	DB 0F5h
+	DB 0D0h
+	DB 0F5h
+	DB 0F3h
+	DB 075h
+	DB 09Eh
+	DB 060h
+	DB 075h
+	DB 0C0h
+	DB 07Fh
+	DB 01h
+	DB 0EAh
+L0493:
+	MOV A, #38h
+L0494:
+	DEC A
+	ANL A, #0FCh
+	MOV R2, A
+	ACALL L0048
+	MOV A, R2
+	JNZ L0494
+	ACALL L0495
+	ACALL L0495
+	AJMP L0007
+
+	DB 012h
+	DB 01h
+	DB 010h
+	DB 01h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 08h
+	DB 03h
+	DB 06h
+	DB 020h
+	DB 010h
+	DB 01h
+	DB 03h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 04h
+	DB 03h
+	DB 09h
+	DB 04h
+	DB 09h
+	DB 02h
+	DB 022h
+	DB 00h
+	DB 01h
+	DB 01h
+	DB 00h
+	DB 0A0h
+	DB 032h
+	DB 09h
+	DB 04h
+	DB 00h
+	DB 00h
+	DB 01h
+	DB 03h
+	DB 01h
+	DB 01h
+	DB 00h
+	DB 09h
+	DB 021h
+	DB 010h
+	DB 01h
+	DB 00h
+	DB 01h
+	DB 022h
+	DB 048h
+	DB 00h
+	DB 07h
+	DB 05h
+	DB 081h
+	DB 03h
+	DB 08h
+	DB 00h
+	DB 0Ah
+	DB 05h
+	DB 01h
+	DB 09h
+	DB 06h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 07h
+	DB 05h
+	DB 08h
+	DB 095h
+	DB 08h
+	DB 075h
+	DB 01h
+	DB 019h
+	DB 01h
+	DB 029h
+	DB 08h
+	DB 091h
+	DB 02h
+	DB 0C0h
+	DB 06h
+	DB 00h
+	DB 0FFh
+	DB 09h
+	DB 01h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 05h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 0FFh
+	DB 019h
+	DB 01h
+	DB 029h
+	DB 05h
+	DB 075h
+	DB 08h
+	DB 095h
+	DB 05h
+	DB 0B1h
+	DB 02h
+	DB 0C0h
+	DB 06h
+	DB 00h
+	DB 0FFh
+	DB 09h
+	DB 01h
+	DB 0A1h
+	DB 01h
+	DB 085h
+	DB 06h
+	DB 015h
+	DB 00h
+	DB 025h
+	DB 0FFh
+	DB 01Ah
+	DB 01h
+	DB 00h
+	DB 02Ah
+	DB 01h
+	DB 08h
+	DB 075h
+	DB 08h
+	DB 096h
+	DB 01h
+	DB 08h
+	DB 0B1h
+	DB 02h
+	DB 0C0h
+	DB 02Ch
+	DB 012h
+	DB 042h
+	DB 022h
+	DB 03Eh
+	DB 04h
+	DB 04Bh
+	DB 09h
+	DB 05Dh
+	DB 07h
+	DB 054h
+	DB 09h
+	DB 064h
+	DB 048h
+	DB 041h
+	DB 04Bh
+	DB 049h
+	DB 052h
+	DB 041h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+	DB 00h
+END
