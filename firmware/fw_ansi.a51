@@ -20,10 +20,10 @@ CSEG AT 0013h
   0013 02    		DB 002h 
   0014 00    		DB 000h 
   0015 2E    		DB 02Eh ; '.'
-L0610:
-  0016 53A97F		ANL 0A9h, #7Fh
-  0019 32    		RETI
-
+  0016 53    		DB 053h ; 'S'
+  0017 A9    		DB 0A9h 
+  0018 7F    		DB 07Fh 
+  0019 32    		DB 032h ; '2'
 CSEG AT 001Bh
   001B 02    		DB 002h 
   001C 24    		DB 024h ; '$'
@@ -112,8 +112,9 @@ CSEG AT 0073h
   0074 25    		DB 025h ; '%'
   0075 3B    		DB 03Bh ; ';'
 CSEG AT 007Bh
-  007B 020016		LJMP L0610
-
+  007B 02    		DB 002h 
+  007C 00    		DB 000h 
+  007D 16    		DB 016h 
   007E 18    		DB 018h 
   007F 03    		DB 003h 
   0080 53    		DB 053h ; 'S'
