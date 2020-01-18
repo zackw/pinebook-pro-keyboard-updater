@@ -822,7 +822,7 @@ CSEG AT 007Bh
   033E 9A    		DB 09Ah 
   033F 87    		DB 087h 
   0340 0D    		DB 00Dh 
-  0341 BE    		DB 0BEh 
+  0341 BE    		DB 0BEh ; KC_BRIGHTNESS_DOWN
   0342 57    		DB 057h ; 'W'
   0343 3C    		DB 03Ch ; '<'
   0344 B6    		DB 0B6h 
@@ -1034,7 +1034,7 @@ CSEG AT 007Bh
   0412 D3    		DB 0D3h 
   0413 7D    		DB 07Dh ; '}'
   0414 98    		DB 098h 
-  0415 BE    		DB 0BEh 
+  0415 BE    		DB 0BEh ; KC_BRIGHTNESS_DOWN
   0416 31    		DB 031h ; '1'
   0417 48    		DB 048h ; 'H'
   0418 1F    		DB 01Fh 
@@ -1058,7 +1058,7 @@ CSEG AT 007Bh
   042A B7    		DB 0B7h 
   042B B8    		DB 0B8h 
   042C F4    		DB 0F4h 
-  042D E1    		DB 0E1h 
+  042D E1    		DB 0E1h ; KC_LSFT
   042E 33    		DB 033h ; '3'
   042F 08    		DB 008h 
   0430 24    		DB 024h ; '$'
@@ -2060,70 +2060,70 @@ L0404:
   0932 00    		DB 000h 
   0933 00    		DB 000h 
   0934 00    		DB 000h 
-  0935 3A    		DB 03Ah ; ':'
-  0936 A5    		DB 0A5h 
-  0937 3B    		DB 03Bh ; ';'
-  0938 A6    		DB 0A6h 
+  0935 3A    		DB 03Ah ; KC_F1
+  0936 A5    		DB 0A5h ; special function?
+  0937 3B    		DB 03Bh ; KC_F2
+  0938 A6    		DB 0A6h ; special function?
   0939 3E    		DB 03Eh ; KC_F5
-  093A 81    		DB 081h 
+  093A 81    		DB 081h ; KC_VOLUME_DOWN
   093B 3D    		DB 03Dh ; KC_F4
-  093C 7F    		DB 07Fh 
+  093C 7F    		DB 07Fh ; KC_MUTE
   093D 40    		DB 040h ; KC_F7
-  093E FE    		DB 0FEh 
+  093E FE    		DB 0FEh ; some screen function
   093F 3F    		DB 03Fh ; KC_F6
-  0940 80    		DB 080h 
-  0941 1D    		DB 01Dh 
-  0942 64    		DB 064h ; 'd'
-  0943 42    		DB 042h ; 'B'
-  0944 53    		DB 053h ; 'S'
-  0945 41    		DB 041h ; 'A'
-  0946 49    		DB 049h ; 'I'
-  0947 44    		DB 044h ; 'D'
-  0948 48    		DB 048h ; 'H'
-  0949 43    		DB 043h ; 'C'
-  094A 47    		DB 047h ; 'G'
-  094B 45    		DB 045h ; 'E'
-  094C 53    		DB 053h ; 'S'
-  094D 50    		DB 050h ; 'P'
-  094E 4A    		DB 04Ah ; 'J'
-  094F 4F    		DB 04Fh ; 'O'
-  0950 4D    		DB 04Dh ; 'M'
-  0951 51    		DB 051h ; 'Q'
-  0952 4E    		DB 04Eh ; 'N'
-  0953 52    		DB 052h ; 'R'
-  0954 4B    		DB 04Bh ; 'K'
-  0955 2A    		DB 02Ah ; '*'
-  0956 4C    		DB 04Ch ; 'L'
-  0957 18    		DB 018h 
-  0958 5C    		DB 05Ch ; '\'
-  0959 24    		DB 024h ; '$'
-  095A 5F    		DB 05Fh ; '_'
-  095B 0E    		DB 00Eh 
-  095C 5A    		DB 05Ah ; 'Z'
-  095D 0D    		DB 00Dh 
-  095E 59    		DB 059h ; 'Y'
-  095F 0C    		DB 00Ch 
-  0960 5D    		DB 05Dh ; ']'
-  0961 25    		DB 025h ; '%'
-  0962 60    		DB 060h ; '`'
-  0963 26    		DB 026h ; '&'
-  0964 61    		DB 061h ; 'a'
-  0965 0F    		DB 00Fh 
-  0966 5B    		DB 05Bh ; '['
-  0967 13    		DB 013h 
-  0968 56    		DB 056h ; 'V'
-  0969 12    		DB 012h 
-  096A 5E    		DB 05Eh ; '^'
-  096B 27    		DB 027h ; '''
-  096C 55    		DB 055h ; 'U'
-  096D 10    		DB 010h 
-  096E 62    		DB 062h ; 'b'
-  096F 33    		DB 033h ; '3'
-  0970 57    		DB 057h ; 'W'
-  0971 37    		DB 037h ; '7'
-  0972 63    		DB 063h ; 'c'
-  0973 38    		DB 038h ; '8'
-  0974 54    		DB 054h ; 'T'
+  0940 80    		DB 080h ; KC_VOLUME_DOWN
+  0941 1D    		DB 01Dh ; KC_Z
+  0942 64    		DB 064h ; KC_NUBS
+  0943 42    		DB 042h ; KC_F9
+  0944 53    		DB 053h ; KC_NUMLOCK
+  0945 41    		DB 041h ; KC_F8
+  0946 49    		DB 049h ; KC_INSERT
+  0947 44    		DB 044h ; KC_F11
+  0948 48    		DB 048h ; KC_PAUSE
+  0949 43    		DB 043h ; KC_F10
+  094A 47    		DB 047h ; KC_SCROLLLOCK
+  094B 45    		DB 045h ; KC_F12
+  094C 53    		DB 053h ; KC_NUMLOCK
+  094D 50    		DB 050h ; KC_LEFT
+  094E 4A    		DB 04Ah ; KC_HOME
+  094F 4F    		DB 04Fh ; KC_RIGHT
+  0950 4D    		DB 04Dh ; KC_END
+  0951 51    		DB 051h ; KC_DOWN
+  0952 4E    		DB 04Eh ; KC_PGDN
+  0953 52    		DB 052h ; KC_UP
+  0954 4B    		DB 04Bh ; KC_PGUP
+  0955 2A    		DB 02Ah ; KC_BACKSPACE
+  0956 4C    		DB 04Ch ; KC_DELETE
+  0957 18    		DB 018h ; KC_U
+  0958 5C    		DB 05Ch ; KC_KP_4 / Left
+  0959 24    		DB 024h ; KC_7
+  095A 5F    		DB 05Fh ; KC_KP_7 / Home
+  095B 0E    		DB 00Eh ; KC_K
+  095C 5A    		DB 05Ah ; KC_KP_2 / Down
+  095D 0D    		DB 00Dh ; KC_J
+  095E 59    		DB 059h ; KC_KP_1 / End
+  095F 0C    		DB 00Ch ; KC_I
+  0960 5D    		DB 05Dh ; KC_KP_5
+  0961 25    		DB 025h ; KC_8
+  0962 60    		DB 060h ; KC_KP_8 / Up
+  0963 26    		DB 026h ; KC_9
+  0964 61    		DB 061h ; KC_KP_9 / Page Up
+  0965 0F    		DB 00Fh ; KC_L
+  0966 5B    		DB 05Bh ; KC_KP_ENTER
+  0967 13    		DB 013h ; KC_P
+  0968 56    		DB 056h ; KC_KP_MINUS
+  0969 12    		DB 012h ; KC_O
+  096A 5E    		DB 05Eh ; KC_KP_6 / Right
+  096B 27    		DB 027h ; KC_0
+  096C 55    		DB 055h ; KC_KP_ASTK
+  096D 10    		DB 010h ; KC_M
+  096E 62    		DB 062h ; KC_KP_0
+  096F 33    		DB 033h ; KC_SEMICOLON
+  0970 57    		DB 057h ; KC_KP_PLUS
+  0971 37    		DB 037h ; KC_DOT
+  0972 63    		DB 063h ; KC_KP_DOT
+  0973 38    		DB 038h ; KC_SLASH
+  0974 54    		DB 054h ; KC_KP_SLASH
 L0286:
   0975 7893  		MOV R0, #93h
   0977 E6    		MOV A, @R0
@@ -2337,7 +2337,7 @@ L0335:
   0AAE 54    		DB 054h ; 'T'
   0AAF 60    		DB 060h ; '`'
   0AB0 24    		DB 024h ; '$'
-  0AB1 E0    		DB 0E0h 
+  0AB1 E0    		DB 0E0h ; KC_LCTL
   0AB2 70    		DB 070h ; 'p'
   0AB3 03    		DB 003h 
   0AB4 02    		DB 002h 
@@ -4629,15 +4629,15 @@ L0249:
   1520 E5    		DB 0E5h 
   1521 DF    		DB 0DFh 
   1522 30    		DB 030h ; '0'
-  1523 E1    		DB 0E1h 
+  1523 E1    		DB 0E1h ; KC_LSFT
   1524 03    		DB 003h 
   1525 E4    		DB 0E4h 
   1526 F5    		DB 0F5h 
   1527 DF    		DB 0DFh 
-  1528 E5    		DB 0E5h 
+  1528 E5    		DB 0E5h ; KC_RSFT
   1529 DF    		DB 0DFh 
   152A 30    		DB 030h ; '0'
-  152B E2    		DB 0E2h 
+  152B E2    		DB 0E2h ; KC_LALT
   152C 6E    		DB 06Eh ; 'n'
   152D 53    		DB 053h ; 'S'
   152E DF    		DB 0DFh 
@@ -4649,7 +4649,7 @@ L0249:
   1534 3A    		DB 03Ah ; ':'
   1535 AF    		DB 0AFh 
   1536 3A    		DB 03Ah ; ':'
-  1537 EF    		DB 0EFh 
+  1537 EF    		DB 0EFh ; KC_MEDIA_MUTE
   1538 C3    		DB 0C3h 
   1539 95    		DB 095h 
   153A 43    		DB 043h ; 'C'
@@ -4658,11 +4658,11 @@ L0249:
   153D 30    		DB 030h ; '0'
   153E 03    		DB 003h 
   153F 4C    		DB 04Ch ; 'L'
-  1540 E5    		DB 0E5h 
+  1540 E5    		DB 0E5h ; KC_RSFT
   1541 3F    		DB 03Fh ; '?'
   1542 70    		DB 070h ; 'p'
   1543 08    		DB 008h 
-  1544 E5    		DB 0E5h 
+  1544 E5    		DB 0E5h ; KC_RSFT
   1545 51    		DB 051h ; 'Q'
   1546 65    		DB 065h ; 'e'
   1547 37    		DB 037h ; '7'
@@ -4670,7 +4670,7 @@ L0249:
   1549 02    		DB 002h 
   154A 80    		DB 080h 
   154B 16    		DB 016h 
-  154C E4    		DB 0E4h 
+  154C E4    		DB 0E4h ; KC_RCTL
   154D FF    		DB 0FFh 
   154E 74    		DB 074h ; 't'
   154F 99    		DB 099h 
@@ -7326,7 +7326,7 @@ L0314:
   21D9 00    		DB 000h 
   21DA 00    		DB 000h 
   21DB 02    		DB 002h 
-  21DC BD    		DB 0BDh 
+  21DC BD    		DB 0BDh ; KC_BRIGHTNESS_UP
   21DD 00    		DB 000h 
   21DE 00    		DB 000h 
   21DF 01    		DB 001h 
@@ -7771,7 +7771,7 @@ L0284:
   2417 A6    		DB 0A6h 
   2418 ED    		DB 0EDh 
   2419 0D    		DB 00Dh 
-  241A BD    		DB 0BDh 
+  241A BD    		DB 0BDh ; KC_BRIGHTNESS_UP
   241B 00    		DB 000h 
   241C 01    		DB 001h 
   241D 0C    		DB 00Ch 
