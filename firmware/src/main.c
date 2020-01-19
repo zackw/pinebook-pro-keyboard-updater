@@ -37,7 +37,7 @@ void main(void) {
             SP = 0x27;
             PSW = 0;
             P4CON = 0x60;
-            P4 = 0x7F;
+            PORT4 = 0x7F;
             if (MODE_FG & 0xA) {
                 DFC = 0x01
                 // L0006
@@ -47,7 +47,7 @@ void main(void) {
                 // L0579
                 while (B != 0xA5);
                 // L0580
-                
+
                 // L0007
                 DFC = 0xC2;
             }

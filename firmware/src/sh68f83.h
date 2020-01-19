@@ -49,11 +49,11 @@ __sfr __at (0xAF) PRCON;
 
 // General I/O Ports Registers
 
-__sfr __at (0x80) P0;
-__sfr __at (0x90) P1;
-__sfr __at (0xA0) P2;
-__sfr __at (0xB0) P3;
-__sfr __at (0xC0) P4;
+__sfr __at (0x80) PORT0;
+__sfr __at (0x90) PORT1;
+__sfr __at (0xA0) PORT2;
+__sfr __at (0xB0) PORT3;
+__sfr __at (0xC0) PORT4;
 __sfr __at (0xA2) P0WK;
 __sfr __at (0xA3) P1WK;
 __sfr __at (0xA4) P2WK;
