@@ -19,7 +19,7 @@ schematic, v2.1](http://files.pine64.org/doc/PinebookPro/pinebookpro_v2.1_mainbo
     T45: NC  (LED2 on the chip, pin 39, P42) 
     T38: Ground
 
-The touchpad is connected to the keyboard MCU (and only this - the replacement 
+The touchpad is connected to the keyboard MCU via I2C (and only this - the replacement 
 firmware will need to handle this) and has these test points, which are 
 connected directly to the TP connector: 
 
@@ -29,11 +29,17 @@ connected directly to the TP connector:
     T63: INT 
     T65: Ground
 
+The I2C bus consists of the keyboard MCU as master. There are two devices on the bus: The touchpad
+and an EEPROM that persists the state of the WiFi/Microphone/Camera kill switches.
+
 These test points can be found on the mainboard by looking at the silkscreen of
 the top and bottom:
 
 * https://wiki.pine64.org/images/3/30/Pinebookpro-v2.1-top-ref.pdf
 * https://wiki.pine64.org/images/b/b7/Pinebookpro-v2.1-bottom-ref.pdf
+
+![Touchpad I2C test points](touchpad-i2c.jpg)
+
 
 # Keyboard Connector
 
@@ -55,6 +61,10 @@ down, and have the following mapping:
     P31: MIC_CUT
     P36: WIFI_CUT
     P37: CAM_CUT
+
+The keyboard MCU is connected to an EEPROM that persists the states of each cut. In the
+factory firmware, only the first byte is used, with each cut corresponding to one of the
+3 least significant bits.
 
 # Decompiling
 
@@ -85,3 +95,31 @@ It may be useful to use the HID Descriptor Tool to analyse those blocks in the
 file: https://www.usb.org/document-library/hid-descriptor-tool
 
 The .hid file can be loaded with this tool.
+
+# I2C Captures
+
+The replacement firmware will need to be able to handle the touchpad interrupt, read its registers, and
+present the touchpad reports to a USB endpoint. It will also have to handle updating of the touchpad firmware.
+To better understand how the MCU interacts with the touchpad, captures of I2C traffic have been provided by
+C_Elgens from the [Pine64 Forum](https://forum.pine64.org/showthread.php?pid=56938#pid56938). 
+
+They are in [DSView](https://github.com/DreamSourceLab/DSView) format. DSView can export decoded I2C to a CSV file.
+
+C_Elgens also described what actions were being done on the touchpad during each capture.
+
+| File                                                | Description                                                |
+|-----------------------------------------------------|------------------------------------------------------------|
+| [click.dsl](i2c-captures/click.dsl)                 | A single click using the mouse button                      |
+| [drag.dsl](i2c-captures/drag.dsl)                   | Me dragging my finger around for a few seconds             |
+| [i2c1.dsl](i2c-captures/i2c1.dsl)                   | Random clicks, drags, and taps                             |
+| [start1.dsl](i2c-captures/start1.dsl)               | Recording of the i2c activity on laptop startup            |
+| [start2.dsl](i2c-captures/start2.dsl)               | Same as start1                                             |
+| [tap.dsl](i2c-captures/tap.dsl)                     | A single tap                                               |
+| [updater-step1.dsl](i2c-captures/updater-step1.dsl) | The i2c activity while running step1 of the update utility |
+| [updater-step2.dsl](i2c-captures/updater-step2.dsl) | The i2c activity while running step2 of the update utility |
+
+# Touchpad
+
+Currently, not much is known about the touchpad IC (part no. HLK H2168). From the I2C captures, we know that its
+firmware is written (sans some header/checksum information at the end of tpfw.bin) to an EEPROM addressable at 0x1A
+on the I2C. The update protocol is trivial, and can be fully understood from the updater-step2.dsl capture.
