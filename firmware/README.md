@@ -62,6 +62,10 @@ down, and have the following mapping:
     P36: WIFI_CUT
     P37: CAM_CUT
 
+The keyboard MCU is connected to an EEPROM that persists the states of each cut. In the
+factory firmware, only the first byte is used, with each cut corresponding to one of the
+3 least significant bits.
+
 # Decompiling
 
 The hex files provided by the manufacturer have been decompiled using `dis51`, 
