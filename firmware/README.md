@@ -38,7 +38,7 @@ the top and bottom:
 * https://wiki.pine64.org/images/3/30/Pinebookpro-v2.1-top-ref.pdf
 * https://wiki.pine64.org/images/b/b7/Pinebookpro-v2.1-bottom-ref.pdf
 
-![Touchpad I2C test points](touchpad-i2c.png)
+![Touchpad I2C test points](touchpad-i2c.jpg)
 
 
 # Keyboard Connector
@@ -97,20 +97,20 @@ The .hid file can be loaded with this tool.
 The replacement firmware will need to be able to handle the touchpad interrupt, read its registers, and
 present the touchpad reports to a USB endpoint. It will also have to handle updating of the touchpad firmware.
 To better understand how the MCU interacts with the touchpad, captures of I2C traffic have been provided by
-C_Elgens from the Pine64 Forums.
+C_Elgens from the [Pine64 Forum](https://forum.pine64.org/showthread.php?pid=56938#pid56938). 
 
 They are in [DSView](https://github.com/DreamSourceLab/DSView) format. DSView can export decoded I2C to a CSV file.
 
 C_Elgens also described what actions were being done on the touchpad during each capture.
 
-| File | Description |
-----------------------
-| [click.dsl](i2c-captures/click.dsl) | A single click using the mouse button |
-| [drag.dsl](i2c-captures/drag.dsl) | Me dragging my finger around for a few seconds |
-| [i2c1.dsl](i2c-captures/i2c1.dsl) | Random clicks, drags, and taps |
-| [start1.dsl](i2c-captures/start1.dsl) | Recording of the i2c activity on laptop startup |
-| [start2.dsl](i2c-captures/start2.dsl) | Same as start1 |
-| [tap.dsl](i2c-captures/tap.dsl) | A single tap |
+| File                                                | Description                                                |
+|-----------------------------------------------------|------------------------------------------------------------|
+| [click.dsl](i2c-captures/click.dsl)                 | A single click using the mouse button                      |
+| [drag.dsl](i2c-captures/drag.dsl)                   | Me dragging my finger around for a few seconds             |
+| [i2c1.dsl](i2c-captures/i2c1.dsl)                   | Random clicks, drags, and taps                             |
+| [start1.dsl](i2c-captures/start1.dsl)               | Recording of the i2c activity on laptop startup            |
+| [start2.dsl](i2c-captures/start2.dsl)               | Same as start1                                             |
+| [tap.dsl](i2c-captures/tap.dsl)                     | A single tap                                               |
 | [updater-step1.dsl](i2c-captures/updater-step1.dsl) | The i2c activity while running step1 of the update utility |
 | [updater-step2.dsl](i2c-captures/updater-step2.dsl) | The i2c activity while running step2 of the update utility |
 
