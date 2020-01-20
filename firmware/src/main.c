@@ -59,6 +59,80 @@ void main(void) {
     }
 }
 
+void L0121(void) {
+    // L0121
+    ACC = *DPTR;
+    DPTR++;
+    R0 = ACC;
+
+    // L0129
+    do {
+        ACC = *DPTR;
+        DPTR++;
+        if (!c) {
+            *R0 = ACC;
+        } else {
+            // L0127
+            // MOVX, external memory via PORT0?
+            *R0 = ACC;
+        }
+        // L0128
+        R0++
+    } while (R7 != 0);
+
+    do {
+        // L0122
+        ACC = *DPTR;
+        DPTR++;
+        R0 = ACC;
+        R0 &= 0x07;
+        R0 += 0x0C;
+        if (ACC > 0x7F)
+            c = true;
+        ACC * 2;
+        ACC = swap(ACC); // swap nibbles
+        ACC &= 0x0F;
+        ACC |= 0x20;
+        ACC <> R0; 
+        // this might be accessing a bit op array that comes shortly after this
+        // MOVC A, @A+PC
+        if (c) {
+            // L0125 jump
+            ACC |= *R0;
+        } else {
+            ACC = ~ACC;
+            ACC &= *R0;
+        }
+        // L0126
+        *R0 = ACC;
+        R7
+    } while (R7 != 0);
+
+    // L0124 jump
+    R6 = 0x01;
+    ACC = *DPTR;
+    if (ACC == 0)
+        // L0119
+    DPTR++;
+    R7 == ACC;
+    ACC &= 0x3F;
+    if (ACC & 0x20) {
+        ACC &= 0x1F;
+        R6 = ACC;
+        ACC = *DPTR;
+        DPTR++;
+        if (ACC != 0)
+            R6++;
+    }
+    // L0120
+    A <> R7
+    ACC &= 0xC0;
+    ACC += ACC;
+    if (ACC)
+
+}
+
+
 void L0130(void) {
     // L0130
     EA = 0;
@@ -71,6 +145,7 @@ void L0131(void) {
     // L0131
     PREWDT = 0;
     CLRWDT = 0x55;
+    // ret
 }
 
 void L0132(void) {
@@ -78,7 +153,9 @@ void L0132(void) {
     if (r96 & 0x02) {
         r1B = 1; // or 0xFF?
         // L0476 jump
-        // L0477 call
+        L0477() // call
+        r96 = 0;
+        L0131(); // jump
     } else {
         // L0475
         if (r96 & 0x04) { 
@@ -97,7 +174,7 @@ void L0132(void) {
                     // L0131 jump
                 } else {
                     // L0476 jump
-                    // L0477 call
+                    L0477() // call
                 }
             }
         }
@@ -518,8 +595,128 @@ void L0228(void) {
     ..
 }
 
-// L0259
+void L0247(void) {
+    // L0247
+    r65 = R7;
+    r66 = R5;
+    r67 = R3;
+    r6C = 0;
+    // L0252
+    while (true) {
+        if (!(TXFLG2 & 0x08)) {
+            // L0250
+            L0131();
+        } else {
+            ACC = TXFLG2;
+            ACC = 0x03;
+            break;
+        }
+    }
+
+    // L0251 jump
+    if (r24)
+        return; // L0254 jump
+    
+    // L0253
+    R0 = 0xD5;
+    ACC = *R0;
+    R7 = ACC;
+    ACC &= 0x03;
+    if (ACC)
+        return; // L0254 jump
+
+    // L0255
+    R0 = 0xCF;
+    ACC = *R0;
+    ACC &= 0x18;
+    if (ACC != 0) {
+        ACC = R7;
+        if (ACC & 0x02)
+            r6C = 0x01;
+    }
+
+    // L0256
+    EA = 0;
+    TXDAT2 = 0x1E;
+    R0 = 0xD5;
+    ACC = *R0;
+    if (ACC & 0x01) {
+        R3 = r68;
+        R2 = r69;
+        R1 = r6A;
+        R6 = r02;
+        R7 = r01;
+        ACC = R7;
+        ACC |= R6;
+        if (ACC == 0) {
+            ACC = r66;
+            ACC = swap(ACC);
+            ACC &= 0xF0;
+            R7 = ACC;
+            ACC = r6C;
+            ACC = swap(ACC);
+            ACC = ACC << 3;
+            ACC &= 0x80;
+            ACC |= R7;
+            R7 = ACC;
+            ACC = r67;
+            ACC += ACC;
+            ACC += ACC;
+            ACC |= R7;
+            ACC |= r65;
+            ACC |= r6B;
+            TXDAT2 = ACC;
+            DPTR = 0x0001;
+            ACC = L0258();
+            TXDAT2 = ACC;
+            ACC = L0259();
+            TXDAT2 = ACC;
+            DPTR = 0x0003;
+            ACC = L0258();
+            TXDAT2 = ACC;
+            DPTR = 0x0002;
+            ACC = L0258();
+            ACC &= 0x0F;
+            TXDAT2 = ACC;
+            // L0260
+        }
+    }
+
+    // L0257
+
+    // L0260
+} 
+
+uint8_t L0258(void) {
+    // L0259
+    c = R3 < 0x01;
+    if (R3 == 0x01) {
+        DPL += R1;
+        DPH += R2;
+        return *DPTR;
+    } else {
+        // L0261 jump
+        if (c) {
+            R0 = R1 + DPL;
+            return *R0;
+        } else {
+            // L0262 jump
+            if (R3 == 0xFE) {
+                ACC = R1;
+                R0 = R1 + DPL;
+                return *R0;
+            } else {
+                // L0263
+                DPL += R1;
+                DPH += R2;
+                return *DPTR;
+            }
+        }
+    }
+}
+
 uint8_t L0259(void) {
+    // L0259
     if (R3 > 0x01) {
         // L0264
         return *R1;
@@ -767,13 +964,49 @@ void L0477(void) {
     // L0477
     P3CON = 0x0D;
     r2B = 0;
-    L0131();
-    L0478();
-    L0131();
+    L0131(); // call
+    L0478(); // call
+    L0131(); // call
     R7 = 0x6E;
-    L0297();
-    L0479();
-    // L0480
+    L0297(); // call
+    L0479(); // call
+
+    // L0480 jump {
+    EA = 0;
+    L0131(); // call
+    P4CON |= 0x60;
+    DFC = 0x01;
+    r20 = 0x01;
+    if (!r1B)
+        return; // L0481
+    DFC = 0x41;
+
+    // L0482 call {
+    DADDR = 0
+    r3C = 0x7D;
+    r3D = 0x7D;
+    r3E = 0x01;
+    R7 = 0;
+    // L0484
+    do {
+        R0 = 0x95 + R7;
+        *R0 = 0
+        R0 = 0x97 + R7;
+        *R0 = 0
+        R7++;
+    }
+    while (R7 != 0x02);
+    r44 = 0x01;
+    // } L0482
+    
+    r20 = 0x82;
+    R7 = 0xCA;
+    
+    // L0483 jump 
+    DFC = R7;
+    return; // from L0483
+
+    // } L0480
 }
 
 // sets up a lot of timers and ports
@@ -909,4 +1142,11 @@ void L0478(void) {
     return // this pops up b/c of the jump
 
     // } L0487
+}
+
+void L0479(void) {
+    // L0479
+    BTCON = 0xA0;
+    IE = 0x88;
+    // ret
 }
