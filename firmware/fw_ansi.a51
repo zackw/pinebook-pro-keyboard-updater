@@ -535,7 +535,7 @@ CSEG AT 007Bh
   021F 03           DB 003h 
   0220 06           DB 006h 
   0221 00           DB 000h 
-  0222 FF           DB 0FFh 
+  0222 FF           DB 0FFh
   0223 85           DB 085h 
   0224 20           DB 020h ; ' '
   0225 09           DB 009h ; usage
@@ -1323,7 +1323,7 @@ L0358:
   0536 0207E3		LJMP L0360
 
 L0359:
-  0539 75F002		MOV B, #2h
+  0539 75F002		MOV B, #2h ; keymap gets loaded from here
   053C EF    		MOV A, R7
   053D A4    		MUL AB
   053E 2415  		ADD A, #15h
@@ -1332,7 +1332,7 @@ L0359:
   0544 3408  		ADDC A, #8h
   0546 F583  		MOV DPH, A
   0548 E4    		CLR A
-  0549 93    		MOVC A, @A+DPTR
+  0549 93    		MOVC A, @A+DPTR ; get data from (2 * R7) + 0x815
   054A F565  		MOV 65h, A
   054C 75F002		MOV B, #2h
   054F EF    		MOV A, R7
@@ -1343,7 +1343,7 @@ L0359:
   0557 3408  		ADDC A, #8h
   0559 F583  		MOV DPH, A
   055B E4    		CLR A
-  055C 93    		MOVC A, @A+DPTR
+  055C 93    		MOVC A, @A+DPTR ; get data from (2 * R7) + 0x816
   055D F564  		MOV 64h, A
   055F E565  		MOV A, 65h
   0561 7003  		JNZ L0361
@@ -5019,7 +5019,7 @@ L0299:
 L0322:
   16AB 902401		MOV DPTR, #02401h
   16AE E4    		CLR A
-  16AF 93    		MOVC A, @A+DPTR
+  16AF 93    		MOVC A, @A+DPTR ; loads 0x1A
   16B0 7A23  		MOV R2, #23h
   16B2 79E4  		MOV R1, #0E4h
   16B4 9023E3		MOV DPTR, #023E3h
@@ -5296,7 +5296,7 @@ L0149:
   1805 EF    		MOV A, R7
   1806 7007  		JNZ L0187
   1808 1226F5		LCALL L0188
-  180B F580  		MOV P0, A
+  180B F580  		MOV P0, A ; set PORT0
   180D 8020  		SJMP L0189
 
 L0187:
@@ -5305,7 +5305,7 @@ L0187:
   1814 93    		MOVC A, @A+DPTR
   1815 B40107		CJNE A, #1h, L0195
   1818 1226F5		LCALL L0188
-  181B F590  		MOV P1, A
+  181B F590  		MOV P1, A ; set PORT0
   181D 8010  		SJMP L0189
 
 L0195:
@@ -7406,7 +7406,7 @@ L0314:
   2229 20    		DB 020h ; ' '
   222A 40    		DB 040h ; '@'
   222B 80    		DB 080h 
-  222C FE    		DB 0FEh 
+  222C FE    		DB 0FEh ; gets written to PORT0, PORT1?
   222D FD    		DB 0FDh 
   222E FB    		DB 0FBh 
   222F F7    		DB 0F7h 
@@ -7424,7 +7424,7 @@ L0314:
   223B 7F    		DB 07Fh 
   223C EF    		DB 0EFh 
   223D DF    		DB 0DFh 
-  223E 00    		DB 000h 
+  223E 00    		DB 000h ; loaded in L0149 and L0187
   223F 00    		DB 000h 
   2240 00    		DB 000h 
   2241 00    		DB 000h 
@@ -8387,14 +8387,14 @@ L0141:
   2719 53D0E7		ANL PSW, #0E7h ; PSW &= 0xE7
   271C 22    		RET
 
-  271D 01    		DB 001h 
-  271E 02    		DB 002h 
+  271D 01    		DB 001h ; loaded from L0384, L0172
+  271E 02    		DB 002h ; array matches pattern of bit ops
   271F 04    		DB 004h 
   2720 08    		DB 008h 
   2721 10    		DB 010h 
-  2722 20    		DB 020h ; ' '
-  2723 40    		DB 040h ; '@'
-  2724 80    		DB 080h 
+  2722 20    		DB 020h
+  2723 40    		DB 040h
+  2724 80    		DB 080h ; end array? 
   2725 03    		DB 003h 
   2726 02    		DB 002h 
   2727 03    		DB 003h 
