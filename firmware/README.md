@@ -73,6 +73,11 @@ and are included in this directory as well.
 
 The HID country code has been changed in the hex file by @salcedo here: https://github.com/salcedo/pinebook-pro-keyboard-updater/commit/cbcdc89c4fd519d81b10396ac58ea13921c9d387
 
+Some effort has been made to trace through the assembly calls in fw_ansi.a51,
+and outlined in src/main.c. Things like the matrix scan and i2c management
+have been identified. I don't completed understand which calls get added to the
+stack, so some return statements may be incorrect.
+
 # Test Firmware
 
 The keymap section of the hex file has been identified and commenting has begun
@@ -123,10 +128,3 @@ C_Elgens also described what actions were being done on the touchpad during each
 Currently, not much is known about the touchpad IC (part no. HLK H2168). From the I2C captures, we know that its
 firmware is written (sans some header/checksum information at the end of tpfw.bin) to an EEPROM addressable at 0x1A
 on the I2C. The update protocol is trivial, and can be fully understood from the updater-step2.dsl capture.
-
-# Decompiling
-
-Some effort has been made to trace through the assembly calls in fw_ansi.a51,
-and outlined in src/main.c. Things like the matrix scan and i2c management
-have been identified. I don't completed understand which calls get added to the
-stack, so some return statements may be incorrect.
