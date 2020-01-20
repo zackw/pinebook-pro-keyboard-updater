@@ -123,3 +123,10 @@ C_Elgens also described what actions were being done on the touchpad during each
 Currently, not much is known about the touchpad IC (part no. HLK H2168). From the I2C captures, we know that its
 firmware is written (sans some header/checksum information at the end of tpfw.bin) to an EEPROM addressable at 0x1A
 on the I2C. The update protocol is trivial, and can be fully understood from the updater-step2.dsl capture.
+
+# Decompiling
+
+Some effort has been made to trace through the assembly calls in fw_ansi.a51,
+and outlined in src/main.c. Things like the matrix scan and i2c management
+have been identified. I don't completed understand which calls get added to the
+stack, so some return statements may be incorrect.
