@@ -20,12 +20,9 @@ The changes are described below:
 
 |Description|ANSI Location|ANSI Change|ISO Location|ISO Change|
 |---|---|---|---|---|
-|Force Mic toggle to return from execution at L0455|0x0620|0x12269F to
-0x02269F|0x0620|0x12269D to 0x02269D|
-|Force Wifi toggle to return from execution at L0461|0x0658|0x12269F to
-0x02269F|0x0658|0x12269D to 0x02269D|
-|Process other keys with LGUI correctly at L0463|0x066A|0x0207E3 to
-0x020778|0x066A|0x0207E3 to 0x020778|
+|Force Mic toggle to return from execution at L0455|0x0620|0x12269F to 0x02269F|0x0620|0x12269D to 0x02269D|
+|Force Wifi toggle to return from execution at L0461|0x0658|0x12269F to 0x02269F|0x0658|0x12269D to 0x02269D|
+|Process other keys with LGUI correctly at L0463|0x066A|0x0207E3 to 0x020778|0x066A|0x0207E3 to 0x020778|
 |Make Fn + F9 match the keycap|0x0944|0x53 to 0x46|-|-|
 |Make Fn + F10 match the keycap|0x094A|0x47 to 0x53|-|-|
 |Make Fn + F11 match the keycap|0x0948|0x48 to 0x47|-|-|
