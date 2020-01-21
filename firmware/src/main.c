@@ -991,7 +991,7 @@ void L0302(void) {
         r69--;
         if (R7 == 0) {
             // L0304
-            L0138();
+         L0138();();
             R7 = 0xFA;
             return;
         }
@@ -1252,22 +1252,23 @@ void L0145(void) {
                 L0369();
                 L0374(); // call
                 R7 = r0A;
-                R5 = 0x66;
+                R5 = 0x66; // KC_POWER
             } else if (r65 == 0x0C) { // L0403
                 // one of these, F3 (screen switch)
+                // sends l gui + p
                 R7 = r0A;
-                R5 = 0x64;
+                R5 = 0x64; // KC_NUBS?
                 L0374(); // call
                 // L0404 call
                 R7 = r0A;
-                R5 = 0x13;
+                R5 = 0x13; // KC_P
                 L0374(); // call
                 L0143(); // update hw cuts
                 // L0405
                 while (!(TXFLG1 & 0x08) && (TXFLG1 & 0x03));
                 // L0406
                 R7 = r0A;
-                R5 = 0x08;
+                R5 = 0x08; // KC_E
                 L0370();
                 L0143(); // L0446 update hw cuts
                 return; // L0360
@@ -1312,10 +1313,10 @@ void L0145(void) {
             L0389(); // jump
             return;
         // L0425
-        if (r65 == 0x06) {// these seem to be the same as above
+        if (r65 == 0x06) {
             DPH = L0394(); // call
             R5 = *DPTR;
-            if (R5 == 0xFE) {
+            if (R5 == 0xFE) { // Fn + F7, disables touchpad
                 if (r24)
                     r24 = 1;
                 else
@@ -1328,6 +1329,168 @@ void L0145(void) {
                 // L0373
             }
         }
+        // L0427
+        if (r65 == 0x07) {
+            // L0432 jump
+            if (r26) {
+                // L0398
+                DPTR = (r64 * 2 ) + 0x0942;
+                R5 = *DPTR;
+                // L0431 jump
+            } else {
+                // L0447 jump
+                R0 = 0x15;
+                if (*R0) {
+                    // L0448 jump
+                    // L0399
+                    DPTR = (r64 * 2) + 0x0941;
+                    if (*DPTR == 0x43) { // KC_F10
+                        R7 = 0x01;
+                    } else {
+                        // L0450
+                        R7 = 0x00;
+                    }
+                    // L0451
+                    if (R7) {
+                        R0 = 0x14;
+                        *R0 = 0;
+                        R0 = 0x17;
+                        R7 = R0*;
+                        if (R7 & 0x01) {
+                            // L0454 call
+                            r10 = 0;
+                            r11 = 0;
+                            ACC = R7;
+                            // ret
+                            ACC &= 0xFE;
+                            *R0 = ACC;
+                            r12 = 0x04;
+                        } else {
+                            // L0453 jump
+                            // L0467 call
+                            r10 = 0;
+                            r11 = 0;
+                            R0 = 0x17;
+                            ACC = *R0;
+                            // ret
+                            ACC |= 0x01;
+                            *R0 = ACC;
+                            r12 = 0x06;
+                        }
+                        // L0455
+                        rC0 = 1;
+                        rC1 = 1;
+                        L0456(); // call and ret
+                        L0138(); // call and ret
+                    }
+                    // L0452
+                    // L0399
+                    DPTR = (r64 * 2) + 0x0941;
+                    if (*DPTR == 0x44) { // KC_F11
+                        R7 = 0x01;
+                    } else {
+                        // L0457
+                        R7 = 0x00;
+                    }
+                    // L0458
+                    if (R7) {
+                        R0 = 0x14;
+                        *R0 = 0x01;
+                        R0 = 0x17
+                        R7 = *R0;
+                        if (R7 & 0x02) {
+                            // L0454 call
+                            r10 = 0;
+                            r11 = 0;
+                            ACC = R7;
+                            // ret
+                            ACC &= 0xFD;
+                            *R0 = ACC;
+                            r12 = 0x04;
+                        } else {
+                            // L0460 jump
+                            // L0467 call
+                            r10 = 0;
+                            r11 = 0;
+                            R0 = 0x17;
+                            ACC = *R0;
+                            // ret
+                            ACC |= 0x02;
+                            *R0 = ACC;
+                            r12 = 0x06;
+                        }
+                        // L0461
+                        rC0 = 1;
+                        rC1 = 1;
+                        L0456(); // call and ret
+                        L0138(); // call and ret
+                    }
+                    // L0459
+                    // L0399
+                    DPTR = (r64 * 2) + 0x0941;
+                    if (*DPTR == 0x45) { // KC_F12
+                        R7 = 0x01;
+                    } else {
+                        // L0462
+                        R7 = 0x00;
+                    }
+                    // L0463
+                    if (R7) {
+                        // L0464
+                        R0 = 0x14;
+                        *R0 = 0x02;
+                        R0 = 0x17;
+                        R7 = *R0;
+                        if (R7 & 0x04) {
+                            // L0454 call
+                            r10 = 0;
+                            r11 = 0;
+                            ACC = R7;
+                            // ret
+                            ACC &= 0xFB;
+                            *R0 = ACC;
+                            r12 = 0x04;
+                        } else {
+                            // L0465
+                            // L0467 call
+                            r10 = 0;
+                            r11 = 0;
+                            R0 = 0x17;
+                            ACC = *R0;
+                            // ret
+                            ACC |= 0x04;
+                            *R0 = ACC;
+                            r12 = 0x06;
+                        }
+                        // L0466
+                        rC0 = 1;
+                        rC1 = 1;
+                        L0136();
+                        R5 = 0x01;
+                        R7 = 0xA0;
+                        L0137();
+                        R5 = 0x01;
+                        R7 = 0x00;
+                        L0137();
+                        R0 = 0x17;
+                        R7 = *R0;
+                        R5 = 0x01;
+                        L0137();
+                        L0138();
+                    } else {
+                        return; // L0360 i think this should be changed
+                    }
+                } else {
+                    // L0449
+                    L0399();
+                    R5 = ACC;
+                    // L0431 jump
+                }
+            }
+        }
+        // L0433
+
+
         // L0428
         // L0396 call
         // L0431 jump
@@ -1528,6 +1691,22 @@ void L0384(void) {
     *R0 = ACC;
     r21 = 1;
     return; // L0386
+}
+
+void L0456(void) {
+    // L0456
+    L0136();
+    R5 = 0x01;
+    R7 = 0xA0;
+    L0137();
+    R5 = 0x01;
+    R7 = 0x00;
+    L0137();
+    R0 = 0x17;
+    R7 = *R0;
+    R5 = 0x01;
+    L0137();
+    // ret
 }
 
 void L0477(void) {
