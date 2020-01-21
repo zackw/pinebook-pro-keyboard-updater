@@ -94,7 +94,7 @@ static int flash_kb_ansi_test()
 {
   int rc;
 
-  rc = write_kb_fw(firmware_fw_ansi_gui_fix, firmware_fw_ansi_gui_fix_len);
+  rc = write_kb_fw(firmware_fw_ansi_gui_hex_fix, firmware_fw_ansi_gui_hex_fix_len);
   if (rc < 0) {
     return rc;
   }
