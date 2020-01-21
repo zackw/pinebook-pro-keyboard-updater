@@ -90,11 +90,23 @@ static int flash_kb_ansi()
   return 0;
 }
 
-static int flash_kb_ansi_test()
+static int flash_kb_ansi_gui_fix()
 {
   int rc;
 
   rc = write_kb_fw(firmware_fw_ansi_gui_fix_hex, firmware_fw_ansi_gui_fix_hex_len);
+  if (rc < 0) {
+    return rc;
+  }
+
+  return 0;
+}
+
+static int flash_kb_iso_gui_fix()
+{
+  int rc;
+
+  rc = write_kb_fw(firmware_fw_iso_gui_fix_hex, firmware_fw_iso_gui_fix_hex_len);
   if (rc < 0) {
     return rc;
   }
@@ -171,8 +183,11 @@ int main(int argc, char *argv[])
     rc = flash_kb_iso();
   } else if (!strcmp(argv[1], "flash-kb-ansi")) {
     rc = flash_kb_ansi();
-  } else if (!strcmp(argv[1], "flash-kb-ansi-test")) {
-    rc = flash_kb_ansi_test();
+  } else if (!strcmp(argv[1], "flash-kb-gui-fix")) {
+    if (strcmp(argv[2], "ansi"))
+      rc = flash_kb_ansi_gui_fix();
+    else
+      rc = flash_kb_iso_gui_fix();
   } else {
     rc = usage(argv[0]);
   }

@@ -85,7 +85,7 @@ in `fw_ansi.a51`. Right now the edits to `fw_ansi_test.hex` have been manual
 using a tool like https://www.fischl.de/hex_checksum_calculator/?
 
 The current version of `fw_ansi_test.hex` can be flashed after compiling with
-`sudo ./updater flash-kb-ansi-test blah` (the third argument is a dummy), and
+`sudo ./updater flash-kb-ansi-test ansi` (the third argument is a dummy), and
 replaces the caps lock key with escape, and has been tested successfully. It
 currently only works with ANSI keyboards.
 
