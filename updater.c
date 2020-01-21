@@ -186,7 +186,7 @@ int main(int argc, char *argv[])
   } else if (!strcmp(argv[1], "flash-kb-ansi")) {
     rc = flash_kb_ansi();
   } else if (!strcmp(argv[1], "flash-kb-gui-fix")) {
-    if (strcmp(argv[2], "ansi"))
+    if (!strcmp(argv[2], "ansi"))
       rc = flash_kb_ansi_gui_fix();
     else
       rc = flash_kb_iso_gui_fix();
