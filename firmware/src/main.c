@@ -246,18 +246,7 @@ void L0134(void) {
     if (*R0 == 0xFF)
         *R0 = 0;
 
-    // L0140
-    while (true) {
-        L0131(); // call
-        // L0141
-        IRQEN |= 0x06;
-        IE2 |= 0x5B;
-        IE |= 0x80;
-        PSW ^= 0xE7;
-        if (r03)
-            L0142(); // from jump - RETs may exit while
-        r21 = 0;
-    }
+    L0140();
 }
 
 // L0136
@@ -321,6 +310,25 @@ void L0138(void) {
     P3CON |= 0x01;
 }
 
+
+// main loop possibly
+void L0140(void) {
+    // L0140
+    while (true) {
+        L0131(); // call and ret
+        // L0141 call {
+        IRQEN |= 0x06;
+        IE2 |= 0x5B;
+        IE |= 0x80;
+        PSW ^= 0xE7;
+        // ret } L0141
+        if (r03) { // interupt revieced? run matrix scan
+            L0142(); // jump
+            return;
+        }
+        r21 = 0;
+    }
+}
 void L0142(void) {
     // L0142
     L0143();
@@ -394,7 +402,7 @@ void L0142(void) {
     L0145(); // keymap parse with r51, r37 (index from 0x82), 0x80 0x81
 }
 
-// updates the hardware cuts based on R6
+// updates the hardware cuts based on values at 0x17
 void L0143(void) {
     // L0143
     R0 = 0x17;
@@ -1242,7 +1250,7 @@ void L0145(void) {
             } else if (r65 == 0x09) { // L0401
                 // only one of these, the esc key (sleep)
                 L0369();
-                L0374();
+                L0374(); // call
                 R7 = r0A;
                 R5 = 0x66;
             } else if (r65 == 0x0C) { // L0403
@@ -1325,6 +1333,8 @@ void L0145(void) {
         // L0431 jump
         R7 = r0A;
         // L0373
+        L0374(); // jump
+        return;
 
     }
     r37 = 0;
@@ -1332,28 +1342,97 @@ void L0145(void) {
     if (r09) { // L0358
         r09 = 0;
     }
-    c = r6D < 0xF1;
-    if (r6D != 0xF1) {
-        // L0198
-        if (r92 != 0) {
-            // L0200
-            // L0286
-            if (r93 + 0x0F = 0) {
-                // L0287
-                EA = 0;
-                // L0340
-                    L0294();
-                    R2 = 0x23;
-                    R1 = 0xE7;
-                    L0343(0x23E6);
-                    if (R7 != 0xFB)
-                        // L0344
-
-
+    R0 = 0x6D;
+    if (*R0 == 0xF1) {
+        *R0 = 0;
+        EA = 0;
+        // L0199 call { should be its own function i think
+            L0136();
+            R5 = 0x01;
+            R7 = 0x20;
+            L0137();
+            if (R7 != 0xFB) {
+                // L0353 jump
+                R5 = 0x01;
+                R7 = 0x1D;
+                L0137();
+                L0138();
+                L0220();
+                L0136();
+                R5 = 0x01;
+                R7 = 0x21;
+                L0137();
+                if (R7 != 0xFB) {
+                    // L0355
+                    R7 = 0x01;
+                    L0139();
+                    R0 = 0x6D;
+                    *R0 = r07;
+                    L0138();
+                    // ret
+                }
             }
-        }
-
+            // L0354 jump
+            L0138();
+            R0 = 0x6D;
+            *R0 = 0;
+            // ret
+        // } L099
+        EA = 1;
     }
+    // L0198
+    R0 = 0x92
+    if (*R0 == 0) {
+        // L0201 call
+    } else {
+        // L0200
+        L0286();
+    }
+    // L0202
+    if (r0B) {
+        r0B = 0;
+        // L0204 call {
+        if (r3C)
+            if (--r3D == 0)
+                r3D = r3C // possibly backwards
+        // ret from L0211 } L0204
+        if (r12 == 0) {
+            // L0205 call {
+            r9E &= 0xF8;
+            if (r2B & 0x01) {
+                rC1 = 0;
+                r1A = 1;
+            } else {
+                // L0206
+                rC1 = 1;
+                r1A = 0;
+            }
+            // L0207
+            if (r2B & 0x02) {
+                rC0 = 0;
+            } else {
+                // L0208
+                rC0 = 1;
+            }
+            // L0209
+            if (r2D & 0x04) {
+                rC2 = 0;
+                // ret
+            } else {
+                // L0210
+                rC2 = 1;
+                // ret
+            }
+            // } L0205
+        }
+    } else {
+        // L0203
+        if (r0C) {
+            r0C = 0;
+        }
+    }
+    L0140();
+
 }
 
 // set R5 modifiers to 0xAC
