@@ -394,6 +394,7 @@ void L0142(void) {
     L0145(); // keymap parse with r51, r37 (index from 0x82), 0x80 0x81
 }
 
+// updates the hardware cuts based on R6
 void L0143(void) {
     // L0143
     R0 = 0x17;
@@ -524,8 +525,7 @@ void L0149(void) {
         L0184(); // jump
         // might return here
     }
-    ACC = *(0x223E + r26); // array of 8 0s, 8 1s, 2 3s - ports for columns?
-    R7 = ACC;
+    R7 = *(0x223E + r26); // ports for columns (0, 1, 3)
     if (R7 > 0x04) || ((R7 ^ 0x02) == 0) { // loop exit for the number of cols
         // L0186
         r0F = 1;
@@ -534,7 +534,7 @@ void L0149(void) {
         // might return here
     }
     if (R7 == 0) {
-        PORT0 = L0188(r26); // config for rows - compliment of the bit offset
+        PORT0 = L0188(r26); // pins for ports (active pull down)
     } else {
         // L0187
         ACC = *(0x223E + r26);
@@ -1118,7 +1118,7 @@ void L0145(void) {
             r0A = 0;
         } else {
             // L0470
-            r0A = 1;
+            r0A = 1; // this is pressed vs released
         }
         // L0471
         // ret } L0362
@@ -1139,13 +1139,15 @@ void L0145(void) {
                 // 7 of these, with non-seq r64 values
                 // possibly modifier keys
                 if (r64 == 0x08) {
-                    // only one with this value - maybe fn key?
+                    // special action for gui key?
+                    // this is probably causing the bug in 
+                    // ayufan-rock64/pinebook-pro-keyboard-updater#7
                     R0 = 0x15;
                     *R0 = 0;
                 }
                 // L0368
                 L0369(); // call and ret
-                L0370(); // jump and ret
+                L0370(); // jump and ret, this sets modifiers to 0xAC
                 return; // beyond L0359 apparently
             }
             // L0367
@@ -1189,6 +1191,7 @@ void L0145(void) {
             // L0388
             if (r65 == 0x06) {
                 // 6 of these with incrementing r64 values
+                // consumer page maybe?
                 // L0394 call
                 DPTR = (r64 * 2) + 0x0936;
                 // L0395 call
@@ -1204,7 +1207,7 @@ void L0145(void) {
                 R7 = r0A;
             } else if (r65 == 0x07) { // L0393
                 // there's 11 of these in the matrix, with incrementing r64 values
-                // maybe this was done to group them together/handle separately?
+                // regular keycodes
                 // L0398
                 DPTR = (r64 * 2 ) + 0x0942;
                 // L0395
@@ -1221,6 +1224,7 @@ void L0145(void) {
                 R7 = r0A;
             } else if (r65 == 0x0A) { // L0397
                 // there's 15 of these in the martix, with incrementing r64 values
+                // keypad keycodes
                 // L0402
                 // L0395
                 DPH = ACC;
@@ -1250,14 +1254,14 @@ void L0145(void) {
                 R7 = r0A;
                 R5 = 0x13;
                 L0374(); // call
-                L0143();
+                L0143(); // update hw cuts
                 // L0405
                 while (!(TXFLG1 & 0x08) && (TXFLG1 & 0x03));
                 // L0406
                 R7 = r0A;
                 R5 = 0x08;
                 L0370();
-                L0143(); // L0446
+                L0143(); // L0446 update hw cuts
                 return; // L0360
 
             } else {
@@ -1352,7 +1356,9 @@ void L0145(void) {
     }
 }
 
+// set R5 modifiers to 0xAC
 void L0370(void) {
+    // L0370
     r22 = 1;
     if (R7 != 0) {
         R0 = 0xAC;
