@@ -7398,7 +7398,7 @@ L0314:
   2221 27    		DB 027h ; '''
   2222 29    		DB 029h ; ')'
   2223 22    		DB 022h ; '"'
-  2224 01    		DB 001h 
+  2224 01    		DB 001h ; another bit array
   2225 02    		DB 002h 
   2226 04    		DB 004h 
   2227 08    		DB 008h 
@@ -7746,7 +7746,7 @@ L0284:
   23FE EE    		DB 0EEh ; KEY_MEDIA_VOLUMEDOWN 
   23FF A0    		DB 0A0h 
   2400 08    		DB 008h 
-  2401 1A    		DB 01Ah ; referenced a couple times in DPTR setting (KC_W)
+  2401 1A    		DB 01Ah ; referenced a couple times, L0316
   2402 8F    		DB 08Fh ; Keyboard International9
   2403 4A    		DB 04Ah ; KC_HOME
   2404 E4    		DB 0E4h ; KC_RCTL
@@ -9650,7 +9650,7 @@ L0072:
   3E62 75833F		MOV DPH, #3Fh
   3E65 EC    		MOV A, R4
   3E66 30E706		JNB ACC.7, L0075
-  3E69 44C0  		ORL A, #0C0h
+  3E69 44C0  		ORL A, #0C0h ; preps address near 0x3FC0?
   3E6B F582  		MOV DPL, A
   3E6D C189  		AJMP L0076
 
