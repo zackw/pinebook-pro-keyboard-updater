@@ -5,19 +5,19 @@ SOURCES := \
 	usb_context.c \
 	usb_keyboard.c \
 	usb_touchpad.c \
-	firmware/fw_tp_update.hex.c \
-	firmware/fw_iso.hex.c \
-	firmware/fw_ansi.hex.c \
-	firmware/fw_ansi_gui_fix.hex.c \
-	firmware/fw_iso_gui_fix.hex.c \
-	firmware/tpfw.bin.c \
+	firmware/fw_tp_update_hex.c \
+	firmware/fw_iso_hex.c \
+	firmware/fw_ansi_hex.c \
+	firmware/tpfw_bin.c \
+	firmware/fw_ansi_gui_fix_hex.c \
+	firmware/fw_iso_gui_fix_hex.c \
 
 all: updater
 
-firmware/%.hex.c: firmware/%.hex
+firmware/%_hex.c: firmware/%.hex
 	xxd -i $^ $@
 
-firmware/%.bin.c: firmware/%.bin
+firmware/%_bin.c: firmware/%.bin
 	xxd -i $^ $@
 
 updater: $(SOURCES)
