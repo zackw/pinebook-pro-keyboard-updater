@@ -10,8 +10,8 @@ extern unsigned char firmware_fw_iso_hex[];
 extern unsigned int firmware_fw_iso_hex_len;
 extern unsigned char firmware_fw_ansi_hex[];
 extern unsigned int firmware_fw_ansi_hex_len;
-extern unsigned char firmware_fw_ansi_gui_fix[];
-extern unsigned int firmware_fw_ansi_gui_fix_len;
+extern unsigned char firmware_fw_ansi_gui_hex_fix[];
+extern unsigned int firmware_fw_ansi_gui_fix_hex_len;
 extern unsigned char firmware_tpfw_bin[];
 extern unsigned int firmware_tpfw_bin_len;
 
