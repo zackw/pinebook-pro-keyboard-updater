@@ -1134,7 +1134,7 @@ void L0145(void) {
         if (r65 == 0x04) {
             // one of these, with r64=0 possibly fn?
             if (r0A) {
-                r26 = 1;
+                r26 = 1; // fn actions
             } else {
                 // L0364
                 r26 = 0;
@@ -1381,7 +1381,7 @@ void L0145(void) {
                         rC0 = 1;
                         rC1 = 1;
                         L0456(); // call and ret
-                        L0138(); // call and ret
+                        L0138(); // call and ret, switch to jump
                     }
                     // L0452
                     // L0399
@@ -1423,7 +1423,7 @@ void L0145(void) {
                         rC0 = 1;
                         rC1 = 1;
                         L0456(); // call and ret
-                        L0138(); // call and ret
+                        L0138(); // call and ret, switch to jump
                     }
                     // L0459
                     // L0399
@@ -1476,7 +1476,7 @@ void L0145(void) {
                         R7 = *R0;
                         R5 = 0x01;
                         L0137();
-                        L0138();
+                        L0138(); // switch to jump
                     } else {
                         return; // L0360 i think this should be changed
                     }
