@@ -391,7 +391,7 @@ void L0142(void) {
         }
 
     }
-    L0145(); // keymap parse with r51, r37 (index from 0x82)
+    L0145(); // keymap parse with r51, r37 (index from 0x82), 0x80 0x81
 }
 
 void L0143(void) {
@@ -1083,16 +1083,244 @@ void L0145(void) {
     // L0145
     // L0197 call
     if (r51 != r37) {
-        // L0356
+        // L0356 jump
         r37++;
         r37 &= 0x0F;
-        // L0358
+        // L0358 call
         R0 = r37 + 0x82;
         R7 = *R0;
-        if (R7 < 0x90)
-            L0359();
-        else
+        if (R7 >= 0x90)
             return; // L0360
+
+        // where the actual keymap gets loaded
+
+        // L0359
+        r65 = *((2 * R7) + 0x815); // fn key
+        r64 = *((2 * R7) + 0x816); // normal
+        if (r65 == 0)
+            return; // L0360
+        // L0361
+        // L0362 call {
+        if (r37 & 0x08) {
+            ACC = L0172(r37);
+            R0 = 0x81;
+            ACC &= *R0;
+            R7 = ACC;
+        } else {
+            // L0468
+            ACC = L0172(r37);
+            R0 = 0x80;
+            ACC &= *R0;
+            R7 = ACC;
+        }
+        // L0469
+        if (R7 == 0) { // something set at 0x80/0x81 earlier on
+            r0A = 0;
+        } else {
+            // L0470
+            r0A = 1;
+        }
+        // L0471
+        // ret } L0362
+        
+        if (r65 == 0x04) {
+            // one of these, with r64=0 possibly fn?
+            if (r0A) {
+                r26 = 1;
+            } else {
+                // L0364
+                r26 = 0;
+            }
+        }
+        // L0363 jump
+        if (!r0A) {
+            // L0366 jump
+            if (r65 == 0x02) {
+                // 7 of these, with non-seq r64 values
+                // possibly modifier keys
+                if (r64 == 0x08) {
+                    // only one with this value - maybe fn key?
+                    R0 = 0x15;
+                    *R0 = 0;
+                }
+                // L0368
+                L0369(); // call and ret
+                L0370(); // jump and ret
+                return; // beyond L0359 apparently
+            }
+            // L0367
+            if (r65 == 0x01) {
+                // indicates it's a normal key and can be passed through
+                // L0422
+                L0369(); // call and ret
+            }
+            // L0372
+            if (r65 == 0x03) {
+                // as far as i can tell there's none of these in r65
+                // L0424
+                L0369(); // call and ret
+                L0384(); // jump
+                return;
+            }
+            // L0383
+            if (r65 == 0x05) {
+                // none in r65
+                // L0426
+                L0369(); // call and ret
+                // L0389
+                if (R7) {
+                    R0 = 0xB3;
+                    if (*R0 & R5)
+                        return; // L0391
+                    ACC = ;
+                    ACC = *R0 | R5;
+                } else {
+                    // L0390
+                    R0 = 0xB3;
+                    if (*R0 & R5 == 0)
+                        return; // L0391
+                    ACC = ~R5 & *R0;
+                }
+                // L0392
+                *R0 = ACC;
+                r20 = 1;
+                return; // L0391
+            }
+            // L0388
+            if (r65 == 0x06) {
+                // 6 of these with incrementing r64 values
+                // L0394 call
+                DPTR = (r64 * 2) + 0x0936;
+                // L0395 call
+                ACC = *DPTR;
+                // L0400
+                R5 = ACC;
+                R7 = r0A;
+                L0374(); // call
+                // L0396 call
+                DPTR = (r64 * 2) + 0x0935;
+                R5 = *DPTR;
+                // L0431
+                R7 = r0A;
+            } else if (r65 == 0x07) { // L0393
+                // there's 11 of these in the matrix, with incrementing r64 values
+                // maybe this was done to group them together/handle separately?
+                // L0398
+                DPTR = (r64 * 2 ) + 0x0942;
+                // L0395
+                ACC = *DPTR;
+                // L0400
+                R5 = ACC;
+                R7 = r0A;
+                L0374(); // call
+                // L0399
+                DPTR = (r64 * 2) + 0x0941;
+                ACC = *DPTR;
+                // L0400
+                R5 = ACC;
+                R7 = r0A;
+            } else if (r65 == 0x0A) { // L0397
+                // there's 15 of these in the martix, with incrementing r64 values
+                // L0402
+                // L0395
+                DPH = ACC;
+                ACC = *DPTR;
+                // L0400
+                R5 = ACC;
+                R7 = r0A;
+                L0374(); // call
+                DPTR = (r64 * 2 ) + 0x0957;
+                // L0395
+                ACC = *DPTR;
+                // L0400
+                R5 = ACC;
+                R7 = r0A;
+            } else if (r65 == 0x09) { // L0401
+                // only one of these, the esc key (sleep)
+                L0369();
+                L0374();
+                R7 = r0A;
+                R5 = 0x66;
+            } else if (r65 == 0x0C) { // L0403
+                // one of these, F3 (screen switch)
+                R7 = r0A;
+                R5 = 0x64;
+                L0374(); // call
+                // L0404 call
+                R7 = r0A;
+                R5 = 0x13;
+                L0374(); // call
+                L0143();
+                // L0405
+                while (!(TXFLG1 & 0x08) && (TXFLG1 & 0x03));
+                // L0406
+                R7 = r0A;
+                R5 = 0x08;
+                L0370();
+                L0143(); // L0446
+                return; // L0360
+
+            } else {
+                return;
+            }
+            // L0373
+            L0374();
+            return
+        }
+        // L0365
+        if (r65 == 0x02) {
+            if (r64 == 0x08) {
+                R0 = 0x15;
+                *R0 = 0x01;
+            }
+            // L0420 next
+            // L0368 jump
+            L0369(); // call
+            L0370(); // jump
+            return;
+
+        }
+        // L0419
+        if (r65 == 0x01) {
+            // L0422 jump
+            L0369(); // call
+            L0373(); // jump
+            return;
+        }
+        // L0421
+        if (r65 == 0x03)
+            // L0424 jump
+            L0369(); // call
+            L0384(); // jump
+            return;
+        // L0423
+        if (r65 == 0x05)
+            // L0426 jump
+            L0369(); // call
+            L0389(); // jump
+            return;
+        // L0425
+        if (r65 == 0x06) {// these seem to be the same as above
+            DPH = L0394(); // call
+            R5 = *DPTR;
+            if (R5 == 0xFE) {
+                if (r24)
+                    r24 = 1;
+                else
+                    r24 = 0;
+                return;
+            } else {
+                // L0429 jump
+                // L0431 jump
+                R7 = r0A;
+                // L0373
+            }
+        }
+        // L0428
+        // L0396 call
+        // L0431 jump
+        R7 = r0A;
+        // L0373
 
     }
     r37 = 0;
@@ -1124,308 +1352,9 @@ void L0145(void) {
     }
 }
 
-// L0359
-// where the actual keymap gets loaded
-void L0359(uint8_t R7) {
-    r65 = *((2 * R7) + 0x815); // fn key
-    r64 = *((2 * R7) + 0x816); // normal
-    if (r65 == 0)
-        return; // L0360
-    // L0361
-    // L0362 call {
-    if (r37 & 0x8) {
-        ACC = L0172(r37);
-        R0 = 0x81;
-        ACC &= *R0;
-        R7 = ACC;
-    } else {
-        // L0468
-        ACC = L0172(r37);
-        R0 = 0x80;
-        ACC &= *R0;
-        R7 = ACC;
-    }
-    // L0469
-    if (R7 == 0) {
-        C = 0;
-    } else {
-        // L0470
-        C = 1;
-    }
-    // L0471
-    r0A = C;
-    // ret } L0362
-    
-    if (r65 == 0x04) {
-        if (r0A) {
-            r26 = 1;
-        } else {
-            // L0364
-            r26 = 0;
-        }
-    }
-    // L0363 jump
-    if (!r0A) {
-        // L0366 jump
-        if (r65 == 0x02) {
-            if (r64 == 0x08) {
-                R0 = 0x15;
-                *R0 = 0;
-            }
-            // L0368 jump
-            L0369(); // call and ret
-            // L0370 jump and ret
-            return; // beyond L0359 apparently
-        }
-        // L0367
-        if (r65 == 0x01) {
-            // L0422
-            L0369(); // call and ret
-            // L0373 jump
-            // L0374 jump
-            if (R7) {
-                R6 = 0;
-                // L0378 next op
-                do {
-                    R0 = 0xAD + R6;
-                    if (!*R0) {
-                        R0 = 0xAD + R6;
-                        *R0 = r05;
-                        r22 = 1;
-                        return; // beyond L0359
-                    }  
-                    // L0376
-                    R0 = 0xAD + R6;
-                    if (!(*R0 ^ R5))
-                        return; // L0377, beyond L0359
-                    R6++;
-                } while (R6 != 0x06);
-                return;
-            }
-            // L0375
-            R6 = 0;
-            // L0382
-            do {
-                R0 = 0xAD + R6;
-                if (*R0 ^ R5 == 0) {
-                    if (0x05 < R6) {
-                        R7 = r06;
-                        // L0381
-                        while (true) {
-                            if (0x05 < R7)
-                                break;
-                            R0 = 0xAE + R7;
-                            R4 = *R0;
-                            R0 = 0xAD + R7;
-                            *R0 = r04;
-                            R7++;
-                        }
-                    }
-                    // L0380
-                    R0 = 0xB2;
-                    *R0 = 0;
-                    r22 = 1;
-                    return; // beyond
-                }
-                // L0379
-                R6++;
-            } while (R6 != 0x06);
-            return;
-        }
-        // L0372
-        if (r65 == 0x03) {
-            // L0424
-            L0369(); // call and ret
-            // L0384 jump
-            ACC = R5 + 0x50;
-            ACC >> 3;
-            ACC &= 0x1F;
-            R6 = ACC;
-            r06 &= 0x1F;
-            R6++;
-            ACC = *(R5 & 0x07 + 0x271D);
-            R3 = ACC;
-            R4 = ACC;
-            if (R7) {
-                R0 = 0xB3 + R6;
-                if (R4 & *R0)
-                    return; // L0386
-                ACC = *R0 | R4;
-            } else {
-                // L0385
-                R0 = 0xB3 + R6;
-                if (R4 & *R0 == 0)
-                    return; // L0386
-                ACC = ~R3 & *R0;
-            }
-            // L0387
-            *R0 = ACC;
-            r21 = 1;
-            return; // L0386
-        }
-        // L0383
-        if (r65 == 0x05) {
-            // L0426
-            L0369(); // call and ret
-            // L0389
-            if (R7) {
-                R0 = 0xB3;
-                if (*R0 & R5)
-                    return; // L0391
-                ACC = ;
-                ACC = *R0 | R5;
-            } else {
-                // L0390
-                R0 = 0xB3;
-                if (*R0 & R5 == 0)
-                    return; // L0391
-                ACC = ~R5 & *R0;
-            }
-            // L0392
-            *R0 = ACC;
-            r20 = 1;
-            return; // L0391
-        }
-        // L0388
-        if (r65 ^ 0x06 == 0) { // this is where the 0x0935 array is referenced
-            // L0394 call
-            DPL = (r64 * 2) + 0x36;
-            ACC = (c?) + 0x09; // if DPL is > 255
-            // L0395 call
-            DPH = ACC;
-            ACC = *DPTR;
-            // L0400
-            R5 = ACC;
-            C = 0x0A; // not sure what this does yet
-            ACC = 0;
-            R7 = ACC << 1;
-            L0374(); // call
-            // L0396 call
-            DPL = (r64 * 2) + 0x35;
-            ACC = (c?) + 0x09; // if DPL is > 255
-            DPH = ACC;
-            R5 = *DPTR;
-
-            // L0431
-            C = 0x0A;
-            ACC = 0;
-            R7 = ACC < 1;
-        } else if (r65 ^ 0x7 == 0) { // L0393
-            // L0398
-            DPL = (r64 * 2 ) + 0x42;
-            ACC = (c?) + 0x09; // if DPL is > 255
-            // L0395
-            DPH = ACC;
-            ACC = *DPTR;
-            // L0400
-            R5 = ACC;
-            C = 0x0A; // not sure what this does yet
-            ACC = 0;
-            R7 = ACC << 1;
-            L0374(); // call
-            // L0399
-            DPL = (r64 * 2) + 0x41;
-            ACC = (c?) + 0x09; // if DPL is > 255
-            DPH = ACC;
-            ACC = *DPTR;
-            // L0400
-            R5 = ACC;
-            C = 0x0A; // not sure what this does yet
-            ACC = 0;
-            R7 = ACC << 1;
-        } else if (r65 ^ 0x0A == 0) { // L0397
-            // L0402
-            // L0395
-            DPH = ACC;
-            ACC = *DPTR;
-            // L0400
-            R5 = ACC;
-            C = 0x0A; // not sure what this does yet
-            ACC = 0;
-            R7 = ACC << 1;
-            L0374(); // call
-            DPL = (r64 * 2 ) + 0x57;
-            ACC = (c?) + 0x09; // if DPL is > 255
-            // L0395
-            DPH = ACC;
-            ACC = *DPTR;
-            // L0400
-            R5 = ACC;
-            C = 0x0A; // not sure what this does yet
-            ACC = 0;
-            R7 = ACC << 1;
-        } else if (r65 == 0x09) { // L0401
-            L0369();
-            L0374();
-            C = 0x0A;
-            ACC = 0;
-            // L0441
-            R7 = ACC << 1;
-            R5 = 0x66;
-        } else if (r65 == 0x0C) { // L0403
-            C = 0x0A;
-            ACC = 0;
-            R7 = ACC << 1;
-            R5 = 0x64;
-            L0374();
-            // L0404 call
-            C = 0x0A;
-            ACC = 0;
-            R7 = ACC << 1;
-            R5 = 0x13;
-            L0374();
-            L0143();
-            // L0405
-            ..
-        } else {
-            return;
-        }
-        // L0373
-    }
-    // L0365
-    if (r65 == 0x02) {
-        if (r64 == 0x04) {
-            R0 = 0x15;
-            *R0 = 0x01;
-        }
-        // L0420
-
-    }
-    // L0419
-        c = r65 < 0x01;
-        if (r65 == 0x01)
-            // L0424
-        // L0421
-        if (r65 == 0x03)
-            // L0424
-        // L0423
-        if (r65 == 0x05)
-            // L0426
-        // L0425
-
-        else
-            // L0422
-                L0369();
-                // L0373
-    } else {
-        if (r64 == 0x08)
-            R0 = 0x15
-            *R0 = 0x01;
-        // L0420
-        // L0368
-            L0369();
-        // L0367
-        c = r65 < 0x01;
-        if (r65 != 0x01)
-            // L0372
-        else
-            // L0422
-    }
-}
-
 void L0370(void) {
     r22 = 1;
-    if (r7 != 0) {
+    if (R7 != 0) {
         R0 = 0xAC;
         *R0 |= R5;
     } else {
@@ -1434,6 +1363,86 @@ void L0370(void) {
         *R0 &= ~R5;
     }
     // ret
+}
+
+void L0374(void) {
+    if (R7) {
+        R6 = 0;
+        // L0378 next op
+        do {
+            R0 = 0xAD + R6;
+            if (!*R0) {
+                R0 = 0xAD + R6;
+                *R0 = r05;
+                r22 = 1;
+                return; // beyond L0359
+            }  
+            // L0376
+            R0 = 0xAD + R6;
+            if (!(*R0 ^ R5))
+                return; // L0377, beyond L0359
+            R6++;
+        } while (R6 != 0x06);
+        return;
+    }
+    // L0375
+    R6 = 0;
+    // L0382
+    do {
+        R0 = 0xAD + R6;
+        if (*R0 ^ R5 == 0) {
+            if (0x05 < R6) {
+                R7 = r06;
+                // L0381
+                while (true) {
+                    if (0x05 < R7)
+                        break;
+                    R0 = 0xAE + R7;
+                    R4 = *R0;
+                    R0 = 0xAD + R7;
+                    *R0 = r04;
+                    R7++;
+                }
+            }
+            // L0380
+            R0 = 0xB2;
+            *R0 = 0;
+            r22 = 1;
+            return; // beyond
+        }
+        // L0379
+        R6++;
+    } while (R6 != 0x06);
+    return;
+}
+
+void L0384(void) {
+    // L0384
+    ACC = R5 + 0x50;
+    ACC >> 3;
+    ACC &= 0x1F;
+    R6 = ACC;
+    r06 &= 0x1F;
+    R6++;
+    ACC = *(R5 & 0x07 + 0x271D);
+    R3 = ACC;
+    R4 = ACC;
+    if (R7) {
+        R0 = 0xB3 + R6;
+        if (R4 & *R0)
+            return; // L0386
+        ACC = *R0 | R4;
+    } else {
+        // L0385
+        R0 = 0xB3 + R6;
+        if (R4 & *R0 == 0)
+            return; // L0386
+        ACC = ~R3 & *R0;
+    }
+    // L0387
+    *R0 = ACC;
+    r21 = 1;
+    return; // L0386
 }
 
 void L0477(void) {
