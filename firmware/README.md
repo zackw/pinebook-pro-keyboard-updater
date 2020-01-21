@@ -4,7 +4,22 @@ The Pinebook Pro's (PBP) keyboard firmware source isn't available, so this is a
 collection of information and code that may assist in writing something from 
 scratch, with the eventual goal of running QMK.
 
-# Hardware
+## Replacement Firmware
+
+Some issues in the stock firmware have been addressed with the 
+`fw_<type>_gui_fix.hex` files. The changes are described below:
+
+|Description|ANSI Location|ANSI Change|ISO Location|ISO Change|
+|---|---|---|---|---|
+|Force F10 to return from execution at L0455|0x0620|12269F to 02269F|0x0620|12269D to 02269D|
+|Force F11 to return from execution at L0461|0x0658|12269F to 02269F|0x0658|12269D to 02269D|
+|Process other keys with LGUI correctly at L0463|0x066A|0207E3 to 020778|0x066A|0207E3 to 020778|
+|Make Fn + F9 match the keycap|0x0944|0x53 to 0x46|-|-|
+|Make Fn + F10 match the keycap|0x094A|0x47 to 0x53|-|-|
+|Make Fn + F11 match the keycap|0x0948|0x48 to 0x47|-|-|
+|Make Fn + F12 match the keycap|0x0942|0x53 to 0x48|-|-|
+
+## Hardware
 
 The PBP uses the SH68F83 made by Sinowealth. The data sheet is the 
 [SH68F83V2.0.pdf](SH68F83V2.0.pdf) file in this folder. It has the following
@@ -41,7 +56,7 @@ the top and bottom:
 ![Touchpad I2C test points](touchpad-i2c.jpg)
 
 
-# Keyboard Connector
+## Keyboard Connector
 
 The rows and columns of the keyboard are mapped out to the 28p FPC connector - 
 it should be noted that the last two positions are unused (this is only clear 
@@ -52,7 +67,7 @@ points.
 P26 of the connector is the Power button, which gets shorted to Ground (P25) to
 power on the PBP. This also has its own test point at `T64`. 
 
-# Hardware Cuts
+## Hardware Cuts
 
 The MIC_CUT, WIFI_CUT, and CAM_CUT seem to be wired directly to the keyboard MCU
 with out any test points. These items are disabled when these pins are pulled
@@ -66,7 +81,7 @@ The keyboard MCU is connected to an EEPROM that persists the states of each cut.
 factory firmware, only the first byte is used, with each cut corresponding to one of the
 3 least significant bits.
 
-# Decompiling
+## Decompiling
 
 The hex files provided by the manufacturer have been decompiled using `dis51`, 
 and are included in this directory as well.
@@ -78,30 +93,25 @@ and outlined in src/main.c. Things like the matrix scan and i2c management
 have been identified. I don't completed understand which calls get added to the
 stack, so some return statements may be incorrect.
 
-# Test Firmware
+## Test Firmware
 
 The keymap section of the hex file has been identified and commenting has begun
 in `fw_ansi.a51`. Right now the edits to `fw_ansi_test.hex` have been manual
 using a tool like https://www.fischl.de/hex_checksum_calculator/?
-
-The current version of `fw_ansi_test.hex` can be flashed after compiling with
-`sudo ./updater flash-kb-ansi-test ansi` (the third argument is a dummy), and
-replaces the caps lock key with escape, and has been tested successfully. It
-currently only works with ANSI keyboards.
 
 The keymap is also being written here for easier readability:
 https://docs.google.com/spreadsheets/d/147NwY3otNitE4M7xduihfY5SpRrhwBLPGwOp8qG5uA8/edit?usp=sharing
 - feel free to request access if you'd like to contribute additional data
 locations.
 
-# HID Descriptor
+## HID Descriptor
 
 It may be useful to use the HID Descriptor Tool to analyse those blocks in the
 file: https://www.usb.org/document-library/hid-descriptor-tool
 
 The .hid file can be loaded with this tool.
 
-# I2C Captures
+## I2C Captures
 
 The replacement firmware will need to be able to handle the touchpad interrupt, read its registers, and
 present the touchpad reports to a USB endpoint. It will also have to handle updating of the touchpad firmware.
@@ -123,7 +133,7 @@ C_Elgens also described what actions were being done on the touchpad during each
 | [updater-step1.dsl](i2c-captures/updater-step1.dsl) | The i2c activity while running step1 of the update utility |
 | [updater-step2.dsl](i2c-captures/updater-step2.dsl) | The i2c activity while running step2 of the update utility |
 
-# Touchpad
+## Touchpad
 
 Currently, not much is known about the touchpad IC (part no. HLK H2168). From the I2C captures, we know that its
 firmware is written (sans some header/checksum information at the end of tpfw.bin) to an EEPROM addressable at 0x1A
