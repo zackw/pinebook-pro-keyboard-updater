@@ -16,7 +16,8 @@ or
 
     sudo ./updater flash-kb-gui-fix iso
 
-The changes are described below:
+No reboot is required for these changes to take effect. The changes to the
+firmware .hex files are described below:
 
 |Description|ANSI Location|ANSI Change|ISO Location|ISO Change|
 |---|---|---|---|---|
@@ -27,6 +28,9 @@ The changes are described below:
 |Make Fn + F10 match the keycap|0x094A|0x47 to 0x53|-|-|
 |Make Fn + F11 match the keycap|0x0948|0x48 to 0x47|-|-|
 |Make Fn + F12 match the keycap|0x0942|0x53 to 0x48|-|-|
+
+You can find these labels and addresses by looking in `fw_ansi.a51` (assembly)
+and `src/main.c` (c pseudo code written by hand).
 
 ## Hardware
 
