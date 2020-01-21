@@ -5,7 +5,7 @@ This application does upgrade firmware of the built-in keyboard and touchpad.
 ## Compiling
 
 ```bash
-git clone https://github.com/ayufan-rock64/pinebook-pro-keyboard-updater
+git clone https://github.com/jackhumbert/pinebook-pro-keyboard-updater
 cd pinebook-pro-keyboard-updater
 sudo apt-get install build-essential libusb-1.0-0-dev xxd
 make
@@ -33,7 +33,7 @@ if at any point process fails, start it from point 1.:
 
 ```bash
 # compile
-git clone https://github.com/ayufan-rock64/pinebook-pro-keyboard-updater
+git clone https://github.com/jackhumbert/pinebook-pro-keyboard-updater
 cd pinebook-pro-keyboard-updater
 sudo apt-get install build-essential libusb-1.0-0-dev xxd
 make
