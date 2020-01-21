@@ -10,8 +10,8 @@ extern unsigned char firmware_fw_iso_hex[];
 extern unsigned int firmware_fw_iso_hex_len;
 extern unsigned char firmware_fw_ansi_hex[];
 extern unsigned int firmware_fw_ansi_hex_len;
-extern unsigned char firmware_fw_ansi_test_hex[];
-extern unsigned int firmware_fw_ansi_test_hex_len;
+extern unsigned char firmware_fw_ansi_gui_fix[];
+extern unsigned int firmware_fw_ansi_gui_fix_len;
 extern unsigned char firmware_tpfw_bin[];
 extern unsigned int firmware_tpfw_bin_len;
 
@@ -94,7 +94,7 @@ static int flash_kb_ansi_test()
 {
   int rc;
 
-  rc = write_kb_fw(firmware_fw_ansi_test_hex, firmware_fw_ansi_test_hex_len);
+  rc = write_kb_fw(firmware_fw_ansi_gui_fix, firmware_fw_ansi_gui_fix_len);
   if (rc < 0) {
     return rc;
   }

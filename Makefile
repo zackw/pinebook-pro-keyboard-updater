@@ -8,7 +8,7 @@ SOURCES := \
 	firmware/fw_tp_update.hex.c \
 	firmware/fw_iso.hex.c \
 	firmware/fw_ansi.hex.c \
-	firmware/fw_ansi_test.hex.c \
+	firmware/fw_ansi_gui_fix.c \
 	firmware/tpfw.bin.c \
 
 all: updater
