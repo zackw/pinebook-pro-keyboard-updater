@@ -1488,7 +1488,7 @@ void L0145(void) {
         }
         // L0433
         if (r65 == 0x0A) {
-            if (r26) { // fn key, should be flipped
+            if (r26) { // fn key
                 // L0402
                 DPTR = (r64 * 2 ) + 0x0958;
                 // L0395
@@ -1496,7 +1496,7 @@ void L0145(void) {
             } else {
                 // L0435
                 ACC = r64 * 2;
-                if (r1A) { // numlock
+                if (r1A) { // numlock, should be ignored
                     // L0437 call
                     DPTR = ACC + 0x958;
                 } else {

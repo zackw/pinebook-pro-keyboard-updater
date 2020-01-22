@@ -35,5 +35,5 @@ NEW:
 ; old non-privacy toggle jump to regular process (arrow key fix)
   066A 0206AD       LJMP L0449
 
-; flip the condition for the numlock
-  06BA 20260B       JB 26h, L0435
+; ignore the numlock feature
+  06CF 0206D4       LJMP L0436
