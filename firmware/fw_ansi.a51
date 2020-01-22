@@ -459,7 +459,7 @@ CSEG AT 007Bh
   01D3 01           DB 001h 
   01D4 81           DB 081h 
   01D5 02           DB 002h 
-  01D6 26           DB 026h ; '&'
+  01D6 26           DB 026h ;   logical max
   01D7 92           DB 092h 
   01D8 03           DB 003h 
   01D9 46           DB 046h ; 'F'
@@ -523,7 +523,7 @@ CSEG AT 007Bh
   0213 01           DB 001h 
   0214 95           DB 095h ; report count 
   0215 01           DB 001h 
-  0216 15           DB 015h 
+  0216 15           DB 015h ; logical min 
   0217 00           DB 000h 
   0218 25           DB 025h ; '%'
   0219 01           DB 001h 
@@ -540,9 +540,9 @@ CSEG AT 007Bh
   0224 20           DB 020h ; ' '
   0225 09           DB 009h ; usage
   0226 C5           DB 0C5h 
-  0227 15           DB 015h 
+  0227 15           DB 015h ;   logical min 
   0228 00           DB 000h 
-  0229 26           DB 026h ; '&'
+  0229 26           DB 026h ;   logical max
   022A FF           DB 0FFh 
   022B 00           DB 000h 
   022C 75           DB 075h ; report size
@@ -568,7 +568,7 @@ CSEG AT 007Bh
   0240 02           DB 002h 
   0241 09           DB 009h ; usage
   0242 52           DB 052h ; 'R'
-  0243 15           DB 015h 
+  0243 15           DB 015h ;   logical min 
   0244 00           DB 000h 
   0245 25           DB 025h ; '%'
   0246 0A           DB 00Ah 
@@ -614,7 +614,7 @@ CSEG AT 007Bh
   026E 02           DB 002h ;     2
   026F 25           DB 025h ; '%'
   0270 01           DB 001h 
-  0271 15           DB 015h 
+  0271 15           DB 015h ;   logical min 
   0272 00           DB 000h 
   0273 75           DB 075h ; report size
   0274 01           DB 001h 
@@ -639,15 +639,15 @@ CSEG AT 007Bh
   0287 06           DB 006h 
   0288 0C           DB 00Ch 
   0289 00           DB 000h 
-  028A 09           DB 009h 
-  028B 01           DB 001h 
+  028A 09           DB 009h ; usage
+  028B 01           DB 001h ; 
   028C A1           DB 0A1h ; start collection
   028D 01           DB 001h ;   application
   028E 85           DB 085h ;   report id
   028F 03           DB 003h ;     3
   0290 25           DB 025h ; '%'
   0291 01           DB 001h 
-  0292 15           DB 015h 
+  0292 15           DB 015h ;   logical min 
   0293 00           DB 000h 
   0294 75           DB 075h ; report size
   0295 01           DB 001h 
@@ -720,13 +720,13 @@ CSEG AT 007Bh
   02D8 25           DB 025h ; '%'
   02D9 02           DB 002h 
   02DA 0A           DB 00Ah 
-  02DB 26           DB 026h ; '&'
+  02DB 26           DB 026h ;   logical max
   02DC 02           DB 002h 
   02DD 0A           DB 00Ah 
   02DE 27           DB 027h ; '''
   02DF 02           DB 002h 
   02E0 0A           DB 00Ah 
-  02E1 2A           DB 02Ah ; '*'
+  02E1 2A           DB 02Ah ;   usage max
   02E2 02           DB 002h 
   02E3 0A           DB 00Ah 
   02E4 B1           DB 0B1h ; feature
@@ -744,7 +744,7 @@ CSEG AT 007Bh
   02F0 01           DB 001h 
   02F1 85           DB 085h 
   02F2 09           DB 009h 
-  02F3 15           DB 015h 
+  02F3 15           DB 015h ;   logical min 
   02F4 00           DB 000h 
   02F5 25           DB 025h ; '%'
   02F6 01           DB 001h 
@@ -770,14 +770,14 @@ CSEG AT 007Bh
   030A 01           DB 001h 
   030B 85           DB 085h 
   030C 06           DB 006h 
-  030D 15           DB 015h 
+  030D 15           DB 015h ;   logical min 
   030E 00           DB 000h 
   030F 25           DB 025h ; '%'
   0310 FF           DB 0FFh 
   0311 1A           DB 01Ah ;   start collection
   0312 01           DB 001h 
   0313 00           DB 000h 
-  0314 2A           DB 02Ah ; '*'
+  0314 2A           DB 02Ah ;   usage max
   0315 0F           DB 00Fh 
   0316 04           DB 004h 
   0317 75           DB 075h ; report size
@@ -797,11 +797,11 @@ CSEG AT 007Bh
   0325 01           DB 001h 
   0326 85           DB 085h 
   0327 05           DB 005h 
-  0328 15           DB 015h 
+  0328 15           DB 015h ;   logical min 
   0329 00           DB 000h 
   032A 25           DB 025h ; '%'
   032B FF           DB 0FFh 
-  032C 19           DB 019h 
+  032C 19           DB 019h ;     usage min 
   032D 01           DB 001h 
   032E 29           DB 029h ; ')'
   032F 05           DB 005h 
@@ -892,7 +892,7 @@ CSEG AT 007Bh
   0384 EC           DB 0ECh 
   0385 B8           DB 0B8h 
   0386 89           DB 089h ; string max?
-  0387 19           DB 019h 
+  0387 19           DB 019h ;     usage min 
   0388 3E           DB 03Eh ; '>'
   0389 B3           DB 0B3h 
   038A AF           DB 0AFh 
@@ -916,7 +916,7 @@ CSEG AT 007Bh
   039C 45           DB 045h ; 'E'
   039D 7D           DB 07Dh ; '}'
   039E A7           DB 0A7h 
-  039F 26           DB 026h ; '&'
+  039F 26           DB 026h ;   logical max
   03A0 9C           DB 09Ch 
   03A1 65           DB 065h ; 'e'
   03A2 3B           DB 03Bh ; ';'
@@ -932,7 +932,7 @@ CSEG AT 007Bh
   03AC F2           DB 0F2h 
   03AD 2B           DB 02Bh ; '+'
   03AE F0           DB 0F0h 
-  03AF 2A           DB 02Ah ; '*'
+  03AF 2A           DB 02Ah ;   usage max
   03B0 41           DB 041h ; 'A'
   03B1 54           DB 054h ; 'T'
   03B2 F0           DB 0F0h 
@@ -1050,7 +1050,7 @@ CSEG AT 007Bh
   0422 F2           DB 0F2h 
   0423 D3           DB 0D3h 
   0424 32           DB 032h ; '2'
-  0425 2A           DB 02Ah ; '*'
+  0425 2A           DB 02Ah ;   usage max
   0426 9A           DB 09Ah 
   0427 E4           DB 0E4h 
   0428 CF           DB 0CFh 
