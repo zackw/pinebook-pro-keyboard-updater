@@ -1141,7 +1141,7 @@ void L0145(void) {
             }
         }
         // L0363 jump
-        if (!r0A) {
+        if (!r0A) { // key release removes both keys from array
             // L0366 jump
             if (r65 == 0x02) {
                 // 7 of these, with non-seq r64 values
