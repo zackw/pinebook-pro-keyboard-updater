@@ -26,10 +26,14 @@ NEW:
   069E FD           MOV R5, A
   0695 7F01         MOV R7, #1h
   0697 121BFF       LCALL L0374
-  069A 7F00         MOV R7, #0h
-  069C 021BFF       LJMP L0374
+  069A 12170D       LCALL L0143
+  069D 7F00         MOV R7, #0h
+  069F 021BFF       LJMP L0374
 
   06AA 00           DB 00h
 
 ; old non-privacy toggle jump to regular process (arrow key fix)
-  066A 0206AD     LJMP L0449
+  066A 0206AD       LJMP L0449
+
+; flip the condition for the numlock
+  06BA 20260B       JB 26h, L0435

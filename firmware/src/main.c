@@ -1487,7 +1487,30 @@ void L0145(void) {
             }
         }
         // L0433
-
+        if (r65 == 0x0A) {
+            if (r26) { // fn key, should be flipped
+                // L0402
+                DPTR = (r64 * 2 ) + 0x0958;
+                // L0395
+                R5 = *DPTR;
+            } else {
+                // L0435
+                ACC = r64 * 2;
+                if (r1A) { // numlock
+                    // L0437 call
+                    DPTR = ACC + 0x958;
+                } else {
+                    // L0436 jump
+                    DPTR = ACC + 0x957;
+                }
+                // L0438
+                R5 = *DPTR;
+            }
+            // L0431
+            R7 = r0A;
+            L0374(); // jump
+        }
+        // L0434
 
         // L0428
         // L0396 call
