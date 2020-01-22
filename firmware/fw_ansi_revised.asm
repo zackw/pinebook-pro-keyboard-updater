@@ -26,7 +26,7 @@
   0948 47           DB 047h
 
 ; Fn+F12 to Pause
-  0942 48           DB 048h
+  094C 48           DB 048h
 
 ; make the end of L0456 jump to this and use the return to pop back
   07FE 02269F       LJMP L0138
