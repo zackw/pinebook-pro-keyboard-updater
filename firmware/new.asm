@@ -2,16 +2,16 @@
   07FE 02269F       LJMP L0138
 
 ; f10 process to new function
-  0620 023FBF       LJMP NEW
+  0620 020693       LJMP NEW
 
 ; f11 process
-  0658 023FBF       LJMP NEW
+  0658 020693       LJMP NEW
 
 ; f12 process
   0690 1207E4       LCALL L0456
 
 ; process R5=keycode and R7=pressed
-; make new function like L0369, then jump to L0431
+; make new function like L0369, then jump to L0374
 ; add 4 if we're turning on the feature
 ; put in the extra space around L0466
 
@@ -24,17 +24,11 @@ NEW:
   069C 33           RLC A
   069D 2D           ADD A, R5
   069E FD           MOV R5, A
-  069F 02076A       LJMP L0431
-  06A0 00           DB 00h
-  06A1 00           DB 00h
-  06A2 00           DB 00h
-  06A3 00           DB 00h
-  06A4 00           DB 00h
-  06A5 00           DB 00h
-  06A6 00           DB 00h
-  06A7 00           DB 00h
-  06A8 00           DB 00h
-  06A9 00           DB 00h
+  0695 7F01         MOV R7, #1h
+  0697 121BFF       LCALL L0374
+  069A 7F00         MOV R7, #0h
+  069C 021BFF       LJMP L0374
+
   06AA 00           DB 00h
 
 ; old non-privacy toggle jump to regular process (arrow key fix)
