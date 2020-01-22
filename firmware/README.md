@@ -19,7 +19,8 @@ or
 No reboot is required for these changes to take effect, but ocassionally a
 reboot is required to wake the keyboard's controller back up - an unresponsive
 touchpad/keyboard after flashing is usually a symptom of this. The changes to
-the firmware .hex files are described in their respective .asm files.
+the firmware .hex files are described in their respective .asm files (they're
+not actually .asm files).
 
 You can find the labels and addresses by looking in `fw_ansi.a51` (assembly)
 and `src/main.c` (c pseudo code written by hand).
