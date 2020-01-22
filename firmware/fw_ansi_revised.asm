@@ -1,3 +1,5 @@
+; these changes start at L889 of fw_ansi_revised.hex
+
 ; make the end of L0456 jump to this and use the return to pop back
   07FE 02269F       LJMP L0138
 
@@ -17,20 +19,20 @@
 
 NEW:
   0693 E564         MOV A, 64h
-  0695 24A3         ADD A, #A3h
-  0697 FD           MOV R5, A
-  0698 E512         MOV A, 12h
-  069A 5404         ANL A, #2h
-  069C 33           RLC A
-  069D 2D           ADD A, R5
-  069E FD           MOV R5, A
-  0695 7F01         MOV R7, #1h
-  0697 121BFF       LCALL L0374
-  069A 12170D       LCALL L0143
-  069D 7F00         MOV R7, #0h
-  069F 021BFF       LJMP L0374
+       2465         ADD A, #65h
+       FD           MOV R5, A
+       E512         MOV A, 12h
+       5402         ANL A, #2h
+       33           RLC A
+       2D           ADD A, R5
+       FD           MOV R5, A
+       7F01         MOV R7, #1h
+       121BFF       LCALL L0374
+       12170D       LCALL L0143
+       7F00         MOV R7, #0h
+       021BFF       LJMP L0374
 
-  06AA 00           DB 00h
+; 06AA is the last address we can use here
 
 ; old non-privacy toggle jump to regular process (arrow key fix)
   066A 0206AD       LJMP L0449
