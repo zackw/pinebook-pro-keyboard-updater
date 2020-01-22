@@ -10,10 +10,10 @@ extern unsigned char firmware_fw_iso_hex[];
 extern unsigned int firmware_fw_iso_hex_len;
 extern unsigned char firmware_fw_ansi_hex[];
 extern unsigned int firmware_fw_ansi_hex_len;
-extern unsigned char firmware_fw_ansi_gui_fix_hex[];
-extern unsigned int firmware_fw_ansi_gui_fix_hex_len;
-extern unsigned char firmware_fw_iso_gui_fix_hex[];
-extern unsigned int firmware_fw_iso_gui_fix_hex_len;
+extern unsigned char firmware_fw_ansi_revised_hex[];
+extern unsigned int firmware_fw_ansi_revised_hex_len;
+extern unsigned char firmware_fw_iso_revised_hex[];
+extern unsigned int firmware_fw_iso_revised_hex_len;
 extern unsigned char firmware_tpfw_bin[];
 extern unsigned int firmware_tpfw_bin_len;
 
@@ -92,11 +92,11 @@ static int flash_kb_ansi()
   return 0;
 }
 
-static int flash_kb_ansi_gui_fix()
+static int flash_kb_ansi_revised()
 {
   int rc;
 
-  rc = write_kb_fw(firmware_fw_ansi_gui_fix_hex, firmware_fw_ansi_gui_fix_hex_len);
+  rc = write_kb_fw(firmware_fw_ansi_revised_hex, firmware_fw_ansi_revised_hex_len);
   if (rc < 0) {
     return rc;
   }
@@ -104,11 +104,11 @@ static int flash_kb_ansi_gui_fix()
   return 0;
 }
 
-static int flash_kb_iso_gui_fix()
+static int flash_kb_iso_revised()
 {
   int rc;
 
-  rc = write_kb_fw(firmware_fw_iso_gui_fix_hex, firmware_fw_iso_gui_fix_hex_len);
+  rc = write_kb_fw(firmware_fw_iso_revised_hex, firmware_fw_iso_revised_hex_len);
   if (rc < 0) {
     return rc;
   }
@@ -185,11 +185,11 @@ int main(int argc, char *argv[])
     rc = flash_kb_iso();
   } else if (!strcmp(argv[1], "flash-kb-ansi")) {
     rc = flash_kb_ansi();
-  } else if (!strcmp(argv[1], "flash-kb-gui-fix")) {
+  } else if (!strcmp(argv[1], "flash-kb-revised")) {
     if (!strcmp(argv[2], "ansi"))
-      rc = flash_kb_ansi_gui_fix();
+      rc = flash_kb_ansi_revised();
     else
-      rc = flash_kb_iso_gui_fix();
+      rc = flash_kb_iso_revised();
   } else {
     rc = usage(argv[0]);
   }
