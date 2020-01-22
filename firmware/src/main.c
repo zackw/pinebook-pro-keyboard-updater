@@ -1079,11 +1079,8 @@ void L0344(void) {
 
 // L0369
 uint8_t L0369(uint8_t r64) {
-    c = *0x0A;
-    a = 0;
-    a *= 2;
-    r7 = a;
-    r5 = r64;
+    R7 = r0A;
+    R5 = r64;
 }
 
 
@@ -1465,6 +1462,7 @@ void L0145(void) {
                         // L0466
                         rC0 = 1;
                         rC1 = 1;
+                        // this should be L0456 but it's manual calls
                         L0136();
                         R5 = 0x01;
                         R7 = 0xA0;
