@@ -305,6 +305,7 @@ void L0136(void) {
 
 // L0137
 // something with i2c stuff - P30 and P32 are SDA and SCL
+// sends uses R5 (read/write?) and R7 (address?)
 void L0137(void) {
     r6B = 0;
     R6 = 0;
@@ -914,10 +915,11 @@ void L0247(void) {
     // L0260
 } 
 
+// another generic lookup function, R3 is type, R1,R2 are address mods
 uint8_t L0258(void) {
     // L0258
     c = R3 < 0x01;
-    if (R3 == 0x01) {
+    if (R3 == 0x01) { // i don't think this logic is right, it's prob like L0275
         DPL += R1;
         DPH += R2;
         return *DPTR;
@@ -951,6 +953,37 @@ uint8_t L0259(void) {
     DPL = R1;
     DPH = R2;
     return *DPTR;
+}
+
+// some generic lookup function that takes R0, R1, R2, (address mods) and R3 as
+// args, and adds them to DPTR
+void L0275(void) {
+    // L0275
+    R0 = ACC;
+    if (R3 == 0x01) {
+        ACC = DPL;
+        ACC += R1;
+        DPL = ACC;
+        ACC = DPH;
+        ACC += R2;
+        DPH = ACC;
+        ACC = R0;
+        *DPTR = ACC;
+        return;
+    } else if (R3 == 0x00) { // L0276
+        ACC = R1;
+        ACC += DPL;
+        ACC <> RO;
+        *R0 = ACC;
+        return;
+    } else if (R3 == 0xFE) { // L0277
+        ACC = R1;
+        ACC += DPL;
+        ACC <> R0;
+        *R0 = ACC; // mov but with an x
+    } else {
+        return; // L0278
+    }
 }
 
 void L0286(void) {
@@ -1962,4 +1995,36 @@ void L0479(void) {
     BTCON = 0xA0;
     IE = 0x88;
     // ret
+}
+
+void L0725(void) {
+    R7 = r36;
+    R6 = R7;
+    R5 = r35;
+    R4 = 0x00;
+    R7 = R5;
+    R6 += R5 + R4; // keep track of extra at c
+    r49 = 0x02;
+    r4D = R6;
+    r4E = R7;
+    if (r47 && R6 < r4B) { // something like that
+        r4D = r4B;
+        r4E = r4C;
+    }
+    // L0726
+    // L0727 call
+
+}
+
+// this loads the descriptor string locations
+// r29,r2A address
+// r4C length of string
+void L0753(void) {
+    DPL = r2A;
+    DPH = r29;
+    ACC = *DPTR;
+    r4B = 0x00;
+    r4C = ACC;
+    r47 = 0x07;
+    return;
 }
