@@ -115,8 +115,8 @@ CSEG AT 007Bh
   007B 02           DB 002h 
   007C 00           DB 000h 
   007D 16           DB 016h 
-  007E 18           DB 018h 
-  007F 03           DB 003h 
+  007E 18           DB 018h ; length of string
+  007F 03           DB 003h ; string type
   0080 53           DB 053h ; 'S'
   0081 00           DB 000h 
   0082 49           DB 049h ; 'I'
@@ -144,8 +144,8 @@ CSEG AT 007Bh
   0098 03           DB 003h 
   0099 09           DB 009h 
   009A 04           DB 004h 
-  009B 20           DB 020h ; ' '
-  009C 03           DB 003h 
+  009B 20           DB 020h ; length of string
+  009C 03           DB 003h ; string type
   009D 48           DB 048h ; 'H'
   009E 00           DB 000h 
   009F 41           DB 041h ; 'A'
@@ -177,8 +177,8 @@ CSEG AT 007Bh
   00B9 44           DB 044h ; 'D'
   00BA 00           DB 000h 
   00BB 00           DB 000h 
-  00BC 1A           DB 01Ah 
-  00BD 03           DB 003h 
+  00BC 1A           DB 01Ah ; length of string
+  00BD 03           DB 003h ; string type
   00BE 55           DB 055h ; 'U'
   00BF 00           DB 000h 
   00C0 53           DB 053h ; 'S'
@@ -242,24 +242,24 @@ CSEG AT 007Bh
   00FA 30           DB 030h ; '0'
   00FB 30           DB 030h ; '0'
   00FC 00           DB 000h 
-  00FD 12           DB 012h 
-  00FE 01           DB 001h 
-  00FF 10           DB 010h 
-  0100 01           DB 001h 
-  0101 00           DB 000h 
-  0102 00           DB 000h 
-  0103 00           DB 000h 
-  0104 08           DB 008h 
-  0105 8A           DB 08Ah 
-  0106 25           DB 025h ; '%'
-  0107 1E           DB 01Eh 
-  0108 00           DB 000h 
-  0109 00           DB 000h 
-  010A 01           DB 001h 
-  010B 01           DB 001h 
-  010C 02           DB 002h 
-  010D 00           DB 000h 
-  010E 01           DB 001h 
+  00FD 12           DB 012h ; blength -- start device descriptor
+  00FE 01           DB 001h ; type
+  00FF 10           DB 010h ; bcdusb
+  0100 01           DB 001h ; *
+  0101 00           DB 000h ; class
+  0102 00           DB 000h ; subclass
+  0103 00           DB 000h ; protocol
+  0104 08           DB 008h ; max packet size
+  0105 8A           DB 08Ah ; vendor id
+  0106 25           DB 025h ; *
+  0107 1E           DB 01Eh ; product id 
+  0108 00           DB 000h ; *
+  0109 00           DB 000h ; bcd device version
+  010A 01           DB 001h ; *
+  010B 01           DB 001h ; manf string i
+  010C 02           DB 002h ; product string i
+  010D 00           DB 000h ; serial number
+  010E 01           DB 001h ; configurations
   010F 05           DB 005h ; usage page (usb hid report descriptor start)
   0110 01           DB 001h ;   generic desktop
   0111 09           DB 009h ; usage
