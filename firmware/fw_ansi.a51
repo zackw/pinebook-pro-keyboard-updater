@@ -1069,65 +1069,65 @@ CSEG AT 007Bh
   0435 E5           DB 0E5h 
   0436 24           DB 024h ; '$'
   0437 C2           DB 0C2h 
-  0438 09           DB 009h 
-  0439 02           DB 002h 
-  043A 3B           DB 03Bh ; ';'
-  043B 00           DB 000h 
-  043C 02           DB 002h 
-  043D 01           DB 001h 
-  043E 00           DB 000h 
-  043F A0           DB 0A0h 
-  0440 32           DB 032h ; '2'
-  0441 09           DB 009h 
-  0442 04           DB 004h 
-  0443 00           DB 000h 
-  0444 00           DB 000h 
-  0445 01           DB 001h 
-  0446 03           DB 003h 
-  0447 01           DB 001h 
-  0448 01           DB 001h 
-  0449 00           DB 000h 
-  044A 09           DB 009h 
-  044B 21           DB 021h ; '!'
-  044C 10           DB 010h 
-  044D 01           DB 001h 
-  044E 00           DB 000h 
-  044F 01           DB 001h 
-  0450 22           DB 022h ; '"'
-  0451 41           DB 041h ; 'A'
-  0452 00           DB 000h 
-  0453 07           DB 007h 
-  0454 05           DB 005h 
-  0455 81           DB 081h 
-  0456 03           DB 003h 
-  0457 08           DB 008h 
-  0458 00           DB 000h 
-  0459 0A           DB 00Ah 
-  045A 09           DB 009h 
-  045B 04           DB 004h 
-  045C 01           DB 001h 
-  045D 00           DB 000h 
-  045E 01           DB 001h 
-  045F 03           DB 003h 
-  0460 00           DB 000h 
-  0461 00           DB 000h 
-  0462 00           DB 000h 
-  0463 09           DB 009h 
-  0464 21           DB 021h ; '!'
-  0465 10           DB 010h 
-  0466 01           DB 001h 
-  0467 00           DB 000h 
-  0468 01           DB 001h 
-  0469 22           DB 022h ; '"'
-  046A E7           DB 0E7h 
-  046B 01           DB 001h 
-  046C 07           DB 007h 
-  046D 05           DB 005h 
-  046E 82           DB 082h 
-  046F 03           DB 003h 
-  0470 08           DB 008h 
-  0471 00           DB 000h 
-  0472 0A           DB 00Ah 
+  0438 09           DB 009h ; bLength  (Configuration Descriptor)
+  0439 02           DB 002h ; bDescriptorType
+  043A 3B           DB 03Bh ; wTotalLength
+  043B 00           DB 000h ; *
+  043C 02           DB 002h ; bNumInterfaces
+  043D 01           DB 001h ; bConfigurationValue
+  043E 00           DB 000h ; iConfiguration
+  043F A0           DB 0A0h ; bmAttributes
+  0440 32           DB 032h ; MaxPower
+  0441 09           DB 009h ; bLength
+  0442 04           DB 004h ; bDescriptorLength
+  0443 00           DB 000h ; bInterfaceNumber
+  0444 00           DB 000h ; bAlternateSetting
+  0445 01           DB 001h ; bNumEndpoints
+  0446 03           DB 003h ; bInterfaceClass (Human Interface Device)
+  0447 01           DB 001h ; bInterefaceSubClass (Boot Interface Subclass)
+  0448 01           DB 001h ; bInterfaceProtocol (Keyboard)
+  0449 00           DB 000h ; iInterface
+  044A 09           DB 009h ;   bLength
+  044B 21           DB 021h ;   bDescriptorType
+  044C 10           DB 010h ;   bcdHID m
+  044D 01           DB 001h ;   bcdHID M
+  044E 00           DB 000h ;   bCountryCode (Not supported)
+  044F 01           DB 001h ;   bNumDescriptors
+  0450 22           DB 022h ;   bDescriptorType (Report)
+  0451 41           DB 041h ;   wDescriptorLength
+  0452 00           DB 000h ; ?
+  0453 07           DB 007h ; bLength
+  0454 05           DB 005h ; bDescriptorType
+  0455 81           DB 081h ; bEndpointAddress (EP 1 IN)
+  0456 03           DB 003h ; bmAttributes
+  0457 08           DB 008h ; wMaxPacketSize 
+  0458 00           DB 000h ; *
+  0459 0A           DB 00Ah ; bInterval
+  045A 09           DB 009h ; bLength
+  045B 04           DB 004h ; bDescriptorType
+  045C 01           DB 001h ; bInterfaceNumber
+  045D 00           DB 000h ; bAlternateSetting
+  045E 01           DB 001h ; bNumEndpoints
+  045F 03           DB 003h ; bInterfaceClass (Human Interface Device)
+  0460 00           DB 000h ; bInterfaceSubClass (No Subclass)
+  0461 00           DB 000h ; bInterfaceProtocol (None)
+  0462 00           DB 000h ; iInterface
+  0463 09           DB 009h ;   bLength
+  0464 21           DB 021h ;   bDescriptorType
+  0465 10           DB 010h ;   bcdHID m
+  0466 01           DB 001h ;   bcdHID M
+  0467 00           DB 000h ;   bCountryCode (Not supported)
+  0468 01           DB 001h ;   bNumDescriptors
+  0469 22           DB 022h ;   bDescriptorType (Repot)
+  046A E7           DB 0E7h ;   wDescripotrLength   
+  046B 01           DB 001h ;   *
+  046C 07           DB 007h ; bLength
+  046D 05           DB 005h ; bDescriptorType
+  046E 82           DB 082h ; bEndpointAddress (EP 2 IN)
+  046F 03           DB 003h ; bmAttributes
+  0470 08           DB 008h ; wMaxPacketSize
+  0471 00           DB 000h ; *
+  0472 0A           DB 00Ah ; bInterval
   0473 FF           DB 0FFh 
   0474 14           DB 014h 
   0475 0D           DB 00Dh 
@@ -9832,35 +9832,35 @@ L0555:
   3F47 01    		DB 001h 
   3F48 00    		DB 000h 
   3F49 A0    		DB 0A0h 
-  3F4A 32    		DB 032h ; '2'
-  3F4B 09    		DB 009h 
-  3F4C 04    		DB 004h 
-  3F4D 00    		DB 000h 
-  3F4E 00    		DB 000h 
-  3F4F 01    		DB 001h 
-  3F50 03    		DB 003h 
-  3F51 01    		DB 001h 
-  3F52 01    		DB 001h 
-  3F53 00    		DB 000h 
-  3F54 09    		DB 009h 
-  3F55 21    		DB 021h ; '!'
-  3F56 10    		DB 010h 
-  3F57 01    		DB 001h 
-  3F58 00    		DB 000h 
-  3F59 01    		DB 001h 
-  3F5A 22    		DB 022h ; '"'
-  3F5B 48    		DB 048h ; 'H'
-  3F5C 00    		DB 000h 
-  3F5D 07    		DB 007h 
-  3F5E 05    		DB 005h 
-  3F5F 81    		DB 081h 
-  3F60 03    		DB 003h 
-  3F61 08    		DB 008h 
-  3F62 00    		DB 000h 
-  3F63 0A    		DB 00Ah 
+  3F4A 32    		DB 032h
+  3F4B 09    		DB 009h ; bLength (an old configuration descriptor?)
+  3F4C 04    		DB 004h ; bDescriptorType
+  3F4D 00    		DB 000h ; bInterfaceNumber
+  3F4E 00    		DB 000h ; bAlternateSetting
+  3F4F 01    		DB 001h ; bNumEndpoints
+  3F50 03    		DB 003h ; bInterfaceClass (Human Interface Device)
+  3F51 01    		DB 001h ; bInterfaceSubClass (Boot Interface Subclass)
+  3F52 01    		DB 001h ; bInterfaceProtocol (Keyboard)
+  3F53 00    		DB 000h ; iInterface {
+  3F54 09    		DB 009h ;   bLength
+  3F55 21    		DB 021h ;   bDescriptorType
+  3F56 10    		DB 010h ;   bcdHID m
+  3F57 01    		DB 001h ;   bcdHID M
+  3F58 00    		DB 000h ;   bCountryCode (Not Supported)
+  3F59 01    		DB 001h ;   bNumDescriptors
+  3F5A 22    		DB 022h ;   bDescriptorType (Report)
+  3F5B 48    		DB 048h ;   DescriptorLength
+  3F5C 00    		DB 000h ; ?
+  3F5D 07    		DB 007h ; bLength
+  3F5E 05    		DB 005h ; bDescriptorType
+  3F5F 81    		DB 081h ; bEndpointAddress EP 1 IN
+  3F60 03    		DB 003h ; bmAttributes
+  3F61 08    		DB 008h ; wMaxPacketSize
+  3F62 00    		DB 000h ; * 
+  3F63 0A    		DB 00Ah ; bInterval
   3F64 05    		DB 005h 
   3F65 01    		DB 001h 
-  3F66 09    		DB 009h 
+  3F66 09    		DB 009h
   3F67 06    		DB 006h 
   3F68 A1    		DB 0A1h 
   3F69 01    		DB 001h 
