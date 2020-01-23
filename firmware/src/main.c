@@ -44,7 +44,7 @@ void main(void) {
                 DFC = 0x01
                 // L0006
                 DPTR = 0x3FBA;
-                R0 = 0x20;
+                R0=  0x20;
                 R1 = 0x06;
                 // L0579
                 while (B != 0xA5);
@@ -60,6 +60,49 @@ void main(void) {
         }
     }
 }
+
+// L0090
+    if (ACC & 0x03) {
+        IF2 &= 0xF7;
+        RXFLG0 &= 0xFB;
+        if (r30) {
+            // L0093
+            if (r10 == 0x01) {
+                DADDR = r0A;
+                if (DADDR == 0)
+            } else {
+                // L0102
+            }
+        }
+
+    } else {
+        // L0092
+    }   
+
+void L0644(void) {
+    EA = 0;
+    RXFLG0 |= 0x04;
+    // L0645 call and ret
+    if (r49 > 0x06) {
+        r49 = 0;
+    }
+    R7 = r49;
+    DPL = R7 * 0x03 + 0xBE;
+    ACC = 0x04;
+    // address lookup is around is 0x04BE+
+    L0646();
+}
+
+void L0646(void) {
+    DPH = ACC;
+    R2 = *(0x1 + DPTR);
+    R1 = *(0x2 + DPTR);
+    // L06337
+    DPH = R2;
+    DPL = R1;
+    // jump to DPTR
+}
+
 
 void L0121(void) {
     // L0121

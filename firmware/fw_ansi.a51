@@ -5155,12 +5155,12 @@ L0277:
 L0278:
   17E3 22    		RET
 
-  17E4 8A    		DB 08Ah 
-  17E5 83    		DB 083h 
-  17E6 89    		DB 089h 
-  17E7 82    		DB 082h 
-  17E8 E4    		DB 0E4h 
-  17E9 73    		DB 073h ; 's'
+L0637:
+  17E4 8A83  		MOV DPH, R2
+  17E6 8982  		MOV DPL, R1
+  17E8 E4    		CLR A
+  17E9 73    		JMP @A+DPTR
+
 L0149:
   17EA 1225BC		LCALL L0184
   17ED E526  		MOV A, 26h
@@ -8228,7 +8228,7 @@ L0656:
   27B7 F549  		MOV 49h, A
   27B9 F5B9  		MOV 0B9h, A
   27BB 22    		RET
-  
+
   27BC 53    		DB 053h ; 'S'
   27BD EF    		DB 0EFh 
   27BE FB    		DB 0FBh 
