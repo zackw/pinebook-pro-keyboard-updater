@@ -13,11 +13,11 @@ make
 
 ## Pick right keyboard model
 
-Pinebook Pro offers two keyboard types: `ISO` and `ANSI`.
+Pinebook Pro offers two keyboard types: `iso` and `ansi`.
 
 Append your model type after the `step-1` or `step-2` command specifying `iso` or `ansi`.
 
-**In order to update with `ANSI` keyboard the external keyboard will be required as for the duration of the process the keyboard will stop working.**
+**In order to update with `ansi` keyboard the external keyboard will be required as for the duration of the process the keyboard will stop working.**
 
 ## Update all firmwares
 
@@ -30,6 +30,10 @@ if at any point process fails, start it from point 1.:
 1. After reboot, run `step-2 iso` or `step-2 ansi` of update process: `sudo ./updater step-2`,
 1. Reboot with `sudo reboot`,
 1. After reboot, your keyboard and touchpad firmware should be updated.
+
+### Revised firmware
+
+There has been some effort in `firmware/` to reverse engineer and customise the existing firmware, fixing some of the common issues people are facing. **Currently you need to flash this after steps 1 and 2 with a separate command**, `flash-kb-revised` followed by the keyboard type. No reboot is required after flashing, but may be needed if your keyboard/touchpad is unresponsive (currently rare). Changelogs and assembly code for each version can be found in `firmware/fw_<type>_revised.asm`.
 
 ```bash
 # compile
@@ -55,6 +59,13 @@ sudo reboot
 # after reboot, step-2
 sudo ./updater step-2 ansi
 sudo reboot
+
+# updating to the revised ansi firmware after steps 1 and 2
+sudo ./updater flash-kb-revised ansi
+
+# updating to the revised iso firmware after steps 1 and 2
+sudo ./updater flash-kb-revised iso
+
 ```
 
 ### Log from `STEP-1`
