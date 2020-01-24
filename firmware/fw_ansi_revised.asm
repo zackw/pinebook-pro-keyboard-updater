@@ -91,5 +91,5 @@ NEW:
 
 
 ; add product to configuration and interface string
-  043E 02           DB 002h ; iConfiguration
-  0449 02           DB 002h ; iInterface
+  043E 02           DB 003h ; iConfiguration
+  0449 FD           DB 0FDh ; iInterface

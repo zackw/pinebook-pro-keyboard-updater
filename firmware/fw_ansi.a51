@@ -2356,15 +2356,15 @@ L0746:
   0AF4 020BA4		LJMP L0724
 
 L0747:
-  0AF7 E531  		MOV A, 31h
+  0AF7 E531  		MOV A, 31h ; load the string index query
   0AF9 14    		DEC A
-  0AFA 6016  		JZ L0749
+  0AFA 6016  		JZ L0749 ; hailuck at 0x01
   0AFC 14    		DEC A
-  0AFD 601F  		JZ L0750
-  0AFF 2403  		ADD A, #3h
-  0B01 6027  		JZ L0751
+  0AFD 601F  		JZ L0750 ; usb keyboard at 0x02
+  0AFF 2403  		ADD A, #3h ; unclear if it ever reaches this, maybe for 0xFD
+  0B01 6027  		JZ L0751 ; sinowealth string
   0B03 14    		DEC A
-  0B04 702F  		JNZ L0752
+  0B04 702F  		JNZ L0752 ; return
   0B06 752900		MOV 29h, #0h
   0B09 752A97		MOV 2Ah, #97h ; reference to something else? 0x04030904
   0B0C 121135		LCALL L0753
