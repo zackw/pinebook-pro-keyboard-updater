@@ -68,19 +68,21 @@ NEW:
 ; ignore the numlock feature, only enable in fn layer
   06CF 0206D4       LJMP L0436
 
-; (disabled)
 ; custom manufacturer (15 characters available) length is +1 (null term) *2
-;  009B 1E03
+; "Pine64"
+  009B 1E03 500069006e00650036003400
 
+; (disabled - might not be able to reach down here)
 ; new address for manufacturer 0x3FBF
-  0B12 75293F   MOV 29h, #3Fh
-  0B15 752ABF   MOV 2Ah, #0BFh
+;  0B12 75293F   MOV 29h, #3Fh
+;  0B15 752ABF   MOV 2Ah, #0BFh
 
+; (disabled)
 ; "Pine Microsystems, Inc." string
-  3FBF 3003500069006E00650020004D006900630072006F00730079007300740065006D0073002C00200049006E0063002E00
+;  3FBF 30 03 500069006E00650020004D006900630072006F00730079007300740065006D0073002C00200049006E0063002E00
 
 ; custom product "Pinebook Pro"
-  00BC 1A03500069006E00650062006F006F006B002000500072006F00
+  00BC 1A 03 500069006E00650062006F006F006B002000500072006F00
 
 ; (disabled)
 ; new address for product
@@ -88,5 +90,6 @@ NEW:
 ;  0B21 752ABC   MOV 2Ah, #0BCh ; descriptor string for usb keyboard
 
 
-; add product to configuration string
-  043E 02           DB 002h ; iConfiguration (string index - could be used)
+; add product to configuration and interface string
+  043E 02           DB 002h ; iConfiguration
+  0449 02           DB 002h ; iInterface
