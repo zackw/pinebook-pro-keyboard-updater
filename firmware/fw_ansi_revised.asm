@@ -70,7 +70,7 @@ NEW:
 
 ; custom manufacturer (15 characters available) length is +1 (null term) *2
 ; "Pine64"
-  009B 1E03 500069006e00650036003400
+  009B 1E 03 500069006e00650036003400
 
 ; (disabled - might not be able to reach down here)
 ; new address for manufacturer 0x3FBF
@@ -91,5 +91,11 @@ NEW:
 
 
 ; add product to configuration and interface string
-  043E 02           DB 003h ; iConfiguration
-  0449 FF           DB 0FFh ; iInterface
+  043E 00           DB 000h ; iConfiguration (ANSI 0.1)
+  0449 02           DB 002h ; iInterface (Pinebook Pro)
+
+; make the string lookup check for 0 so we can pass a serial string
+  0AFF 2402     ADD A, #2h ; return to 0 instead of 255
+
+; custom serial string "ANSI 0.1" in place of old "sino wealth" one
+  007E 14 03 41004E0053004900200030002E0031000000

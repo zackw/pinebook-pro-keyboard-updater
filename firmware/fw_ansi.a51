@@ -2335,11 +2335,11 @@ L0743:
 L0745:
   0AC6 E532  		MOV A, 32h
   0AC8 24FE  		ADD A, #0FEh
-  0ACA 6019  		JZ L0746
+  0ACA 6019  		JZ L0746 ; configuration
   0ACC 14    		DEC A
-  0ACD 6028  		JZ L0747
+  0ACD 6028  		JZ L0747 ; strings
   0ACF 2402  		ADD A, #2h
-  0AD1 7064  		JNZ L0748
+  0AD1 7064  		JNZ L0748 ; return
   0AD3 754B00		MOV 4Bh, #0h
   0AD6 754C12		MOV 4Ch, #12h ; length of device descriptor
   0AD9 752900		MOV 29h, #0h
@@ -2361,8 +2361,8 @@ L0747:
   0AFA 6016  		JZ L0749 ; hailuck at 0x01
   0AFC 14    		DEC A
   0AFD 601F  		JZ L0750 ; usb keyboard at 0x02
-  0AFF 2403  		ADD A, #3h ; unclear if it ever reaches this, maybe for 0xFF
-  0B01 6027  		JZ L0751 ; sinowealth string
+  0AFF 2403  		ADD A, #3h ;
+  0B01 6027  		JZ L0751 ; sinowealth at 0xFF
   0B03 14    		DEC A
   0B04 702F  		JNZ L0752 ; return
   0B06 752900		MOV 29h, #0h
