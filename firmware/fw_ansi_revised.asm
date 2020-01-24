@@ -91,7 +91,7 @@ NEW:
 
 
 ; add product to configuration and interface string
-  043E 00           DB 000h ; iConfiguration (ANSI 0.1)
+  043E FF           DB 0FFh ; iConfiguration (ANSI 0.1)
   0449 02           DB 002h ; iInterface (Pinebook Pro)
 
 ; tell serial to look at 0xFF
@@ -99,3 +99,7 @@ NEW:
 
 ; custom serial string "ANSI 0.1" in place of old "sino wealth" one
   007E 14 03 41004E0053004900200030002E0031000000
+
+; custom bcdDevice version (0.1)
+  0109 01           DB 001h ; bcd device version
+  010A 00           DB 000h ; *

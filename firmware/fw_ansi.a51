@@ -232,9 +232,9 @@ CSEG AT 007Bh
   00FA 30           DB 030h ; '0'
   00FB 30           DB 030h ; '0'
   00FC 00           DB 000h 
-  00FD 12           DB 012h ; blength -- start device descriptor
-  00FE 01           DB 001h ; type
-  00FF 10           DB 010h ; bcdusb
+  00FD 12           DB 012h ; bLength -- start device descriptor
+  00FE 01           DB 001h ; bDescritorType
+  00FF 10           DB 010h ; bcdHID
   0100 01           DB 001h ; *
   0101 00           DB 000h ; class
   0102 00           DB 000h ; subclass
