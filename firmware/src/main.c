@@ -1997,6 +1997,14 @@ void L0479(void) {
     // ret
 }
 
+void L0631(void) {
+    TXFLG0 |= STLT0;
+    RXFLG0 |= STLR0;
+    r49 = 0;
+    IP2 = 0;
+    return;
+}
+
 void L0725(void) {
     R7 = r36;
     R6 = R7;
@@ -2014,6 +2022,15 @@ void L0725(void) {
     // L0726
     // L0727 call
 
+}
+
+void L0733(void) {
+    r4A = 0x08;
+    ACC = 0xF8;
+    r4E += ACC;
+    ACC = 0xFF;
+    r45 += ACC; // keep track of remainder in c
+    return;
 }
 
 // this loads the descriptor string locations

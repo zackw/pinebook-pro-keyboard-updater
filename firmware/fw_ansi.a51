@@ -194,7 +194,7 @@ CSEG AT 007Bh
   00D4 44           DB 044h ; 'D'
   00D5 00           DB 000h 
   00D6 00           DB 000h 
-  00D7 58           DB 058h ; 'X'
+  00D7 58           DB 058h ; 'X' serial number
   00D8 57           DB 057h ; 'W'
   00D9 2D           DB 02Dh ; '-'
   00DA 4E           DB 04Eh ; 'N'
@@ -802,7 +802,7 @@ CSEG AT 007Bh
   0334 B1           DB 0B1h ; feature
   0335 02           DB 002h 
   0336 C0           DB 0C0h ; end collection
-  0337 20           DB 020h ; ' '
+  0337 20           DB 020h ; something else referenced in L0781
   0338 FC           DB 0FCh 
   0339 28           DB 028h ; '('
   033A FE           DB 0FEh 
@@ -1065,7 +1065,7 @@ CSEG AT 007Bh
   043B 00           DB 000h ; *
   043C 02           DB 002h ; bNumInterfaces
   043D 01           DB 001h ; bConfigurationValue
-  043E 00           DB 000h ; iConfiguration
+  043E 00           DB 000h ; iConfiguration (string index - could be used)
   043F A0           DB 0A0h ; bmAttributes
   0440 32           DB 032h ; MaxPower
   0441 09           DB 009h ; bLength
@@ -1076,7 +1076,7 @@ CSEG AT 007Bh
   0446 03           DB 003h ; bInterfaceClass (Human Interface Device)
   0447 01           DB 001h ; bInterefaceSubClass (Boot Interface Subclass)
   0448 01           DB 001h ; bInterfaceProtocol (Keyboard)
-  0449 00           DB 000h ; iInterface
+  0449 00           DB 000h ; iInterface (string index - could be used)
   044A 09           DB 009h ;   bLength
   044B 21           DB 021h ;   bDescriptorType
   044C 10           DB 010h ;   bcdHID m
@@ -1101,14 +1101,14 @@ CSEG AT 007Bh
   045F 03           DB 003h ; bInterfaceClass (Human Interface Device)
   0460 00           DB 000h ; bInterfaceSubClass (No Subclass)
   0461 00           DB 000h ; bInterfaceProtocol (None)
-  0462 00           DB 000h ; iInterface
+  0462 00           DB 000h ; iInterface (string index - could be used)
   0463 09           DB 009h ;   bLength
   0464 21           DB 021h ;   bDescriptorType
   0465 10           DB 010h ;   bcdHID m
   0466 01           DB 001h ;   bcdHID M
   0467 00           DB 000h ;   bCountryCode (Not supported)
   0468 01           DB 001h ;   bNumDescriptors
-  0469 22           DB 022h ;   bDescriptorType (Repot)
+  0469 22           DB 022h ;   bDescriptorType (Report)
   046A E7           DB 0E7h ;   wDescripotrLength   
   046B 01           DB 001h ;   *
   046C 07           DB 007h ; bLength
@@ -2239,10 +2239,10 @@ L0330:
   0A32 E4    		CLR A
   0A33 93    		MOVC A, @A+DPTR
   0A34 7A23  		MOV R2, #23h
-  0A36 79F8  		MOV R1, #0F8h
-  0A38 9023F7		MOV DPTR, #023F7h
+  0A36 79F8  		MOV R1, #0F8h	  ; 0xA0
+  0A38 9023F7		MOV DPTR, #023F7h ; 0x03
   0A3B 1216B7		LCALL L0331
-  0A3E 121E2C		LCALL L0302
+  0A3E 121E2C		LCALL L0302 ; sends some data to i2c maybe
   0A41 1216EA		LCALL L0291
   0A44 BFFA04		CJNE R7, #0FAh, L0332
   0A47 76E7  		MOV @R0, #0E7h
@@ -2311,7 +2311,7 @@ L0335:
   0A9F 6480  		XRL A, #80h
   0AA1 6009  		JZ L0715
   0AA3 E52F  		MOV A, 2Fh
-  0AA5 6481  		XRL A, #81h
+  0AA5 6481  		XRL A, #81h ; endpoint condition?
   0AA7 6003  		JZ L0715
   0AA9 020BAD		LJMP L0716
 
@@ -2341,17 +2341,17 @@ L0745:
   0ACF 2402  		ADD A, #2h
   0AD1 7064  		JNZ L0748
   0AD3 754B00		MOV 4Bh, #0h
-  0AD6 754C12		MOV 4Ch, #12h ; length value?
+  0AD6 754C12		MOV 4Ch, #12h ; length of device descriptor
   0AD9 752900		MOV 29h, #0h
-  0ADC 752AFD		MOV 2Ah, #0FDh
+  0ADC 752AFD		MOV 2Ah, #0FDh ; device descriptor location
   0ADF 754701		MOV 47h, #1h
   0AE2 020BA4		LJMP L0724
 
 L0746:
   0AE5 754B00		MOV 4Bh, #0h
-  0AE8 754C3B		MOV 4Ch, #3Bh ; length value?
+  0AE8 754C3B		MOV 4Ch, #3Bh ; length of config descriptor
   0AEB 752904		MOV 29h, #4h
-  0AEE 752A38		MOV 2Ah, #38h
+  0AEE 752A38		MOV 2Ah, #38h ; config descriptor location
   0AF1 754702		MOV 47h, #2h
   0AF4 020BA4		LJMP L0724
 
@@ -2411,17 +2411,17 @@ L0720:
   0B4E 04    		INC A
   0B4F 7022  		JNZ L0723
   0B51 754B00		MOV 4Bh, #0h
-  0B54 754C09		MOV 4Ch, #9h ; length value?
+  0B54 754C09		MOV 4Ch, #9h ; length of keyboard interface
   0B57 752904		MOV 29h, #4h
-  0B5A 752A4A		MOV 2Ah, #4Ah
+  0B5A 752A4A		MOV 2Ah, #4Ah ; location of keyboard interface
   0B5D 754703		MOV 47h, #3h
   0B60 8042  		SJMP L0724
 
 L0722:
   0B62 754B00		MOV 4Bh, #0h
-  0B65 754C41		MOV 4Ch, #41h ; length value?
+  0B65 754C41		MOV 4Ch, #41h ; length of hid report descriptror
   0B68 752901		MOV 29h, #1h
-  0B6B 752A0F		MOV 2Ah, #0Fh
+  0B6B 752A0F		MOV 2Ah, #0Fh ; location of hid report descriptor
   0B6E 754704		MOV 47h, #4h
   0B71 8031  		SJMP L0724
 
@@ -2438,17 +2438,17 @@ L0721:
   0B81 04    		INC A
   0B82 7023  		JNZ L0742
   0B84 754B00		MOV 4Bh, #0h
-  0B87 754C09		MOV 4Ch, #9h ; length value?
+  0B87 754C09		MOV 4Ch, #9h ; length of 2nd interface
   0B8A 752904		MOV 29h, #4h
-  0B8D 752A63		MOV 2Ah, #63h
+  0B8D 752A63		MOV 2Ah, #63h ; 2nd interface location
   0B90 754705		MOV 47h, #5h
   0B93 800F  		SJMP L0724
 
 L0741:
   0B95 754B01		MOV 4Bh, #1h
-  0B98 754CE7		MOV 4Ch, #0E7h ; length value?
+  0B98 754CE7		MOV 4Ch, #0E7h ; length
   0B9B 752901		MOV 29h, #1h
-  0B9E 752A50		MOV 2Ah, #50h
+  0B9E 752A50		MOV 2Ah, #50h ; another hid report descriptor?
   0BA1 754706		MOV 47h, #6h
 L0724:
   0BA4 021620		LJMP L0725
@@ -2516,9 +2516,9 @@ L0773:
   0C0C E536  		MOV A, 36h
   0C0E B40412		CJNE A, #4h, L0774
   0C11 752900		MOV 29h, #0h
-  0C14 752AD7		MOV 2Ah, #0D7h
+  0C14 752AD7		MOV 2Ah, #0D7h ; serial number location
   0C17 754B00		MOV 4Bh, #0h
-  0C1A 754C25		MOV 4Ch, #25h ; length value?
+  0C1A 754C25		MOV 4Ch, #25h ; length
   0C1D 754708		MOV 47h, #8h
   0C20 020CAC		LJMP L0775
 
@@ -2585,9 +2585,9 @@ L0781:
   0C9A B40112		CJNE A, #1h, L0782
   0C9D 7401  		MOV A, #1h
   0C9F F54B  		MOV 4Bh, A
-  0CA1 F54C  		MOV 4Ch, A
+  0CA1 F54C  		MOV 4Ch, A ; length of 1
   0CA3 752903		MOV 29h, #3h
-  0CA6 752A37		MOV 2Ah, #37h
+  0CA6 752A37		MOV 2Ah, #37h ; something else? 0x20
   0CA9 754705		MOV 47h, #5h
 L0775:
   0CAC 021620		LJMP L0725
@@ -3327,7 +3327,7 @@ L0738:
 L0727:
   115B C3    		CLR C
   115C E54E  		MOV A, 4Eh ; length value?
-  115E 9408  		SUBB A, #8h
+  115E 9408  		SUBB A, #8h ; see if it's less than 8 bytes?
   1160 E54D  		MOV A, 4Dh
   1162 9400  		SUBB A, #0h
   1164 22    		RET
