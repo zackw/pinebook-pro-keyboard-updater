@@ -2361,7 +2361,7 @@ L0747:
   0AFA 6016  		JZ L0749 ; hailuck at 0x01
   0AFC 14    		DEC A
   0AFD 601F  		JZ L0750 ; usb keyboard at 0x02
-  0AFF 2403  		ADD A, #3h ; unclear if it ever reaches this, maybe for 0xFD
+  0AFF 2403  		ADD A, #3h ; unclear if it ever reaches this, maybe for 0xFF
   0B01 6027  		JZ L0751 ; sinowealth string
   0B03 14    		DEC A
   0B04 702F  		JNZ L0752 ; return
