@@ -86,3 +86,7 @@ NEW:
 ; new address for product
 ;  0B1E 752900   MOV 29h, #0h
 ;  0B21 752ABC   MOV 2Ah, #0BCh ; descriptor string for usb keyboard
+
+
+; add product to configuration string
+  043E 02           DB 002h ; iConfiguration (string index - could be used)
