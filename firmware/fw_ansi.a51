@@ -4621,7 +4621,7 @@ L0369:
 L0396:
   18DE E564  		MOV A, 64h
   18E0 25E0  		ADD A, ACC
-  18E2 2435  		ADD A, #35h
+  18E2 2435  		ADD A, #35h ; load func_cons
   18E4 F582  		MOV DPL, A
   18E6 E4    		CLR A
   18E7 3409  		ADDC A, #9h
