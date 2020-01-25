@@ -74,15 +74,22 @@ __code uint16_t fns_keypad[] = {
     [14] = REG_FN(KC_SLSH, KC_PSLS)
 };
 
+#define GET_DPL(addr) ((addr) & 0xFF)
+#define GET_DPH(addr) (((addr) >> 8) & 0xFF)
+
+#define FN_CONSUMER_ADDR STARTING_ADDR
+#define FN_REGULAR_ADDR FN_CONSUMER_ADDR + sizeof(fns_consumer)
+#define FN_KEYPAD_ADDR FN_REGULAR_ADDR + sizeof(fns_regular)
+
 // assign our custom array addresses to the DPTR loading spots
 
-__code __at (0x18E3) uint8_t fnc_consumer_dpl = (STARTING_ADDR) & 0xFF;
-__code __at (0x18E8) uint8_t fnc_consumer_dph = (STARTING_ADDR >> 8) & 0xFF;
+__code __at (0x18E3) uint8_t fns_consumer_dpl = GET_DPL(FN_CONSUMER_ADDR);
+__code __at (0x18E8) uint8_t fns_consumer_dph = GET_DPH(FN_CONSUMER_ADDR);
 
-__code __at (0x18C0) uint8_t fns_regular_dpl = (STARTING_ADDR + sizeof(fns_consumer)) & 0xFF;
-__code __at (0x18C5) uint8_t fns_regular_dph = ((STARTING_ADDR + sizeof(fns_consumer)) >> 8) & 0xFF;
+__code __at (0x18C0) uint8_t fns_regular_dpl = GET_DPL(FN_REGULAR_ADDR);
+__code __at (0x18C5) uint8_t fns_regular_dph = GET_DPH(FN_REGULAR_ADDR);
 
-__code __at (0x06D5) uint8_t fns_keypad_dpl = (STARTING_ADDR + sizeof(fns_consumer) + sizeof(fns_regular)) & 0xFF;
-__code __at (0x06DA) uint8_t fns_keypad_dph = ((STARTING_ADDR + sizeof(fns_consumer) + sizeof(fns_regular)) >> 8) & 0xFF;
-__code __at (0x079D) uint8_t fns_keypad_dpl2 = (STARTING_ADDR + sizeof(fns_consumer) + sizeof(fns_regular)) & 0xFF;
-__code __at (0x07A2) uint8_t fns_keypad_dph2 = ((STARTING_ADDR + sizeof(fns_consumer) + sizeof(fns_regular)) >> 8) & 0xFF;
+__code __at (0x06D5) uint8_t fns_keypad_dpl1 = GET_DPL(FN_KEYPAD_ADDR);
+__code __at (0x06DA) uint8_t fns_keypad_dph1 = GET_DPH(FN_KEYPAD_ADDR);
+__code __at (0x079D) uint8_t fns_keypad_dpl2 = GET_DPL(FN_KEYPAD_ADDR);
+__code __at (0x07A2) uint8_t fns_keypad_dph2 = GET_DPH(FN_KEYPAD_ADDR);

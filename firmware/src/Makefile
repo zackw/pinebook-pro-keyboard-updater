@@ -1,12 +1,17 @@
+ifeq (, $(shell which sdcc))
 SDCC=/c/Program\ Files\ \(x86\)/SDCC/bin/sdcc.exe
 SREC=/c/Program\ Files\ \(x86\)/SDCC/bin/srec_cat.exe
+else
+SDCC=sdcc
+SREC=srec_cat
+endif
 BUILD_DIR=build
 
 default: default_ansi
 
 %: $(BUILD_DIR)/revised.rel $(BUILD_DIR)/keymaps/%.rel | $(BUILD_DIR)
 	$(SDCC) $^ -o $(BUILD_DIR)/revised_$@.ihx --code-loc 0x3000
-	$(SREC) -disable-sequence-warning -data-only -mult ../fw_ansi.hex -Intel $(BUILD_DIR)/revised_$@.ihx -Intel -o revised_fw_$@.hex -Intel  
+	$(SREC) -disable-sequence-warning -data-only -mult ../fw_ansi.hex -Intel $(BUILD_DIR)/revised_$@.ihx -Intel -o revised_fw_$@.hex -Intel 2>/dev/null
 
 $(BUILD_DIR):
 	@mkdir -p $@
