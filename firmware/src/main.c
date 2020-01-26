@@ -1250,23 +1250,7 @@ void L0145(void) {
                 // none in r65
                 // L0426
                 L0369(); // call and ret
-                // L0389
-                if (R7) {
-                    R0 = 0xB3;
-                    if (*R0 & R5)
-                        return; // L0391
-                    ACC = ;
-                    ACC = *R0 | R5;
-                } else {
-                    // L0390
-                    R0 = 0xB3;
-                    if (*R0 & R5 == 0)
-                        return; // L0391
-                    ACC = ~R5 & *R0;
-                }
-                // L0392
-                *R0 = ACC;
-                r20 = 1;
+                L0389();
                 return; // L0391
             }
             // L0388
@@ -1788,6 +1772,25 @@ void L0384(void) {
     *R0 = ACC;
     r21 = 1;
     return; // L0386
+}
+
+void L0389(void) {
+	if (R7) {
+		R0 = 0xB3;
+		if (*R0 & R5)
+			return;
+		ACC = *R0 | R5;
+	} else {
+		// L0390
+		R0 = 0xB3;
+		if (*R0 & R5)
+			return;
+		ACC = ~R5 & *R0;
+	}
+	// L0392
+	*R0 = ACC;
+	r20 = 1;
+	return;
 }
 
 void L0456(void) {

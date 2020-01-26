@@ -35,12 +35,22 @@ ADDR(0x0693)[] = {
     0x02, 0x1B, 0xFF  // LJMP L0374  ; process as usual
 };
 
-
 // old non-privacy toggle jump to regular process (arrow key fix)
 ADDR(0x066A)[] = { 0x02, 0x06, 0xAD }; // LJMP L0449
 
 // ignore the numlock feature, only enable in fn layer
 ADDR(0x06CF)[] = { 0x02, 0x06, 0xD4 }; // LJMP L0436
+
+// r65 values to switch/case
+//   0x02: L0370
+//   0x01: -
+//   0x03: L0384
+//   0x05: L0389
+//   0x06: L0394
+//   0x07: L0398
+//   0x0A: L0395
+//   0x09: L0400
+//   0x0C: L0403
 
 // custom manufacturer
 ADDR(0x009B) = 0x1E; // length of packet
@@ -58,7 +68,6 @@ ADDR(0x00BE)[] = { // Pinebook Pro
     0x6F, 0x00, 0x6B, 0x00, 0x20, 0x00, 0x50, 0x00, 0x72, 0x00, 0x6F, 0x00,
     0x00, 0x00
 };
-
 
 // add product to configuration and interface string
 ADDR(0x043E) = 0xFF; // DB 0FFh ; iConfiguration (ANSI 0.1)
