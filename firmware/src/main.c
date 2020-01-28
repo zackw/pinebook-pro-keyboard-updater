@@ -271,20 +271,23 @@ void L0134(void) {
     *R0 = 0;
     R0++; // 0xBE
     *R0 = 0;
-    L0136();
+    L0136(); // start i2c
     R5 = 0x01;
     R7 = 0xA0;
-    L0137();
+    L0137(); // send 0xA0
     R5 = 0x01;
     R7 = 0x00;
-    L0137();
-    L0138();
-    L0136();
+    L0137(); // send 0x00
+    L0138(); // stop i2c
+    L0136(); // start i2c
     R5 = 0x01;
     R7 = 0xA0;
-    L0137();
-    R7 = 0x01
-    L0139();
+    L0137(); // send 0xA0
+    R7 = 0x01;
+    L0139(); // read from i2c
+    R0 = 0x17;
+    *R0 = 0x07;
+    L0138(); // stop i2c
     R0 = 0x17;
     if (*R0 == 0xFF)
         *R0 = 0;
@@ -293,65 +296,105 @@ void L0134(void) {
 }
 
 // L0136
+// i2c start condition
 void L0136(void) {
-    P3CON |= 0x05;
-    L0190(); // wait a lil
-    P3CON &= 0xFE;
-    PORT3_0 = 0;
-    L0219(); // wait a lot
-    P3CON &= 0xFB;
-    PORT3_2 = 0;
+    P3CON |= 0x05; // 0bxxxxx1x1 HI-Z SDA and SCL (pulled high ex)
+    L0190();       // wait a lil
+    P3CON &= 0xFE; // 0bxxxxxxx0 SDA to output
+    PORT3_0 = 0;   //            Pull down SDA
+    L0219();       // wait a lot
+    P3CON &= 0xFB; // 0bxxxxx0xx SCL to ouput
+    PORT3_2 = 0;   //            Pull down SCL
 }
 
 // L0137
 // something with i2c stuff - P30 and P32 are SDA and SCL
-// sends uses R5 (read/write?) and R7 (address?)
+// sends a byte (R7)
+// returns 0xFA for ack, 0xFB for nack to R7
 void L0137(void) {
     r6B = 0;
     R6 = 0;
     // L0236
-    do {
+    do { // send address (R7) to i2c
         ACC = R7;
         if (ACC & 0x80 == 0) {
             // L0234
-            P3CON &= 0xFE;
-            PORT3_0 = 0;
+            P3CON &= 0xFE; // 0bxxxxxxx0 SDA to output
+            PORT3_0 = 0;   //            Pull down SDA
         } else {
-            P3CON |= 0x01;
+            P3CON |= 0x01; // 0bxxxxxxx1 Hi-Z SDA (pulled high ex)
         }
         // L0235
         // 6 nops
-        P3CON |= 0x04;
-        R7 += ACC;
+        P3CON |= 0x04;     // 0bxxxxx1xx Hi-Z SCL (pulled high ex)
+        R7 += ACC; // shift to the left
         // 12 nops
-        P3CON &= 0xFB;
-        PORT3_2 = 0;
+        P3CON &= 0xFB;     // 0bxxxxx0xx SCL to output
+        PORT3_2 = 0;       //            Pull down SCL
         R6++;
     } while (R6 != 0x08);
 
     // 12 nops
-    P3CON |= 0x01;
+    P3CON |= 0x01; // 0bxxxxxxx1 Hi-Z SDA (pulled high ex)
     // 6 nops
-    P3CON |= 0x04;
-    L0190();
-    R5 = PORT3_0;
-    P3CON &= 0xFB;
-    PORT3_2 = 0;
+    P3CON |= 0x04; // 0bxxxxx1xx Hi-Z SCL (pulled high ex)
+    L0190();       // wait a lil
+    R5 = PORT3_0;  // read from SDA - ack?
+    P3CON &= 0xFB; // 0bxxxxx0xx SCL to ouput
+    PORT3_2 = 0;   //            Pull down SCL
     if (R5 != 0x01) {
-        R7 = 0xFA;
+        R7 = 0xFA; // ack
     } else {
-        R7 = 0xFB;
+        R7 = 0xFB; // nack
     }
+    return; // ret
 }
 
+// i2c stop condition
 void L0138(void) {
     // L0138
-    P3CON &= 0xFE;
-    PORT3_0 = 0;
-    L0190();
-    P3CON |= 0x04;
-    L0219();
+    P3CON &= 0xFE; // 0bxxxxxxx0 SDA to output
+    PORT3_0 = 0;   //            Pull down SDA
+    L0190();       // wait a lil
+    P3CON |= 0x04; // 0bxxxxx1xx Hi-Z SCL (pulled high ex)
+    L0219();       // wait a lot
+    P3CON |= 0x01; // 0bxxxxxxx1 Hi-Z SDA (pulled high ex)
+}
+
+// i2c read byte to R7
+// set R7 for no wait
+void L0139(void) {
+    // L0139
+    r6B = 0;
     P3CON |= 0x01;
+    R6 = 0;
+
+    // L0279
+    do {
+        P3CON |= 0x04; // 0bxxxxx1xx Hi-Z SCL (pulled high ex)
+        r6B = r6B << 1;
+        r6B |= PORT3_0; // read from SDA bit by bit
+        // 12 nops
+        P3CON &= 0xFB; // 0bxxxxx0xx SCL to ouput
+        PORT3_2 = 0;   //            Pull down SCL
+        // 12 nops
+        R6++;
+
+    } while (R6 != 0x08);
+    if (R7) {
+        // L0280
+        P3CON &= 0xFE; // 0bxxxxxxx0 SDA to output
+        PORT3_0 = 0;   //            Pull down SDA
+    } else {
+        // L0281                     stop condition
+        P3CON |= 0x01; // 0bxxxxxxx1 Hi-Z SDA (pulled high ex)
+    }
+    L0190();       // wait a lil
+    P3CON |= 0x04; // 0bxxxxx1xx Hi-Z SCL (pulled high ex)
+    L0190();       // wait a lil
+    P3CON &= 0xFB; // 0bxxxxx0xx SCL to ouput
+    PORT3_2 = 0;   //            Pull down SCL
+    R7 = r6B;
 }
 
 
@@ -955,6 +998,18 @@ uint8_t L0259(void) {
     return *DPTR;
 }
 
+void L0273(void) {
+    L0139(); // read from i2c
+    R3 = r66;
+    R2 = r67;
+    R1 = r68;
+    DPL = r6A;
+    DPH = 0x00;
+    ACC = R7;
+    L0275();
+    return;
+}
+
 // some generic lookup function that takes R0, R1, R2, (address mods) and R3 as
 // args, and adds them to DPTR
 void L0275(void) {
@@ -1150,7 +1205,7 @@ void L0344(void) {
         R7 = 0xFB;
     // L0345
     L0299();
-    // L0228
+    L0228();
 }
 
 // L0369
@@ -1587,42 +1642,44 @@ void L0145(void) {
     if (r09) { // L0358
         r09 = 0;
     }
-    R0 = 0x6D;
+    // L0145 cont
+    R0 = 0x6D; // this value might have come from i2c previously
     if (*R0 == 0xF1) {
         *R0 = 0;
         EA = 0;
-        // L0199 call { should be its own function i think
-            L0136();
+        // L0199 call {
+            L0136(); // start i2c
             R5 = 0x01;
             R7 = 0x20;
-            L0137();
-            if (R7 != 0xFB) {
+            L0137(); // send 0x20
+            if (R7 != 0xFB) { // ack received
                 // L0353 jump
                 R5 = 0x01;
                 R7 = 0x1D;
-                L0137();
-                L0138();
-                L0220();
-                L0136();
+                L0137(); // send 0x1D
+                L0138(); // stop i2c
+                L0220(); // wait 18 nops
+                L0136(); // start i2c
                 R5 = 0x01;
                 R7 = 0x21;
-                L0137();
-                if (R7 != 0xFB) {
+                L0137(); // send 0x21
+                if (R7 != 0xFB) { // ack received
                     // L0355
                     R7 = 0x01;
-                    L0139();
+                    L0139(); // read to R7
                     R0 = 0x6D;
-                    *R0 = r07;
-                    L0138();
+                    *R0 = r07; // does this pull from R7?
+                    L0138(); // stop
                     // ret
                 }
+            } else {
+                // L0354 jump
+                L0138(); // stop
+                R0 = 0x6D;
+                *R0 = 0;
+                // ret
             }
-            // L0354 jump
-            L0138();
-            R0 = 0x6D;
-            *R0 = 0;
-            // ret
-        // } L099
+        // } L0199
         EA = 1;
     }
     // L0198
@@ -2024,8 +2081,15 @@ void L0725(void) {
         r4E = r4C;
     }
     // L0726
-    // L0727 call
+    L0727();
 
+}
+
+void L0727(void) {
+    C = 0;
+    C = (r4E < 0x08); // ish
+    C = (r4D < 0x00); // idk
+    return;
 }
 
 void L0733(void) {
@@ -2034,6 +2098,24 @@ void L0733(void) {
     r4E += ACC;
     ACC = 0xFF;
     r45 += ACC; // keep track of remainder in c
+    return;
+}
+
+void L0736(void) {
+    r2A++;
+    ACC = r2A;
+    R4 = r29;
+    return;
+}
+
+void L0738(void) {
+    ACC--;
+    DPL = ACC;
+    DPH = R4;
+    ACC = 0;
+    ACC = *DPTR;
+    TXDAT0 = ACC;
+    R7++;
     return;
 }
 
@@ -2047,5 +2129,100 @@ void L0753(void) {
     r4B = 0x00;
     r4C = ACC;
     r47 = 0x07;
+    return;
+}
+
+void L08xx(void) {
+    ACC = r4E;
+    ACC |= r4D;
+    if (ACC == 0) {
+        // L0835
+        if (r11) {
+            r11 = 0;
+            TXCNT0 = 0;
+            // L0844
+            TXFLG0 |= 0x01;
+            return;
+
+        } else {
+            // L0847
+            TXFLG0 |= 0x02;
+            return;
+        }
+    }
+
+    L0727();
+    if (C) {
+        // L0836
+        r4A = r4E;
+        r4D = 0;
+        r4E = 0;
+    } else {
+        L0733();
+    }
+
+    // L0837
+    if (r4A == 0 || r47 == 0) {
+        // L0838
+        TXCNT0 = r4A;
+        L0682();
+        if (r12)
+            return;
+
+        // L0844
+        TXFLG0 |= 0x01;
+        return;
+    }
+    if (r47 != 0x08 || (r4E | r4D)) {
+        // L0839
+        R4 = 0x00;
+        // L0846
+        while (true) {
+            ACC = R7;
+            if (R7 < r4A) // ish
+                break;
+            L0736();
+            if (ACC == 0x00)
+                r29++;
+            // L0845
+            L0738(); // send data from pointer to usb ep 1
+        }
+
+    }
+    R7 = (r4E | r4D);
+
+    // L0842
+    while (true) {
+        R6 = r4A + 0xFE;
+        if (R7 < R6) { // ish
+            // L0840
+            R0 = 0x6D; // this value was previously read from i2c
+            ACC = *R0;
+            // this turns 0xVW into 0x3V3W and sends it to usb ep 0
+            // maybe this is some sort of padding for the hid spec?
+            R6 = ACC;
+            swap(ACC);
+            ACC = (ACC & 0x0F) + 0x30;
+            TXDAT0 = ACC;
+            ACC = (R6 & 0x0F) + 0x30;
+            TXDAT0 = ACC;
+            break;
+        } 
+        L0736();
+        if (ACC == 0x00)
+            r29++;
+
+        // L0841
+        L0738(); // send data from pointer to usb ep 1
+    }  
+
+    // L0838
+    TXCNT0 = r4A;
+    L0682();
+    if (r12)
+        return;
+
+    // L0844
+    TXFLG0 |= 0x01;
     return;
 }
