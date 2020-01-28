@@ -9,8 +9,7 @@ SOURCES := \
 	firmware/fw_iso_hex.c \
 	firmware/fw_ansi_hex.c \
 	firmware/tpfw_bin.c \
-	firmware/fw_ansi_revised_hex.c \
-	firmware/fw_iso_revised_hex.c \
+	firmware/fw_revised_default_ansi_hex.c \
 
 all: updater
 

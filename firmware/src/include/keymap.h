@@ -24,7 +24,9 @@
 #define R(n) ((KC_ ## n) | 0x0100)  
 #define M(n) ((n) | 0x0200)
 #define F() (0x00 | 0x0400)
-#define FN_C(n) (n | 0x0600)
+#define FS(n) (n | 0x0600)
+#define FR(n) (n | 0x0700)
+#define FK(n) (n | 0x0A00)
 
 #define REG_FN(reg, fn) (reg | ((uint16_t)fn) << 8)
 

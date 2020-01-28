@@ -1118,7 +1118,7 @@ CSEG AT 007Bh
   0470 08           DB 008h ; wMaxPacketSize
   0471 00           DB 000h ; *
   0472 0A           DB 00Ah ; bInterval
-  0473 FF           DB 0FFh 
+  0473 FF           DB 0FFh              ; start address table
   0474 14           DB 014h 
   0475 0D           DB 00Dh 
   0476 FF           DB 0FFh 
@@ -1300,7 +1300,7 @@ CSEG AT 007Bh
   0526 45           DB 045h ; 'E'
   0527 FF           DB 0FFh 
   0528 13           DB 013h 
-  0529 7A           DB 07Ah ; 'z'
+  0529 7A           DB 07Ah ; 'z'       end address table
 L0358:
   052A 7482  		MOV A, #82h
   052C 2537  		ADD A, 37h
@@ -1340,11 +1340,11 @@ L0359:
   0563 0207E3		LJMP L0360
 
 L0361:
-  0566 1223A3		LCALL L0362
+  0566 1223A3		LCALL L0362              ; keycode press processing
   0569 E565  		MOV A, 65h
   056B B40409		CJNE A, #4h, L0363
   056E 300A04		JNB 0Ah, L0364
-  0571 D226  		SETB 26h
+  0571 D226  		SETB 26h ; sets fn key
   0573 8002  		SJMP L0363
 
 L0364:
@@ -1420,7 +1420,7 @@ L0432:
   05E0 02076A		LJMP L0431
 
 L0447:
-  05E3 7815  		MOV R0, #15h ; that weird gui flag
+  05E3 7815  		MOV R0, #15h
   05E5 E6    		MOV A, @R0
   05E6 7003  		JNZ L0448
   05E8 0206AD		LJMP L0449
@@ -1616,7 +1616,7 @@ L0445:
 L0443:
   0721 8019  		SJMP L0422
 
-L0366:
+L0366:                                    ; key release processing
   0723 E565  		MOV A, 65h
   0725 B4020F		CJNE A, #2h, L0367
   0728 E564  		MOV A, 64h

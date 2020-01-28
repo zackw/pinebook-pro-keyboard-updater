@@ -10,10 +10,8 @@ extern unsigned char firmware_fw_iso_hex[];
 extern unsigned int firmware_fw_iso_hex_len;
 extern unsigned char firmware_fw_ansi_hex[];
 extern unsigned int firmware_fw_ansi_hex_len;
-extern unsigned char firmware_fw_ansi_revised_hex[];
-extern unsigned int firmware_fw_ansi_revised_hex_len;
-extern unsigned char firmware_fw_iso_revised_hex[];
-extern unsigned int firmware_fw_iso_revised_hex_len;
+extern unsigned char firmware_fw_revised_default_ansi_hex[];
+extern unsigned int firmware_fw_revised_default_ansi_hex_len;
 extern unsigned char firmware_tpfw_bin[];
 extern unsigned int firmware_tpfw_bin_len;
 
@@ -96,19 +94,7 @@ static int flash_kb_ansi_revised()
 {
   int rc;
 
-  rc = write_kb_fw(firmware_fw_ansi_revised_hex, firmware_fw_ansi_revised_hex_len);
-  if (rc < 0) {
-    return rc;
-  }
-
-  return 0;
-}
-
-static int flash_kb_iso_revised()
-{
-  int rc;
-
-  rc = write_kb_fw(firmware_fw_iso_revised_hex, firmware_fw_iso_revised_hex_len);
+  rc = write_kb_fw(firmware_fw_revised_default_ansi_hex, firmware_fw_revised_default_ansi_hex_len);
   if (rc < 0) {
     return rc;
   }
@@ -189,7 +175,7 @@ int main(int argc, char *argv[])
     if (!strcmp(argv[2], "ansi"))
       rc = flash_kb_ansi_revised();
     else
-      rc = flash_kb_iso_revised();
+      rc = usage(argv[0]);
   } else {
     rc = usage(argv[0]);
   }

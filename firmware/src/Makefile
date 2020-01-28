@@ -11,7 +11,7 @@ default: default_ansi
 
 %: $(BUILD_DIR)/revised.rel $(BUILD_DIR)/keymaps/%.rel | $(BUILD_DIR)
 	$(SDCC) $^ -o $(BUILD_DIR)/revised_$@.ihx --code-loc 0x3000
-	$(SREC) -disable-sequence-warning -data-only -mult ../fw_ansi.hex -Intel $(BUILD_DIR)/revised_$@.ihx -Intel -o revised_fw_$@.hex -Intel 2>/dev/null
+	$(SREC) -disable-sequence-warning -data-only -mult ../fw_ansi.hex -Intel $(BUILD_DIR)/revised_$@.ihx -Intel -o ../fw_revised_$@.hex -Intel 2>/dev/null
 
 $(BUILD_DIR):
 	@mkdir -p $@

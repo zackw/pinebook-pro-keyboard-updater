@@ -41,10 +41,34 @@ ADDR(0x066A)[] = { 0x02, 0x06, 0xAD }; // LJMP L0449
 // ignore the numlock feature, only enable in fn layer
 ADDR(0x06CF)[] = { 0x02, 0x06, 0xD4 }; // LJMP L0436
 
+// add another fn layer
+
+// in L0361
+// 056E jump to custom
+// if r0A 
+    // r?? |= r64
+// else
+    // r?? &= ~r64
+// jump to 0577
+
+// b26 mentions
+// 0571 // skipping
+// 0575 // skipping
+// 05AC // in 0x06 press
+// 05D5 // in 0x07 press
+// 06BA // in 0x0A press
+// 06E9 // in 0x09 press
+// 06FC // in 0x0C press
+
+// open vars
+// 2C
+
+
 // r65 values to switch/case
-//   0x02: L0370
 //   0x01: -
+//   0x02: L0370
 //   0x03: L0384
+//   0x04: 
 //   0x05: L0389
 //   0x06: L0394
 //   0x07: L0398

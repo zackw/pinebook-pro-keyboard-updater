@@ -1203,14 +1203,15 @@ void L0145(void) {
         }
         // L0471
         // ret } L0362
-        
+
+        // L0361 cont
         if (r65 == 0x04) {
             // one of these, with r64=0 possibly fn?
             if (r0A) {
-                r26 = 1; // fn actions
+                b26 = 1; // fn actions
             } else {
                 // L0364
-                r26 = 0;
+                b26 = 0;
             }
         }
         // L0363 jump
@@ -1371,25 +1372,25 @@ void L0145(void) {
             return;
         // L0425
         if (r65 == 0x06) {
-            DPH = L0394(); // call
-            R5 = *DPTR;
-            if (R5 == 0xFE) { // Fn + F7, disables touchpad
-                if (r24)
-                    r24 = 1;
-                else
-                    r24 = 0;
-                return;
-            } else {
-                // L0429 jump
-                // L0431 jump
-                R7 = r0A;
-                // L0373
+            if (b26) {
+                DPH = L0394(); // call
+                R5 = *DPTR;
+                if (R5 == 0xFE) { // Fn + F7, disables touchpad
+                    if (r24)
+                        r24 = 1;
+                    else
+                        r24 = 0;
+                    return;
+                }
             }
+            // L0431 jump
+            R7 = r0A;
+            // L0373
         }
         // L0427
         if (r65 == 0x07) {
             // L0432 jump
-            if (r26) {
+            if (b26) {
                 // L0398
                 DPTR = (r64 * 2 ) + 0x0942;
                 R5 = *DPTR;
@@ -1548,7 +1549,7 @@ void L0145(void) {
         }
         // L0433
         if (r65 == 0x0A) {
-            if (r26) { // fn key
+            if (b26) { // fn key
                 // L0402
                 DPTR = (r64 * 2 ) + 0x0958;
                 // L0395
