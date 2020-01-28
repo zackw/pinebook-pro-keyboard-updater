@@ -24,9 +24,9 @@
 __code __at (0x0815) uint16_t keymap[] = KEYMAP_ANSI(
     R(ESC), FS(0), FS(1), R(F3), FS(2), FS(3), FS(4), FS(5), FR(1), FR(2), FR(3), FR(4), FR(5), 
     R(GRV),  R(1), R(2), R(3), R(4), R(5), R(6), FK(7), FK(8), FK(9), FK(10), R(MINS), R(EQL), FR(10) , 
-    R(TAB),   R(Q), R(W), R(E), R(R), R(T), R(Y), FK(4), FK(5), FK(6), FK(11), R(LBRC), R(RBRC), R(BSLS),
-    R(CAPS),   R(A), R(S), R(D), R(F), R(G), R(H), FK(1), FK(2), FK(3), FK(12), R(QUOT), R(ENT),
-    M(LSFT),    FR(0), R(X), R(C), R(V), R(B), R(N), FK(0), R(COMM), FK(13), FK(14), M(RSFT), FR(6), 
+    R(TAB),   R(Q), R(W), R(F), R(P), R(G), R(J), FK(4), FK(5), FK(6), FK(11), R(LBRC), R(RBRC), R(BSLS),
+    R(CAPS),   R(A), R(R), R(S), R(T), R(D), R(H), FK(1), FK(2), FK(3), FK(12), R(QUOT), R(ENT),
+    M(LSFT),    FR(0), R(X), R(C), R(V), R(B), R(K), FK(0), R(COMM), FK(13), FK(14), M(RSFT), FR(6), 
     M(LCTL), F(0), M(LGUI), M(LALT),         R(SPC),           M(RALT), M(RCTL),        FR(7), FR(8), FR(9)
 );
 
@@ -58,18 +58,18 @@ __code uint16_t fns_regular[] = {
 // __code __at (0x0957)
 __code uint16_t fns_keypad[] = {
     [0] = REG_FN(KC_M, KC_P0),
-    [1] = REG_FN(KC_J, KC_P1),
-    [2] = REG_FN(KC_K, KC_P2),
-    [3] = REG_FN(KC_L, KC_P3),
-    [4] = REG_FN(KC_U, KC_P4),
-    [5] = REG_FN(KC_I, KC_P5),
-    [6] = REG_FN(KC_O, KC_P6),
+    [1] = REG_FN(KC_N, KC_P1),
+    [2] = REG_FN(KC_I, KC_P2),
+    [3] = REG_FN(KC_O, KC_P3),
+    [4] = REG_FN(KC_L, KC_P4),
+    [5] = REG_FN(KC_U, KC_P5),
+    [6] = REG_FN(KC_Y, KC_P6),
     [7] = REG_FN(KC_7, KC_P7),
     [8] = REG_FN(KC_8, KC_P8),
     [9] = REG_FN(KC_9, KC_P9),
     [10] = REG_FN(KC_0, KC_PAST),
-    [11] = REG_FN(KC_P, KC_PMNS),
-    [12] = REG_FN(KC_SCLN, KC_PPLS),
+    [11] = REG_FN(KC_SCLN, KC_PMNS),
+    [12] = REG_FN(KC_O, KC_PPLS),
     [13] = REG_FN(KC_DOT, KC_PDOT),
     [14] = REG_FN(KC_SLSH, KC_PSLS)
 };
