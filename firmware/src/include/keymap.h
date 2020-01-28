@@ -21,12 +21,12 @@
 #include "keycodes.h"
 
 #define NK 0x0000
-#define R(n) ((KC_ ## n) | 0x0100)  
-#define M(n) ((n) | 0x0200)
-#define F() (0x00 | 0x0400)
-#define FS(n) (n | 0x0600)
-#define FR(n) (n | 0x0700)
-#define FK(n) (n | 0x0A00)
+#define R(n) ((uint16_t)((KC_ ## n) << 8) | 0x01)  
+#define M(n) ((uint16_t)((n) << 8) | 0x02)
+#define F() (0x0000 | 0x04)
+#define FS(n) ((uint16_t)((n) << 8) | 0x06)
+#define FR(n) ((uint16_t)((n) << 8) | 0x07)
+#define FK(n) ((uint16_t)((n) << 8) | 0x0A)
 
 #define REG_FN(reg, fn) (reg | ((uint16_t)fn) << 8)
 
