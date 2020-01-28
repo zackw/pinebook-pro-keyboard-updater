@@ -251,6 +251,7 @@ void L0132(void) {
     }
 }
 
+// startup function of some sort
 void L0134(void) {
     // L0134
     // L0135
@@ -284,12 +285,12 @@ void L0134(void) {
     R7 = 0xA0;
     L0137(); // send 0xA0
     R7 = 0x01;
-    L0139(); // read from i2c
+    L0139(); // read from i2c (eeprom?)
     R0 = 0x17;
-    *R0 = 0x07;
+    *R0 = 0x07; // does this read from R7?
     L0138(); // stop i2c
     R0 = 0x17;
-    if (*R0 == 0xFF)
+    if (*R0 == 0xFF) // probably initial state of eeprom
         *R0 = 0;
 
     L0140();
@@ -826,6 +827,38 @@ void L0191(void) {
     R7 = r06;
 }
 
+// might be process TP data
+void L0201(void) {
+    // L0201
+    r64 = 0x05;
+    L0212();
+    R0 = 0xB7;
+    if (*R0 == 0) {
+        if (r3E != 0) {
+            R0 = 0xBA;
+            if (*R0 != 0)
+                // L0215
+        }
+        // L0214
+        R0 = 0xB9;
+        if (*R0 != 0) {
+            L0216();
+            if (R4 == 0xFB) {
+                // L0218
+                L0138(); // stop i2c
+                EA = 1;
+                // L0222
+                return;
+            }
+            // L0215
+            R5 = 0x01;
+        }
+    }
+    // L0213
+
+    // L0218
+}
+
 // L0219
 void L0219(void) {
     L0220();
@@ -842,28 +875,49 @@ void L0228(void) {
     r66 = R3;
     r67 = R2;
     r68 = R1;
-    L0136();
-    ACC = r65;
-    ACC += ACC;
-    ACC |= 0x01;
-    R7 = ACC;
+    L0136(); // start i2c
+    R7 = (r65 * 2) | 0x01;
     R5 = 0x01;
-    L0137();
-    ACC = R7;
-    ACC ^= 0xFA;
-    if (ACC != 0) {
+    L0137(); // send some data to i2c
+    if (R7 != 0xFA) { // nack
         // L0271
-        L0138();
+        L0138(); // stop i2c
         R7 = 0xFB;
         return;
     }
-    r6A = ACC;
+    r6A = 0; // from ACC
     // L0274
-    ACC = r69;
-    ACC--;
-    R7 = ACC;
-    ACC = r6A;
-    ..
+    while (true) {
+        ACC = r69;
+        ACC--;
+        R7 = ACC;
+        ACC = r6A;
+        if (r6A < R7) // ish
+            break;
+        R7 = 0;
+        // from L0299 when this is called
+        // R1 = 0xAB
+        // R2 = 0x00
+        // R3 = 0x00
+        // r69 = 0x01
+        // DPTR = 0x2401
+        // overwritten by L0273 itself:
+        // DPH = 0x00
+        // DPL = r6A
+        // so what actually happens in L0275 after getting i2c:
+        // *(R1 + DPL) = i2c_read
+        L0273(); // loads i2c data to pointer, look it up and set to R7?
+        r6A++;
+    }
+    // L0272
+    R7 = 0x01;
+    L0273();
+
+    // L0282
+    L0138(); // stop i2c
+    R7 = 0xFA;
+    return;
+    
 }
 
 void L0247(void) {
@@ -999,7 +1053,7 @@ uint8_t L0259(void) {
 }
 
 void L0273(void) {
-    L0139(); // read from i2c
+    L0139(); // read data from i2c to R7
     R3 = r66;
     R2 = r67;
     R1 = r68;
@@ -1106,13 +1160,13 @@ void L0302(void) {
     r66 = R3;
     r67 = R2;
     r68 = R1;
-    L0136();
+    L0136(); // start i2c
     R7 = r65 + ACC;
     R5 = 0x01;
-    L0137();
+    L0137(); // send data to i2c
     if (R7 != 0xFA) {
         // L0303
-        L0138();
+        L0138(); // stop i2c
         R7 = 0xFB;
         return;
     }
@@ -1122,7 +1176,7 @@ void L0302(void) {
         r69--;
         if (R7 == 0) {
             // L0304
-         L0138();();
+         L0138(); // stop i2c
             R7 = 0xFA;
             return;
         }
@@ -1131,7 +1185,7 @@ void L0302(void) {
         R1 = r68;
         R7 = L0259();
         R5 = 0x01;
-        L0137();
+        L0137(); // send R7 to i2c
         r68++;
         r67 += c; // leftover from previous op
     }
@@ -1155,7 +1209,7 @@ void L0316(void) {
         r69 = ACC;
         L0302();
         if (R7 == 0xFA) {
-            R0 = 0xAB;
+            R0 = 0xAB; // this might have been read from i2c earlier
             ACC = *R0;
             R0 = 0x92;
             if (ACC == 0x01) {
@@ -1183,18 +1237,19 @@ void L0331(void) {
     r69 = *DPTR; // &0x23F7, 0x03
 }
 
-// L0343
-void L0343(uint16_t DPTR) {
-    ACC = *DPTR;
-    r69 = ACC;
-    L0302();
-    R0 = 0xD7;
-    ACC = R7;
-    *R0 = R7;
-}
+void L0340(void) {
+    // L0340
+    L0294();
+    R2 = 0x23;
+    R1 = 0xE7;
+    DPTR = 0x23E6;
+    L0343();
+    if (R7 == 0xFB) {
+        R7 = 0xFB;
+        return;
+    }
 
-// L0344
-void L0344(void) {
+    // L0344
     R7 = 0x05;
     L0297();
     L0294();
@@ -1206,7 +1261,33 @@ void L0344(void) {
     // L0345
     L0299();
     L0228();
+    R0 = 0xD7;
+    *R0 = R7;
+    if (R7 == 0xFB) {
+        R7 = 0xFB;
+        return;
+    }
+    // L0346
+    R0 = 0xAB;
+    if (*R0 != 0x55) {
+        R7 = 0xFB;
+        return;
+    }
+    // L0347
+    R7 = 0xFA;
+    return;
 }
+
+// L0343
+void L0343(uint16_t DPTR) {
+    ACC = *DPTR;
+    r69 = ACC;
+    L0302();
+    R0 = 0xD7;
+    ACC = R7;
+    *R0 = R7;
+}
+
 
 // L0369
 uint8_t L0369(uint8_t r64) {
@@ -1493,8 +1574,8 @@ void L0145(void) {
                         // L0455
                         rC0 = 1;
                         rC1 = 1;
-                        L0456(); // call and ret
-                        L0138(); // call and ret, switch to jump
+                        L0456(); // send some data to eeprom
+                        L0138(); // stop i2c
                     }
                     // L0452
                     // L0399
@@ -1535,8 +1616,8 @@ void L0145(void) {
                         // L0461
                         rC0 = 1;
                         rC1 = 1;
-                        L0456(); // call and ret
-                        L0138(); // call and ret, switch to jump
+                        L0456(); // send some data to eeprom
+                        L0138(); // stop i2c
                     }
                     // L0459
                     // L0399
@@ -1589,8 +1670,8 @@ void L0145(void) {
                         R0 = 0x17;
                         R7 = *R0;
                         R5 = 0x01;
-                        L0137();
-                        L0138(); // switch to jump
+                        L0137(); // send some data to eeprom
+                        L0138(); // stop i2c (jump and ret)
                     } else {
                         return; // L0360 i think this should be changed
                     }
@@ -1853,17 +1934,17 @@ void L0389(void) {
 
 void L0456(void) {
     // L0456
-    L0136();
+    L0136(); // start i2c
     R5 = 0x01;
     R7 = 0xA0;
-    L0137();
+    L0137(); // send 0xA0
     R5 = 0x01;
     R7 = 0x00;
-    L0137();
+    L0137(); // send 0x00
     R0 = 0x17;
     R7 = *R0;
     R5 = 0x01;
-    L0137();
+    L0137(); // send 0x01
     // ret
 }
 
