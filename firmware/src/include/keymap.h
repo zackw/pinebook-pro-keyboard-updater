@@ -42,7 +42,7 @@
 #define KEYMAP_ANSI( \
     esc, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12,          \
     grv,  n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, min, eql, bkp,     \
-    tab,   q,  w,  e,  r,  t,  y,  o,  u,  i,  p,  lbr, rbr, bsl,    \
+    tab,   q,  w,  e,  r,  t,  y,  u,  i,  o,  p,  lbr, rbr, bsl,    \
     cap,    a,  s,  d,  f,  g,  h,  j,  k,  l,  sem, quo, ent,       \
     lsf,     z,  x,  c,  v,  b,  n,  m, com, dot, sls, rsf, up,      \
     lct, fn, pi, lal,         spc,           ral, rct, lef, dn, rht) \
