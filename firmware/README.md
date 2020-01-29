@@ -113,6 +113,8 @@ locations.
 ## HID Descriptor
 
 https://eleccelerator.com/usbdescreqparser/ was used to parse the usb stuff.
+https://sourceforge.net/projects/hidrdd/ can generate headers based on the
+descriptors.
 
 ## I2C Captures
 

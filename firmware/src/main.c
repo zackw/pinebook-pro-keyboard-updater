@@ -1175,12 +1175,12 @@ void L0247(void) {
         R6 = r02;
         R7 = r01;
         if (R7 | R6 == 0) {
-            R7 = swap(r66) & 0xF0;
-            R7 |= (swap(r6C) << 3) & 0x80;
-            ACC = (r67 << 2);
+            R7 = swap(r66) & 0xF0;          // usage 0x47 (1)
+            R7 |= (swap(r6C) << 3) & 0x80;  // usage 0x42 (1)
+            ACC = (r67 << 2);               // usage 0x51 (2)
             ACC |= R7;
-            ACC |= r65;
-            ACC |= r6B;
+            ACC |= r65;                     // usage 0x54 (3)
+            ACC |= r6B;                     // usage 0x01 (1)
             TXDAT2 = ACC;
             DPTR = 0x0001;
             ACC = L0258();
