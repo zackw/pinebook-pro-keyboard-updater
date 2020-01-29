@@ -1619,6 +1619,7 @@ void L0145(void) {
                 // there's 15 of these in the martix, with incrementing r64 values
                 // keypad keycodes
                 // L0402
+                DPTR = (r64 * 2 ) + 0x0958;
                 // L0395
                 DPH = ACC;
                 ACC = *DPTR;
@@ -1642,13 +1643,13 @@ void L0145(void) {
                 // one of these, F3 (screen switch)
                 // sends l gui + p
                 R7 = r0A;
-                R5 = 0x64; // KC_NUBS?
+                R5 = r64; // release F3
                 L0374(); // call
                 L0404(); // KC_P
                 L0143(); // send key info
                 // L0405
                 while (!(TXFLG1 & 0x08) && (TXFLG1 & 0x03));
-                L0406(); // KC_E & 0b10101100 mod bits
+                L0406(); // release mod bits
                 L0143(); // send key info
                 return; // L0360
 

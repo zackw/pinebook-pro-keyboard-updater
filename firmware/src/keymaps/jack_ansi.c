@@ -21,12 +21,15 @@
 // there instead of the usual spot, so we can enable any key to have a fn 
 #define STARTING_ADDR 0x3000
 
+// macro for shifted fn layer
+#define RS(n) ((uint16_t)((n) << 8) | 0x0C)
+
 __code __at (0x0815) uint16_t keymap[] = KEYMAP_ANSI(
     R(ESC), FS(0), FS(1), R(F3), FS(2), FS(3), FS(4), FS(5), FR(1), FR(2), FR(3), FR(4), FR(5), 
-    R(GRV),  R(1), R(2), R(3), R(4), R(5), R(6), FK(7), FK(8), FK(9), FK(10), R(MINS), R(EQL), FR(10) , 
-    R(TAB),   R(Q), FR(11), FR(12), FR(13), R(G), R(J), FR(14), FK(5), FR(15), FK(11), R(LBRC), R(RBRC), R(BSLS),
-    R(ESC),   FR(16), FR(17), R(S), FR(18), FR(19), FR(20), FR(21), FR(22), FR(23), FR(24), R(QUOT), R(ENT),
-    M(LSFT),    FR(0), R(X), R(C), R(V), R(B), R(K), FK(0), R(COMM), FK(13), FK(14), M(RSFT), FR(6), 
+    R(GRV),  R(1), R(2), R(3), R(4), R(5), R(6), R(7), R(8), R(9), R(0), R(MINS), R(EQL), FR(10) , 
+    R(TAB),   R(Q), RS(0), RS(1), RS(2), R(G), R(J), FR(11), RS(3), FR(12), R(SCLN), R(LBRC), R(RBRC), R(BSLS),
+    R(ESC),   FR(13), FR(14), RS(4), FR(15), RS(5), RS(6), RS(7), RS(8), FR(16), RS(9), R(QUOT), R(ENT),
+    M(LSFT),   R(Z),  RS(10), RS(11), RS(12), R(B), R(K), RS(13), RS(14), RS(15), R(SLSH), M(RSFT), FR(6), 
     M(LCTL), F(0), M(LGUI), M(LALT),         R(SPC),           F(0), M(RCTL),        FR(7), FR(8), FR(9)
 );
 
@@ -42,7 +45,6 @@ __code uint16_t fns_special[] = {
 
 // __code __at (0x0941)
 __code uint16_t fns_regular[] = {
-    [0] = REG_FN(KC_Z, KC_NUBS),
     [1] = REG_FN(KC_F8, KC_INS),
     [2] = REG_FN(KC_F9, KC_PSCR),
     [3] = REG_FN(KC_F10, KC_NLCK),
@@ -53,48 +55,57 @@ __code uint16_t fns_regular[] = {
     [8] = REG_FN(KC_DOWN, KC_PGDN),
     [9] = REG_FN(KC_RGHT, KC_END),
     [10] = REG_FN(KC_BSPC, KC_DEL),
-    [11] = REG_FN(KC_W, KC_KP_LT),
-    [12] = REG_FN(KC_F, KC_CURRENCY_UNIT),
-    [13] = REG_FN(KC_P, KC_KP_GT),
-    [14] = REG_FN(KC_L, KC_LBRC),
-    [15] = REG_FN(KC_Y, KC_RBRC),
-    [16] = REG_FN(KC_A, KC_NUBS),
-    [17] = REG_FN(KC_R, KC_KP_LPAREN),
-    [18] = REG_FN(KC_T, KC_KP_RPAREN),
-    [19] = REG_FN(KC_D, KC_NUHS),
-    [20] = REG_FN(KC_H, KC_KP_PERC),
-    [21] = REG_FN(KC_N, KC_KP_LCBRACKET),
-    [22] = REG_FN(KC_E, KC_KP_EQUAL),
-    [23] = REG_FN(KC_I, KC_KP_RCBRACKET),
-    [24] = REG_FN(KC_O, KC_KP_OR)
+    [11] = REG_FN(KC_L, KC_LBRC),
+    [12] = REG_FN(KC_Y, KC_RBRC),
+    [13] = REG_FN(KC_A, KC_BSLS),
+    [14] = REG_FN(KC_R, KC_KP_LPAREN),
+    [15] = REG_FN(KC_T, KC_KP_RPAREN),
+    [16] = REG_FN(KC_E, KC_EQL)
 };
 
-// the keypad area is disabled with the numlock fix, but this could be used
-// to flip the keyboard from qwerty to colemak (or something) in a pinch, sine
-// the default numlock feature locks.
-//
-// this separate lookup could also be used for shifted (and inversely shifted) keys
-// like _ and others that don't have unique keypad keycodes.
-//
-// or an alternate shift table for specific keycodes (processed separately maybe)
+// this array is processed by 0x0C and shift is applied to the fn keycode
 // __code __at (0x0957)
 __code uint16_t fns_keypad[] = {
-    [0] = REG_FN(KC_M, KC_P0),
-    [1] = REG_FN(KC_N, KC_P1),
-    [2] = REG_FN(KC_I, KC_P2),
-    [3] = REG_FN(KC_O, KC_P3),
-    [4] = REG_FN(KC_L, KC_P4),
-    [5] = REG_FN(KC_U, KC_P5),
-    [6] = REG_FN(KC_Y, KC_P6),
-    [7] = REG_FN(KC_7, KC_P7),
-    [8] = REG_FN(KC_8, KC_P8),
-    [9] = REG_FN(KC_9, KC_P9),
-    [10] = REG_FN(KC_0, KC_PAST),
-    [11] = REG_FN(KC_SCLN, KC_PMNS),
-    [12] = REG_FN(KC_O, KC_PPLS),
-    [13] = REG_FN(KC_DOT, KC_PDOT),
-    [14] = REG_FN(KC_SLSH, KC_PSLS)
+    [0] = REG_FN(KC_W, KC_COMM),  // <
+    [1] = REG_FN(KC_F, KC_4),     // $
+    [2] = REG_FN(KC_P, KC_DOT),   // >
+    [3] = REG_FN(KC_U, KC_MINS),  // _
+    [4] = REG_FN(KC_S, KC_QUOT),  // "
+    [5] = REG_FN(KC_D, KC_3),     // #
+    [6] = REG_FN(KC_H, KC_5),     // %
+    [7] = REG_FN(KC_N, KC_LBRC),  // {
+    [8] = REG_FN(KC_I, KC_RBRC),  // }
+    [9] = REG_FN(KC_O, KC_BSLS),  // |
+    [10] = REG_FN(KC_X, KC_SCLN),  // :
+    [11] = REG_FN(KC_C, KC_8),     // *
+    [12] = REG_FN(KC_V, KC_EQL),   // +
+    [13] = REG_FN(KC_M, KC_7),     // &
+    [14] = REG_FN(KC_COMM, KC_6),  // ^
+    [15] = REG_FN(KC_DOT, KC_GRV)  // ~
 };
+
+// make the 0x0C type use LSFT instead of LGUI
+ADDR(0x0805) = 0x01;
+
+// make Fn + 0x0C press go to the keypad table values instead of P
+ADDR(0x071B)[] = { 0x02, 0x06, 0xBD }; // jump to 0x06BD
+
+// make normal 0x0C press go to keypad table instead of L0422
+ADDR(0x0721)[] = { 0x80, 0xAD }; // jump to L0435/0x06C8
+
+/*
+  07C3 A20A         MOV C, 0Ah
+  07C5 33           RLC A
+  07C6 FF           MOV R7, A
+  07C7 AD64         MOV R5, 64h
+  07C9 121BFF       LCALL L0374
+  07CC 12080A       LCALL L0404
+  07CF 12170D       LCALL L0143 <-- keep
+*/
+// make 0x0C release the keypad keys instead - call 0x078F / L0397 ish
+ADDR(0x07C3)[] = {  0x12, 0x07, 0x8F, // call 0x078F
+                    0x02, 0x07, 0xCF, // skip to L0143 call
+                    0, 0, 0, 0, 0, 0};
 
 #define GET_DPL(addr) ((addr) & 0xFF)
 #define GET_DPH(addr) (((addr) >> 8) & 0xFF)
