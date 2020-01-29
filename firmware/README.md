@@ -112,10 +112,7 @@ locations.
 
 ## HID Descriptor
 
-It may be useful to use the HID Descriptor Tool to analyse those blocks in the
-file: https://www.usb.org/document-library/hid-descriptor-tool
-
-The .hid file can be loaded with this tool.
+https://eleccelerator.com/usbdescreqparser/ was used to parse the usb stuff.
 
 ## I2C Captures
 

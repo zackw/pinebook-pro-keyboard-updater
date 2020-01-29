@@ -836,27 +836,147 @@ void L0201(void) {
     if (*R0 == 0) {
         if (r3E != 0) {
             R0 = 0xBA;
-            if (*R0 != 0)
+            if (*R0 != 0) {
                 // L0215
-        }
-        // L0214
-        R0 = 0xB9;
-        if (*R0 != 0) {
-            L0216();
-            if (R4 == 0xFB) {
-                // L0218
+                R0 = 0xB9;
+                if (*R0 != 0) {
+                    L0216();
+                    if (R7 == 0xFB) {
+                        // L0218
+                        L0138(); // stop i2c
+                        EA = 1;
+                        return; // L0222
+                    }
+                    // L0283
+                    R5 = 0x01;
+                    R7 = 0x1F;
+
+                    // L0221
+                    L0137(); // send 0x1F
+                    L0138(); // stop i2c
+                    EA = 1;
+                    R0 = 0xB9;
+                    *R0 = 0;
+                }
+            }
+        } else {
+            // L0214
+            R0 = 0xB9;
+            if (*R0 != 0) {
+                L0216();
+                if (R4 == 0xFB) {
+                    // L0218
+                    L0138(); // stop i2c
+                    EA = 1;
+                    return; // L0222
+                }
+                // L0217
+                R5 = 0x01;
+                R7 = 0x1C;
+
+                // L0221
+                L0137(); // send 0x1C
                 L0138(); // stop i2c
                 EA = 1;
-                // L0222
-                return;
+                R0 = 0xB9;
+                *R0 = 0;
             }
-            // L0215
-            R5 = 0x01;
         }
     }
     // L0213
+    if (PORT3_3)
+        return; // L0222
+    R0 = 0xB7;
+    if (*R0 != 0)
+        return; // L0222
+    L0223();
 
+    if (R7 == 0xFB) {
+        // L0218
+        L0138(); // stop i2c
+        EA = 1;
+        return; // L0222
+    }
+
+    // L0224
+    R5 = 0x01;
+    R7 = 0x55;
+    L0137(); // send 0x55
+    L0138(); // stop i2c
+    L0221();
+    if (r3E) {
+        R0 = 0xBA;
+        if (*R0 != 0)
+            // L0226
+            r64 = 0x15;
+    }
+    // L0225
+    r64 = 0x05;
+    
+    // L0227
+    R3 = 0x00;
+    R2 = 0x00;
+    R1 = 0xBF;
+    r69 = r64;
+    R7 = 0x10;
+    L0228();
+    if (R7 == 0xFA) {
+        R0 = 0xBB;
+        *R0 = ACC;
+        R0++; // 0xBC;
+        *R0 = ACC;
+        EA = 1;
+        if (r3E == 0x01) {
+            R0 = 0xD4;
+            if (*R0 == 0) {
+                R0 = 0xBA;
+                if (*R0 != 0) {
+                    // L0231
+                    L0242();
+                } else {
+                    L0232();
+                }
+            }
+        } else {
+            // L0230
+            L0267();
+        }
+    }
+    // L0229
+    L0223();
+    if (R7 != 0xFB) {
+        // L0233
+        R5 = 0x01;
+        R7 = 0x1E;
+        L0137(); // send 0x1E
+    }
     // L0218
+    L0138(); // stop i2c
+    EA = 1;
+    return; // L0222
+}
+
+void L0212(void) {
+    R0 = 0xB7;
+    if (*R0 != 0x01)
+        return; // L0284
+    R0 = 0xBE;
+    *R0++;
+    ACC = *R0;
+    *R0--;
+    if (ACC == 0)
+        *R0++;
+    // L0285
+    C = 1;
+    R0 = 0xBE;
+    ACC = *R0 - 0xD0 - C;
+    R0--; // 0xBD
+    ACC = *R0 - 0x07 - C;
+    if // if the 16 bit amount at 0xBD,0xBE is < 0x7D0 ish
+        return; // L0284
+    R0 = 0xB7;
+    *R0 = 0;
+    return; // L0284
 }
 
 // L0219
@@ -895,7 +1015,7 @@ void L0228(void) {
         if (r6A < R7) // ish
             break;
         R7 = 0;
-        // from L0299 when this is called
+        // from L0299 when this is called (from L0340)
         // R1 = 0xAB
         // R2 = 0x00
         // R3 = 0x00

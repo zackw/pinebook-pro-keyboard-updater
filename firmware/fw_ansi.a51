@@ -303,14 +303,14 @@ CSEG AT 007Bh
   0141 15           DB 015h ;   logical min
   0142 00           DB 000h ;     0
   0143 26           DB 026h ;   logical max
-  0144 FF           DB 0FFh ;     0xFF00
+  0144 FF           DB 0FFh ;     0x00FF
   0145 00           DB 000h ;
   0146 05           DB 005h ;   usage page
   0147 07           DB 007h ;     keyboard
   0148 19           DB 019h ;   usage min
   0149 00           DB 000h ;     0
   014A 2A           DB 02Ah ;   usage max
-  014B FF           DB 0FFh ;     0xFF00
+  014B FF           DB 0FFh ;     0x00FF
   014C 00           DB 000h ;
   014D 81           DB 081h ;   input
   014E 00           DB 000h ;     data, array, absolute
@@ -430,8 +430,8 @@ CSEG AT 007Bh
   01C0 15           DB 015h ;   logical min
   01C1 00           DB 000h ;     0
   01C2 26           DB 026h ;   logical max
-  01C3 78           DB 078h ;     0x7805
-  01C4 05           DB 005h ;
+  01C3 78           DB 078h ;     0x0578
+  01C4 05           DB 005h ;     *
   01C5 75           DB 075h ;   report size
   01C6 10           DB 010h ;     0x10 
   01C7 55           DB 055h ;   unit exponent
@@ -439,82 +439,82 @@ CSEG AT 007Bh
   01C9 65           DB 065h ;   unit
   01CA 11           DB 011h ;     SI Lin:Distance
   01CB 09           DB 009h ;   usage
-  01CC 30           DB 030h ; '0'
-  01CD 35           DB 035h ; '5'
-  01CE 00           DB 000h 
-  01CF 46           DB 046h ; 'F'
-  01D0 E0           DB 0E0h 
-  01D1 01           DB 001h 
-  01D2 95           DB 095h ; report count 
-  01D3 01           DB 001h 
-  01D4 81           DB 081h 
-  01D5 02           DB 002h 
+  01CC 30           DB 030h ;     reserved
+  01CD 35           DB 035h ;   physical minimum
+  01CE 00           DB 000h ;     0
+  01CF 46           DB 046h ;   physical maximum
+  01D0 E0           DB 0E0h ;     0x1E0
+  01D1 01           DB 001h ;     *
+  01D2 95           DB 095h ;   report count 
+  01D3 01           DB 001h ;     1
+  01D4 81           DB 081h ;   input
+  01D5 02           DB 002h ;     data, variable, absolute
   01D6 26           DB 026h ;   logical max
-  01D7 92           DB 092h 
-  01D8 03           DB 003h 
-  01D9 46           DB 046h ; 'F'
-  01DA 40           DB 040h ; '@'
-  01DB 01           DB 001h 
-  01DC 09           DB 009h ; usage
-  01DD 31           DB 031h ; '1'
-  01DE 81           DB 081h 
-  01DF 02           DB 002h 
+  01D7 92           DB 092h ;     0x0392 
+  01D8 03           DB 003h ;     *
+  01D9 46           DB 046h ;   physical maximum
+  01DA 40           DB 040h ;     0x0140
+  01DB 01           DB 001h ;     *
+  01DC 09           DB 009h ;   usage
+  01DD 31           DB 031h ;     0x31
+  01DE 81           DB 081h ;   input
+  01DF 02           DB 002h ;     data, variable, absolute
   01E0 C0           DB 0C0h ; end collection
-  01E1 A1           DB 0A1h 
-  01E2 02           DB 002h 
-  01E3 55           DB 055h ; 'U'
-  01E4 0C           DB 00Ch 
-  01E5 66           DB 066h ; 'f'
-  01E6 01           DB 001h 
-  01E7 10           DB 010h 
-  01E8 47           DB 047h ; 'G'
-  01E9 FF           DB 0FFh 
-  01EA FF           DB 0FFh 
-  01EB 00           DB 000h 
-  01EC 00           DB 000h 
-  01ED 27           DB 027h ; '''
-  01EE FF           DB 0FFh 
-  01EF FF           DB 0FFh 
-  01F0 00           DB 000h 
-  01F1 00           DB 000h 
-  01F2 75           DB 075h ; report size
-  01F3 10           DB 010h 
-  01F4 95           DB 095h ; report count 
-  01F5 01           DB 001h 
-  01F6 05           DB 005h 
-  01F7 0D           DB 00Dh 
-  01F8 09           DB 009h ; usage
-  01F9 56           DB 056h ; 'V'
-  01FA 81           DB 081h 
-  01FB 02           DB 002h 
-  01FC 05           DB 005h 
-  01FD 0D           DB 00Dh 
-  01FE 85           DB 085h 
-  01FF 1F           DB 01Fh 
-  0200 09           DB 009h ; usage
-  0201 55           DB 055h ; 'U'
-  0202 09           DB 009h ; usage
-  0203 59           DB 059h ; 'Y'
-  0204 75           DB 075h ; report size
-  0205 04           DB 004h 
-  0206 95           DB 095h ; report count 
-  0207 02           DB 002h 
-  0208 25           DB 025h ; '%'
-  0209 0F           DB 00Fh 
-  020A B1           DB 0B1h ; feature
-  020B 02           DB 002h 
-  020C 05           DB 005h 
-  020D 0D           DB 00Dh 
-  020E 85           DB 085h 
-  020F 25           DB 025h ; '%'
-  0210 09           DB 009h ; usage
-  0211 60           DB 060h ; '`'
-  0212 75           DB 075h ; report size
-  0213 01           DB 001h 
-  0214 95           DB 095h ; report count 
-  0215 01           DB 001h 
-  0216 15           DB 015h ; logical min 
-  0217 00           DB 000h 
+  01E1 A1           DB 0A1h ; collection
+  01E2 02           DB 002h ;   logical
+  01E3 55           DB 055h ;   unit exp
+  01E4 0C           DB 00Ch ;     -4
+  01E5 66           DB 066h ;   uint
+  01E6 01           DB 001h ;     time
+  01E7 10           DB 010h ;     seconds
+  01E8 47           DB 047h ;   physical max
+  01E9 FF           DB 0FFh ;     0x0000FFFF
+  01EA FF           DB 0FFh ;     *
+  01EB 00           DB 000h ;     *
+  01EC 00           DB 000h ;     *
+  01ED 27           DB 027h ;   logical max
+  01EE FF           DB 0FFh ;     0x0000FFFF
+  01EF FF           DB 0FFh ;     *
+  01F0 00           DB 000h ;     *
+  01F1 00           DB 000h ;     *
+  01F2 75           DB 075h ;   report size
+  01F3 10           DB 010h ;     0x10
+  01F4 95           DB 095h ;   report count 
+  01F5 01           DB 001h ;     1
+  01F6 05           DB 005h ;   usage page
+  01F7 0D           DB 00Dh ;     digitizer
+  01F8 09           DB 009h ;   usage
+  01F9 56           DB 056h ;     0x56
+  01FA 81           DB 081h ;   input
+  01FB 02           DB 002h ;     data, variable, absolute
+  01FC 05           DB 005h ;   usage page
+  01FD 0D           DB 00Dh ;     digitizer
+  01FE 85           DB 085h ;   report id
+  01FF 1F           DB 01Fh ;     0x1F (31)
+  0200 09           DB 009h ;   usage
+  0201 55           DB 055h ;     0x55
+  0202 09           DB 009h ;   usage
+  0203 59           DB 059h ;     0x59
+  0204 75           DB 075h ;   report size
+  0205 04           DB 004h ;     4
+  0206 95           DB 095h ;   report count 
+  0207 02           DB 002h ;     2
+  0208 25           DB 025h ;   logical max
+  0209 0F           DB 00Fh ;     15
+  020A B1           DB 0B1h ;   feature
+  020B 02           DB 002h ;     data, variable, absolute
+  020C 05           DB 005h ;   usage page
+  020D 0D           DB 00Dh ;     digitizer
+  020E 85           DB 085h ;   report id
+  020F 25           DB 025h ;     0x25 (37)
+  0210 09           DB 009h ;   usage
+  0211 60           DB 060h ;     0x60
+  0212 75           DB 075h ;   report size
+  0213 01           DB 001h ;     1
+  0214 95           DB 095h ;   report count 
+  0215 01           DB 001h ;     1
+  0216 15           DB 015h ;   logical min 
+  0217 00           DB 000h ;     0
   0218 25           DB 025h ; '%'
   0219 01           DB 001h 
   021A B1           DB 0B1h ; feature
@@ -523,8 +523,8 @@ CSEG AT 007Bh
   021D 07           DB 007h 
   021E B1           DB 0B1h ; feature
   021F 03           DB 003h 
-  0220 06           DB 006h 
-  0221 00           DB 000h 
+  0220 06           DB 006h ;  I stopped decoding it here - see the usb_hid_ansi.txt
+  0221 00           DB 000h ;  for all of the info contained in this block
   0222 FF           DB 0FFh
   0223 85           DB 085h 
   0224 20           DB 020h ; ' '
