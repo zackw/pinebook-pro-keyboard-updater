@@ -490,7 +490,8 @@ void L0142(void) {
     L0145(); // keymap parse with r51, r37 (index from 0x82), 0x80 0x81
 }
 
-// updates the hardware cuts based on values at 0x17
+// updates the hardware cuts based on values at 0x17 and sends the current data
+// in the key buffer over usb
 void L0143(void) {
     // L0143
     R0 = 0x17;
@@ -517,15 +518,15 @@ void L0143(void) {
     }
     // start of usb endpoint 1 transmit
     // L0412
-    if (rE4 & 0x08 == 0)
+    if (TXFLG1 & 0x08 == 0)
         return; // L0413 from jump
-    if (rE4 & 0x03)
+    if (TXFLG1 & 0x03)
         return; // L0413 from jump
     if (r22 == 0)
         return; // L0413 from jump
     r22 = 0;
-    if (r96 & 0x08) {
-        r96 &= 0xEF;
+    if (MODE_FG & 0x08) {
+        MODE_FG &= 0xEF;
         return;
     }
     // L0414
@@ -889,7 +890,7 @@ void L0201(void) {
     R0 = 0xB7;
     if (*R0 != 0)
         return; // L0222
-    L0223();
+    L0223(); // send 0x20
 
     if (R7 == 0xFB) {
         // L0218
@@ -903,7 +904,7 @@ void L0201(void) {
     R7 = 0x55;
     L0137(); // send 0x55
     L0138(); // stop i2c
-    L0221();
+    L0220(); // wait a while
     if (r3E) {
         R0 = 0xBA;
         if (*R0 != 0)
@@ -943,7 +944,7 @@ void L0201(void) {
         }
     }
     // L0229
-    L0223();
+    L0223(); // send 0x20
     if (R7 != 0xFB) {
         // L0233
         R5 = 0x01;
@@ -988,6 +989,16 @@ void L0219(void) {
 // L0220
 void L0220(void) {
     // 12 nops
+}
+
+void L0223(void) {
+    // L0223
+    EA = 0;
+    L0136(); // start i2c
+    R5 = 0x01;
+    R7 = 0x20;
+    L0137(); // send 0x20
+    return;
 }
 
 void L0228(void) {
@@ -1040,6 +1051,84 @@ void L0228(void) {
     
 }
 
+void L0242(void) {
+    // L0242
+    R0 = 0xCF;
+    R7 = *R0;
+    R6 = R7 & 0x07;
+    if (R6 == 0 && !(R7 & 0x18))
+        return; // L0244
+    // L0243
+    if (R6 < 0x01 && *R0 & 0x18) // ish
+        return;
+    // L0245
+    R0 = 0xC1;
+    R6 = *R0;
+    ACC = SWAP(R6);
+    ACC >> 2;
+    R7 = ACC & 0x02;
+    R0 = 0xCF;
+    R5 = *R0 & 0x07;
+    ACC = R6;
+    L0246();
+    r69 = 0x00;
+    r6A = 0xBF;
+    R6 = *R0;
+    r6B = (SWAP(R6) >> 1) & 0x01;
+    L0247();
+    R0 = 0xCF;
+    R6 = *R0;
+    if (R6 & 0x07 < 0x02) // ish
+        return; // L0244
+    R0 = 0xC5;
+    L0248();
+    r69 = 0x00;
+    r6A = 0xC3;
+    L0249();
+    if (ACC < 0x03) // ish
+        return; // L0244
+    R0 = 0xC9;
+    L0248();
+    r69 = 0x00;
+    r6A = 0xC7;
+    L0249();
+    if (ACC < 0x04) // ish
+        return;
+    R0 = 0xCD;
+    L0248();
+    r69 = 0x00;
+    r6A = 0xCB;
+    r6B = (swap(R6) >> 1) & 0x01;
+    R5 = 0;
+    L0247();
+    return; // L0244
+}
+
+void L0246(void) {
+    R3 = swap(ACC) & 0x07;
+    r68 = 0x00;
+    return;
+} 
+
+void L0248(void) {
+    R5 = *R0;
+    R7 = (swap(R5) >> 2) & 0x02;
+    ACC = R5;
+    L0246();
+    return;
+}
+
+void L0249(void) {
+    R5 = (swap(R6) >> 1) & 0x01;
+    L0247();
+    R0 = 0xCF;
+    R6 = *R0;
+    ACC = R6 & 0x07;
+    C = 0;
+    return;
+}
+
+// send data over EP 2
 void L0247(void) {
     // L0247
     r65 = R7;
@@ -1064,49 +1153,31 @@ void L0247(void) {
     
     // L0253
     R0 = 0xD5;
-    ACC = *R0;
-    R7 = ACC;
-    ACC &= 0x03;
-    if (ACC)
+    R7 = *R0;
+    if (R7 & 0x03)
         return; // L0254 jump
 
     // L0255
     R0 = 0xCF;
-    ACC = *R0;
-    ACC &= 0x18;
-    if (ACC != 0) {
-        ACC = R7;
-        if (ACC & 0x02)
+    if (*R0 & 0x18 != 0) {
+        if (R7 & 0x02)
             r6C = 0x01;
     }
 
     // L0256
     EA = 0;
-    TXDAT2 = 0x1E;
+    TXDAT2 = 0x1E; // report id? for digitizer
     R0 = 0xD5;
-    ACC = *R0;
-    if (ACC & 0x01) {
+    if (*R0 & 0x01) {
         R3 = r68;
         R2 = r69;
         R1 = r6A;
         R6 = r02;
         R7 = r01;
-        ACC = R7;
-        ACC |= R6;
-        if (ACC == 0) {
-            ACC = r66;
-            ACC = swap(ACC);
-            ACC &= 0xF0;
-            R7 = ACC;
-            ACC = r6C;
-            ACC = swap(ACC);
-            ACC = ACC << 3;
-            ACC &= 0x80;
-            ACC |= R7;
-            R7 = ACC;
-            ACC = r67;
-            ACC += ACC;
-            ACC += ACC;
+        if (R7 | R6 == 0) {
+            R7 = swap(r66) & 0xF0;
+            R7 |= (swap(r6C) << 3) & 0x80;
+            ACC = (r67 << 2);
             ACC |= R7;
             ACC |= r65;
             ACC |= r6B;
@@ -1432,8 +1503,8 @@ void L0145(void) {
         // where the actual keymap gets loaded
 
         // L0359
-        r65 = *((2 * R7) + 0x815); // fn key
-        r64 = *((2 * R7) + 0x816); // normal
+        r65 = *((2 * R7) + 0x815); // key type
+        r64 = *((2 * R7) + 0x816); // arg for type/keycode
         if (r65 == 0)
             return; // L0360
         // L0361
@@ -1485,7 +1556,7 @@ void L0145(void) {
                 }
                 // L0368
                 L0369(); // call and ret
-                L0370(); // jump and ret, this sets modifiers to 0xAC
+                L0370(); // set mods
                 return; // beyond L0359 apparently
             }
             // L0367
@@ -1573,18 +1644,12 @@ void L0145(void) {
                 R7 = r0A;
                 R5 = 0x64; // KC_NUBS?
                 L0374(); // call
-                // L0404 call
-                R7 = r0A;
-                R5 = 0x13; // KC_P
-                L0374(); // call
-                L0143(); // update hw cuts
+                L0404(); // KC_P
+                L0143(); // send key info
                 // L0405
                 while (!(TXFLG1 & 0x08) && (TXFLG1 & 0x03));
-                // L0406
-                R7 = r0A;
-                R5 = 0x08; // KC_E
-                L0370();
-                L0143(); // L0446 update hw cuts
+                L0406(); // KC_E & 0b10101100 mod bits
+                L0143(); // send key info
                 return; // L0360
 
             } else {
@@ -1603,7 +1668,7 @@ void L0145(void) {
             // L0420 next
             // L0368 jump
             L0369(); // call
-            L0370(); // jump
+            L0370(); // set mods
             return;
 
         }
@@ -1828,6 +1893,38 @@ void L0145(void) {
             L0374(); // jump
         }
         // L0434
+        if (r65 == 0x09) {
+            if (r26) {
+                // L0441
+                R5 = 0x66;
+            } else {
+                // L0440
+                // L0422
+                L0369();
+            }
+        }
+        // L0439
+        if (r65 == 0x0C) {
+            // L0442
+            if (r26) {
+                // L0444
+                while (!(TXFLG1 & T1EPE));
+                // there's another additional check loop after this loop
+                L0406(); // LGUI
+                L0143(); // send key info
+                // L0445
+                while (!(TXFLG1 & T1EPE));
+                // there's another additional check loop after this loop
+                L0404(); // KC_P
+                L0143(); // send key info
+
+            } else {
+                // L0443
+                // L0422
+                L0369();
+            }
+        }
+        // L0360
 
         // L0428
         // L0396 call
@@ -1938,7 +2035,7 @@ void L0145(void) {
 
 }
 
-// set R5 modifiers to 0xAC
+// sets modifiers (R5) at 0xAC for processing later
 void L0370(void) {
     // L0370
     r22 = 1;
@@ -1953,6 +2050,7 @@ void L0370(void) {
     // ret
 }
 
+// puts currently pressed keys at 0xAD to be sent over usb later
 void L0374(void) {
     if (R7) {
         R6 = 0;
@@ -2050,6 +2148,22 @@ void L0389(void) {
 	*R0 = ACC;
 	r20 = 1;
 	return;
+}
+
+void L0404(void) {                 
+    // L0404
+    R7 = r0A;
+    R5 = 0x13; // KC_P
+    L0374();
+    return;
+}
+
+void L0406(void) {                 
+    // L0406
+    R7 = r0A;
+    R5 = 0x08; // LGUI
+    L0370();   // sets mods
+    return;
 }
 
 void L0456(void) {
