@@ -4,12 +4,12 @@
 //--------------------------------------------------------------------------------
 
 /*
-05 01        (GLOBAL) USAGE_PAGE         0x0001  
-09 06        (LOCAL)  USAGE              0x00010006 <-- Warning: Undocumented usage (document it by inserting 0006 into file 0001.conf)
-A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010006: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CA (Application Collection)
-05 07          (GLOBAL) USAGE_PAGE         0x0007  
-19 E0          (LOCAL)  USAGE_MINIMUM      0x000700E0 <-- Warning: Undocumented usage (document it by inserting 00E0 into file 0007.conf)
-29 E7          (LOCAL)  USAGE_MAXIMUM      0x000700E7 <-- Warning: Undocumented usage (document it by inserting 00E7 into file 0007.conf)
+05 01        (GLOBAL) USAGE_PAGE         0x0001 Generic Desktop Page 
+09 06        (LOCAL)  USAGE              0x00010006 Keyboard (Application Collection)  
+A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010006: Page=Generic Desktop Page, Usage=Keyboard, Type=Application Collection)
+05 07          (GLOBAL) USAGE_PAGE         0x0007 Keyboard/Keypad Page 
+19 E0          (LOCAL)  USAGE_MINIMUM      0x000700E0 Keyboard Left Control (Dynamic Value)  
+29 E7          (LOCAL)  USAGE_MAXIMUM      0x000700E7 Keyboard Right GUI (Dynamic Value)  
 15 00          (GLOBAL) LOGICAL_MINIMUM    0x00 (0)  <-- Info: Consider replacing 15 00 with 14
 25 01          (GLOBAL) LOGICAL_MAXIMUM    0x01 (1)  
 75 01          (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field  
@@ -20,9 +20,9 @@ A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010006: Pag
 81 01          (MAIN)   INPUT              0x00000001 (1 field x 8 bits) 1=Constant 0=Array 0=Absolute 
 95 03          (GLOBAL) REPORT_COUNT       0x03 (3) Number of fields  
 75 01          (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field  
-05 08          (GLOBAL) USAGE_PAGE         0x0008  
-19 01          (LOCAL)  USAGE_MINIMUM      0x00080001 <-- Warning: Undocumented usage (document it by inserting 0001 into file 0008.conf)
-29 03          (LOCAL)  USAGE_MAXIMUM      0x00080003 <-- Warning: Undocumented usage (document it by inserting 0003 into file 0008.conf)
+05 08          (GLOBAL) USAGE_PAGE         0x0008 LED Indicator Page 
+19 01          (LOCAL)  USAGE_MINIMUM      0x00080001 Num Lock (On/Off Control)  
+29 03          (LOCAL)  USAGE_MAXIMUM      0x00080003 Scroll Lock (On/Off Control)  
 91 02          (MAIN)   OUTPUT             0x00000002 (3 fields x 1 bit) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
 95 05          (GLOBAL) REPORT_COUNT       0x05 (5) Number of fields  
 75 01          (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field <-- Redundant: REPORT_SIZE is already 1 
@@ -31,45 +31,45 @@ A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010006: Pag
 75 08          (GLOBAL) REPORT_SIZE        0x08 (8) Number of bits per field  
 15 00          (GLOBAL) LOGICAL_MINIMUM    0x00 (0) <-- Redundant: LOGICAL_MINIMUM is already 0 <-- Info: Consider replacing 15 00 with 14
 26 FF00        (GLOBAL) LOGICAL_MAXIMUM    0x00FF (255)  
-05 07          (GLOBAL) USAGE_PAGE         0x0007  
-19 00          (LOCAL)  USAGE_MINIMUM      0x00070000   <-- Info: Consider replacing 19 00 with 18
+05 07          (GLOBAL) USAGE_PAGE         0x0007 Keyboard/Keypad Page 
+19 00          (LOCAL)  USAGE_MINIMUM      0x00070000 Keyboard No event indicated (Selector)  <-- Info: Consider replacing 19 00 with 18
 2A FF00        (LOCAL)  USAGE_MAXIMUM      0x000700FF   <-- Info: Consider replacing 2A FF00 with 29 FF
 81 00          (MAIN)   INPUT              0x00000000 (6 fields x 8 bits) 0=Data 0=Array 0=Absolute 
 C0           (MAIN)   END_COLLECTION     Application 
 */
 
 //--------------------------------------------------------------------------------
-//  inputReport (Device --> Host)
+// Keyboard/Keypad Page inputReport (Device --> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
                                                      // No REPORT ID byte
-                                                     // Collection: CA:
-  uint8_t  00E0 : 1;                                 // Usage 0x000700E0: , Value = 0 to 1
-  uint8_t  00E1 : 1;                                 // Usage 0x000700E1: , Value = 0 to 1
-  uint8_t  00E2 : 1;                                 // Usage 0x000700E2: , Value = 0 to 1
-  uint8_t  00E3 : 1;                                 // Usage 0x000700E3: , Value = 0 to 1
-  uint8_t  00E4 : 1;                                 // Usage 0x000700E4: , Value = 0 to 1
-  uint8_t  00E5 : 1;                                 // Usage 0x000700E5: , Value = 0 to 1
-  uint8_t  00E6 : 1;                                 // Usage 0x000700E6: , Value = 0 to 1
-  uint8_t  00E7 : 1;                                 // Usage 0x000700E7: , Value = 0 to 1
+                                                     // Collection: CA:Keyboard
+  uint8_t  KB_KeyboardKeyboardLeftControl : 1;       // Usage 0x000700E0: Keyboard Left Control, Value = 0 to 1
+  uint8_t  KB_KeyboardKeyboardLeftShift : 1;         // Usage 0x000700E1: Keyboard Left Shift, Value = 0 to 1
+  uint8_t  KB_KeyboardKeyboardLeftAlt : 1;           // Usage 0x000700E2: Keyboard Left Alt, Value = 0 to 1
+  uint8_t  KB_KeyboardKeyboardLeftGui : 1;           // Usage 0x000700E3: Keyboard Left GUI, Value = 0 to 1
+  uint8_t  KB_KeyboardKeyboardRightControl : 1;      // Usage 0x000700E4: Keyboard Right Control, Value = 0 to 1
+  uint8_t  KB_KeyboardKeyboardRightShift : 1;        // Usage 0x000700E5: Keyboard Right Shift, Value = 0 to 1
+  uint8_t  KB_KeyboardKeyboardRightAlt : 1;          // Usage 0x000700E6: Keyboard Right Alt, Value = 0 to 1
+  uint8_t  KB_KeyboardKeyboardRightGui : 1;          // Usage 0x000700E7: Keyboard Right GUI, Value = 0 to 1
   uint8_t  pad_2;                                    // Pad
-  uint8_t  [6];                                      // Value = 0 to 255
+  uint8_t  Keyboard[6];                              // Value = 0 to 255
 } inputReport_t;
 
 
 //--------------------------------------------------------------------------------
-//  outputReport (Device <-- Host)
+// LED Indicator Page outputReport (Device <-- Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
                                                      // No REPORT ID byte
-                                                     // Collection: CA:
-  uint8_t  0001 : 1;                                 // Usage 0x00080001: , Value = 0 to 1
-  uint8_t  0002 : 1;                                 // Usage 0x00080002: , Value = 0 to 1
-  uint8_t  0003 : 1;                                 // Usage 0x00080003: , Value = 0 to 1
+                                                     // Collection: CA:Keyboard
+  uint8_t  LED_KeyboardNumLock : 1;                  // Usage 0x00080001: Num Lock, Value = 0 to 1
+  uint8_t  LED_KeyboardCapsLock : 1;                 // Usage 0x00080002: Caps Lock, Value = 0 to 1
+  uint8_t  LED_KeyboardScrollLock : 1;               // Usage 0x00080003: Scroll Lock, Value = 0 to 1
   uint8_t  : 1;                                      // Pad
   uint8_t  : 1;                                      // Pad
   uint8_t  : 1;                                      // Pad
@@ -83,15 +83,15 @@ typedef struct
 //--------------------------------------------------------------------------------
 
 /*
-05 01        (GLOBAL) USAGE_PAGE         0x0001  
-09 02        (LOCAL)  USAGE              0x00010002 <-- Warning: Undocumented usage (document it by inserting 0002 into file 0001.conf)
-A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010002: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CA (Application Collection)
+05 01        (GLOBAL) USAGE_PAGE         0x0001 Generic Desktop Page 
+09 02        (LOCAL)  USAGE              0x00010002 Mouse (Application Collection)  
+A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010002: Page=Generic Desktop Page, Usage=Mouse, Type=Application Collection)
 85 01          (GLOBAL) REPORT_ID          0x01 (1)  
-09 01          (LOCAL)  USAGE              0x00010001 <-- Warning: Undocumented usage (document it by inserting 0001 into file 0001.conf)
-A1 00          (MAIN)   COLLECTION         0x00 Physical (Usage=0x00010001: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CP (Physical Collection)
-05 09            (GLOBAL) USAGE_PAGE         0x0009  
-19 01            (LOCAL)  USAGE_MINIMUM      0x00090001 <-- Warning: Undocumented usage (document it by inserting 0001 into file 0009.conf)
-29 03            (LOCAL)  USAGE_MAXIMUM      0x00090003 <-- Warning: Undocumented usage (document it by inserting 0003 into file 0009.conf)
+09 01          (LOCAL)  USAGE              0x00010001 Pointer (Physical Collection)  
+A1 00          (MAIN)   COLLECTION         0x00 Physical (Usage=0x00010001: Page=Generic Desktop Page, Usage=Pointer, Type=Physical Collection)
+05 09            (GLOBAL) USAGE_PAGE         0x0009 Button Page 
+19 01            (LOCAL)  USAGE_MINIMUM      0x00090001 Button 1 Primary/trigger (Selector, On/Off Control, Momentary Control, or One Shot Control)  
+29 03            (LOCAL)  USAGE_MAXIMUM      0x00090003 Button 3 Tertiary (Selector, On/Off Control, Momentary Control, or One Shot Control)  
 15 00            (GLOBAL) LOGICAL_MINIMUM    0x00 (0) <-- Redundant: LOGICAL_MINIMUM is already 0 <-- Info: Consider replacing 15 00 with 14
 25 01            (GLOBAL) LOGICAL_MAXIMUM    0x01 (1)  
 95 03            (GLOBAL) REPORT_COUNT       0x03 (3) Number of fields  
@@ -100,9 +100,9 @@ A1 00          (MAIN)   COLLECTION         0x00 Physical (Usage=0x00010001: Page
 95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields  
 75 05            (GLOBAL) REPORT_SIZE        0x05 (5) Number of bits per field  
 81 03            (MAIN)   INPUT              0x00000003 (1 field x 5 bits) 1=Constant 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
-05 01            (GLOBAL) USAGE_PAGE         0x0001  
-09 30            (LOCAL)  USAGE              0x00010030 <-- Warning: Undocumented usage (document it by inserting 0030 into file 0001.conf)
-09 31            (LOCAL)  USAGE              0x00010031 <-- Warning: Undocumented usage (document it by inserting 0031 into file 0001.conf)
+05 01            (GLOBAL) USAGE_PAGE         0x0001 Generic Desktop Page 
+09 30            (LOCAL)  USAGE              0x00010030 X (Dynamic Value)  
+09 31            (LOCAL)  USAGE              0x00010031 Y (Dynamic Value)  
 15 81            (GLOBAL) LOGICAL_MINIMUM    0x81 (-127)  
 25 7F            (GLOBAL) LOGICAL_MAXIMUM    0x7F (127)  
 75 08            (GLOBAL) REPORT_SIZE        0x08 (8) Number of bits per field  
@@ -113,19 +113,19 @@ C0           (MAIN)   END_COLLECTION     Application
 */
 
 //--------------------------------------------------------------------------------
-//  inputReport 01 (Device --> Host)
+// Button Page inputReport 01 (Device --> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x01 (1)
-                                                     // Collection: CA: CP:
-  uint8_t  0001 : 1;                                 // Usage 0x00090001: , Value = 0 to 1
-  uint8_t  0002 : 1;                                 // Usage 0x00090002: , Value = 0 to 1
-  uint8_t  0003 : 1;                                 // Usage 0x00090003: , Value = 0 to 1
+                                                     // Collection: CA:Mouse CP:Pointer
+  uint8_t  BTN_MousePointerButton1 : 1;              // Usage 0x00090001: Button 1 Primary/trigger, Value = 0 to 1
+  uint8_t  BTN_MousePointerButton2 : 1;              // Usage 0x00090002: Button 2 Secondary, Value = 0 to 1
+  uint8_t  BTN_MousePointerButton3 : 1;              // Usage 0x00090003: Button 3 Tertiary, Value = 0 to 1
   uint8_t  : 5;                                      // Pad
-  int8_t   0030;                                     // Usage 0x00010030: , Value = -127 to 127
-  int8_t   0031;                                     // Usage 0x00010031: , Value = -127 to 127
+  int8_t   GD_MousePointerX;                         // Usage 0x00010030: X, Value = -127 to 127
+  int8_t   GD_MousePointerY;                         // Usage 0x00010031: Y, Value = -127 to 127
 } inputReport01_t;
 
 
@@ -134,49 +134,49 @@ typedef struct
 //--------------------------------------------------------------------------------
 
 /*
-05 0D        (GLOBAL) USAGE_PAGE         0x000D  
-09 05        (LOCAL)  USAGE              0x000D0005 <-- Warning: Undocumented usage (document it by inserting 0005 into file 000D.conf)
-A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x000D0005: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CA (Application Collection)
+05 0D        (GLOBAL) USAGE_PAGE         0x000D Digitizer Device Page 
+09 05        (LOCAL)  USAGE              0x000D0005 Touch Pad (Application Collection)  
+A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x000D0005: Page=Digitizer Device Page, Usage=Touch Pad, Type=Application Collection)
 85 1E          (GLOBAL) REPORT_ID          0x1E (30)  
-09 22          (LOCAL)  USAGE              0x000D0022 <-- Warning: Undocumented usage (document it by inserting 0022 into file 000D.conf)
-A1 02          (MAIN)   COLLECTION         0x02 Logical (Usage=0x000D0022: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CL (Logical Collection)
+09 22          (LOCAL)  USAGE              0x000D0022 Finger (Logical Collection)  
+A1 02          (MAIN)   COLLECTION         0x02 Logical (Usage=0x000D0022: Page=Digitizer Device Page, Usage=Finger, Type=Logical Collection)
 15 00            (GLOBAL) LOGICAL_MINIMUM    0x00 (0)  <-- Info: Consider replacing 15 00 with 14
 25 01            (GLOBAL) LOGICAL_MAXIMUM    0x01 (1)  
-09 47            (LOCAL)  USAGE              0x000D0047 <-- Warning: Undocumented usage (document it by inserting 0047 into file 000D.conf)
-09 42            (LOCAL)  USAGE              0x000D0042 <-- Warning: Undocumented usage (document it by inserting 0042 into file 000D.conf)
+09 47            (LOCAL)  USAGE              0x000D0047 Confidence (Dynamic Value)  
+09 42            (LOCAL)  USAGE              0x000D0042 Tip Switch (Momentary Control)  
 95 02            (GLOBAL) REPORT_COUNT       0x02 (2) Number of fields <-- Redundant: REPORT_COUNT is already 2 
 75 01            (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field  
 81 02            (MAIN)   INPUT              0x00000002 (2 fields x 1 bit) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
 95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields  
 75 02            (GLOBAL) REPORT_SIZE        0x02 (2) Number of bits per field  
 25 03            (GLOBAL) LOGICAL_MAXIMUM    0x03 (3)  
-09 51            (LOCAL)  USAGE              0x000D0051 <-- Warning: Undocumented usage (document it by inserting 0051 into file 000D.conf)
+09 51            (LOCAL)  USAGE              0x000D0051 Contact Identifier (Dynamic Value)  
 81 02            (MAIN)   INPUT              0x00000002 (1 field x 2 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
-09 54            (LOCAL)  USAGE              0x000D0054 <-- Warning: Undocumented usage (document it by inserting 0054 into file 000D.conf)
+09 54            (LOCAL)  USAGE              0x000D0054 Contact Count (Dynamic Value)  
 25 07            (GLOBAL) LOGICAL_MAXIMUM    0x07 (7)  
 95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields <-- Redundant: REPORT_COUNT is already 1 
 75 03            (GLOBAL) REPORT_SIZE        0x03 (3) Number of bits per field  
 81 02            (MAIN)   INPUT              0x00000002 (1 field x 3 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
-05 09            (GLOBAL) USAGE_PAGE         0x0009  
-09 01            (LOCAL)  USAGE              0x00090001 <-- Warning: Undocumented usage (document it by inserting 0001 into file 0009.conf)
+05 09            (GLOBAL) USAGE_PAGE         0x0009 Button Page 
+09 01            (LOCAL)  USAGE              0x00090001 Button 1 Primary/trigger (Selector, On/Off Control, Momentary Control, or One Shot Control)  
 25 01            (GLOBAL) LOGICAL_MAXIMUM    0x01 (1)  
 75 01            (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field  
 95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields <-- Redundant: REPORT_COUNT is already 1 
 81 02            (MAIN)   INPUT              0x00000002 (1 field x 1 bit) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
-05 01            (GLOBAL) USAGE_PAGE         0x0001  
+05 01            (GLOBAL) USAGE_PAGE         0x0001 Generic Desktop Page 
 15 00            (GLOBAL) LOGICAL_MINIMUM    0x00 (0) <-- Redundant: LOGICAL_MINIMUM is already 0 <-- Info: Consider replacing 15 00 with 14
 26 7805          (GLOBAL) LOGICAL_MAXIMUM    0x0578 (1400)  
 75 10            (GLOBAL) REPORT_SIZE        0x10 (16) Number of bits per field  
 55 0E            (GLOBAL) UNIT_EXPONENT      0x0E (Unit Value x 10⁻²)  
 65 11            (GLOBAL) UNIT               0x11 Distance in metres [1 cm units] (1=System=SI Linear, 1=Length=Centimetre)  
-09 30            (LOCAL)  USAGE              0x00010030 <-- Warning: Undocumented usage (document it by inserting 0030 into file 0001.conf)
+09 30            (LOCAL)  USAGE              0x00010030 X (Dynamic Value)  
 35 00            (GLOBAL) PHYSICAL_MINIMUM   0x00 (0)  <-- Info: Consider replacing 35 00 with 34
 46 E001          (GLOBAL) PHYSICAL_MAXIMUM   0x01E0 (480)  
 95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields <-- Redundant: REPORT_COUNT is already 1 
 81 02            (MAIN)   INPUT              0x00000002 (1 field x 16 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
 26 9203          (GLOBAL) LOGICAL_MAXIMUM    0x0392 (914)  
 46 4001          (GLOBAL) PHYSICAL_MAXIMUM   0x0140 (320)  
-09 31            (LOCAL)  USAGE              0x00010031 <-- Warning: Undocumented usage (document it by inserting 0031 into file 0001.conf)
+09 31            (LOCAL)  USAGE              0x00010031 Y (Dynamic Value)  
 81 02            (MAIN)   INPUT              0x00000002 (1 field x 16 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
 C0             (MAIN)   END_COLLECTION     Logical  <-- Warning: Physical units are still in effect PHYSICAL(MIN=0,MAX=320) UNIT(0x00000011,EXP=-2)
 A1 02          (MAIN)   COLLECTION         0x02 Logical (Usage=0x0: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CL (Logical Collection)
@@ -186,20 +186,20 @@ A1 02          (MAIN)   COLLECTION         0x02 Logical (Usage=0x0: Page=, Usage
 27 FFFF0000      (GLOBAL) LOGICAL_MAXIMUM    0x0000FFFF (65535)  
 75 10            (GLOBAL) REPORT_SIZE        0x10 (16) Number of bits per field <-- Redundant: REPORT_SIZE is already 16 
 95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields <-- Redundant: REPORT_COUNT is already 1 
-05 0D            (GLOBAL) USAGE_PAGE         0x000D  
-09 56            (LOCAL)  USAGE              0x000D0056 <-- Warning: Undocumented usage (document it by inserting 0056 into file 000D.conf)
+05 0D            (GLOBAL) USAGE_PAGE         0x000D Digitizer Device Page 
+09 56            (LOCAL)  USAGE              0x000D0056 Relative Scan Time (Dynamic Value)  
 81 02            (MAIN)   INPUT              0x00000002 (1 field x 16 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
-05 0D            (GLOBAL) USAGE_PAGE         0x000D  <-- Redundant: USAGE_PAGE is already 0x000D
+05 0D            (GLOBAL) USAGE_PAGE         0x000D Digitizer Device Page <-- Redundant: USAGE_PAGE is already 0x000D
 85 1F            (GLOBAL) REPORT_ID          0x1F (31)  
-09 55            (LOCAL)  USAGE              0x000D0055 <-- Warning: Undocumented usage (document it by inserting 0055 into file 000D.conf)
-09 59            (LOCAL)  USAGE              0x000D0059 <-- Warning: Undocumented usage (document it by inserting 0059 into file 000D.conf)
+09 55            (LOCAL)  USAGE              0x000D0055 Contact Count Maximum (Static Value)  
+09 59            (LOCAL)  USAGE              0x000D0059 Pad Type (Static Flag)  
 75 04            (GLOBAL) REPORT_SIZE        0x04 (4) Number of bits per field  
 95 02            (GLOBAL) REPORT_COUNT       0x02 (2) Number of fields  
 25 0F            (GLOBAL) LOGICAL_MAXIMUM    0x0F (15)  
 B1 02            (MAIN)   FEATURE            0x00000002 (2 fields x 4 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
-05 0D            (GLOBAL) USAGE_PAGE         0x000D  <-- Redundant: USAGE_PAGE is already 0x000D
+05 0D            (GLOBAL) USAGE_PAGE         0x000D Digitizer Device Page <-- Redundant: USAGE_PAGE is already 0x000D
 85 25            (GLOBAL) REPORT_ID          0x25 (37)  
-09 60            (LOCAL)  USAGE              0x000D0060 <-- Warning: Undocumented usage (document it by inserting 0060 into file 000D.conf)
+09 60            (LOCAL)  USAGE              0x000D0060 Latency Mode (Dynamic Flag)  
 75 01            (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field  
 95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields  
 15 00            (GLOBAL) LOGICAL_MINIMUM    0x00 (0) <-- Redundant: LOGICAL_MINIMUM is already 0 <-- Info: Consider replacing 15 00 with 14
@@ -220,27 +220,27 @@ C0           (MAIN)   END_COLLECTION     Application  <-- Warning: Physical unit
 */
 
 //--------------------------------------------------------------------------------
-//  featureReport 1F (Device <-> Host)
+// Digitizer Device Page featureReport 1F (Device <-> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x1F (31)
-                                                     // Collection: CA: CL:
-  uint8_t  0055 : 4;                                 // Usage 0x000D0055: , Value = 0 to 15, Physical = Value x 4369 in 10⁻⁴ s units
-  uint8_t  0059 : 4;                                 // Usage 0x000D0059: , Value = 0 to 15, Physical = Value x 4369 in 10⁻⁴ s units
+                                                     // Collection: CA:TouchPad CL:
+  uint8_t  DIG_TouchPadContactCountMaximum : 4;      // Usage 0x000D0055: Contact Count Maximum, Value = 0 to 15, Physical = Value x 4369 in 10⁻⁴ s units
+  uint8_t  DIG_TouchPadPadType : 4;                  // Usage 0x000D0059: Pad Type, Value = 0 to 15, Physical = Value x 4369 in 10⁻⁴ s units
 } featureReport1F_t;
 
 
 //--------------------------------------------------------------------------------
-//  featureReport 25 (Device <-> Host)
+// Digitizer Device Page featureReport 25 (Device <-> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x25 (37)
-                                                     // Collection: CA: CL:
-  uint8_t  0060 : 1;                                 // Usage 0x000D0060: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+                                                     // Collection: CA:TouchPad CL:
+  uint8_t  DIG_TouchPadLatencyMode : 1;              // Usage 0x000D0060: Latency Mode, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
   uint8_t  : 1;                                      // Pad
   uint8_t  : 1;                                      // Pad
   uint8_t  : 1;                                      // Pad
@@ -258,27 +258,28 @@ typedef struct
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x20 (32)
-                                                     // Collection: CA: CL:
-  uint8_t  VEN_00C5[256];                            // Usage 0xFF0000C5: , Value = 0 to 255, Physical = Value x 257 in 10⁻⁴ s units
+                                                     // Collection: CA:TouchPad CL:
+  uint8_t  VEN_TouchPad00C5[256];                    // Usage 0xFF0000C5: , Value = 0 to 255, Physical = Value x 257 in 10⁻⁴ s units
 } featureReport20_t;
 
 
 //--------------------------------------------------------------------------------
-//  inputReport 1E (Device --> Host)
+// Digitizer Device Page inputReport 1E (Device --> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x1E (30)
-                                                     // Collection: CA: CL:
-  uint8_t  0047 : 1;                                 // Usage 0x000D0047: , Value = 0 to 1
-  uint8_t  0042 : 1;                                 // Usage 0x000D0042: , Value = 0 to 1
-  uint8_t  0051 : 2;                                 // Usage 0x000D0051: , Value = 0 to 3
-  uint8_t  0054 : 3;                                 // Usage 0x000D0054: , Value = 0 to 7
-  uint8_t  0001 : 1;                                 // Usage 0x00090001: , Value = 0 to 1
-  uint16_t 0030;                                     // Usage 0x00010030: , Value = 0 to 1400, Physical = Value x 12 / 35 in 10⁻⁴ m units
-  uint16_t 0031;                                     // Usage 0x00010031: , Value = 0 to 914, Physical = Value x 160 / 457 in 10⁻⁴ m units
-  uint16_t 0056;                                     // Usage 0x000D0056: , Value = 0 to 65535, Physical = Value in 10⁻⁴ s units
+                                                     // Collection: CA:TouchPad CL:Finger
+  uint8_t  DIG_TouchPadFingerConfidence : 1;         // Usage 0x000D0047: Confidence, Value = 0 to 1
+  uint8_t  DIG_TouchPadFingerTipSwitch : 1;          // Usage 0x000D0042: Tip Switch, Value = 0 to 1
+  uint8_t  DIG_TouchPadFingerContactIdentifier : 2;  // Usage 0x000D0051: Contact Identifier, Value = 0 to 3
+  uint8_t  DIG_TouchPadFingerContactCount : 3;       // Usage 0x000D0054: Contact Count, Value = 0 to 7
+  uint8_t  BTN_TouchPadFingerButton1 : 1;            // Usage 0x00090001: Button 1 Primary/trigger, Value = 0 to 1
+  uint16_t GD_TouchPadFingerX;                       // Usage 0x00010030: X, Value = 0 to 1400, Physical = Value x 12 / 35 in 10⁻⁴ m units
+  uint16_t GD_TouchPadFingerY;                       // Usage 0x00010031: Y, Value = 0 to 914, Physical = Value x 160 / 457 in 10⁻⁴ m units
+                                                     // Collection: CA:TouchPad CL:
+  uint16_t DIG_TouchPadRelativeScanTime;             // Usage 0x000D0056: Relative Scan Time, Value = 0 to 65535, Physical = Value in 10⁻⁴ s units
 } inputReport1E_t;
 
 
@@ -287,24 +288,24 @@ typedef struct
 //--------------------------------------------------------------------------------
 
 /*
-05 0D        (GLOBAL) USAGE_PAGE         0x000D  
-09 0E        (LOCAL)  USAGE              0x000D000E <-- Warning: Undocumented usage (document it by inserting 000E into file 000D.conf)
-A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x000D000E: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CA (Application Collection)
+05 0D        (GLOBAL) USAGE_PAGE         0x000D Digitizer Device Page 
+09 0E        (LOCAL)  USAGE              0x000D000E Device Configuration (Application Collection)  
+A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x000D000E: Page=Digitizer Device Page, Usage=Device Configuration, Type=Application Collection)
 85 22          (GLOBAL) REPORT_ID          0x22 (34)  
-09 22          (LOCAL)  USAGE              0x000D0022 <-- Warning: Undocumented usage (document it by inserting 0022 into file 000D.conf)
-A1 02          (MAIN)   COLLECTION         0x02 Logical (Usage=0x000D0022: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CL (Logical Collection)
-09 52            (LOCAL)  USAGE              0x000D0052 <-- Warning: Undocumented usage (document it by inserting 0052 into file 000D.conf)
+09 22          (LOCAL)  USAGE              0x000D0022 Finger (Logical Collection)  
+A1 02          (MAIN)   COLLECTION         0x02 Logical (Usage=0x000D0022: Page=Digitizer Device Page, Usage=Finger, Type=Logical Collection)
+09 52            (LOCAL)  USAGE              0x000D0052 Device Mode (Dynamic Value)  
 15 00            (GLOBAL) LOGICAL_MINIMUM    0x00 (0) <-- Redundant: LOGICAL_MINIMUM is already 0 <-- Info: Consider replacing 15 00 with 14
 25 0A            (GLOBAL) LOGICAL_MAXIMUM    0x0A (10)  
 75 08            (GLOBAL) REPORT_SIZE        0x08 (8) Number of bits per field <-- Redundant: REPORT_SIZE is already 8 
 95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields  
 B1 02            (MAIN)   FEATURE            0x00000002 (1 field x 8 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
 C0             (MAIN)   END_COLLECTION     Logical  <-- Warning: Physical units are still in effect PHYSICAL(MIN=0,MAX=65535) UNIT(0x00001001,EXP=-4)
-09 22          (LOCAL)  USAGE              0x000D0022 <-- Warning: Undocumented usage (document it by inserting 0022 into file 000D.conf)
-A1 00          (MAIN)   COLLECTION         0x00 Physical (Usage=0x000D0022: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CP (Physical Collection)
+09 22          (LOCAL)  USAGE              0x000D0022 Finger (Logical Collection)  
+A1 00          (MAIN)   COLLECTION         0x00 Physical (Usage=0x000D0022: Page=Digitizer Device Page, Usage=Finger, Type=Logical Collection) <-- Warning: USAGE type should be CP (Physical Collection)
 85 23            (GLOBAL) REPORT_ID          0x23 (35)  
-09 57            (LOCAL)  USAGE              0x000D0057 <-- Warning: Undocumented usage (document it by inserting 0057 into file 000D.conf)
-09 58            (LOCAL)  USAGE              0x000D0058 <-- Warning: Undocumented usage (document it by inserting 0058 into file 000D.conf)
+09 57            (LOCAL)  USAGE              0x000D0057 Surface Switch (Dynamic Flag)  
+09 58            (LOCAL)  USAGE              0x000D0058 Button Switch (Dynamic Flag)  
 75 01            (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field  
 95 02            (GLOBAL) REPORT_COUNT       0x02 (2) Number of fields  
 25 01            (GLOBAL) LOGICAL_MAXIMUM    0x01 (1)  
@@ -316,27 +317,27 @@ C0           (MAIN)   END_COLLECTION     Application  <-- Warning: Physical unit
 */
 
 //--------------------------------------------------------------------------------
-//  featureReport 22 (Device <-> Host)
+// Digitizer Device Page featureReport 22 (Device <-> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x22 (34)
-                                                     // Collection: CA: CL:
-  uint8_t  0052;                                     // Usage 0x000D0052: , Value = 0 to 10, Physical = Value x 13107 / 2 in 10⁻⁴ s units
+                                                     // Collection: CA:DeviceConfiguration CL:Finger
+  uint8_t  DIG_DeviceConfigurationFingerDeviceMode;  // Usage 0x000D0052: Device Mode, Value = 0 to 10, Physical = Value x 13107 / 2 in 10⁻⁴ s units
 } featureReport22_t;
 
 
 //--------------------------------------------------------------------------------
-//  featureReport 23 (Device <-> Host)
+// Digitizer Device Page featureReport 23 (Device <-> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x23 (35)
-                                                     // Collection: CA: CP:
-  uint8_t  0057 : 1;                                 // Usage 0x000D0057: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0058 : 1;                                 // Usage 0x000D0058: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+                                                     // Collection: CA:DeviceConfiguration CP:Finger
+  uint8_t  DIG_DeviceConfigurationFingerSurfaceSwitch : 1; // Usage 0x000D0057: Surface Switch, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  DIG_DeviceConfigurationFingerButtonSwitch : 1; // Usage 0x000D0058: Button Switch, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
   uint8_t  : 1;                                      // Pad
   uint8_t  : 1;                                      // Pad
   uint8_t  : 1;                                      // Pad
@@ -351,16 +352,16 @@ typedef struct
 //--------------------------------------------------------------------------------
 
 /*
-06 0100      (GLOBAL) USAGE_PAGE         0x0001  
-09 80        (LOCAL)  USAGE              0x00010080 <-- Warning: Undocumented usage (document it by inserting 0080 into file 0001.conf)
-A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010080: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CA (Application Collection)
+06 0100      (GLOBAL) USAGE_PAGE         0x0001 Generic Desktop Page 
+09 80        (LOCAL)  USAGE              0x00010080 System Control (Application Collection)  
+A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010080: Page=Generic Desktop Page, Usage=System Control, Type=Application Collection)
 85 02          (GLOBAL) REPORT_ID          0x02 (2)  
 25 01          (GLOBAL) LOGICAL_MAXIMUM    0x01 (1) <-- Redundant: LOGICAL_MAXIMUM is already 1 
 15 00          (GLOBAL) LOGICAL_MINIMUM    0x00 (0) <-- Redundant: LOGICAL_MINIMUM is already 0 <-- Info: Consider replacing 15 00 with 14
 75 01          (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field <-- Redundant: REPORT_SIZE is already 1 
-0A 8100        (LOCAL)  USAGE              0x00010081   <-- Info: Consider replacing 0A 8100 with 09 81
-0A 8200        (LOCAL)  USAGE              0x00010082   <-- Info: Consider replacing 0A 8200 with 09 82
-0A 8300        (LOCAL)  USAGE              0x00010083   <-- Info: Consider replacing 0A 8300 with 09 83
+0A 8100        (LOCAL)  USAGE              0x00010081 System Power Down (One Shot Control)  <-- Info: Consider replacing 0A 8100 with 09 81
+0A 8200        (LOCAL)  USAGE              0x00010082 System Sleep (One Shot Control)  <-- Info: Consider replacing 0A 8200 with 09 82
+0A 8300        (LOCAL)  USAGE              0x00010083 System Wake Up (One Shot Control)  <-- Info: Consider replacing 0A 8300 with 09 83
 95 03          (GLOBAL) REPORT_COUNT       0x03 (3) Number of fields  
 81 06          (MAIN)   INPUT              0x00000006 (3 fields x 1 bit) 0=Data 1=Variable 1=Relative 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
 95 05          (GLOBAL) REPORT_COUNT       0x05 (5) Number of fields  
@@ -369,16 +370,16 @@ C0           (MAIN)   END_COLLECTION     Application  <-- Warning: Physical unit
 */
 
 //--------------------------------------------------------------------------------
-//  inputReport 02 (Device --> Host)
+// Generic Desktop Page inputReport 02 (Device --> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x02 (2)
-                                                     // Collection: CA:
-  uint8_t  0081 : 1;                                 // Usage 0x00010081: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0082 : 1;                                 // Usage 0x00010082: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0083 : 1;                                 // Usage 0x00010083: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+                                                     // Collection: CA:SystemControl
+  uint8_t  GD_SystemControlSystemPowerDown : 1;      // Usage 0x00010081: System Power Down, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  GD_SystemControlSystemSleep : 1;          // Usage 0x00010082: System Sleep, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  GD_SystemControlSystemWakeUp : 1;         // Usage 0x00010083: System Wake Up, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
   uint8_t  : 1;                                      // Pad
   uint8_t  : 1;                                      // Pad
   uint8_t  : 1;                                      // Pad
@@ -392,40 +393,40 @@ typedef struct
 //--------------------------------------------------------------------------------
 
 /*
-06 0C00      (GLOBAL) USAGE_PAGE         0x000C  
-09 01        (LOCAL)  USAGE              0x000C0001 <-- Warning: Undocumented usage (document it by inserting 0001 into file 000C.conf)
-A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x000C0001: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CA (Application Collection)
+06 0C00      (GLOBAL) USAGE_PAGE         0x000C Consumer Device Page 
+09 01        (LOCAL)  USAGE              0x000C0001 Consumer Control (Application Collection)  
+A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x000C0001: Page=Consumer Device Page, Usage=Consumer Control, Type=Application Collection)
 85 03          (GLOBAL) REPORT_ID          0x03 (3)  
 25 01          (GLOBAL) LOGICAL_MAXIMUM    0x01 (1) <-- Redundant: LOGICAL_MAXIMUM is already 1 
 15 00          (GLOBAL) LOGICAL_MINIMUM    0x00 (0) <-- Redundant: LOGICAL_MINIMUM is already 0 <-- Info: Consider replacing 15 00 with 14
 75 01          (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field <-- Redundant: REPORT_SIZE is already 1 
-0A B500        (LOCAL)  USAGE              0x000C00B5   <-- Info: Consider replacing 0A B500 with 09 B5
-0A B600        (LOCAL)  USAGE              0x000C00B6   <-- Info: Consider replacing 0A B600 with 09 B6
-0A 6F00        (LOCAL)  USAGE              0x000C006F   <-- Info: Consider replacing 0A 6F00 with 09 6F
-0A 7000        (LOCAL)  USAGE              0x000C0070   <-- Info: Consider replacing 0A 7000 with 09 70
-0A E200        (LOCAL)  USAGE              0x000C00E2   <-- Info: Consider replacing 0A E200 with 09 E2
-0A A200        (LOCAL)  USAGE              0x000C00A2   <-- Info: Consider replacing 0A A200 with 09 A2
-0A E900        (LOCAL)  USAGE              0x000C00E9   <-- Info: Consider replacing 0A E900 with 09 E9
-0A EA00        (LOCAL)  USAGE              0x000C00EA   <-- Info: Consider replacing 0A EA00 with 09 EA
+0A B500        (LOCAL)  USAGE              0x000C00B5 Scan Next Track (One Shot Control)  <-- Info: Consider replacing 0A B500 with 09 B5
+0A B600        (LOCAL)  USAGE              0x000C00B6 Scan Previous Track (One Shot Control)  <-- Info: Consider replacing 0A B600 with 09 B6
+0A 6F00        (LOCAL)  USAGE              0x000C006F Display Brightness Increment (Re-trigger Control)  <-- Info: Consider replacing 0A 6F00 with 09 6F
+0A 7000        (LOCAL)  USAGE              0x000C0070 Display Brightness Decrement (Re-trigger Control)  <-- Info: Consider replacing 0A 7000 with 09 70
+0A E200        (LOCAL)  USAGE              0x000C00E2 Mute (On/Off Control)  <-- Info: Consider replacing 0A E200 with 09 E2
+0A A200        (LOCAL)  USAGE              0x000C00A2 Daily (One Shot Control)  <-- Info: Consider replacing 0A A200 with 09 A2
+0A E900        (LOCAL)  USAGE              0x000C00E9 Volume Increment (Re-trigger Control)  <-- Info: Consider replacing 0A E900 with 09 E9
+0A EA00        (LOCAL)  USAGE              0x000C00EA Volume Decrement (Re-trigger Control)  <-- Info: Consider replacing 0A EA00 with 09 EA
 95 08          (GLOBAL) REPORT_COUNT       0x08 (8) Number of fields  
 81 02          (MAIN)   INPUT              0x00000002 (8 fields x 1 bit) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
-0A 8301        (LOCAL)  USAGE              0x000C0183 <-- Warning: Undocumented usage (document it by inserting 0183 into file 000C.conf)
-0A 9401        (LOCAL)  USAGE              0x000C0194 <-- Warning: Undocumented usage (document it by inserting 0194 into file 000C.conf)
-0A 8601        (LOCAL)  USAGE              0x000C0186 <-- Warning: Undocumented usage (document it by inserting 0186 into file 000C.conf)
-0A 8801        (LOCAL)  USAGE              0x000C0188 <-- Warning: Undocumented usage (document it by inserting 0188 into file 000C.conf)
-0A 8A01        (LOCAL)  USAGE              0x000C018A <-- Warning: Undocumented usage (document it by inserting 018A into file 000C.conf)
-0A 9201        (LOCAL)  USAGE              0x000C0192 <-- Warning: Undocumented usage (document it by inserting 0192 into file 000C.conf)
-0A B700        (LOCAL)  USAGE              0x000C00B7   <-- Info: Consider replacing 0A B700 with 09 B7
-0A CD00        (LOCAL)  USAGE              0x000C00CD   <-- Info: Consider replacing 0A CD00 with 09 CD
+0A 8301        (LOCAL)  USAGE              0x000C0183 AL Consumer Control Configuration (Selector)  
+0A 9401        (LOCAL)  USAGE              0x000C0194 AL Local Machine Browser (Selector)  
+0A 8601        (LOCAL)  USAGE              0x000C0186 AL Spreadsheet (Selector)  
+0A 8801        (LOCAL)  USAGE              0x000C0188 AL Presentation App (Selector)  
+0A 8A01        (LOCAL)  USAGE              0x000C018A AL Email Reader (Selector)  
+0A 9201        (LOCAL)  USAGE              0x000C0192 AL Calculator (Selector)  
+0A B700        (LOCAL)  USAGE              0x000C00B7 Stop (One Shot Control)  <-- Info: Consider replacing 0A B700 with 09 B7
+0A CD00        (LOCAL)  USAGE              0x000C00CD Play/Pause (One Shot Control)  <-- Info: Consider replacing 0A CD00 with 09 CD
 95 08          (GLOBAL) REPORT_COUNT       0x08 (8) Number of fields <-- Redundant: REPORT_COUNT is already 8 
 81 02          (MAIN)   INPUT              0x00000002 (8 fields x 1 bit) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
-0A 2102        (LOCAL)  USAGE              0x000C0221 <-- Warning: Undocumented usage (document it by inserting 0221 into file 000C.conf)
-0A 2302        (LOCAL)  USAGE              0x000C0223 <-- Warning: Undocumented usage (document it by inserting 0223 into file 000C.conf)
-0A 2402        (LOCAL)  USAGE              0x000C0224 <-- Warning: Undocumented usage (document it by inserting 0224 into file 000C.conf)
-0A 2502        (LOCAL)  USAGE              0x000C0225 <-- Warning: Undocumented usage (document it by inserting 0225 into file 000C.conf)
-0A 2602        (LOCAL)  USAGE              0x000C0226 <-- Warning: Undocumented usage (document it by inserting 0226 into file 000C.conf)
-0A 2702        (LOCAL)  USAGE              0x000C0227 <-- Warning: Undocumented usage (document it by inserting 0227 into file 000C.conf)
-0A 2A02        (LOCAL)  USAGE              0x000C022A <-- Warning: Undocumented usage (document it by inserting 022A into file 000C.conf)
+0A 2102        (LOCAL)  USAGE              0x000C0221 AC Search (Selector)  
+0A 2302        (LOCAL)  USAGE              0x000C0223 AC Home (Selector)  
+0A 2402        (LOCAL)  USAGE              0x000C0224 AC Back (Selector)  
+0A 2502        (LOCAL)  USAGE              0x000C0225 AC Forward (Selector)  
+0A 2602        (LOCAL)  USAGE              0x000C0226 AC Stop (Selector)  
+0A 2702        (LOCAL)  USAGE              0x000C0227 AC Refresh (Selector)  
+0A 2A02        (LOCAL)  USAGE              0x000C022A AC Bookmarks (Selector)  
 0A B102        (LOCAL)  USAGE              0x000C02B1 <-- Warning: Undocumented usage (document it by inserting 02B1 into file 000C.conf)
 95 08          (GLOBAL) REPORT_COUNT       0x08 (8) Number of fields <-- Redundant: REPORT_COUNT is already 8 
 81 02          (MAIN)   INPUT              0x00000002 (8 fields x 1 bit) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
@@ -433,37 +434,37 @@ C0           (MAIN)   END_COLLECTION     Application  <-- Warning: Physical unit
 */
 
 //--------------------------------------------------------------------------------
-//  inputReport 03 (Device --> Host)
+// Consumer Device Page inputReport 03 (Device --> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x03 (3)
-                                                     // Collection: CA:
-  uint8_t  00B5 : 1;                                 // Usage 0x000C00B5: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  00B6 : 1;                                 // Usage 0x000C00B6: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  006F : 1;                                 // Usage 0x000C006F: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0070 : 1;                                 // Usage 0x000C0070: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  00E2 : 1;                                 // Usage 0x000C00E2: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  00A2 : 1;                                 // Usage 0x000C00A2: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  00E9 : 1;                                 // Usage 0x000C00E9: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  00EA : 1;                                 // Usage 0x000C00EA: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0183 : 1;                                 // Usage 0x000C0183: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0194 : 1;                                 // Usage 0x000C0194: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0186 : 1;                                 // Usage 0x000C0186: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0188 : 1;                                 // Usage 0x000C0188: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  018A : 1;                                 // Usage 0x000C018A: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0192 : 1;                                 // Usage 0x000C0192: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  00B7 : 1;                                 // Usage 0x000C00B7: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  00CD : 1;                                 // Usage 0x000C00CD: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0221 : 1;                                 // Usage 0x000C0221: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0223 : 1;                                 // Usage 0x000C0223: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0224 : 1;                                 // Usage 0x000C0224: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0225 : 1;                                 // Usage 0x000C0225: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0226 : 1;                                 // Usage 0x000C0226: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  0227 : 1;                                 // Usage 0x000C0227: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  022A : 1;                                 // Usage 0x000C022A: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
-  uint8_t  02B1 : 1;                                 // Usage 0x000C02B1: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+                                                     // Collection: CA:ConsumerControl
+  uint8_t  CD_ConsumerControlScanNextTrack : 1;      // Usage 0x000C00B5: Scan Next Track, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlScanPreviousTrack : 1;  // Usage 0x000C00B6: Scan Previous Track, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlDisplayBrightnessIncrement : 1; // Usage 0x000C006F: Display Brightness Increment, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlDisplayBrightnessDecrement : 1; // Usage 0x000C0070: Display Brightness Decrement, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlMute : 1;               // Usage 0x000C00E2: Mute, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlDaily : 1;              // Usage 0x000C00A2: Daily, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlVolumeIncrement : 1;    // Usage 0x000C00E9: Volume Increment, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlVolumeDecrement : 1;    // Usage 0x000C00EA: Volume Decrement, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAlConsumerControlConfiguration : 1; // Usage 0x000C0183: AL Consumer Control Configuration, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAlLocalMachineBrowser : 1; // Usage 0x000C0194: AL Local Machine Browser, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAlSpreadsheet : 1;      // Usage 0x000C0186: AL Spreadsheet, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAlPresentationApp : 1;  // Usage 0x000C0188: AL Presentation App, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAlEmailReader : 1;      // Usage 0x000C018A: AL Email Reader, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAlCalculator : 1;       // Usage 0x000C0192: AL Calculator, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlStop : 1;               // Usage 0x000C00B7: Stop, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlPlayPause : 1;          // Usage 0x000C00CD: Play/Pause, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAcSearch : 1;           // Usage 0x000C0221: AC Search, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAcHome : 1;             // Usage 0x000C0223: AC Home, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAcBack : 1;             // Usage 0x000C0224: AC Back, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAcForward : 1;          // Usage 0x000C0225: AC Forward, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAcStop : 1;             // Usage 0x000C0226: AC Stop, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAcRefresh : 1;          // Usage 0x000C0227: AC Refresh, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControlAcBookmarks : 1;        // Usage 0x000C022A: AC Bookmarks, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+  uint8_t  CD_ConsumerControl02B1 : 1;               // Usage 0x000C02B1: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
 } inputReport03_t;
 
 
@@ -472,13 +473,13 @@ typedef struct
 //--------------------------------------------------------------------------------
 
 /*
-05 01        (GLOBAL) USAGE_PAGE         0x0001  
-09 0C        (LOCAL)  USAGE              0x0001000C <-- Warning: Undocumented usage (document it by inserting 000C into file 0001.conf)
-A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x0001000C: Page=, Usage=, Type=) <-- Error: COLLECTION must be preceded by a USAGE <-- Warning: USAGE type should be CA (Application Collection)
+05 01        (GLOBAL) USAGE_PAGE         0x0001 Generic Desktop Page 
+09 0C        (LOCAL)  USAGE              0x0001000C Wireless Radio Controls (Application Collection)  
+A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x0001000C: Page=Generic Desktop Page, Usage=Wireless Radio Controls, Type=Application Collection)
 85 09          (GLOBAL) REPORT_ID          0x09 (9)  
 15 00          (GLOBAL) LOGICAL_MINIMUM    0x00 (0) <-- Redundant: LOGICAL_MINIMUM is already 0 <-- Info: Consider replacing 15 00 with 14
 25 01          (GLOBAL) LOGICAL_MAXIMUM    0x01 (1) <-- Redundant: LOGICAL_MAXIMUM is already 1 
-09 C6          (LOCAL)  USAGE              0x000100C6 <-- Warning: Undocumented usage (document it by inserting 00C6 into file 0001.conf)
+09 C6          (LOCAL)  USAGE              0x000100C6 Wireless Radio Button (On/Off Control)  
 95 01          (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields  
 75 01          (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field <-- Redundant: REPORT_SIZE is already 1 
 81 06          (MAIN)   INPUT              0x00000006 (1 field x 1 bit) 0=Data 1=Variable 1=Relative 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
@@ -488,14 +489,14 @@ C0           (MAIN)   END_COLLECTION     Application  <-- Warning: Physical unit
 */
 
 //--------------------------------------------------------------------------------
-//  inputReport 09 (Device --> Host)
+// Generic Desktop Page inputReport 09 (Device --> Host)
 //--------------------------------------------------------------------------------
 
 typedef struct
 {
   uint8_t  reportId;                                 // Report ID = 0x09 (9)
-                                                     // Collection: CA:
-  uint8_t  00C6 : 1;                                 // Usage 0x000100C6: , Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
+                                                     // Collection: CA:WirelessRadioControls
+  uint8_t  GD_WirelessRadioControlsWirelessRadioButton : 1; // Usage 0x000100C6: Wireless Radio Button, Value = 0 to 1, Physical = Value x 65535 in 10⁻⁴ s units
   uint8_t  : 7;                                      // Pad
 } inputReport09_t;
 
