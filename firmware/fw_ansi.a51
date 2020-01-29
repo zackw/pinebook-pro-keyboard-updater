@@ -7208,7 +7208,7 @@ L0152:
 
 CSEG AT 37FBh
 L0113:
-  37FB 0211A3		LJMP L0114
+  37FB 0211A3		LJMP L0114 ; this gets overwritten by the flasher maybe?
 
   37FE 00    		DB 000h 
   37FF 00    		DB 000h 

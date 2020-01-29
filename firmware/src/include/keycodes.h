@@ -379,60 +379,58 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KC_CRSEL  163
 #define KC_EXSEL  164
 
-#if 0
   // ***************************************************************
   // These keycodes are present in the HID spec, but are           *
   // nonfunctional on modern OSes. QMK uses this range (0xA5-0xDF) *
   // for the media and function keys instead - see below.          *
   // ***************************************************************
 
-  KC_KP_00                = 0xB0,
-  KC_KP_000,
-  KC_THOUSANDS_SEPARATOR,
-  KC_DECIMAL_SEPARATOR,
-  KC_CURRENCY_UNIT,
-  KC_CURRENCY_SUB_UNIT,
-  KC_KP_LPAREN,
-  KC_KP_RPAREN,
-  KC_KP_LCBRACKET,
-  KC_KP_RCBRACKET,
-  KC_KP_TAB,
-  KC_KP_BSPACE,
-  KC_KP_A,
-  KC_KP_B,
-  KC_KP_C,
-  KC_KP_D,
-  KC_KP_E,                //0xC0
-  KC_KP_F,
-  KC_KP_XOR,
-  KC_KP_HAT,
-  KC_KP_PERC,
-  KC_KP_LT,
-  KC_KP_GT,
-  KC_KP_AND,
-  KC_KP_LAZYAND,
-  KC_KP_OR,
-  KC_KP_LAZYOR,
-  KC_KP_COLON,
-  KC_KP_HASH,
-  KC_KP_SPACE,
-  KC_KP_ATMARK,
-  KC_KP_EXCLAMATION,
-  KC_KP_MEM_STORE,        //0xD0
-  KC_KP_MEM_RECALL,
-  KC_KP_MEM_CLEAR,
-  KC_KP_MEM_ADD,
-  KC_KP_MEM_SUB,
-  KC_KP_MEM_MUL,
-  KC_KP_MEM_DIV,
-  KC_KP_PLUS_MINUS,
-  KC_KP_CLEAR,
-  KC_KP_CLEAR_ENTRY,
-  KC_KP_BINARY,
-  KC_KP_OCTAL,
-  KC_KP_DECIMAL,
-  KC_KP_HEXADECIMAL,
-#endif
+#define KC_KP_00  0xB0
+#define KC_KP_000 0xB1
+#define KC_THOUSANDS_SEPARATOR 0xB2
+#define KC_DECIMAL_SEPARATOR 0xB3
+#define KC_CURRENCY_UNIT 0xB4
+#define KC_CURRENCY_SUB_UNIT 0xB5
+#define KC_KP_LPAREN 0xB6
+#define KC_KP_RPAREN 0xB7
+#define KC_KP_LCBRACKET 0xB8
+#define KC_KP_RCBRACKET 0xB9
+#define KC_KP_TAB 0xBA
+#define KC_KP_BSPACE 0xBB
+#define KC_KP_A 0xBC
+#define KC_KP_B 0xBD
+#define KC_KP_C 0xBE
+#define KC_KP_D 0xBF
+#define KC_KP_E 0xC0
+#define KC_KP_F 0xC1
+#define KC_KP_XOR 0xC2
+#define KC_KP_HAT 0xC3
+#define KC_KP_PERC 0xC4
+#define KC_KP_LT 0xC5
+#define KC_KP_GT 0xC6
+#define KC_KP_AND 0xC7
+#define KC_KP_LAZYAND 0xC8
+#define KC_KP_OR 0xC9
+#define KC_KP_LAZYOR 0xCA
+#define KC_KP_COLON 0xCB
+#define KC_KP_HASH 0xCC
+#define KC_KP_SPACE 0xCD
+#define KC_KP_ATMARK 0xCE
+#define KC_KP_EXCLAMATION 0xCF
+#define KC_KP_MEM_STORE 0xD0
+#define KC_KP_MEM_RECALL 0xD1
+#define KC_KP_MEM_CLEAR 0xD2
+#define KC_KP_MEM_ADD 0xD3
+#define KC_KP_MEM_SUB 0xD4
+#define KC_KP_MEM_MUL 0xD5
+#define KC_KP_MEM_DIV 0xD6
+#define KC_KP_PLUS_MINUS 0xD7
+#define KC_KP_CLEAR 0xD8
+#define KC_KP_CLEAR_ENTRY 0xD9
+#define KC_KP_BINARY 0xDA
+#define KC_KP_OCTAL 0xDB
+#define KC_KP_DECIMAL 0xDC
+#define KC_KP_HEXADECIMAL 0xDD
 
   /* Modifiers */
 #define KC_LCTRL  0xE0

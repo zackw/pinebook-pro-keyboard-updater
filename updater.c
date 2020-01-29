@@ -90,15 +90,35 @@ static int flash_kb_ansi()
   return 0;
 }
 
-static int flash_kb_ansi_revised()
+static int flash_kb(char * filename)
 {
   int rc;
+  char * buffer = 0;
+  long length;
 
-  rc = write_kb_fw(firmware_fw_revised_default_ansi_hex, firmware_fw_revised_default_ansi_hex_len);
+  FILE *fp = fopen(filename, "rb");
+  if (!fp) {
+    printf("Could not find file");
+    fclose(fp);
+    return 1;
+  }
+
+  fseek(fp, 0, SEEK_END);
+  length = ftell(fp);
+  fseek(fp, 0, SEEK_SET);
+  buffer = malloc(length);
+  if (buffer) {
+    fread(buffer, 1, length, fp);
+  }
+  fclose(fp);
+
+  rc = write_kb_fw(buffer, length);
   if (rc < 0) {
+    fclose(fp);
     return rc;
   }
 
+  fclose(fp);
   return 0;
 }
 
@@ -152,12 +172,7 @@ int main(int argc, char *argv[])
 {
   int rc = 0;
 
-  if (argc != 3) {
-    rc = usage(argv[0]);
-  } else if (strcmp(argv[2], "iso") && strcmp(argv[2], "ansi")) {
-    rc = usage(argv[0]);
-    printf("* specify valid keyboard type\n");
-  } else if (!strcmp(argv[1], "convert")) {
+  if (!strcmp(argv[1], "convert")) {
     rc = convert();
   } else if (!strcmp(argv[1], "step-1")) {
     rc = step_1();
@@ -171,11 +186,8 @@ int main(int argc, char *argv[])
     rc = flash_kb_iso();
   } else if (!strcmp(argv[1], "flash-kb-ansi")) {
     rc = flash_kb_ansi();
-  } else if (!strcmp(argv[1], "flash-kb-revised")) {
-    if (!strcmp(argv[2], "ansi"))
-      rc = flash_kb_ansi_revised();
-    else
-      rc = usage(argv[0]);
+  } else if (!strcmp(argv[1], "flash-kb")) {
+    rc = flash_kb(argv[2]);
   } else {
     rc = usage(argv[0]);
   }
