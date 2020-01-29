@@ -25,7 +25,7 @@ __code __at (0x0815) uint16_t keymap[] = KEYMAP_ANSI(
     R(ESC), FS(0), FS(1), R(F3), FS(2), FS(3), FS(4), FS(5), FR(1), FR(2), FR(3), FR(4), FR(5), 
     R(GRV),  R(1), R(2), R(3), R(4), R(5), R(6), FK(7), FK(8), FK(9), FK(10), R(MINS), R(EQL), FR(10) , 
     R(TAB),   R(Q), FR(11), FR(12), FR(13), R(G), R(J), FR(14), FK(5), FR(15), FK(11), R(LBRC), R(RBRC), R(BSLS),
-    R(CAPS),   FR(16), FR(17), R(S), FR(18), FR(19), FR(20), FR(21), FR(22), FR(23), FR(24), R(QUOT), R(ENT),
+    R(ESC),   FR(16), FR(17), R(S), FR(18), FR(19), FR(20), FR(21), FR(22), FR(23), FR(24), R(QUOT), R(ENT),
     M(LSFT),    FR(0), R(X), R(C), R(V), R(B), R(K), FK(0), R(COMM), FK(13), FK(14), M(RSFT), FR(6), 
     M(LCTL), F(0), M(LGUI), M(LALT),         R(SPC),           F(0), M(RCTL),        FR(7), FR(8), FR(9)
 );

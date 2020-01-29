@@ -114,11 +114,9 @@ static int flash_kb(char * filename)
 
   rc = write_kb_fw(buffer, length);
   if (rc < 0) {
-    fclose(fp);
     return rc;
   }
 
-  fclose(fp);
   return 0;
 }
 
