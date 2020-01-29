@@ -1175,23 +1175,23 @@ void L0247(void) {
         R6 = r02;
         R7 = r01;
         if (R7 | R6 == 0) {
-            R7 = swap(r66) & 0xF0;          // usage 0x47 (1)
-            R7 |= (swap(r6C) << 3) & 0x80;  // usage 0x42 (1)
-            ACC = (r67 << 2);               // usage 0x51 (2)
+            R7 = swap(r66) & 0xF0;          // Confidence
+            R7 |= (swap(r6C) << 3) & 0x80;  // TipSwitch
+            ACC = (r67 << 2);               // ContactID
             ACC |= R7;
-            ACC |= r65;                     // usage 0x54 (3)
-            ACC |= r6B;                     // usage 0x01 (1)
+            ACC |= r65;                     // ContactCount
+            ACC |= r6B;                     // Button1
             TXDAT2 = ACC;
             DPTR = 0x0001;
-            ACC = L0258();
+            ACC = L0258();                  // FingerX (16b)
             TXDAT2 = ACC;
             ACC = L0259();
             TXDAT2 = ACC;
             DPTR = 0x0003;
-            ACC = L0258();
+            ACC = L0258();                  // FingerY (16b)
             TXDAT2 = ACC;
             DPTR = 0x0002;
-            ACC = L0258();
+            ACC = L0258();                  // RelativeScanTime (16b)
             ACC &= 0x0F;
             TXDAT2 = ACC;
             // L0260
