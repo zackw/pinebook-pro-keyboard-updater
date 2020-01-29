@@ -85,7 +85,7 @@ __code uint16_t fns_keypad[] = {
 };
 
 // make the 0x0C type use LSFT instead of LGUI
-ADDR(0x0805) = 0x01;
+ADDR(0x0805) = 0x02;
 
 // make Fn + 0x0C press go to the keypad table values instead of P
 ADDR(0x071B)[] = { 0x02, 0x06, 0xBD }; // jump to 0x06BD
