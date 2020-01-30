@@ -6,9 +6,9 @@ The `revised.c` file here implements the fixes that were previously done to the 
 
 ## Keymaps
 
-The `keymaps/*.c` files contain individual keymaps that declare the key type/keycode, and function arrays that can used to customise the function layer. The address that this array is being assigned to is important. **Only ANSI keyboards are supported currently** There a couple of helpers that have been written to make configuring keymaps easier:
+The `keymaps/*.c` files contain individual keymaps that declare the key type/keycode, and function arrays that can used to customise the function layer. The address that this array is being assigned to is important. **Only ANSI keyboards are supported currently**. There a couple of helpers that have been written to make configuring keymaps easier:
 
- * `R(n)`: regular keycode (see below) - `KC_` gets prefixed to `n`
+ * `R(n)`: regular keycode (see below) - `KC_` gets prefixed to `n`,
     e.g. only use `A` here to get `KC_A`
  * `M(n)`: modifier using the bits of the USB spec (see below)
  * `F(n)`: function key - only one is implemented currently, so use `F(0)` 
@@ -31,7 +31,7 @@ Modifiers are defined as four letter shortcuts (only for use with `M(n)`):
 
 ## Function Arrays
 
-These arrays should **not** be rearranged - the code relies on them existing in this order, since array addresses aren't constant at compile time (something that may be an issue with SDCC itself). They're inserted into a section of the code (`0x3000`) that is currently empty (the next memory location is `0x37FB`). It should be possible to define 1021 entries (among all arrays) here. The starting location can change by modifying the [`Makefile`](Makefile) and the define at the top of the keymap (TODO, this could be moved to a variable only in the Makefile).
+The arrays themselves (`fns_special`, `fns_regular`, `fns_keypad`) should **not** be rearranged - the code relies on them existing in this order, since array addresses aren't constant at compile time (something that may be an issue with SDCC itself). They're inserted into a section of the code (`0x3000`) that is currently empty (the next memory location is `0x37FB`). It should be possible to define 1021 entries (among all arrays) here. The starting location can change by modifying the [`Makefile`](Makefile) and the define at the top of the keymap (TODO, this could be moved to a variable only in the Makefile).
 
 Each array should be indexed for clarity (this makes it easier to refer to them with their `F*(n)` helpers), and each element takes the helper function, `REG_FN(reg, fn)`, where `reg` and `fn` are full keycodes (e.g. `KC_A`) - neither are prefixed with `KC_` automatically. `fn` can also be a value that's handled by the firmware internally, but only codes that exist in `default_ansi.c` should be used, or unexpected things may happen.
 
@@ -49,7 +49,7 @@ The make system (in the `firmware/src` directory) will take the keymap's filenam
 
 will compile `keymaps/default_ansi.c` and generate `default_ansi.hex` one folder up. 
 
-With the modifications on this fork, the updater will (after compiling it separately) load arbitrary filenames with the `flash-kb` command, like this:
+With the modifications in this branch (`c_source`), the updater (after compiling it separately from the repo's root) will load arbitrary filenames with the `flash-kb` command, like this:
 
     sudo ./updater flash-kb firmware/default_ansi.hex
 
