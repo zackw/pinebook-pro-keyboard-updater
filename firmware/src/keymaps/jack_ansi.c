@@ -149,8 +149,9 @@ ADDR(0x0806) = 0x02;
 //   07BA 021BFF       LJMP L0374 -->
 
 // make Fn + 0x0C press go to the keypad table values instead of P (L404)
-ADDR(0x071B)[] = { 0x12, 0x06, 0xBD }; // call 0x06BD
-
+ADDR(0x071B)[] = {  0x12, 0x06, 0xBD, // call 0x06BD
+                    0x12, 0x07, 0xE0, // call L0446
+                    0xC2, 0x0A };     // clear b0A and let the keyrelease process
 
 // L0442:
 //   06FC 302622       JNB 26h, L0443 -->
