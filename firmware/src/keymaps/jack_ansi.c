@@ -328,7 +328,6 @@ ADDR(0x06FE) = 0xC9; // jump to L0435/0x06C8
 // make 0x0C release the keypad keys instead - call 0x078F / L0397 ish
 ADDR(0x07C3)[] = {  0x12, 0x07, 0x8F, // call 0x078F
                     0x12, 0x17, 0x0D, // call L0143
-                    // 0x22,             // return
                     0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 #define GET_DPL(addr) ((addr) & 0xFF)
