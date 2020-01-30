@@ -85,8 +85,23 @@ __code uint16_t fns_keypad[] = {
 };
 
 // make the 0x0C type use LSFT instead of LGUI
-ADDR(0x0805) = 0x02;
+// this location is change in revised.c
+ADDR(0x0806) = 0x02;
 
+// L0444:
+//   06FF E5E4         MOV A, 0E4h
+//   0701 30E3FB       JNB ACC.3, L0444
+//   0704 E5E4         MOV A, 0E4h
+//   0706 5403         ANL A, #3h
+//   0708 70F5         JNZ L0444
+//   070A 1207FF       LCALL L0406
+//   070D 12170D       LCALL L0143
+// L0445:
+//   0710 E5E4         MOV A, 0E4h
+//   0712 30E3FB       JNB ACC.3, L0445
+//   0715 E5E4         MOV A, 0E4h
+//   0717 5403         ANL A, #3h
+//   0719 70F5         JNZ L0445
 //   071B 12080A       LCALL L0404 -->
 //   071E 0207E0       LJMP L0446 <--
 
@@ -112,6 +127,16 @@ ADDR(0x0805) = 0x02;
 //   06C3 93           MOVC A, @A+DPTR
 //   06C4 FD           MOV R5, A
 //   06C5 02076A       LJMP L0431
+
+// L0402:
+//   18EF E564         MOV A, 64h
+//   18F1 25E0         ADD A, ACC
+// L0437:
+//   18F3 2458         ADD A, #58h
+//   18F5 F582         MOV DPL, A
+//   18F7 E4           CLR A
+//   18F8 3409         ADDC A, #9h
+//   18FA 22           RET
 
 // L0431:
 //   076A A20A         MOV C, 0Ah
@@ -303,8 +328,8 @@ ADDR(0x06FE) = 0xC9; // jump to L0435/0x06C8
 // make 0x0C release the keypad keys instead - call 0x078F / L0397 ish
 ADDR(0x07C3)[] = {  0x12, 0x07, 0x8F, // call 0x078F
                     0x12, 0x17, 0x0D, // call L0143
-                    0x22,             // return
-                    0, 0, 0, 0, 0, 0, 0 };
+                    // 0x22,             // return
+                    0, 0, 0, 0, 0, 0, 0, 0 };
 
 #define GET_DPL(addr) ((addr) & 0xFF)
 #define GET_DPH(addr) (((addr) >> 8) & 0xFF)

@@ -2,6 +2,13 @@
 
 // make the end of L0456 jump to this and use the return to pop back
 ADDR(0x07FE)[] = { 0x02, 0x26, 0x9F }; // LJMP L0138
+// instruction above overwrites L0406 so we need to change it a bit
+ADDR(0x0801)[] = { 0xA2, 0x0A,      // MOV C, 0Ah
+                   0x33,            // RLC A (already 0)
+                   0xFF,            // MOV R7, A
+                   0x7D, 0x08,      // MOV R5, #8h
+                   0x02, 0x26, 0xC3 // LJMP L0370, use ret to pop back
+                 };
 
 // f10 process to new function
 ADDR(0x0620)[] = { 0x02, 0x06, 0x93 }; // LJMP NEW
