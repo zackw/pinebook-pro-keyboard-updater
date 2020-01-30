@@ -127,6 +127,9 @@ ADDR(0x0805) = 0x02;
 ADDR(0x071B)[] = { 0x12, 0x06, 0xBD }; // call 0x06BD
 
 
+// L0442:
+//   06FC 302622       JNB 26h, L0443
+
 // L0443:
 //   0721 8019         SJMP L0422 -->
 
@@ -178,9 +181,11 @@ ADDR(0x071B)[] = { 0x12, 0x06, 0xBD }; // call 0x06BD
 // L0373:
 //   07BA 021BFF       LJMP L0374 -->
 
-// (not working at all)
 // make normal 0x0C press go to keypad table instead of L0422
-ADDR(0x0721)[] = { 0x80, 0xAD }; // jump to L0435/0x06C8
+
+ADDR(0x06FE) = 0xC9; // jump to L0435/0x06C8
+
+// ADDR(0x0721)[] = { 0x80, 0xAD }; // jump to L0435/0x06C8
 
 /*
   07C3 A20A         MOV C, 0Ah
