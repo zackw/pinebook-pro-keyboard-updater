@@ -43,7 +43,7 @@ The arrays themselves are compiled together at the memory location specified, an
 
 ## Generating the Binary
 
-The packages require for this build system can be installed with:
+The packages required for this build system can be installed with:
 
    sudo apt-get install sdcc srecord
 
