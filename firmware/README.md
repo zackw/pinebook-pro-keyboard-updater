@@ -22,8 +22,10 @@ touchpad/keyboard after flashing is usually a symptom of this. The changes to
 the firmware .hex files are described in their respective `src/keymaps/*.c`
 files.
 
-You can find the labels and addresses by looking in `fw_ansi.a51` (assembly)
-and `src/main.c` (c pseudo code written by hand) and `src/revised`.
+You can find the labels and addresses by looking in [`fw_ansi.a51`]
+(fw_ansi.a51) (assembly)
+and [`src/main.c`](src/main.c) (c pseudo code written by hand) and
+[`src/revised.c`](src/revised.c) (common code for all keymaps).
 
 ## Hardware
 
