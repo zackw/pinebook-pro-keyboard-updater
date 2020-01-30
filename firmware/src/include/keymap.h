@@ -89,8 +89,8 @@
         NK,  com, l,   o,   n9,  f10, f9,  NK, \
         NK,  dot, sem, p,   min, n0,  f11, NK, \
         NK,  sls, quo, lbr, eql, NK,  f12, NK, \
-        spc, rsf, bsl, rbr, lef, bkp, NK,  NK, \
-        ral, rct, lef,  up,  dn, rht, NK,  NK, \
+        spc, rsf, bsl, rbr, bkp, ent, NK,  NK, \
+        ral, rct, lef, up,  dn,  rht, NK,  NK, \
         NK,  NK,  NK,  NK,  NK,  NK,  NK,  NK, \
         NK,  NK,  NK,  NK,  NK,  NK,  NK,  NK  \
     }
