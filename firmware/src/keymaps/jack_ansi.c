@@ -302,7 +302,7 @@ ADDR(0x06FE) = 0xC9; // jump to L0435/0x06C8
 
 // make 0x0C release the keypad keys instead - call 0x078F / L0397 ish
 ADDR(0x07C3)[] = {  0x12, 0x07, 0x8F, // call 0x078F
-                    0xC2, 0x0A,       // clear r0A (key release)
+                    0xD2, 0x0A,       // set r0A (key release?)
                     0x02, 0x07, 0xCF, // skip to L0143 call
                     0, 0, 0, 0 };
 
