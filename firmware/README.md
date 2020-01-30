@@ -7,23 +7,23 @@ scratch, with the eventual goal of running QMK.
 ## Replacement Firmware
 
 Some issues in the stock firmware have been addressed with the 
-`fw_<type>_revised.hex` files. You can flash these files, after cloning and
+`default_<type>.hex` files. You can flash these files, after cloning and
 compiling:
 
-    sudo ./updater flash-kb-revised ansi
+    sudo ./updater flash-kb firmware/default_ansi.hex
 
 or
 
-    sudo ./updater flash-kb-revised iso
+    sudo ./updater flash-kb firmware/default_iso.hex
 
 No reboot is required for these changes to take effect, but ocassionally a
 reboot is required to wake the keyboard's controller back up - an unresponsive
 touchpad/keyboard after flashing is usually a symptom of this. The changes to
-the firmware .hex files are described in their respective .asm files (they're
-not actually .asm files).
+the firmware .hex files are described in their respective `src/keymaps/*.c`
+files.
 
 You can find the labels and addresses by looking in `fw_ansi.a51` (assembly)
-and `src/main.c` (c pseudo code written by hand).
+and `src/main.c` (c pseudo code written by hand) and `src/revised`.
 
 ## Hardware
 

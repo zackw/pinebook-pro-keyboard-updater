@@ -6,7 +6,9 @@ The [`revised.c`](revised.c) file here implements the fixes that were previously
 
 ## Keymaps
 
-The `keymaps/*.c` files contain individual keymaps that declare the key type/keycode, and function arrays that can used to customise the function layer. The address that this array is being assigned to is important. **Only ANSI keyboards are supported currently**. There a couple of helpers that have been written to make configuring keymaps easier:
+The `keymaps/*.c` files contain individual keymaps that declare the key type/keycode, and function arrays that can used to customise the function layer. The address that this array is being assigned to is important. You can use the `KEYMAP_ISO` or `KEYMAP_ANSI` macros to define your keymap - these take a different number of arguments since each keyboard has a different number of keys. The power button on both keyboards cannot be mapped and is excluded from the keymaps.
+
+There a couple of helpers that have been written to make configuring keymaps easier:
 
  * `R(n)`: regular keycode (see below) - `KC_` gets prefixed to `n`,
     e.g. only use `A` here to get `KC_A`
@@ -68,4 +70,4 @@ In a workflow, something like the following works best, executed from the repo's
 
 The keyboard will (hopefully) be usable as soon as the updater script has completed.
 
-If you're customising a keymap for yourself, please create a new file with the appropriate type suffix, e.g. `myname_ansi.c`, so that changes from upstream can easily be pulled in. You may need to force-add and `*.c` files to the repo.
+If you're customising a keymap for yourself, please create a new file with the appropriate type suffix, e.g. `myname_ansi.c`, so that changes from upstream can easily be pulled in. If you think others might benefit from seeing your keymap, feel free to make a pull request to this repo, adding it to the `keymaps/` folder.

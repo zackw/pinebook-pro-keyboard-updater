@@ -33,13 +33,13 @@ if at any point process fails, start it from point 1.:
 
 ### Revised firmware
 
-There has been some effort in `firmware/` to reverse engineer and customise the existing firmware, fixing some of the common issues people are facing. **Currently you need to flash this after steps 1 and 2 with a separate command**, `flash-kb-revised` followed by the keyboard type. No reboot is required after flashing, but may be needed if your keyboard/touchpad is unresponsive (currently rare). Changelogs and assembly code for each version can be found in `firmware/fw_<type>_revised.asm`.
+There has been some effort in [`firmware/`](firmware/) to reverse engineer and customise the existing firmware, fixing some of the common issues people are facing. **Currently you need to flash this after steps 1 and 2 with a separate command**, `flash-kb` followed by the `.hex` file location. No reboot is required after flashing, but may be needed if your keyboard/touchpad is unresponsive (currently rare). Source code for each version can be found in [`firmware/src/`](firmware/src/).
 
 ```bash
 # compile
 git clone https://github.com/jackhumbert/pinebook-pro-keyboard-updater
 cd pinebook-pro-keyboard-updater
-sudo apt-get install build-essential libusb-1.0-0-dev xxd
+sudo apt-get install build-essential libusb-1.0-0-dev xxd 
 make
 
 # For ISO keyboard
@@ -61,10 +61,10 @@ sudo ./updater step-2 ansi
 sudo reboot
 
 # updating to the revised ansi firmware after steps 1 and 2
-sudo ./updater flash-kb-revised ansi
+sudo ./updater flash-kb firmware/default_ansi.hex
 
 # updating to the revised iso firmware after steps 1 and 2
-sudo ./updater flash-kb-revised iso
+sudo ./updater flash-kb firmware/default_iso.hex
 
 ```
 
