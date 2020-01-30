@@ -85,6 +85,14 @@ __code uint16_t fns_keypad[] = {
     [15] = REG_FN(KC_DOT, KC_GRV)  // ~
 };
 
+// custom serial string "ANSI 0.1" in place of old "sino wealth" one
+ADDR(0x007E) = 0x14; // lenth of packet
+ADDR(0x007F) = 0x03; // string
+ADDR(0x0080)[] = {
+    0x41, 0x00, 0x4E, 0x00, 0x53, 0x00, 0x49, 0x00, 0x20, 0x00, 0x30, 0x00,
+    0x2E, 0x00, 0x31, 0x00, 0x00, 0x00 // null term
+};
+
 // make the 0x0C type use LSFT instead of LGUI
 // this function's location is changed in revised.c
 ADDR(0x0806) = 0x02;

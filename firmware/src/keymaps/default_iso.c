@@ -74,6 +74,14 @@ __code uint16_t fns_keypad[] = {
     [14] = REG_FN(KC_SLSH, KC_PSLS)
 };
 
+// custom serial string "ISO 0.1" in place of old "sino wealth" one
+ADDR(0x007E) = 0x13; // lenth of packet
+ADDR(0x007F) = 0x03; // string
+ADDR(0x0080)[] = {
+    0x49, 0x00, 0x53, 0x00, 0x4F, 0x00, 0x20, 0x00, 0x30, 0x00, 0x2E, 0x00, 
+    0x31, 0x00, 0x00 // null term
+};
+
 #define GET_DPL(addr) ((addr) & 0xFF)
 #define GET_DPH(addr) (((addr) >> 8) & 0xFF)
 
