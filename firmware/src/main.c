@@ -1645,7 +1645,7 @@ void L0145(void) {
                 R7 = r0A;
                 R5 = r64; // release F3
                 L0374(); // call
-                L0404(); // KC_P
+                L0404(); // KC_P & L0374
                 L0143(); // send key info
                 // L0405
                 while (!(TXFLG1 & 0x08) && (TXFLG1 & 0x03));
