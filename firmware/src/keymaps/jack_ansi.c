@@ -87,8 +87,96 @@ __code uint16_t fns_keypad[] = {
 // make the 0x0C type use LSFT instead of LGUI
 ADDR(0x0805) = 0x02;
 
-// make Fn + 0x0C press go to the keypad table values instead of P
+//   071B 12080A       LCALL L0404 -->
+//   071E 0207E0       LJMP L0446 <--
+
+// L0404:
+//   080A A20A         MOV C, 0Ah
+//   080C E4           CLR A
+//   080D 33           RLC A
+//   080E FF           MOV R7, A
+//   080F 7D13         MOV R5, #13h
+//   0811 121BFF       LCALL L0374
+//   0814 22           RET
+
+// L0446:
+//   07E0 12170D       LCALL L0143
+// L0360:
+//   07E3 22           RET
+
+// replaced by
+
+//   06BD 1218EF       LCALL L0402 <--
+//   06C0 F583         MOV DPH, A
+//   06C2 E4           CLR A
+//   06C3 93           MOVC A, @A+DPTR
+//   06C4 FD           MOV R5, A
+//   06C5 02076A       LJMP L0431
+
+// L0431:
+//   076A A20A         MOV C, 0Ah
+//   076C E4           CLR A
+//   076D 33           RLC A
+//   076E FF           MOV R7, A
+//   076F 0207BA       LJMP L0373
+
+// L0373:
+//   07BA 021BFF       LJMP L0374 -->
+
+// make Fn + 0x0C press go to the keypad table values instead of P (L404)
 ADDR(0x071B)[] = { 0x12, 0x06, 0xBD }; // call 0x06BD
+
+
+// L0443:
+//   0721 8019         SJMP L0422 -->
+
+// L0422:
+//   073C 1218D6       LCALL L0369
+//   073F 0207BA       LJMP L0373
+
+// L0369:
+//   18D6 A20A         MOV C, 0Ah
+//   18D8 E4           CLR A
+//   18D9 33           RLC A
+//   18DA FF           MOV R7, A
+//   18DB AD64         MOV R5, 64h
+//   18DD 22           RET
+
+// L0373:
+//   07BA 021BFF       LJMP L0374 -->
+
+// replace by
+
+// L0435:
+//   06C8 E564         MOV A, 64h <--
+//   06CA 25E0         ADD A, ACC
+//   06CC 301A05       JNB 1Ah, L0436
+//   06CF 1218F3       LCALL L0437
+//   06D2 8007         SJMP L0438
+
+// L0437:
+//   18F3 2458         ADD A, #58h
+//   18F5 F582         MOV DPL, A
+//   18F7 E4           CLR A
+//   18F8 3409         ADDC A, #9h
+//   18FA 22           RET
+
+// L0438:
+//   06DB F583         MOV DPH, A
+//   06DD E4           CLR A
+//   06DE 93           MOVC A, @A+DPTR
+//   06DF FD           MOV R5, A
+//   06E0 02076A       LJMP L0431
+
+// L0431:
+//   076A A20A         MOV C, 0Ah
+//   076C E4           CLR A
+//   076D 33           RLC A
+//   076E FF           MOV R7, A
+//   076F 0207BA       LJMP L0373
+
+// L0373:
+//   07BA 021BFF       LJMP L0374 -->
 
 // (not working at all)
 // make normal 0x0C press go to keypad table instead of L0422
