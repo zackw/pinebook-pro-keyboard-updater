@@ -531,7 +531,7 @@ void L0143(void) {
     }
     // L0414
     EA = 0;
-    R0 = 0xAC;
+    R0 = 0xAC; // mod bits
     TXDAT1 = *R0;
     TXDAT1 = 0;
     if (r08) {

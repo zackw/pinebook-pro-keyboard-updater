@@ -302,9 +302,8 @@ ADDR(0x06FE) = 0xC9; // jump to L0435/0x06C8
 
 // make 0x0C release the keypad keys instead - call 0x078F / L0397 ish
 ADDR(0x07C3)[] = {  0x12, 0x07, 0x8F, // call 0x078F
-                    0xD2, 0x0A,       // set r0A (key release?)
-                    0x02, 0x07, 0xCF, // skip to L0143 call
-                    0, 0, 0, 0 };
+                    0, 0, 0, // nops
+                    0, 0, 0, 0, 0, 0 };
 
 #define GET_DPL(addr) ((addr) & 0xFF)
 #define GET_DPH(addr) (((addr) >> 8) & 0xFF)
