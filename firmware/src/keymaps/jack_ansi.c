@@ -64,6 +64,7 @@ __code uint16_t fns_regular[] = {
 };
 
 // this array is processed by 0x0C and shift is applied to the fn keycode
+// the shifted keycode is also tapped so that other keys aren't affected
 // __code __at (0x0957)
 __code uint16_t fns_keypad[] = {
     [0] = REG_FN(KC_W, KC_COMM),  // <
@@ -85,251 +86,21 @@ __code uint16_t fns_keypad[] = {
 };
 
 // make the 0x0C type use LSFT instead of LGUI
-// this location is change in revised.c
+// this function's location is changed in revised.c
 ADDR(0x0806) = 0x02;
-
-// L0444:
-//   06FF E5E4         MOV A, 0E4h
-//   0701 30E3FB       JNB ACC.3, L0444
-//   0704 E5E4         MOV A, 0E4h
-//   0706 5403         ANL A, #3h
-//   0708 70F5         JNZ L0444
-//   070A 1207FF       LCALL L0406
-//   070D 12170D       LCALL L0143
-// L0445:
-//   0710 E5E4         MOV A, 0E4h
-//   0712 30E3FB       JNB ACC.3, L0445
-//   0715 E5E4         MOV A, 0E4h
-//   0717 5403         ANL A, #3h
-//   0719 70F5         JNZ L0445
-//   071B 12080A       LCALL L0404 -->
-//   071E 0207E0       LJMP L0446 <--
-
-// L0404:
-//   080A A20A         MOV C, 0Ah
-//   080C E4           CLR A
-//   080D 33           RLC A
-//   080E FF           MOV R7, A
-//   080F 7D13         MOV R5, #13h
-//   0811 121BFF       LCALL L0374
-//   0814 22           RET
-
-// L0446:
-//   07E0 12170D       LCALL L0143
-// L0360:
-//   07E3 22           RET
-
-// replaced by
-
-//   06BD 1218EF       LCALL L0402 <--
-//   06C0 F583         MOV DPH, A
-//   06C2 E4           CLR A
-//   06C3 93           MOVC A, @A+DPTR
-//   06C4 FD           MOV R5, A
-//   06C5 02076A       LJMP L0431
-
-// L0402:
-//   18EF E564         MOV A, 64h
-//   18F1 25E0         ADD A, ACC
-// L0437:
-//   18F3 2458         ADD A, #58h
-//   18F5 F582         MOV DPL, A
-//   18F7 E4           CLR A
-//   18F8 3409         ADDC A, #9h
-//   18FA 22           RET
-
-// L0431:
-//   076A A20A         MOV C, 0Ah
-//   076C E4           CLR A
-//   076D 33           RLC A
-//   076E FF           MOV R7, A
-//   076F 0207BA       LJMP L0373
-
-// L0373:
-//   07BA 021BFF       LJMP L0374 -->
 
 // make Fn + 0x0C press go to the keypad table values instead of P (L404)
 ADDR(0x071B)[] = {  0x12, 0x06, 0xBD, // call 0x06BD
                     0x12, 0x07, 0xE0, // call L0446
-                    0xC2, 0x0A };     // clear b0A and let the keyrelease process
-
-// L0442:
-//   06FC 302622       JNB 26h, L0443 -->
-
-// L0443:
-//   0721 8019         SJMP L0422
-
-// L0422:
-//   073C 1218D6       LCALL L0369
-//   073F 0207BA       LJMP L0373
-
-// L0369:
-//   18D6 A20A         MOV C, 0Ah
-//   18D8 E4           CLR A
-//   18D9 33           RLC A
-//   18DA FF           MOV R7, A
-//   18DB AD64         MOV R5, 64h
-//   18DD 22           RET
-
-// L0373:
-//   07BA 021BFF       LJMP L0374 -->
-
-// replace by
-
-// L0435:
-//   06C8 E564         MOV A, 64h <--
-//   06CA 25E0         ADD A, ACC
-//   06CC 301A05       JNB 1Ah, L0436
-//   06CF 1218F3       LCALL L0437
-//   06D2 8007         SJMP L0438
-
-// L0437:
-//   18F3 2458         ADD A, #58h
-//   18F5 F582         MOV DPL, A
-//   18F7 E4           CLR A
-//   18F8 3409         ADDC A, #9h
-//   18FA 22           RET
-
-// L0438:
-//   06DB F583         MOV DPH, A
-//   06DD E4           CLR A
-//   06DE 93           MOVC A, @A+DPTR
-//   06DF FD           MOV R5, A
-//   06E0 02076A       LJMP L0431
-
-// L0431:
-//   076A A20A         MOV C, 0Ah
-//   076C E4           CLR A
-//   076D 33           RLC A
-//   076E FF           MOV R7, A
-//   076F 0207BA       LJMP L0373
-
-// L0373:
-//   07BA 021BFF       LJMP L0374 -->
+                    0xC2, 0x0A };     // clear b0A and let the release process
 
 // make normal 0x0C press go to keypad table instead of L0422
-
 ADDR(0x06FE) = 0xC9; // jump to L0435/0x06C8
-
-// ADDR(0x0721)[] = { 0x80, 0xAD }; // jump to L0435/0x06C8
-
-//   07C3 A20A         MOV C, 0Ah -->
-//   07C5 33           RLC A
-//   07C6 FF           MOV R7, A
-//   07C7 AD64         MOV R5, 64h
-//   07C9 121BFF       LCALL L0374
-//   07CC 12080A       LCALL L0404
-//   07CF 12170D       LCALL L0143 <--
-
-// L0405:
-//   07D2 E5E4         MOV A, 0E4h
-//   07D4 30E3FB       JNB ACC.3, L0405
-//   07D7 E5E4         MOV A, 0E4h
-//   07D9 5403         ANL A, #3h
-//   07DB 70F5         JNZ L0405
-//   07DD 1207FF       LCALL L0406
-// L0446:
-//   07E0 12170D       LCALL L0143
-// L0360:
-//   07E3 22           RET
-
-// L0374:
-//   1BFF EF           MOV A, R7
-//   1C00 601F         JZ L0375
-//   1C02 E4           CLR A
-//   1C03 FE           MOV R6, A
-// L0378:
-//   1C04 74AD         MOV A, #0ADh
-//   1C06 2E           ADD A, R6
-//   1C07 F8           MOV R0, A
-//   1C08 E6           MOV A, @R0
-//   1C09 7009         JNZ L0376
-//   1C0B 74AD         MOV A, #0ADh
-//   1C0D 2E           ADD A, R6
-//   1C0E F8           MOV R0, A
-//   1C0F A605         MOV @R0, 5h
-//   1C11 D222         SETB 22h
-//   1C13 22           RET
-
-// L0404:
-//   080A A20A         MOV C, 0Ah
-//   080C E4           CLR A
-//   080D 33           RLC A
-//   080E FF           MOV R7, A
-//   080F 7D13         MOV R5, #13h
-//   0811 121BFF       LCALL L0374
-//   0814 22           RET
-
-// L0406:
-//   07FF A20A         MOV C, 0Ah
-//   0801 E4           CLR A
-//   0802 33           RLC A
-//   0803 FF           MOV R7, A
-//   0804 7D08         MOV R5, #8h
-//   0806 1226C3       LCALL L0370
-//   0809 22           RET
-
-// replaced by
-
-//   078F 1218EF       LCALL L0402 <--
-//   0792 1218CB       LCALL L0395
-//   0795 121BFF       LCALL L0374
-//   0798 E564         MOV A, 64h
-//   079A 25E0         ADD A, ACC
-//   079C 2457         ADD A, #57h
-//   079E F582         MOV DPL, A
-//   07A0 E4           CLR A
-//   07A1 3409         ADDC A, #9h
-//   07A3 1218CB       LCALL L0395
-//   07A6 8012         SJMP L0373
-
-// L0402:
-//   18EF E564         MOV A, 64h
-//   18F1 25E0         ADD A, ACC
-// L0437:
-//   18F3 2458         ADD A, #58h
-//   18F5 F582         MOV DPL, A
-//   18F7 E4           CLR A
-//   18F8 3409         ADDC A, #9h
-//   18FA 22           RET
-
-// L0395:
-//   18CB F583         MOV DPH, A
-//   18CD E4           CLR A
-//   18CE 93           MOVC A, @A+DPTR
-// L0400:
-//   18CF FD           MOV R5, A
-//   18D0 A20A         MOV C, 0Ah
-//   18D2 E4           CLR A
-//   18D3 33           RLC A
-//   18D4 FF           MOV R7, A
-//   18D5 22           RET
-
-// L0374:
-//   1BFF EF           MOV A, R7
-//   1C00 601F         JZ L0375
-//   1C02 E4           CLR A
-//   1C03 FE           MOV R6, A
-// L0378:
-//   1C04 74AD         MOV A, #0ADh
-//   1C06 2E           ADD A, R6
-//   1C07 F8           MOV R0, A
-//   1C08 E6           MOV A, @R0
-//   1C09 7009         JNZ L0376
-//   1C0B 74AD         MOV A, #0ADh
-//   1C0D 2E           ADD A, R6
-//   1C0E F8           MOV R0, A
-//   1C0F A605         MOV @R0, 5h
-//   1C11 D222         SETB 22h
-//   1C13 22           RET
-
-// L0373:
-//   07BA 021BFF       LJMP L0374 -->
 
 // make 0x0C release the keypad keys instead - call 0x078F / L0397 ish
 ADDR(0x07C3)[] = {  0x12, 0x07, 0x8F, // call 0x078F
                     0x12, 0x17, 0x0D, // call L0143
-                    0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                    0, 0, 0, 0, 0, 0, 0, 0, 0 }; // removed code to nops
 
 #define GET_DPL(addr) ((addr) & 0xFF)
 #define GET_DPH(addr) (((addr) >> 8) & 0xFF)
