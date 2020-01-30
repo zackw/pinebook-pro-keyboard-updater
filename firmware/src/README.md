@@ -2,7 +2,7 @@
 
 **It's not currently clear how easy it is (or possible for someone at a hobbyist level) to recover a keyboard controller flashed with bad code (the programming uses USB endpoints), so please be careful when making modifications to the source files. Generally anything staying away from the USB stuff is probably safe. While this is written in C, regular functions cannot be easily inserted into the codebase (at this time) - only the definitions using `ADDR()`.**
 
-The `revised.c` file here implements the fixes that were previously done to the .hex files manually. The build system generates a barebones .ihx file from this file and the selected keymap that then gets overlaid onto `fw_ansi.hex` (effectively the source of truth for all of these modifications). `revised.c` gets compiled first, and any keymap changes are added afterwards (i.e. overwriting addresses where necessary).
+The [`revised.c`](revised.c) file here implements the fixes that were previously done to the .hex files manually. The build system generates a barebones .ihx file from this file and the selected keymap that then gets overlaid onto `fw_ansi.hex` (effectively the source of truth for all of these modifications). `revised.c` gets compiled first, and any keymap changes are added afterwards (i.e. overwriting addresses where necessary).
 
 ## Keymaps
 
@@ -42,6 +42,12 @@ The arrays themselves are compiled together at the memory location specified, an
 [`keymaps/jack_ansi.c`](keymaps/jack_ansi.c) contains some custom functionality with one of the array lookups that enables some shifted keycodes (e.g. getting `{}_()"|<$>` with one action) in a specific array. The file itself contains more details about the modifications made.
 
 ## Generating the Binary
+
+The packages require for this build system can be installed with:
+
+   sudo apt-get install sdcc srecord
+
+There are definitions for a Windows system in the `Makefile` as well.
 
 The make system (in the `firmware/src` directory) will take the keymap's filename (without `.c`) as an argument and insert the completed .hex file into the parent `firmware/` folder. e.g.:
 
