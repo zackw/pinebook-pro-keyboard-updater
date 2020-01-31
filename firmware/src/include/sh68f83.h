@@ -14,6 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// This file will be useful if we ever write the firmware from scratch
+// Right now it's not being used in any compilation
+
 #pragma once
 
 // System Registers

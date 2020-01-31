@@ -7,23 +7,25 @@ scratch, with the eventual goal of running QMK.
 ## Replacement Firmware
 
 Some issues in the stock firmware have been addressed with the 
-`fw_<type>_revised.hex` files. You can flash these files, after cloning and
+`default_<type>.hex` files. You can flash these files, after cloning and
 compiling:
 
-    sudo ./updater flash-kb-revised ansi
+    sudo ./updater flash-kb firmware/default_ansi.hex
 
 or
 
-    sudo ./updater flash-kb-revised iso
+    sudo ./updater flash-kb firmware/default_iso.hex
 
 No reboot is required for these changes to take effect, but ocassionally a
 reboot is required to wake the keyboard's controller back up - an unresponsive
 touchpad/keyboard after flashing is usually a symptom of this. The changes to
-the firmware .hex files are described in their respective .asm files (they're
-not actually .asm files).
+the firmware .hex files are described in their respective `src/keymaps/*.c`
+files.
 
-You can find the labels and addresses by looking in `fw_ansi.a51` (assembly)
-and `src/main.c` (c pseudo code written by hand).
+You can find the labels and addresses by looking in [`fw_ansi.a51`]
+(fw_ansi.a51) (assembly)
+and [`src/main.c`](src/main.c) (c pseudo code written by hand) and
+[`src/revised.c`](src/revised.c) (common code for all keymaps).
 
 ## Hardware
 
@@ -112,10 +114,9 @@ locations.
 
 ## HID Descriptor
 
-It may be useful to use the HID Descriptor Tool to analyse those blocks in the
-file: https://www.usb.org/document-library/hid-descriptor-tool
-
-The .hid file can be loaded with this tool.
+https://eleccelerator.com/usbdescreqparser/ was used to parse the usb stuff.
+https://sourceforge.net/projects/hidrdd/ can generate headers based on the
+descriptors.
 
 ## I2C Captures
 

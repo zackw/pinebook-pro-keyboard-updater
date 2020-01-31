@@ -194,7 +194,7 @@ CSEG AT 007Bh
   00D4 44           DB 044h ; 'D'
   00D5 00           DB 000h 
   00D6 00           DB 000h 
-  00D7 58           DB 058h ; 'X'
+  00D7 58           DB 058h ; 'X' serial number
   00D8 57           DB 057h ; 'W'
   00D9 2D           DB 02Dh ; '-'
   00DA 4E           DB 04Eh ; 'N'
@@ -232,9 +232,9 @@ CSEG AT 007Bh
   00FA 30           DB 030h ; '0'
   00FB 30           DB 030h ; '0'
   00FC 00           DB 000h 
-  00FD 12           DB 012h ; blength -- start device descriptor
-  00FE 01           DB 001h ; type
-  00FF 10           DB 010h ; bcdusb
+  00FD 12           DB 012h ; bLength -- start device descriptor
+  00FE 01           DB 001h ; bDescritorType
+  00FF 10           DB 010h ; bcdHID
   0100 01           DB 001h ; *
   0101 00           DB 000h ; class
   0102 00           DB 000h ; subclass
@@ -303,14 +303,14 @@ CSEG AT 007Bh
   0141 15           DB 015h ;   logical min
   0142 00           DB 000h ;     0
   0143 26           DB 026h ;   logical max
-  0144 FF           DB 0FFh ;     0xFF00
+  0144 FF           DB 0FFh ;     0x00FF
   0145 00           DB 000h ;
   0146 05           DB 005h ;   usage page
   0147 07           DB 007h ;     keyboard
   0148 19           DB 019h ;   usage min
   0149 00           DB 000h ;     0
   014A 2A           DB 02Ah ;   usage max
-  014B FF           DB 0FFh ;     0xFF00
+  014B FF           DB 0FFh ;     0x00FF
   014C 00           DB 000h ;
   014D 81           DB 081h ;   input
   014E 00           DB 000h ;     data, array, absolute
@@ -430,8 +430,8 @@ CSEG AT 007Bh
   01C0 15           DB 015h ;   logical min
   01C1 00           DB 000h ;     0
   01C2 26           DB 026h ;   logical max
-  01C3 78           DB 078h ;     0x7805
-  01C4 05           DB 005h ;
+  01C3 78           DB 078h ;     0x0578
+  01C4 05           DB 005h ;     *
   01C5 75           DB 075h ;   report size
   01C6 10           DB 010h ;     0x10 
   01C7 55           DB 055h ;   unit exponent
@@ -439,82 +439,82 @@ CSEG AT 007Bh
   01C9 65           DB 065h ;   unit
   01CA 11           DB 011h ;     SI Lin:Distance
   01CB 09           DB 009h ;   usage
-  01CC 30           DB 030h ; '0'
-  01CD 35           DB 035h ; '5'
-  01CE 00           DB 000h 
-  01CF 46           DB 046h ; 'F'
-  01D0 E0           DB 0E0h 
-  01D1 01           DB 001h 
-  01D2 95           DB 095h ; report count 
-  01D3 01           DB 001h 
-  01D4 81           DB 081h 
-  01D5 02           DB 002h 
+  01CC 30           DB 030h ;     reserved
+  01CD 35           DB 035h ;   physical minimum
+  01CE 00           DB 000h ;     0
+  01CF 46           DB 046h ;   physical maximum
+  01D0 E0           DB 0E0h ;     0x1E0
+  01D1 01           DB 001h ;     *
+  01D2 95           DB 095h ;   report count 
+  01D3 01           DB 001h ;     1
+  01D4 81           DB 081h ;   input
+  01D5 02           DB 002h ;     data, variable, absolute
   01D6 26           DB 026h ;   logical max
-  01D7 92           DB 092h 
-  01D8 03           DB 003h 
-  01D9 46           DB 046h ; 'F'
-  01DA 40           DB 040h ; '@'
-  01DB 01           DB 001h 
-  01DC 09           DB 009h ; usage
-  01DD 31           DB 031h ; '1'
-  01DE 81           DB 081h 
-  01DF 02           DB 002h 
+  01D7 92           DB 092h ;     0x0392 
+  01D8 03           DB 003h ;     *
+  01D9 46           DB 046h ;   physical maximum
+  01DA 40           DB 040h ;     0x0140
+  01DB 01           DB 001h ;     *
+  01DC 09           DB 009h ;   usage
+  01DD 31           DB 031h ;     0x31
+  01DE 81           DB 081h ;   input
+  01DF 02           DB 002h ;     data, variable, absolute
   01E0 C0           DB 0C0h ; end collection
-  01E1 A1           DB 0A1h 
-  01E2 02           DB 002h 
-  01E3 55           DB 055h ; 'U'
-  01E4 0C           DB 00Ch 
-  01E5 66           DB 066h ; 'f'
-  01E6 01           DB 001h 
-  01E7 10           DB 010h 
-  01E8 47           DB 047h ; 'G'
-  01E9 FF           DB 0FFh 
-  01EA FF           DB 0FFh 
-  01EB 00           DB 000h 
-  01EC 00           DB 000h 
-  01ED 27           DB 027h ; '''
-  01EE FF           DB 0FFh 
-  01EF FF           DB 0FFh 
-  01F0 00           DB 000h 
-  01F1 00           DB 000h 
-  01F2 75           DB 075h ; report size
-  01F3 10           DB 010h 
-  01F4 95           DB 095h ; report count 
-  01F5 01           DB 001h 
-  01F6 05           DB 005h 
-  01F7 0D           DB 00Dh 
-  01F8 09           DB 009h ; usage
-  01F9 56           DB 056h ; 'V'
-  01FA 81           DB 081h 
-  01FB 02           DB 002h 
-  01FC 05           DB 005h 
-  01FD 0D           DB 00Dh 
-  01FE 85           DB 085h 
-  01FF 1F           DB 01Fh 
-  0200 09           DB 009h ; usage
-  0201 55           DB 055h ; 'U'
-  0202 09           DB 009h ; usage
-  0203 59           DB 059h ; 'Y'
-  0204 75           DB 075h ; report size
-  0205 04           DB 004h 
-  0206 95           DB 095h ; report count 
-  0207 02           DB 002h 
-  0208 25           DB 025h ; '%'
-  0209 0F           DB 00Fh 
-  020A B1           DB 0B1h ; feature
-  020B 02           DB 002h 
-  020C 05           DB 005h 
-  020D 0D           DB 00Dh 
-  020E 85           DB 085h 
-  020F 25           DB 025h ; '%'
-  0210 09           DB 009h ; usage
-  0211 60           DB 060h ; '`'
-  0212 75           DB 075h ; report size
-  0213 01           DB 001h 
-  0214 95           DB 095h ; report count 
-  0215 01           DB 001h 
-  0216 15           DB 015h ; logical min 
-  0217 00           DB 000h 
+  01E1 A1           DB 0A1h ; collection
+  01E2 02           DB 002h ;   logical
+  01E3 55           DB 055h ;   unit exp
+  01E4 0C           DB 00Ch ;     -4
+  01E5 66           DB 066h ;   uint
+  01E6 01           DB 001h ;     time
+  01E7 10           DB 010h ;     seconds
+  01E8 47           DB 047h ;   physical max
+  01E9 FF           DB 0FFh ;     0x0000FFFF
+  01EA FF           DB 0FFh ;     *
+  01EB 00           DB 000h ;     *
+  01EC 00           DB 000h ;     *
+  01ED 27           DB 027h ;   logical max
+  01EE FF           DB 0FFh ;     0x0000FFFF
+  01EF FF           DB 0FFh ;     *
+  01F0 00           DB 000h ;     *
+  01F1 00           DB 000h ;     *
+  01F2 75           DB 075h ;   report size
+  01F3 10           DB 010h ;     0x10
+  01F4 95           DB 095h ;   report count 
+  01F5 01           DB 001h ;     1
+  01F6 05           DB 005h ;   usage page
+  01F7 0D           DB 00Dh ;     digitizer
+  01F8 09           DB 009h ;   usage
+  01F9 56           DB 056h ;     0x56
+  01FA 81           DB 081h ;   input
+  01FB 02           DB 002h ;     data, variable, absolute
+  01FC 05           DB 005h ;   usage page
+  01FD 0D           DB 00Dh ;     digitizer
+  01FE 85           DB 085h ;   report id
+  01FF 1F           DB 01Fh ;     0x1F (31)
+  0200 09           DB 009h ;   usage
+  0201 55           DB 055h ;     0x55
+  0202 09           DB 009h ;   usage
+  0203 59           DB 059h ;     0x59
+  0204 75           DB 075h ;   report size
+  0205 04           DB 004h ;     4
+  0206 95           DB 095h ;   report count 
+  0207 02           DB 002h ;     2
+  0208 25           DB 025h ;   logical max
+  0209 0F           DB 00Fh ;     15
+  020A B1           DB 0B1h ;   feature
+  020B 02           DB 002h ;     data, variable, absolute
+  020C 05           DB 005h ;   usage page
+  020D 0D           DB 00Dh ;     digitizer
+  020E 85           DB 085h ;   report id
+  020F 25           DB 025h ;     0x25 (37)
+  0210 09           DB 009h ;   usage
+  0211 60           DB 060h ;     0x60
+  0212 75           DB 075h ;   report size
+  0213 01           DB 001h ;     1
+  0214 95           DB 095h ;   report count 
+  0215 01           DB 001h ;     1
+  0216 15           DB 015h ;   logical min 
+  0217 00           DB 000h ;     0
   0218 25           DB 025h ; '%'
   0219 01           DB 001h 
   021A B1           DB 0B1h ; feature
@@ -523,8 +523,8 @@ CSEG AT 007Bh
   021D 07           DB 007h 
   021E B1           DB 0B1h ; feature
   021F 03           DB 003h 
-  0220 06           DB 006h 
-  0221 00           DB 000h 
+  0220 06           DB 006h ;  I stopped decoding it here - see the usb_hid_ansi.txt
+  0221 00           DB 000h ;  for all of the info contained in this block
   0222 FF           DB 0FFh
   0223 85           DB 085h 
   0224 20           DB 020h ; ' '
@@ -802,7 +802,7 @@ CSEG AT 007Bh
   0334 B1           DB 0B1h ; feature
   0335 02           DB 002h 
   0336 C0           DB 0C0h ; end collection
-  0337 20           DB 020h ; ' '
+  0337 20           DB 020h ; something else referenced in L0781
   0338 FC           DB 0FCh 
   0339 28           DB 028h ; '('
   033A FE           DB 0FEh 
@@ -1059,66 +1059,66 @@ CSEG AT 007Bh
   0435 E5           DB 0E5h 
   0436 24           DB 024h ; '$'
   0437 C2           DB 0C2h 
-  0438 09           DB 009h ; loaded in usb descriptor stuff
-  0439 02           DB 002h 
-  043A 3B           DB 03Bh ; ';'
-  043B 00           DB 000h 
-  043C 02           DB 002h 
-  043D 01           DB 001h 
-  043E 00           DB 000h 
-  043F A0           DB 0A0h 
-  0440 32           DB 032h ; '2'
-  0441 09           DB 009h 
-  0442 04           DB 004h 
-  0443 00           DB 000h 
-  0444 00           DB 000h 
-  0445 01           DB 001h 
-  0446 03           DB 003h 
-  0447 01           DB 001h 
-  0448 01           DB 001h 
-  0449 00           DB 000h 
-  044A 09           DB 009h 
-  044B 21           DB 021h ; '!'
-  044C 10           DB 010h 
-  044D 01           DB 001h 
-  044E 00           DB 000h 
-  044F 01           DB 001h 
-  0450 22           DB 022h ; '"'
-  0451 41           DB 041h ; 'A'
-  0452 00           DB 000h 
-  0453 07           DB 007h 
-  0454 05           DB 005h 
-  0455 81           DB 081h 
-  0456 03           DB 003h 
-  0457 08           DB 008h 
-  0458 00           DB 000h 
-  0459 0A           DB 00Ah 
-  045A 09           DB 009h 
-  045B 04           DB 004h 
-  045C 01           DB 001h 
-  045D 00           DB 000h 
-  045E 01           DB 001h 
-  045F 03           DB 003h 
-  0460 00           DB 000h 
-  0461 00           DB 000h 
-  0462 00           DB 000h 
-  0463 09           DB 009h 
-  0464 21           DB 021h ; '!'
-  0465 10           DB 010h 
-  0466 01           DB 001h 
-  0467 00           DB 000h 
-  0468 01           DB 001h 
-  0469 22           DB 022h ; '"'
-  046A E7           DB 0E7h 
-  046B 01           DB 001h 
-  046C 07           DB 007h 
-  046D 05           DB 005h 
-  046E 82           DB 082h 
-  046F 03           DB 003h 
-  0470 08           DB 008h 
-  0471 00           DB 000h 
-  0472 0A           DB 00Ah 
-  0473 FF           DB 0FFh 
+  0438 09           DB 009h ; bLength  (Configuration Descriptor)
+  0439 02           DB 002h ; bDescriptorType
+  043A 3B           DB 03Bh ; wTotalLength
+  043B 00           DB 000h ; *
+  043C 02           DB 002h ; bNumInterfaces
+  043D 01           DB 001h ; bConfigurationValue
+  043E 00           DB 000h ; iConfiguration (string index - could be used)
+  043F A0           DB 0A0h ; bmAttributes
+  0440 32           DB 032h ; MaxPower
+  0441 09           DB 009h ; bLength
+  0442 04           DB 004h ; bDescriptorLength
+  0443 00           DB 000h ; bInterfaceNumber
+  0444 00           DB 000h ; bAlternateSetting
+  0445 01           DB 001h ; bNumEndpoints
+  0446 03           DB 003h ; bInterfaceClass (Human Interface Device)
+  0447 01           DB 001h ; bInterefaceSubClass (Boot Interface Subclass)
+  0448 01           DB 001h ; bInterfaceProtocol (Keyboard)
+  0449 00           DB 000h ; iInterface (string index - could be used)
+  044A 09           DB 009h ;   bLength
+  044B 21           DB 021h ;   bDescriptorType
+  044C 10           DB 010h ;   bcdHID m
+  044D 01           DB 001h ;   bcdHID M
+  044E 00           DB 000h ;   bCountryCode (Not supported)
+  044F 01           DB 001h ;   bNumDescriptors
+  0450 22           DB 022h ;   bDescriptorType (Report)
+  0451 41           DB 041h ;   wDescriptorLength
+  0452 00           DB 000h ; ?
+  0453 07           DB 007h ; bLength
+  0454 05           DB 005h ; bDescriptorType
+  0455 81           DB 081h ; bEndpointAddress (EP 1 IN)
+  0456 03           DB 003h ; bmAttributes
+  0457 08           DB 008h ; wMaxPacketSize 
+  0458 00           DB 000h ; *
+  0459 0A           DB 00Ah ; bInterval
+  045A 09           DB 009h ; bLength
+  045B 04           DB 004h ; bDescriptorType
+  045C 01           DB 001h ; bInterfaceNumber
+  045D 00           DB 000h ; bAlternateSetting
+  045E 01           DB 001h ; bNumEndpoints
+  045F 03           DB 003h ; bInterfaceClass (Human Interface Device)
+  0460 00           DB 000h ; bInterfaceSubClass (No Subclass)
+  0461 00           DB 000h ; bInterfaceProtocol (None)
+  0462 00           DB 000h ; iInterface (string index - could be used)
+  0463 09           DB 009h ;   bLength
+  0464 21           DB 021h ;   bDescriptorType
+  0465 10           DB 010h ;   bcdHID m
+  0466 01           DB 001h ;   bcdHID M
+  0467 00           DB 000h ;   bCountryCode (Not supported)
+  0468 01           DB 001h ;   bNumDescriptors
+  0469 22           DB 022h ;   bDescriptorType (Report)
+  046A E7           DB 0E7h ;   wDescripotrLength   
+  046B 01           DB 001h ;   *
+  046C 07           DB 007h ; bLength
+  046D 05           DB 005h ; bDescriptorType
+  046E 82           DB 082h ; bEndpointAddress (EP 2 IN)
+  046F 03           DB 003h ; bmAttributes
+  0470 08           DB 008h ; wMaxPacketSize
+  0471 00           DB 000h ; *
+  0472 0A           DB 00Ah ; bInterval
+  0473 FF           DB 0FFh              ; start address table
   0474 14           DB 014h 
   0475 0D           DB 00Dh 
   0476 FF           DB 0FFh 
@@ -1300,7 +1300,7 @@ CSEG AT 007Bh
   0526 45           DB 045h ; 'E'
   0527 FF           DB 0FFh 
   0528 13           DB 013h 
-  0529 7A           DB 07Ah ; 'z'
+  0529 7A           DB 07Ah ; 'z'       end address table
 L0358:
   052A 7482  		MOV A, #82h
   052C 2537  		ADD A, 37h
@@ -1340,11 +1340,11 @@ L0359:
   0563 0207E3		LJMP L0360
 
 L0361:
-  0566 1223A3		LCALL L0362
+  0566 1223A3		LCALL L0362              ; keycode press processing
   0569 E565  		MOV A, 65h
   056B B40409		CJNE A, #4h, L0363
   056E 300A04		JNB 0Ah, L0364
-  0571 D226  		SETB 26h
+  0571 D226  		SETB 26h ; sets fn key
   0573 8002  		SJMP L0363
 
 L0364:
@@ -1420,7 +1420,7 @@ L0432:
   05E0 02076A		LJMP L0431
 
 L0447:
-  05E3 7815  		MOV R0, #15h ; that weird gui flag
+  05E3 7815  		MOV R0, #15h
   05E5 E6    		MOV A, @R0
   05E6 7003  		JNZ L0448
   05E8 0206AD		LJMP L0449
@@ -1616,7 +1616,7 @@ L0445:
 L0443:
   0721 8019  		SJMP L0422
 
-L0366:
+L0366:                                    ; key release processing
   0723 E565  		MOV A, 65h
   0725 B4020F		CJNE A, #2h, L0367
   0728 E564  		MOV A, 64h
@@ -2239,10 +2239,10 @@ L0330:
   0A32 E4    		CLR A
   0A33 93    		MOVC A, @A+DPTR
   0A34 7A23  		MOV R2, #23h
-  0A36 79F8  		MOV R1, #0F8h
-  0A38 9023F7		MOV DPTR, #023F7h
+  0A36 79F8  		MOV R1, #0F8h	  ; 0xA0
+  0A38 9023F7		MOV DPTR, #023F7h ; 0x03
   0A3B 1216B7		LCALL L0331
-  0A3E 121E2C		LCALL L0302
+  0A3E 121E2C		LCALL L0302 ; sends some data to i2c maybe
   0A41 1216EA		LCALL L0291
   0A44 BFFA04		CJNE R7, #0FAh, L0332
   0A47 76E7  		MOV @R0, #0E7h
@@ -2311,7 +2311,7 @@ L0335:
   0A9F 6480  		XRL A, #80h
   0AA1 6009  		JZ L0715
   0AA3 E52F  		MOV A, 2Fh
-  0AA5 6481  		XRL A, #81h
+  0AA5 6481  		XRL A, #81h ; endpoint condition?
   0AA7 6003  		JZ L0715
   0AA9 020BAD		LJMP L0716
 
@@ -2335,36 +2335,36 @@ L0743:
 L0745:
   0AC6 E532  		MOV A, 32h
   0AC8 24FE  		ADD A, #0FEh
-  0ACA 6019  		JZ L0746
+  0ACA 6019  		JZ L0746 ; configuration
   0ACC 14    		DEC A
-  0ACD 6028  		JZ L0747
+  0ACD 6028  		JZ L0747 ; strings
   0ACF 2402  		ADD A, #2h
-  0AD1 7064  		JNZ L0748
+  0AD1 7064  		JNZ L0748 ; return
   0AD3 754B00		MOV 4Bh, #0h
-  0AD6 754C12		MOV 4Ch, #12h ; length value?
+  0AD6 754C12		MOV 4Ch, #12h ; length of device descriptor
   0AD9 752900		MOV 29h, #0h
-  0ADC 752AFD		MOV 2Ah, #0FDh
+  0ADC 752AFD		MOV 2Ah, #0FDh ; device descriptor location
   0ADF 754701		MOV 47h, #1h
   0AE2 020BA4		LJMP L0724
 
 L0746:
   0AE5 754B00		MOV 4Bh, #0h
-  0AE8 754C3B		MOV 4Ch, #3Bh ; length value?
+  0AE8 754C3B		MOV 4Ch, #3Bh ; length of config descriptor
   0AEB 752904		MOV 29h, #4h
-  0AEE 752A38		MOV 2Ah, #38h
+  0AEE 752A38		MOV 2Ah, #38h ; config descriptor location
   0AF1 754702		MOV 47h, #2h
   0AF4 020BA4		LJMP L0724
 
 L0747:
-  0AF7 E531  		MOV A, 31h
+  0AF7 E531  		MOV A, 31h ; load the string index query
   0AF9 14    		DEC A
-  0AFA 6016  		JZ L0749
+  0AFA 6016  		JZ L0749 ; hailuck at 0x01
   0AFC 14    		DEC A
-  0AFD 601F  		JZ L0750
-  0AFF 2403  		ADD A, #3h
-  0B01 6027  		JZ L0751
+  0AFD 601F  		JZ L0750 ; usb keyboard at 0x02
+  0AFF 2403  		ADD A, #3h ;
+  0B01 6027  		JZ L0751 ; sinowealth at 0xFF
   0B03 14    		DEC A
-  0B04 702F  		JNZ L0752
+  0B04 702F  		JNZ L0752 ; return
   0B06 752900		MOV 29h, #0h
   0B09 752A97		MOV 2Ah, #97h ; reference to something else? 0x04030904
   0B0C 121135		LCALL L0753
@@ -2411,17 +2411,17 @@ L0720:
   0B4E 04    		INC A
   0B4F 7022  		JNZ L0723
   0B51 754B00		MOV 4Bh, #0h
-  0B54 754C09		MOV 4Ch, #9h ; length value?
+  0B54 754C09		MOV 4Ch, #9h ; length of keyboard interface
   0B57 752904		MOV 29h, #4h
-  0B5A 752A4A		MOV 2Ah, #4Ah
+  0B5A 752A4A		MOV 2Ah, #4Ah ; location of keyboard interface
   0B5D 754703		MOV 47h, #3h
   0B60 8042  		SJMP L0724
 
 L0722:
   0B62 754B00		MOV 4Bh, #0h
-  0B65 754C41		MOV 4Ch, #41h ; length value?
+  0B65 754C41		MOV 4Ch, #41h ; length of hid report descriptror
   0B68 752901		MOV 29h, #1h
-  0B6B 752A0F		MOV 2Ah, #0Fh
+  0B6B 752A0F		MOV 2Ah, #0Fh ; location of hid report descriptor
   0B6E 754704		MOV 47h, #4h
   0B71 8031  		SJMP L0724
 
@@ -2438,17 +2438,17 @@ L0721:
   0B81 04    		INC A
   0B82 7023  		JNZ L0742
   0B84 754B00		MOV 4Bh, #0h
-  0B87 754C09		MOV 4Ch, #9h ; length value?
+  0B87 754C09		MOV 4Ch, #9h ; length of 2nd interface
   0B8A 752904		MOV 29h, #4h
-  0B8D 752A63		MOV 2Ah, #63h
+  0B8D 752A63		MOV 2Ah, #63h ; 2nd interface location
   0B90 754705		MOV 47h, #5h
   0B93 800F  		SJMP L0724
 
 L0741:
   0B95 754B01		MOV 4Bh, #1h
-  0B98 754CE7		MOV 4Ch, #0E7h ; length value?
+  0B98 754CE7		MOV 4Ch, #0E7h ; length
   0B9B 752901		MOV 29h, #1h
-  0B9E 752A50		MOV 2Ah, #50h
+  0B9E 752A50		MOV 2Ah, #50h ; another hid report descriptor?
   0BA1 754706		MOV 47h, #6h
 L0724:
   0BA4 021620		LJMP L0725
@@ -2516,9 +2516,9 @@ L0773:
   0C0C E536  		MOV A, 36h
   0C0E B40412		CJNE A, #4h, L0774
   0C11 752900		MOV 29h, #0h
-  0C14 752AD7		MOV 2Ah, #0D7h
+  0C14 752AD7		MOV 2Ah, #0D7h ; serial number location
   0C17 754B00		MOV 4Bh, #0h
-  0C1A 754C25		MOV 4Ch, #25h ; length value?
+  0C1A 754C25		MOV 4Ch, #25h ; length
   0C1D 754708		MOV 47h, #8h
   0C20 020CAC		LJMP L0775
 
@@ -2543,7 +2543,7 @@ L0776:
   0C46 B4030F		CJNE A, #3h, L0778
   0C49 E533  		MOV A, 33h
   0C4B B4010A		CJNE A, #1h, L0778
-  0C4E 75EA25		MOV 0EAh, #25h
+  0C4E 75EA25		MOV 0EAh, #25h ; report id for touchpad latency mode
   0C51 78D4  		MOV R0, #0D4h
   0C53 121146		LCALL L0779
   0C56 8032  		SJMP L0772
@@ -2585,9 +2585,9 @@ L0781:
   0C9A B40112		CJNE A, #1h, L0782
   0C9D 7401  		MOV A, #1h
   0C9F F54B  		MOV 4Bh, A
-  0CA1 F54C  		MOV 4Ch, A
+  0CA1 F54C  		MOV 4Ch, A ; length of 1
   0CA3 752903		MOV 29h, #3h
-  0CA6 752A37		MOV 2Ah, #37h
+  0CA6 752A37		MOV 2Ah, #37h ; something else? 0x20
   0CA9 754705		MOV 47h, #5h
 L0775:
   0CAC 021620		LJMP L0725
@@ -3327,7 +3327,7 @@ L0738:
 L0727:
   115B C3    		CLR C
   115C E54E  		MOV A, 4Eh ; length value?
-  115E 9408  		SUBB A, #8h
+  115E 9408  		SUBB A, #8h ; see if it's less than 8 bytes?
   1160 E54D  		MOV A, 4Dh
   1162 9400  		SUBB A, #0h
   1164 22    		RET
@@ -4621,7 +4621,7 @@ L0369:
 L0396:
   18DE E564  		MOV A, 64h
   18E0 25E0  		ADD A, ACC
-  18E2 2435  		ADD A, #35h
+  18E2 2435  		ADD A, #35h ; load func_cons
   18E4 F582  		MOV DPL, A
   18E6 E4    		CLR A
   18E7 3409  		ADDC A, #9h
@@ -7208,7 +7208,7 @@ L0152:
 
 CSEG AT 37FBh
 L0113:
-  37FB 0211A3		LJMP L0114
+  37FB 0211A3		LJMP L0114 ; this gets overwritten by the flasher maybe?
 
   37FE 00    		DB 000h 
   37FF 00    		DB 000h 
@@ -8410,35 +8410,35 @@ L0555:
   3F47 01    		DB 001h 
   3F48 00    		DB 000h 
   3F49 A0    		DB 0A0h 
-  3F4A 32    		DB 032h ; '2'
-  3F4B 09    		DB 009h 
-  3F4C 04    		DB 004h 
-  3F4D 00    		DB 000h 
-  3F4E 00    		DB 000h 
-  3F4F 01    		DB 001h 
-  3F50 03    		DB 003h 
-  3F51 01    		DB 001h 
-  3F52 01    		DB 001h 
-  3F53 00    		DB 000h 
-  3F54 09    		DB 009h 
-  3F55 21    		DB 021h ; '!'
-  3F56 10    		DB 010h 
-  3F57 01    		DB 001h 
-  3F58 00    		DB 000h 
-  3F59 01    		DB 001h 
-  3F5A 22    		DB 022h ; '"'
-  3F5B 48    		DB 048h ; 'H'
-  3F5C 00    		DB 000h 
-  3F5D 07    		DB 007h 
-  3F5E 05    		DB 005h 
-  3F5F 81    		DB 081h 
-  3F60 03    		DB 003h 
-  3F61 08    		DB 008h 
-  3F62 00    		DB 000h 
-  3F63 0A    		DB 00Ah 
+  3F4A 32    		DB 032h
+  3F4B 09    		DB 009h ; bLength (an old configuration descriptor?)
+  3F4C 04    		DB 004h ; bDescriptorType
+  3F4D 00    		DB 000h ; bInterfaceNumber
+  3F4E 00    		DB 000h ; bAlternateSetting
+  3F4F 01    		DB 001h ; bNumEndpoints
+  3F50 03    		DB 003h ; bInterfaceClass (Human Interface Device)
+  3F51 01    		DB 001h ; bInterfaceSubClass (Boot Interface Subclass)
+  3F52 01    		DB 001h ; bInterfaceProtocol (Keyboard)
+  3F53 00    		DB 000h ; iInterface {
+  3F54 09    		DB 009h ;   bLength
+  3F55 21    		DB 021h ;   bDescriptorType
+  3F56 10    		DB 010h ;   bcdHID m
+  3F57 01    		DB 001h ;   bcdHID M
+  3F58 00    		DB 000h ;   bCountryCode (Not Supported)
+  3F59 01    		DB 001h ;   bNumDescriptors
+  3F5A 22    		DB 022h ;   bDescriptorType (Report)
+  3F5B 48    		DB 048h ;   DescriptorLength
+  3F5C 00    		DB 000h ; ?
+  3F5D 07    		DB 007h ; bLength
+  3F5E 05    		DB 005h ; bDescriptorType
+  3F5F 81    		DB 081h ; bEndpointAddress EP 1 IN
+  3F60 03    		DB 003h ; bmAttributes
+  3F61 08    		DB 008h ; wMaxPacketSize
+  3F62 00    		DB 000h ; * 
+  3F63 0A    		DB 00Ah ; bInterval
   3F64 05    		DB 005h 
   3F65 01    		DB 001h 
-  3F66 09    		DB 009h 
+  3F66 09    		DB 009h
   3F67 06    		DB 006h 
   3F68 A1    		DB 0A1h 
   3F69 01    		DB 001h 
