@@ -53,6 +53,16 @@ __sfr __at (0xAF) PRCON;
 // General I/O Ports Registers
 
 __sfr __at (0x80) PORT0;
+
+__sbit __at (0x80) P3_0;
+__sbit __at (0x81) P3_1;
+__sbit __at (0x82) P3_2;
+__sbit __at (0x83) P3_3;
+__sbit __at (0x84) P3_4;
+__sbit __at (0x85) P3_5;
+__sbit __at (0x86) P3_6;
+__sbit __at (0x87) P3_7;
+
 __sfr __at (0x90) PORT1;
 __sfr __at (0xA0) PORT2;
 __sfr __at (0xB0) PORT3;
@@ -356,3 +366,16 @@ __sfr __at (0xB4) IB_CON2;
 __sfr __at (0xB5) IB_CON3;
 __sfr __at (0xB6) IB_CON4;
 __sfr __at (0xB7) IB_CON5;
+
+/* Interrupt numbers: address = (number * 8) + 3 */
+#define IE_0_VECTOR  0  // 0x0003 External Interrupt0 (EXT0), P4.6 Falling Edge
+#define IE_1_VECTOR  1  // 0x000B Base Timer0 (T0) Interrupt
+#define IE_3_VECTOR  3  // 0x001B Base Timer1 (T1) Interrupt
+#define IE_4_VECTOR  4  // 0x0023 Time Capture0 (TC0) Interrupt
+#define IE2_0_VECTOR 8  // 0x0043 SETUP Token Interrupt
+#define IE2_1_VECTOR 9  // 0x004B OWSTUP Interrupt
+#define IE2_2_VECTOR 10 // 0x0053 OT0ERR Interrupt
+#define IE2_3_VECTOR 11 // 0x005B IN0 Interrupt
+#define IE2_4_VECTOR 12 // 0x0063 OUT0 Interrupt
+#define IE2_5_VECTOR 13 // 0x006B SIE Interrupt, NAKT0, NAKR0, T0STL, R0STL, NAK1, NAK2, IN1, IN2
+#define IE2_6_VECTOR 14 // 0x0073 Suspend/OVL Interrupt
