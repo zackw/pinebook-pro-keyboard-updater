@@ -26,9 +26,9 @@ L0489:
 CSEG AT 001Bh
   001B 0217D1		LJMP L0441
 
-  001E 02    		DB 002h 
-  001F 3F    		DB 03Fh ; '?'
-  0020 00    		DB 000h 
+L0666:
+  001E 023F00		LJMP L0667
+
   0021 22    		DB 022h ; '"'
 CSEG AT 0023h
   0023 020046		LJMP L0444
@@ -92,21 +92,18 @@ L0308:
 CSEG AT 0063h
   0063 02183D		LJMP L0470
 
-  0066 02    		DB 002h 
-  0067 1A    		DB 01Ah 
-  0068 E5    		DB 0E5h 
+  0066 021AE5		LJMP L0478
+
 CSEG AT 006Bh
   006B 02000E		LJMP L0480
 
-  006E 02    		DB 002h 
-  006F 1A    		DB 01Ah 
-  0070 E5    		DB 0E5h 
+  006E 021AE5		LJMP L0478
+
 CSEG AT 0073h
   0073 021858		LJMP L0481
 
-  0076 02    		DB 002h 
-  0077 1A    		DB 01Ah 
-  0078 E5    		DB 0E5h 
+  0076 021AE5		LJMP L0478
+
 CSEG AT 007Bh
   007B 020016		LJMP L0489
 
@@ -1316,282 +1313,165 @@ L0178:
   05C5 49    		DB 049h ; 'I'
   05C6 39    		DB 039h ; '9'
   05C7 46    		DB 046h ; 'F'
-  05C8 E5    		DB 0E5h 
-  05C9 2F    		DB 02Fh ; '/'
-  05CA 64    		DB 064h ; 'd'
-  05CB 80    		DB 080h 
-  05CC 60    		DB 060h ; '`'
-  05CD 09    		DB 009h 
-  05CE E5    		DB 0E5h 
-  05CF 2F    		DB 02Fh ; '/'
-  05D0 64    		DB 064h ; 'd'
-  05D1 81    		DB 081h 
-  05D2 60    		DB 060h ; '`'
-  05D3 03    		DB 003h 
-  05D4 02    		DB 002h 
-  05D5 06    		DB 006h 
-  05D6 D8    		DB 0D8h 
-  05D7 E5    		DB 0E5h 
-  05D8 32    		DB 032h ; '2'
-  05D9 54    		DB 054h ; 'T'
-  05DA 60    		DB 060h ; '`'
-  05DB 24    		DB 024h ; '$'
-  05DC E0    		DB 0E0h 
-  05DD 70    		DB 070h ; 'p'
-  05DE 03    		DB 003h 
-  05DF 02    		DB 002h 
-  05E0 06    		DB 006h 
-  05E1 64    		DB 064h ; 'd'
-  05E2 24    		DB 024h ; '$'
-  05E3 20    		DB 020h ; ' '
-  05E4 60    		DB 060h ; '`'
-  05E5 03    		DB 003h 
-  05E6 02    		DB 002h 
-  05E7 06    		DB 006h 
-  05E8 D6    		DB 0D6h 
-  05E9 E5    		DB 0E5h 
-  05EA 2F    		DB 02Fh ; '/'
-  05EB B4    		DB 0B4h 
-  05EC 81    		DB 081h 
-  05ED 03    		DB 003h 
-  05EE 02    		DB 002h 
-  05EF 06    		DB 006h 
-  05F0 D8    		DB 0D8h 
-  05F1 E5    		DB 0E5h 
-  05F2 32    		DB 032h ; '2'
-  05F3 24    		DB 024h ; '$'
-  05F4 FE    		DB 0FEh 
-  05F5 60    		DB 060h ; '`'
-  05F6 19    		DB 019h 
-  05F7 14    		DB 014h 
-  05F8 60    		DB 060h ; '`'
-  05F9 28    		DB 028h ; '('
-  05FA 24    		DB 024h ; '$'
-  05FB 02    		DB 002h 
-  05FC 70    		DB 070h ; 'p'
-  05FD 64    		DB 064h ; 'd'
-  05FE 75    		DB 075h ; 'u'
-  05FF 4B    		DB 04Bh ; 'K'
-  0600 00    		DB 000h 
-  0601 75    		DB 075h ; 'u'
-  0602 4C    		DB 04Ch ; 'L'
-  0603 12    		DB 012h 
-  0604 75    		DB 075h ; 'u'
-  0605 29    		DB 029h ; ')'
-  0606 00    		DB 000h 
-  0607 75    		DB 075h ; 'u'
-  0608 2A    		DB 02Ah ; '*'
-  0609 EB    		DB 0EBh 
-  060A 75    		DB 075h ; 'u'
-  060B 47    		DB 047h ; 'G'
-  060C 01    		DB 001h 
-  060D 02    		DB 002h 
-  060E 06    		DB 006h 
-  060F CF    		DB 0CFh 
-  0610 75    		DB 075h ; 'u'
-  0611 4B    		DB 04Bh ; 'K'
-  0612 00    		DB 000h 
-  0613 75    		DB 075h ; 'u'
-  0614 4C    		DB 04Ch ; 'L'
-  0615 3B    		DB 03Bh ; ';'
-  0616 75    		DB 075h ; 'u'
-  0617 29    		DB 029h ; ')'
-  0618 02    		DB 002h 
-  0619 75    		DB 075h ; 'u'
-  061A 2A    		DB 02Ah ; '*'
-  061B 45    		DB 045h ; 'E'
-  061C 75    		DB 075h ; 'u'
-  061D 47    		DB 047h ; 'G'
-  061E 02    		DB 002h 
-  061F 02    		DB 002h 
-  0620 06    		DB 006h 
-  0621 CF    		DB 0CFh 
-  0622 E5    		DB 0E5h 
-  0623 31    		DB 031h ; '1'
-  0624 14    		DB 014h 
-  0625 60    		DB 060h ; '`'
-  0626 16    		DB 016h 
-  0627 14    		DB 014h 
-  0628 60    		DB 060h ; '`'
-  0629 1F    		DB 01Fh 
-  062A 24    		DB 024h ; '$'
-  062B 03    		DB 003h 
-  062C 60    		DB 060h ; '`'
-  062D 27    		DB 027h ; '''
-  062E 14    		DB 014h 
-  062F 70    		DB 070h ; 'p'
-  0630 2F    		DB 02Fh ; '/'
-  0631 75    		DB 075h ; 'u'
-  0632 29    		DB 029h ; ')'
-  0633 00    		DB 000h 
-  0634 75    		DB 075h ; 'u'
-  0635 2A    		DB 02Ah ; '*'
-  0636 97    		DB 097h 
-  0637 12    		DB 012h 
-  0638 09    		DB 009h 
-  0639 06    		DB 006h 
-  063A 02    		DB 002h 
-  063B 06    		DB 006h 
-  063C CF    		DB 0CFh 
-  063D 75    		DB 075h ; 'u'
-  063E 29    		DB 029h ; ')'
-  063F 00    		DB 000h 
-  0640 75    		DB 075h ; 'u'
-  0641 2A    		DB 02Ah ; '*'
-  0642 9B    		DB 09Bh 
-  0643 12    		DB 012h 
-  0644 09    		DB 009h 
-  0645 06    		DB 006h 
-  0646 02    		DB 002h 
-  0647 06    		DB 006h 
-  0648 CF    		DB 0CFh 
-  0649 75    		DB 075h ; 'u'
-  064A 29    		DB 029h ; ')'
-  064B 00    		DB 000h 
-  064C 75    		DB 075h ; 'u'
-  064D 2A    		DB 02Ah ; '*'
-  064E BC    		DB 0BCh 
-  064F 12    		DB 012h 
-  0650 09    		DB 009h 
-  0651 06    		DB 006h 
-  0652 02    		DB 002h 
-  0653 06    		DB 006h 
-  0654 CF    		DB 0CFh 
-  0655 75    		DB 075h ; 'u'
-  0656 29    		DB 029h ; ')'
-  0657 00    		DB 000h 
-  0658 75    		DB 075h ; 'u'
-  0659 2A    		DB 02Ah ; '*'
-  065A 7E    		DB 07Eh ; '~'
-  065B 12    		DB 012h 
-  065C 09    		DB 009h 
-  065D 06    		DB 006h 
-  065E 80    		DB 080h 
-  065F 6F    		DB 06Fh ; 'o'
-  0660 80    		DB 080h 
-  0661 76    		DB 076h ; 'v'
-  0662 80    		DB 080h 
-  0663 74    		DB 074h ; 't'
-  0664 E5    		DB 0E5h 
-  0665 34    		DB 034h ; '4'
-  0666 70    		DB 070h ; 'p'
-  0667 05    		DB 005h 
-  0668 E5    		DB 0E5h 
-  0669 2F    		DB 02Fh ; '/'
-  066A B4    		DB 0B4h 
-  066B 80    		DB 080h 
-  066C 02    		DB 002h 
-  066D 80    		DB 080h 
-  066E 69    		DB 069h ; 'i'
-  066F E5    		DB 0E5h 
-  0670 33    		DB 033h ; '3'
-  0671 70    		DB 070h ; 'p'
-  0672 2D    		DB 02Dh ; '-'
-  0673 E5    		DB 0E5h 
-  0674 32    		DB 032h ; '2'
-  0675 24    		DB 024h ; '$'
-  0676 DE    		DB 0DEh 
-  0677 60    		DB 060h ; '`'
-  0678 14    		DB 014h 
-  0679 04    		DB 004h 
-  067A 70    		DB 070h ; 'p'
-  067B 22    		DB 022h ; '"'
-  067C 75    		DB 075h ; 'u'
-  067D 4B    		DB 04Bh ; 'K'
-  067E 00    		DB 000h 
-  067F 75    		DB 075h ; 'u'
-  0680 4C    		DB 04Ch ; 'L'
-  0681 09    		DB 009h 
-  0682 75    		DB 075h ; 'u'
-  0683 29    		DB 029h ; ')'
-  0684 02    		DB 002h 
-  0685 75    		DB 075h ; 'u'
-  0686 2A    		DB 02Ah ; '*'
-  0687 57    		DB 057h ; 'W'
-  0688 75    		DB 075h ; 'u'
-  0689 47    		DB 047h ; 'G'
-  068A 03    		DB 003h 
-  068B 80    		DB 080h 
-  068C 42    		DB 042h ; 'B'
-  068D 75    		DB 075h ; 'u'
-  068E 4B    		DB 04Bh ; 'K'
-  068F 00    		DB 000h 
-  0690 75    		DB 075h ; 'u'
-  0691 4C    		DB 04Ch ; 'L'
-  0692 41    		DB 041h ; 'A'
-  0693 75    		DB 075h ; 'u'
-  0694 29    		DB 029h ; ')'
-  0695 00    		DB 000h 
-  0696 75    		DB 075h ; 'u'
-  0697 2A    		DB 02Ah ; '*'
-  0698 FD    		DB 0FDh 
-  0699 75    		DB 075h ; 'u'
-  069A 47    		DB 047h ; 'G'
-  069B 04    		DB 004h 
-  069C 80    		DB 080h 
-  069D 31    		DB 031h ; '1'
-  069E 80    		DB 080h 
-  069F 38    		DB 038h ; '8'
-  06A0 E5    		DB 0E5h 
-  06A1 33    		DB 033h ; '3'
-  06A2 64    		DB 064h ; 'd'
-  06A3 01    		DB 001h 
-  06A4 70    		DB 070h ; 'p'
-  06A5 2E    		DB 02Eh ; '.'
-  06A6 E5    		DB 0E5h 
-  06A7 32    		DB 032h ; '2'
-  06A8 24    		DB 024h ; '$'
-  06A9 DE    		DB 0DEh 
-  06AA 60    		DB 060h ; '`'
-  06AB 14    		DB 014h 
-  06AC 04    		DB 004h 
-  06AD 70    		DB 070h ; 'p'
-  06AE 23    		DB 023h ; '#'
-  06AF 75    		DB 075h ; 'u'
-  06B0 4B    		DB 04Bh ; 'K'
-  06B1 00    		DB 000h 
-  06B2 75    		DB 075h ; 'u'
-  06B3 4C    		DB 04Ch ; 'L'
-  06B4 09    		DB 009h 
-  06B5 75    		DB 075h ; 'u'
-  06B6 29    		DB 029h ; ')'
-  06B7 02    		DB 002h 
-  06B8 75    		DB 075h ; 'u'
-  06B9 2A    		DB 02Ah ; '*'
-  06BA 70    		DB 070h ; 'p'
-  06BB 75    		DB 075h ; 'u'
-  06BC 47    		DB 047h ; 'G'
-  06BD 05    		DB 005h 
-  06BE 80    		DB 080h 
-  06BF 0F    		DB 00Fh 
-  06C0 75    		DB 075h ; 'u'
-  06C1 4B    		DB 04Bh ; 'K'
-  06C2 01    		DB 001h 
-  06C3 75    		DB 075h ; 'u'
-  06C4 4C    		DB 04Ch ; 'L'
-  06C5 07    		DB 007h 
-  06C6 75    		DB 075h ; 'u'
-  06C7 29    		DB 029h ; ')'
-  06C8 01    		DB 001h 
-  06C9 75    		DB 075h ; 'u'
-  06CA 2A    		DB 02Ah ; '*'
-  06CB 3E    		DB 03Eh ; '>'
-  06CC 75    		DB 075h ; 'u'
-  06CD 47    		DB 047h ; 'G'
-  06CE 06    		DB 006h 
-  06CF 02    		DB 002h 
-  06D0 0C    		DB 00Ch 
-  06D1 B3    		DB 0B3h 
-  06D2 80    		DB 080h 
-  06D3 04    		DB 004h 
-  06D4 80    		DB 080h 
-  06D5 02    		DB 002h 
-  06D6 80    		DB 080h 
-  06D7 00    		DB 000h 
-  06D8 12    		DB 012h 
-  06D9 1A    		DB 01Ah 
-  06DA 6C    		DB 06Ch ; 'l'
-  06DB 22    		DB 022h ; '"'
+  05C8 E52F  		MOV A, 2Fh
+  05CA 6480  		XRL A, #80h
+  05CC 6009  		JZ L0532
+  05CE E52F  		MOV A, 2Fh
+  05D0 6481  		XRL A, #81h
+  05D2 6003  		JZ L0532
+  05D4 0206D8		LJMP L0533
+
+L0532:
+  05D7 E532  		MOV A, 32h
+  05D9 5460  		ANL A, #60h
+  05DB 24E0  		ADD A, #0E0h
+  05DD 7003  		JNZ L0534
+  05DF 020664		LJMP L0535
+
+L0534:
+  05E2 2420  		ADD A, #20h
+  05E4 6003  		JZ L0560
+  05E6 0206D6		LJMP L0561
+
+L0560:
+  05E9 E52F  		MOV A, 2Fh
+  05EB B48103		CJNE A, #81h, L0562
+  05EE 0206D8		LJMP L0533
+
+L0562:
+  05F1 E532  		MOV A, 32h
+  05F3 24FE  		ADD A, #0FEh
+  05F5 6019  		JZ L0563
+  05F7 14    		DEC A
+  05F8 6028  		JZ L0564
+  05FA 2402  		ADD A, #2h
+  05FC 7064  		JNZ L0565
+  05FE 754B00		MOV 4Bh, #0h
+  0601 754C12		MOV 4Ch, #12h
+  0604 752900		MOV 29h, #0h
+  0607 752AEB		MOV 2Ah, #0EBh
+  060A 754701		MOV 47h, #1h
+  060D 0206CF		LJMP L0541
+
+L0563:
+  0610 754B00		MOV 4Bh, #0h
+  0613 754C3B		MOV 4Ch, #3Bh
+  0616 752902		MOV 29h, #2h
+  0619 752A45		MOV 2Ah, #45h
+  061C 754702		MOV 47h, #2h
+  061F 0206CF		LJMP L0541
+
+L0564:
+  0622 E531  		MOV A, 31h
+  0624 14    		DEC A
+  0625 6016  		JZ L0566
+  0627 14    		DEC A
+  0628 601F  		JZ L0567
+  062A 2403  		ADD A, #3h
+  062C 6027  		JZ L0568
+  062E 14    		DEC A
+  062F 702F  		JNZ L0569
+  0631 752900		MOV 29h, #0h
+  0634 752A97		MOV 2Ah, #97h
+  0637 120906		LCALL L0570
+  063A 0206CF		LJMP L0541
+
+L0566:
+  063D 752900		MOV 29h, #0h
+  0640 752A9B		MOV 2Ah, #9Bh
+  0643 120906		LCALL L0570
+  0646 0206CF		LJMP L0541
+
+L0567:
+  0649 752900		MOV 29h, #0h
+  064C 752ABC		MOV 2Ah, #0BCh
+  064F 120906		LCALL L0570
+  0652 0206CF		LJMP L0541
+
+L0568:
+  0655 752900		MOV 29h, #0h
+  0658 752A7E		MOV 2Ah, #7Eh
+  065B 120906		LCALL L0570
+  065E 806F  		SJMP L0541
+
+L0569:
+  0660 8076  		SJMP L0533
+
+L0565:
+  0662 8074  		SJMP L0533
+
+L0535:
+  0664 E534  		MOV A, 34h
+  0666 7005  		JNZ L0536
+  0668 E52F  		MOV A, 2Fh
+  066A B48002		CJNE A, #80h, L0537
+L0536:
+  066D 8069  		SJMP L0533
+
+L0537:
+  066F E533  		MOV A, 33h
+  0671 702D  		JNZ L0538
+  0673 E532  		MOV A, 32h
+  0675 24DE  		ADD A, #0DEh
+  0677 6014  		JZ L0539
+  0679 04    		INC A
+  067A 7022  		JNZ L0540
+  067C 754B00		MOV 4Bh, #0h
+  067F 754C09		MOV 4Ch, #9h
+  0682 752902		MOV 29h, #2h
+  0685 752A57		MOV 2Ah, #57h
+  0688 754703		MOV 47h, #3h
+  068B 8042  		SJMP L0541
+
+L0539:
+  068D 754B00		MOV 4Bh, #0h
+  0690 754C41		MOV 4Ch, #41h
+  0693 752900		MOV 29h, #0h
+  0696 752AFD		MOV 2Ah, #0FDh
+  0699 754704		MOV 47h, #4h
+  069C 8031  		SJMP L0541
+
+L0540:
+  069E 8038  		SJMP L0533
+
+L0538:
+  06A0 E533  		MOV A, 33h
+  06A2 6401  		XRL A, #1h
+  06A4 702E  		JNZ L0557
+  06A6 E532  		MOV A, 32h
+  06A8 24DE  		ADD A, #0DEh
+  06AA 6014  		JZ L0558
+  06AC 04    		INC A
+  06AD 7023  		JNZ L0559
+  06AF 754B00		MOV 4Bh, #0h
+  06B2 754C09		MOV 4Ch, #9h
+  06B5 752902		MOV 29h, #2h
+  06B8 752A70		MOV 2Ah, #70h
+  06BB 754705		MOV 47h, #5h
+  06BE 800F  		SJMP L0541
+
+L0558:
+  06C0 754B01		MOV 4Bh, #1h
+  06C3 754C07		MOV 4Ch, #7h
+  06C6 752901		MOV 29h, #1h
+  06C9 752A3E		MOV 2Ah, #3Eh
+  06CC 754706		MOV 47h, #6h
+L0541:
+  06CF 020CB3		LJMP L0542
+
+L0559:
+  06D2 8004  		SJMP L0533
+
+L0557:
+  06D4 8002  		SJMP L0533
+
+L0561:
+  06D6 8000  		SJMP L0533
+
+L0533:
+  06D8 121A6C		LCALL L0453
+  06DB 22    		RET
+
 L0183:
   06DC 7471  		MOV A, #71h
   06DE 2537  		ADD A, 37h
@@ -1925,25 +1805,18 @@ L0256:
   08C6 D3    		SETB C
   08C7 22    		RET
 
-  08C8 53    		DB 053h ; 'S'
-  08C9 DB    		DB 0DBh 
-  08CA EF    		DB 0EFh 
-  08CB D2    		DB 0D2h 
-  08CC 13    		DB 013h 
-  08CD AF    		DB 0AFh 
-  08CE 48    		DB 048h ; 'H'
-  08CF EF    		DB 0EFh 
-  08D0 75    		DB 075h ; 'u'
-  08D1 F0    		DB 0F0h 
-  08D2 03    		DB 003h 
-  08D3 A4    		DB 0A4h 
-  08D4 24    		DB 024h ; '$'
-  08D5 EF    		DB 0EFh 
-  08D6 F5    		DB 0F5h 
-  08D7 82    		DB 082h 
-  08D8 E4    		DB 0E4h 
-  08D9 34    		DB 034h ; '4'
-  08DA 02    		DB 002h 
+L0653:
+  08C8 53DBEF		ANL 0DBh, #0EFh
+  08CB D213  		SETB 13h
+L0638:
+  08CD AF48  		MOV R7, 48h
+  08CF EF    		MOV A, R7
+  08D0 75F003		MOV B, #3h
+  08D3 A4    		MUL AB
+  08D4 24EF  		ADD A, #0EFh
+  08D6 F582  		MOV DPL, A
+  08D8 E4    		CLR A
+  08D9 3402  		ADDC A, #2h
 L0458:
   08DB F583  		MOV DPH, A
   08DD 7401  		MOV A, #1h
@@ -1954,92 +1827,64 @@ L0458:
   08E4 F9    		MOV R1, A
   08E5 22    		RET
 
-  08E6 75    		DB 075h ; 'u'
-  08E7 49    		DB 049h ; 'I'
-  08E8 02    		DB 002h 
-  08E9 75    		DB 075h ; 'u'
-  08EA EB    		DB 0EBh 
-  08EB 01    		DB 001h 
-  08EC 43    		DB 043h ; 'C'
-  08ED B9    		DB 0B9h 
-  08EE 10    		DB 010h 
-  08EF 75    		DB 075h ; 'u'
-  08F0 E9    		DB 0E9h 
-  08F1 06    		DB 006h 
-  08F2 43    		DB 043h ; 'C'
-  08F3 EC    		DB 0ECh 
-  08F4 01    		DB 001h 
-  08F5 22    		DB 022h ; '"'
-  08F6 75    		DB 075h ; 'u'
-  08F7 49    		DB 049h ; 'I'
-  08F8 01    		DB 001h 
-  08F9 E4    		DB 0E4h 
-  08FA F5    		DB 0F5h 
-  08FB EB    		DB 0EBh 
-  08FC 43    		DB 043h ; 'C'
-  08FD B9    		DB 0B9h 
-  08FE 08    		DB 008h 
-  08FF 75    		DB 075h ; 'u'
-  0900 E9    		DB 0E9h 
-  0901 01    		DB 001h 
-  0902 43    		DB 043h ; 'C'
-  0903 EC    		DB 0ECh 
-  0904 01    		DB 001h 
-  0905 22    		DB 022h ; '"'
-  0906 85    		DB 085h 
-  0907 2A    		DB 02Ah ; '*'
-  0908 82    		DB 082h 
-  0909 85    		DB 085h 
-  090A 29    		DB 029h ; ')'
-  090B 83    		DB 083h 
-  090C E4    		DB 0E4h 
-  090D 93    		DB 093h 
-  090E 75    		DB 075h ; 'u'
-  090F 4B    		DB 04Bh ; 'K'
-  0910 00    		DB 000h 
-  0911 F5    		DB 0F5h 
-  0912 4C    		DB 04Ch ; 'L'
-  0913 75    		DB 075h ; 'u'
-  0914 47    		DB 047h ; 'G'
-  0915 07    		DB 007h 
-  0916 22    		DB 022h ; '"'
-  0917 14    		DB 014h 
-  0918 F5    		DB 0F5h 
-  0919 82    		DB 082h 
-  091A 8C    		DB 08Ch 
-  091B 83    		DB 083h 
-  091C E4    		DB 0E4h 
-  091D 93    		DB 093h 
-  091E F5    		DB 0F5h 
-  091F EA    		DB 0EAh 
-  0920 0F    		DB 00Fh 
-  0921 22    		DB 022h ; '"'
-  0922 C3    		DB 0C3h 
-  0923 E5    		DB 0E5h 
-  0924 4E    		DB 04Eh ; 'N'
-  0925 94    		DB 094h 
-  0926 08    		DB 008h 
-  0927 E5    		DB 0E5h 
-  0928 4D    		DB 04Dh ; 'M'
-  0929 94    		DB 094h 
-  092A 00    		DB 000h 
-  092B 22    		DB 022h ; '"'
-  092C 75    		DB 075h ; 'u'
-  092D 4A    		DB 04Ah ; 'J'
-  092E 08    		DB 008h 
-  092F 74    		DB 074h ; 't'
-  0930 F8    		DB 0F8h 
-  0931 25    		DB 025h ; '%'
-  0932 4E    		DB 04Eh ; 'N'
-  0933 F5    		DB 0F5h 
-  0934 4E    		DB 04Eh ; 'N'
-  0935 74    		DB 074h ; 't'
-  0936 FF    		DB 0FFh 
-  0937 35    		DB 035h ; '5'
-  0938 4D    		DB 04Dh ; 'M'
-  0939 F5    		DB 0F5h 
-  093A 4D    		DB 04Dh ; 'M'
-  093B 22    		DB 022h ; '"'
+L0572:
+  08E6 754902		MOV 49h, #2h
+  08E9 75EB01		MOV 0EBh, #1h
+L0499:
+  08EC 43B910		ORL 0B9h, #10h
+  08EF 75E906		MOV 0E9h, #6h
+  08F2 43EC01		ORL 0ECh, #1h
+  08F5 22    		RET
+
+L0516:
+  08F6 754901		MOV 49h, #1h
+L0614:
+  08F9 E4    		CLR A
+L0627:
+  08FA F5EB  		MOV 0EBh, A
+  08FC 43B908		ORL 0B9h, #8h
+  08FF 75E901		MOV 0E9h, #1h
+  0902 43EC01		ORL 0ECh, #1h
+  0905 22    		RET
+
+L0570:
+  0906 852A82		MOV DPL, 2Ah
+  0909 852983		MOV DPH, 29h
+  090C E4    		CLR A
+  090D 93    		MOVC A, @A+DPTR
+  090E 754B00		MOV 4Bh, #0h
+  0911 F54C  		MOV 4Ch, A
+  0913 754707		MOV 47h, #7h
+  0916 22    		RET
+
+L0555:
+  0917 14    		DEC A
+  0918 F582  		MOV DPL, A
+  091A 8C83  		MOV DPH, R4
+  091C E4    		CLR A
+  091D 93    		MOVC A, @A+DPTR
+  091E F5EA  		MOV 0EAh, A
+  0920 0F    		INC R7
+  0921 22    		RET
+
+L0544:
+  0922 C3    		CLR C
+  0923 E54E  		MOV A, 4Eh
+  0925 9408  		SUBB A, #8h
+  0927 E54D  		MOV A, 4Dh
+  0929 9400  		SUBB A, #0h
+  092B 22    		RET
+
+L0550:
+  092C 754A08		MOV 4Ah, #8h
+  092F 74F8  		MOV A, #0F8h
+  0931 254E  		ADD A, 4Eh
+  0933 F54E  		MOV 4Eh, A
+  0935 74FF  		MOV A, #0FFh
+  0937 354D  		ADDC A, 4Dh
+  0939 F54D  		MOV 4Dh, A
+  093B 22    		RET
+
 L0468:
   093C F583  		MOV DPH, A
   093E 7401  		MOV A, #1h
@@ -2050,37 +1895,32 @@ L0468:
   0945 F9    		MOV R1, A
   0946 021B2D		LJMP L0459
 
-  0949 E4    		DB 0E4h 
-  094A 93    		DB 093h 
-  094B 42    		DB 042h ; 'B'
-  094C 4F    		DB 04Fh ; 'O'
-  094D 75    		DB 075h ; 'u'
-  094E 48    		DB 048h ; 'H'
-  094F 0F    		DB 00Fh 
-  0950 75    		DB 075h ; 'u'
-  0951 49    		DB 049h ; 'I'
-  0952 01    		DB 001h 
-  0953 E4    		DB 0E4h 
-  0954 22    		DB 022h ; '"'
+L0631:
+  0949 E4    		CLR A
+  094A 93    		MOVC A, @A+DPTR
+  094B 424F  		ORL 4Fh, A
+  094D 75480F		MOV 48h, #0Fh
+  0950 754901		MOV 49h, #1h
+  0953 E4    		CLR A
+  0954 22    		RET
+
 L0452:
   0955 43EF04		ORL 0EFh, #4h
   0958 53EFFE		ANL 0EFh, #0FEh
   095B 22    		RET
 
-  095C E5    		DB 0E5h 
-  095D 36    		DB 036h ; '6'
-  095E 45    		DB 045h ; 'E'
-  095F 35    		DB 035h ; '5'
-  0960 45    		DB 045h ; 'E'
-  0961 34    		DB 034h ; '4'
-  0962 22    		DB 022h ; '"'
-  0963 05    		DB 005h 
-  0964 2A    		DB 02Ah ; '*'
-  0965 E5    		DB 0E5h 
-  0966 2A    		DB 02Ah ; '*'
-  0967 AC    		DB 0ACh 
-  0968 29    		DB 029h ; ')'
-  0969 22    		DB 022h ; '"'
+L0580:
+  095C E536  		MOV A, 36h
+  095E 4535  		ORL A, 35h
+  0960 4534  		ORL A, 34h
+  0962 22    		RET
+
+L0553:
+  0963 052A  		INC 2Ah
+  0965 E52A  		MOV A, 2Ah
+  0967 AC29  		MOV R4, 29h
+  0969 22    		RET
+
 L0114:
   096A 00    		NOP
   096B 00    		NOP
@@ -2214,289 +2054,205 @@ L0123:
   0A05 DEE7  		DJNZ R6, L0123
   0A07 80BE  		SJMP L0124
 
-  0A09 E5    		DB 0E5h 
-  0A0A 35    		DB 035h ; '5'
-  0A0B 64    		DB 064h ; 'd'
-  0A0C 02    		DB 002h 
-  0A0D 60    		DB 060h ; '`'
-  0A0E 03    		DB 003h 
-  0A0F 02    		DB 002h 
-  0A10 0A    		DB 00Ah 
-  0A11 97    		DB 097h 
-  0A12 E5    		DB 0E5h 
-  0A13 36    		DB 036h ; '6'
-  0A14 60    		DB 060h ; '`'
-  0A15 03    		DB 003h 
-  0A16 02    		DB 002h 
-  0A17 0A    		DB 00Ah 
-  0A18 97    		DB 097h 
-  0A19 E5    		DB 0E5h 
-  0A1A 2F    		DB 02Fh ; '/'
-  0A1B 24    		DB 024h ; '$'
-  0A1C 7F    		DB 07Fh 
-  0A1D 60    		DB 060h ; '`'
-  0A1E 14    		DB 014h 
-  0A1F 14    		DB 014h 
-  0A20 60    		DB 060h ; '`'
-  0A21 2A    		DB 02Ah ; '*'
-  0A22 24    		DB 024h ; '$'
-  0A23 02    		DB 002h 
-  0A24 70    		DB 070h ; 'p'
-  0A25 6F    		DB 06Fh ; 'o'
-  0A26 20    		DB 020h ; ' '
-  0A27 1D    		DB 01Dh 
-  0A28 05    		DB 005h 
-  0A29 E4    		DB 0E4h 
-  0A2A F5    		DB 0F5h 
-  0A2B EA    		DB 0EAh 
-  0A2C 80    		DB 080h 
-  0A2D 46    		DB 046h ; 'F'
-  0A2E 75    		DB 075h ; 'u'
-  0A2F EA    		DB 0EAh 
-  0A30 02    		DB 002h 
-  0A31 80    		DB 080h 
-  0A32 41    		DB 041h ; 'A'
-  0A33 E5    		DB 0E5h 
-  0A34 34    		DB 034h ; '4'
-  0A35 60    		DB 060h ; '`'
-  0A36 02    		DB 002h 
-  0A37 80    		DB 080h 
-  0A38 5E    		DB 05Eh ; '^'
-  0A39 E5    		DB 0E5h 
-  0A3A 33    		DB 033h ; '3'
-  0A3B 14    		DB 014h 
-  0A3C 60    		DB 060h ; '`'
-  0A3D 05    		DB 005h 
-  0A3E 04    		DB 004h 
-  0A3F 70    		DB 070h ; 'p'
-  0A40 09    		DB 009h 
-  0A41 80    		DB 080h 
-  0A42 21    		DB 021h ; '!'
-  0A43 30    		DB 030h ; '0'
-  0A44 03    		DB 003h 
-  0A45 02    		DB 002h 
-  0A46 80    		DB 080h 
-  0A47 1C    		DB 01Ch 
-  0A48 80    		DB 080h 
-  0A49 4D    		DB 04Dh ; 'M'
-  0A4A 80    		DB 080h 
-  0A4B 4B    		DB 04Bh ; 'K'
-  0A4C E5    		DB 0E5h 
-  0A4D 34    		DB 034h ; '4'
-  0A4E 60    		DB 060h ; '`'
-  0A4F 02    		DB 002h 
-  0A50 80    		DB 080h 
-  0A51 45    		DB 045h ; 'E'
-  0A52 E5    		DB 0E5h 
-  0A53 33    		DB 033h ; '3'
-  0A54 24    		DB 024h ; '$'
-  0A55 80    		DB 080h 
-  0A56 60    		DB 060h ; '`'
-  0A57 0C    		DB 00Ch 
-  0A58 14    		DB 014h 
-  0A59 60    		DB 060h ; '`'
-  0A5A 0E    		DB 00Eh 
-  0A5B 14    		DB 014h 
-  0A5C 60    		DB 060h ; '`'
-  0A5D 1B    		DB 01Bh 
-  0A5E 24    		DB 024h ; '$'
-  0A5F 82    		DB 082h 
-  0A60 70    		DB 070h ; 'p'
-  0A61 31    		DB 031h ; '1'
-  0A62 80    		DB 080h 
-  0A63 00    		DB 000h 
-  0A64 E4    		DB 0E4h 
-  0A65 F5    		DB 0F5h 
-  0A66 EA    		DB 0EAh 
-  0A67 80    		DB 080h 
-  0A68 1C    		DB 01Ch 
-  0A69 30    		DB 030h ; '0'
-  0A6A 03    		DB 003h 
-  0A6B 0B    		DB 00Bh 
-  0A6C E5    		DB 0E5h 
-  0A6D E4    		DB 0E4h 
-  0A6E 54    		DB 054h ; 'T'
-  0A6F 02    		DB 002h 
-  0A70 C3    		DB 0C3h 
-  0A71 13    		DB 013h 
-  0A72 F5    		DB 0F5h 
-  0A73 EA    		DB 0EAh 
-  0A74 E4    		DB 0E4h 
-  0A75 80    		DB 080h 
-  0A76 0E    		DB 00Eh 
-  0A77 80    		DB 080h 
-  0A78 1E    		DB 01Eh 
-  0A79 30    		DB 030h ; '0'
-  0A7A 03    		DB 003h 
-  0A7B 15    		DB 015h 
-  0A7C E5    		DB 0E5h 
-  0A7D E7    		DB 0E7h 
-  0A7E 54    		DB 054h ; 'T'
-  0A7F 02    		DB 002h 
-  0A80 C3    		DB 0C3h 
-  0A81 13    		DB 013h 
-  0A82 F5    		DB 0F5h 
-  0A83 EA    		DB 0EAh 
-  0A84 E4    		DB 0E4h 
-  0A85 F5    		DB 0F5h 
-  0A86 EA    		DB 0EAh 
-  0A87 75    		DB 075h ; 'u'
-  0A88 49    		DB 049h ; 'I'
-  0A89 02    		DB 002h 
-  0A8A 75    		DB 075h ; 'u'
-  0A8B EB    		DB 0EBh 
-  0A8C 02    		DB 002h 
-  0A8D 12    		DB 012h 
-  0A8E 08    		DB 008h 
-  0A8F EC    		DB 0ECh 
-  0A90 22    		DB 022h ; '"'
-  0A91 80    		DB 080h 
-  0A92 04    		DB 004h 
-  0A93 80    		DB 080h 
-  0A94 02    		DB 002h 
-  0A95 80    		DB 080h 
-  0A96 00    		DB 000h 
-  0A97 12    		DB 012h 
-  0A98 1A    		DB 01Ah 
-  0A99 6C    		DB 06Ch ; 'l'
-  0A9A 22    		DB 022h ; '"'
-  0A9B 12    		DB 012h 
-  0A9C 19    		DB 019h 
-  0A9D 17    		DB 017h 
-  0A9E 50    		DB 050h ; 'P'
-  0A9F 03    		DB 003h 
-  0AA0 02    		DB 002h 
-  0AA1 0B    		DB 00Bh 
-  0AA2 20    		DB 020h ; ' '
-  0AA3 E5    		DB 0E5h 
-  0AA4 34    		DB 034h ; '4'
-  0AA5 70    		DB 070h ; 'p'
-  0AA6 7C    		DB 07Ch ; '|'
-  0AA7 E5    		DB 0E5h 
-  0AA8 36    		DB 036h ; '6'
-  0AA9 70    		DB 070h ; 'p'
-  0AAA 34    		DB 034h ; '4'
-  0AAB E5    		DB 0E5h 
-  0AAC 35    		DB 035h ; '5'
-  0AAD 94    		DB 094h 
-  0AAE 08    		DB 008h 
-  0AAF 50    		DB 050h ; 'P'
-  0AB0 2E    		DB 02Eh ; '.'
-  0AB1 E5    		DB 0E5h 
-  0AB2 33    		DB 033h ; '3'
-  0AB3 54    		DB 054h ; 'T'
-  0AB4 FE    		DB 0FEh 
-  0AB5 70    		DB 070h ; 'p'
-  0AB6 26    		DB 026h ; '&'
-  0AB7 E5    		DB 0E5h 
-  0AB8 31    		DB 031h ; '1'
-  0AB9 45    		DB 045h ; 'E'
-  0ABA 33    		DB 033h ; '3'
-  0ABB 70    		DB 070h ; 'p'
-  0ABC 0A    		DB 00Ah 
-  0ABD E5    		DB 0E5h 
-  0ABE 32    		DB 032h ; '2'
-  0ABF B4    		DB 0B4h 
-  0AC0 02    		DB 002h 
-  0AC1 05    		DB 005h 
-  0AC2 75    		DB 075h ; 'u'
-  0AC3 48    		DB 048h ; 'H'
-  0AC4 12    		DB 012h 
-  0AC5 80    		DB 080h 
-  0AC6 37    		DB 037h ; '7'
-  0AC7 E5    		DB 0E5h 
-  0AC8 31    		DB 031h ; '1'
-  0AC9 B4    		DB 0B4h 
-  0ACA 05    		DB 005h 
-  0ACB 0F    		DB 00Fh 
-  0ACC E5    		DB 0E5h 
-  0ACD 32    		DB 032h ; '2'
-  0ACE B4    		DB 0B4h 
-  0ACF 03    		DB 003h 
-  0AD0 0A    		DB 00Ah 
-  0AD1 E5    		DB 0E5h 
-  0AD2 35    		DB 035h ; '5'
-  0AD3 B4    		DB 0B4h 
-  0AD4 06    		DB 006h 
-  0AD5 05    		DB 005h 
-  0AD6 75    		DB 075h ; 'u'
-  0AD7 48    		DB 048h ; 'H'
-  0AD8 16    		DB 016h 
-  0AD9 80    		DB 080h 
-  0ADA 23    		DB 023h ; '#'
-  0ADB 80    		DB 080h 
-  0ADC 43    		DB 043h ; 'C'
-  0ADD 80    		DB 080h 
-  0ADE 41    		DB 041h ; 'A'
-  0ADF E5    		DB 0E5h 
-  0AE0 36    		DB 036h ; '6'
-  0AE1 64    		DB 064h ; 'd'
-  0AE2 04    		DB 004h 
-  0AE3 70    		DB 070h ; 'p'
-  0AE4 20    		DB 020h ; ' '
-  0AE5 E5    		DB 0E5h 
-  0AE6 35    		DB 035h ; '5'
-  0AE7 64    		DB 064h ; 'd'
-  0AE8 10    		DB 010h 
-  0AE9 70    		DB 070h ; 'p'
-  0AEA 1A    		DB 01Ah 
-  0AEB E5    		DB 0E5h 
-  0AEC 33    		DB 033h ; '3'
-  0AED 64    		DB 064h ; 'd'
-  0AEE 01    		DB 001h 
-  0AEF 70    		DB 070h ; 'p'
-  0AF0 14    		DB 014h 
-  0AF1 E5    		DB 0E5h 
-  0AF2 31    		DB 031h ; '1'
-  0AF3 B4    		DB 0B4h 
-  0AF4 06    		DB 006h 
-  0AF5 0D    		DB 00Dh 
-  0AF6 E5    		DB 0E5h 
-  0AF7 32    		DB 032h ; '2'
-  0AF8 B4    		DB 0B4h 
-  0AF9 03    		DB 003h 
-  0AFA 08    		DB 008h 
-  0AFB 75    		DB 075h ; 'u'
-  0AFC 48    		DB 048h ; 'H'
-  0AFD 17    		DB 017h 
-  0AFE 75    		DB 075h ; 'u'
-  0AFF 49    		DB 049h ; 'I'
-  0B00 04    		DB 004h 
-  0B01 80    		DB 080h 
-  0B02 15    		DB 015h 
-  0B03 80    		DB 080h 
-  0B04 1B    		DB 01Bh 
-  0B05 E5    		DB 0E5h 
-  0B06 33    		DB 033h ; '3'
-  0B07 70    		DB 070h ; 'p'
-  0B08 15    		DB 015h 
-  0B09 E5    		DB 0E5h 
-  0B0A 31    		DB 031h ; '1'
-  0B0B 70    		DB 070h ; 'p'
-  0B0C 0F    		DB 00Fh 
-  0B0D E5    		DB 0E5h 
-  0B0E 32    		DB 032h ; '2'
-  0B0F B4    		DB 0B4h 
-  0B10 02    		DB 002h 
-  0B11 0A    		DB 00Ah 
-  0B12 75    		DB 075h ; 'u'
-  0B13 48    		DB 048h ; 'H'
-  0B14 12    		DB 012h 
-  0B15 75    		DB 075h ; 'u'
-  0B16 49    		DB 049h ; 'I'
-  0B17 05    		DB 005h 
-  0B18 12    		DB 012h 
-  0B19 08    		DB 008h 
-  0B1A F9    		DB 0F9h 
-  0B1B 22    		DB 022h ; '"'
-  0B1C 80    		DB 080h 
-  0B1D 02    		DB 002h 
-  0B1E 80    		DB 080h 
-  0B1F 00    		DB 000h 
-  0B20 12    		DB 012h 
-  0B21 1A    		DB 01Ah 
-  0B22 6C    		DB 06Ch ; 'l'
-  0B23 22    		DB 022h ; '"'
+  0A09 E535  		MOV A, 35h
+  0A0B 6402  		XRL A, #2h
+  0A0D 6003  		JZ L0490
+  0A0F 020A97		LJMP L0491
+
+L0490:
+  0A12 E536  		MOV A, 36h
+  0A14 6003  		JZ L0492
+  0A16 020A97		LJMP L0491
+
+L0492:
+  0A19 E52F  		MOV A, 2Fh
+  0A1B 247F  		ADD A, #7Fh
+  0A1D 6014  		JZ L0493
+  0A1F 14    		DEC A
+  0A20 602A  		JZ L0494
+  0A22 2402  		ADD A, #2h
+  0A24 706F  		JNZ L0495
+  0A26 201D05		JB 1Dh, L0496
+  0A29 E4    		CLR A
+  0A2A F5EA  		MOV 0EAh, A
+  0A2C 8046  		SJMP L0497
+
+L0496:
+  0A2E 75EA02		MOV 0EAh, #2h
+  0A31 8041  		SJMP L0497
+
+L0493:
+  0A33 E534  		MOV A, 34h
+  0A35 6002  		JZ L0507
+  0A37 805E  		SJMP L0491
+
+L0507:
+  0A39 E533  		MOV A, 33h
+  0A3B 14    		DEC A
+  0A3C 6005  		JZ L0508
+  0A3E 04    		INC A
+  0A3F 7009  		JNZ L0509
+  0A41 8021  		SJMP L0501
+
+L0508:
+  0A43 300302		JNB 3h, L0510
+  0A46 801C  		SJMP L0501
+
+L0510:
+  0A48 804D  		SJMP L0491
+
+L0509:
+  0A4A 804B  		SJMP L0491
+
+L0494:
+  0A4C E534  		MOV A, 34h
+  0A4E 6002  		JZ L0500
+  0A50 8045  		SJMP L0491
+
+L0500:
+  0A52 E533  		MOV A, 33h
+  0A54 2480  		ADD A, #80h
+  0A56 600C  		JZ L0501
+  0A58 14    		DEC A
+  0A59 600E  		JZ L0502
+  0A5B 14    		DEC A
+  0A5C 601B  		JZ L0503
+  0A5E 2482  		ADD A, #82h
+  0A60 7031  		JNZ L0504
+  0A62 8000  		SJMP L0501
+
+L0501:
+  0A64 E4    		CLR A
+  0A65 F5EA  		MOV 0EAh, A
+  0A67 801C  		SJMP L0498
+
+L0502:
+  0A69 30030B		JNB 3h, L0506
+  0A6C E5E4  		MOV A, 0E4h
+  0A6E 5402  		ANL A, #2h
+  0A70 C3    		CLR C
+  0A71 13    		RRC A
+  0A72 F5EA  		MOV 0EAh, A
+L0497:
+  0A74 E4    		CLR A
+  0A75 800E  		SJMP L0498
+
+L0506:
+  0A77 801E  		SJMP L0491
+
+L0503:
+  0A79 300315		JNB 3h, L0505
+  0A7C E5E7  		MOV A, 0E7h
+  0A7E 5402  		ANL A, #2h
+  0A80 C3    		CLR C
+  0A81 13    		RRC A
+  0A82 F5EA  		MOV 0EAh, A
+  0A84 E4    		CLR A
+L0498:
+  0A85 F5EA  		MOV 0EAh, A
+  0A87 754902		MOV 49h, #2h
+  0A8A 75EB02		MOV 0EBh, #2h
+  0A8D 1208EC		LCALL L0499
+  0A90 22    		RET
+
+L0505:
+  0A91 8004  		SJMP L0491
+
+L0504:
+  0A93 8002  		SJMP L0491
+
+L0495:
+  0A95 8000  		SJMP L0491
+
+L0491:
+  0A97 121A6C		LCALL L0453
+  0A9A 22    		RET
+
+  0A9B 121917		LCALL L0605
+  0A9E 5003  		JNC L0606
+  0AA0 020B20		LJMP L0607
+
+L0606:
+  0AA3 E534  		MOV A, 34h
+  0AA5 707C  		JNZ L0608
+  0AA7 E536  		MOV A, 36h
+  0AA9 7034  		JNZ L0609
+  0AAB E535  		MOV A, 35h
+  0AAD 9408  		SUBB A, #8h
+  0AAF 502E  		JNC L0609
+  0AB1 E533  		MOV A, 33h
+  0AB3 54FE  		ANL A, #0FEh
+  0AB5 7026  		JNZ L0610
+  0AB7 E531  		MOV A, 31h
+  0AB9 4533  		ORL A, 33h
+  0ABB 700A  		JNZ L0611
+  0ABD E532  		MOV A, 32h
+  0ABF B40205		CJNE A, #2h, L0611
+  0AC2 754812		MOV 48h, #12h
+  0AC5 8037  		SJMP L0612
+
+L0611:
+  0AC7 E531  		MOV A, 31h
+  0AC9 B4050F		CJNE A, #5h, L0615
+  0ACC E532  		MOV A, 32h
+  0ACE B4030A		CJNE A, #3h, L0615
+  0AD1 E535  		MOV A, 35h
+  0AD3 B40605		CJNE A, #6h, L0615
+  0AD6 754816		MOV 48h, #16h
+  0AD9 8023  		SJMP L0612
+
+L0615:
+  0ADB 8043  		SJMP L0607
+
+L0610:
+  0ADD 8041  		SJMP L0607
+
+L0609:
+  0ADF E536  		MOV A, 36h
+  0AE1 6404  		XRL A, #4h
+  0AE3 7020  		JNZ L0616
+  0AE5 E535  		MOV A, 35h
+  0AE7 6410  		XRL A, #10h
+  0AE9 701A  		JNZ L0616
+  0AEB E533  		MOV A, 33h
+  0AED 6401  		XRL A, #1h
+  0AEF 7014  		JNZ L0616
+  0AF1 E531  		MOV A, 31h
+  0AF3 B4060D		CJNE A, #6h, L0617
+  0AF6 E532  		MOV A, 32h
+  0AF8 B40308		CJNE A, #3h, L0617
+  0AFB 754817		MOV 48h, #17h
+L0612:
+  0AFE 754904		MOV 49h, #4h
+  0B01 8015  		SJMP L0613
+
+L0617:
+  0B03 801B  		SJMP L0607
+
+L0616:
+  0B05 E533  		MOV A, 33h
+  0B07 7015  		JNZ L0618
+  0B09 E531  		MOV A, 31h
+  0B0B 700F  		JNZ L0619
+  0B0D E532  		MOV A, 32h
+  0B0F B4020A		CJNE A, #2h, L0619
+  0B12 754812		MOV 48h, #12h
+  0B15 754905		MOV 49h, #5h
+L0613:
+  0B18 1208F9		LCALL L0614
+  0B1B 22    		RET
+
+L0619:
+  0B1C 8002  		SJMP L0607
+
+L0618:
+  0B1E 8000  		SJMP L0607
+
+L0607:
+  0B20 121A6C		LCALL L0453
+L0608:
+  0B23 22    		RET
+
 L0236:
   0B24 121954		LCALL L0270
   0B27 E526  		MOV A, 26h
@@ -2585,140 +2341,95 @@ L0271:
 L0279:
   0BA9 021954		LJMP L0270
 
-  0BAC E5    		DB 0E5h 
-  0BAD 4E    		DB 04Eh ; 'N'
-  0BAE 45    		DB 045h ; 'E'
-  0BAF 4D    		DB 04Dh ; 'M'
-  0BB0 60    		DB 060h ; '`'
-  0BB1 70    		DB 070h ; 'p'
-  0BB2 12    		DB 012h 
-  0BB3 09    		DB 009h 
-  0BB4 22    		DB 022h ; '"'
-  0BB5 40    		DB 040h ; '@'
-  0BB6 05    		DB 005h 
-  0BB7 12    		DB 012h 
-  0BB8 09    		DB 009h 
-  0BB9 2C    		DB 02Ch ; ','
-  0BBA 80    		DB 080h 
-  0BBB 08    		DB 008h 
-  0BBC 85    		DB 085h 
-  0BBD 4E    		DB 04Eh ; 'N'
-  0BBE 4A    		DB 04Ah ; 'J'
-  0BBF E4    		DB 0E4h 
-  0BC0 F5    		DB 0F5h 
-  0BC1 4D    		DB 04Dh ; 'M'
-  0BC2 F5    		DB 0F5h 
-  0BC3 4E    		DB 04Eh ; 'N'
-  0BC4 E5    		DB 0E5h 
-  0BC5 4A    		DB 04Ah ; 'J'
-  0BC6 60    		DB 060h ; '`'
-  0BC7 4F    		DB 04Fh ; 'O'
-  0BC8 E5    		DB 0E5h 
-  0BC9 47    		DB 047h ; 'G'
-  0BCA 60    		DB 060h ; '`'
-  0BCB 4B    		DB 04Bh ; 'K'
-  0BCC E5    		DB 0E5h 
-  0BCD 47    		DB 047h ; 'G'
-  0BCE 64    		DB 064h ; 'd'
-  0BCF 08    		DB 008h 
-  0BD0 70    		DB 070h ; 'p'
-  0BD1 31    		DB 031h ; '1'
-  0BD2 E5    		DB 0E5h 
-  0BD3 4E    		DB 04Eh ; 'N'
-  0BD4 45    		DB 045h ; 'E'
-  0BD5 4D    		DB 04Dh ; 'M'
-  0BD6 70    		DB 070h ; 'p'
-  0BD7 2B    		DB 02Bh ; '+'
-  0BD8 FF    		DB 0FFh 
-  0BD9 E5    		DB 0E5h 
-  0BDA 4A    		DB 04Ah ; 'J'
-  0BDB 24    		DB 024h ; '$'
-  0BDC FE    		DB 0FEh 
-  0BDD FE    		DB 0FEh 
-  0BDE EF    		DB 0EFh 
-  0BDF C3    		DB 0C3h 
-  0BE0 9E    		DB 09Eh 
-  0BE1 50    		DB 050h ; 'P'
-  0BE2 0C    		DB 00Ch 
-  0BE3 12    		DB 012h 
-  0BE4 09    		DB 009h 
-  0BE5 63    		DB 063h ; 'c'
-  0BE6 70    		DB 070h ; 'p'
-  0BE7 02    		DB 002h 
-  0BE8 05    		DB 005h 
-  0BE9 29    		DB 029h ; ')'
-  0BEA 12    		DB 012h 
-  0BEB 09    		DB 009h 
-  0BEC 17    		DB 017h 
-  0BED 80    		DB 080h 
-  0BEE EA    		DB 0EAh 
-  0BEF 78    		DB 078h ; 'x'
-  0BF0 5C    		DB 05Ch ; '\'
-  0BF1 E6    		DB 0E6h 
-  0BF2 FE    		DB 0FEh 
-  0BF3 C4    		DB 0C4h 
-  0BF4 54    		DB 054h ; 'T'
-  0BF5 0F    		DB 00Fh 
-  0BF6 24    		DB 024h ; '$'
-  0BF7 30    		DB 030h ; '0'
-  0BF8 F5    		DB 0F5h 
-  0BF9 EA    		DB 0EAh 
-  0BFA EE    		DB 0EEh 
-  0BFB 54    		DB 054h ; 'T'
-  0BFC 0F    		DB 00Fh 
-  0BFD 24    		DB 024h ; '$'
-  0BFE 30    		DB 030h ; '0'
-  0BFF F5    		DB 0F5h 
-  0C00 EA    		DB 0EAh 
-  0C01 80    		DB 080h 
-  0C02 14    		DB 014h 
-  0C03 E4    		DB 0E4h 
-  0C04 FF    		DB 0FFh 
-  0C05 EF    		DB 0EFh 
-  0C06 C3    		DB 0C3h 
-  0C07 95    		DB 095h 
-  0C08 4A    		DB 04Ah ; 'J'
-  0C09 50    		DB 050h ; 'P'
-  0C0A 0C    		DB 00Ch 
-  0C0B 12    		DB 012h 
-  0C0C 09    		DB 009h 
-  0C0D 63    		DB 063h ; 'c'
-  0C0E 70    		DB 070h ; 'p'
-  0C0F 02    		DB 002h 
-  0C10 05    		DB 005h 
-  0C11 29    		DB 029h ; ')'
-  0C12 12    		DB 012h 
-  0C13 09    		DB 009h 
-  0C14 17    		DB 017h 
-  0C15 80    		DB 080h 
-  0C16 EE    		DB 0EEh 
-  0C17 85    		DB 085h 
-  0C18 4A    		DB 04Ah ; 'J'
-  0C19 EB    		DB 0EBh 
-  0C1A 12    		DB 012h 
-  0C1B 08    		DB 008h 
-  0C1C EC    		DB 0ECh 
-  0C1D 20    		DB 020h ; ' '
-  0C1E 12    		DB 012h 
-  0C1F 11    		DB 011h 
-  0C20 80    		DB 080h 
-  0C21 08    		DB 008h 
-  0C22 30    		DB 030h ; '0'
-  0C23 11    		DB 011h 
-  0C24 09    		DB 009h 
-  0C25 C2    		DB 0C2h 
-  0C26 11    		DB 011h 
-  0C27 E4    		DB 0E4h 
-  0C28 F5    		DB 0F5h 
-  0C29 EB    		DB 0EBh 
-  0C2A 43    		DB 043h ; 'C'
-  0C2B EC    		DB 0ECh 
-  0C2C 01    		DB 001h 
-  0C2D 22    		DB 022h ; '"'
-  0C2E 43    		DB 043h ; 'C'
-  0C2F EC    		DB 0ECh 
-  0C30 02    		DB 002h 
-  0C31 22    		DB 022h ; '"'
+  0BAC E54E  		MOV A, 4Eh
+  0BAE 454D  		ORL A, 4Dh
+  0BB0 6070  		JZ L0639
+  0BB2 120922		LCALL L0544
+  0BB5 4005  		JC L0640
+  0BB7 12092C		LCALL L0550
+  0BBA 8008  		SJMP L0641
+
+L0640:
+  0BBC 854E4A		MOV 4Ah, 4Eh
+  0BBF E4    		CLR A
+  0BC0 F54D  		MOV 4Dh, A
+  0BC2 F54E  		MOV 4Eh, A
+L0641:
+  0BC4 E54A  		MOV A, 4Ah
+  0BC6 604F  		JZ L0642
+  0BC8 E547  		MOV A, 47h
+  0BCA 604B  		JZ L0642
+  0BCC E547  		MOV A, 47h
+  0BCE 6408  		XRL A, #8h
+  0BD0 7031  		JNZ L0643
+  0BD2 E54E  		MOV A, 4Eh
+  0BD4 454D  		ORL A, 4Dh
+  0BD6 702B  		JNZ L0643
+  0BD8 FF    		MOV R7, A
+L0646:
+  0BD9 E54A  		MOV A, 4Ah
+  0BDB 24FE  		ADD A, #0FEh
+  0BDD FE    		MOV R6, A
+  0BDE EF    		MOV A, R7
+  0BDF C3    		CLR C
+  0BE0 9E    		SUBB A, R6
+  0BE1 500C  		JNC L0644
+  0BE3 120963		LCALL L0553
+  0BE6 7002  		JNZ L0645
+  0BE8 0529  		INC 29h
+L0645:
+  0BEA 120917		LCALL L0555
+  0BED 80EA  		SJMP L0646
+
+L0644:
+  0BEF 785C  		MOV R0, #5Ch
+  0BF1 E6    		MOV A, @R0
+  0BF2 FE    		MOV R6, A
+  0BF3 C4    		SWAP A
+  0BF4 540F  		ANL A, #0Fh
+  0BF6 2430  		ADD A, #30h
+  0BF8 F5EA  		MOV 0EAh, A
+  0BFA EE    		MOV A, R6
+  0BFB 540F  		ANL A, #0Fh
+  0BFD 2430  		ADD A, #30h
+  0BFF F5EA  		MOV 0EAh, A
+  0C01 8014  		SJMP L0642
+
+L0643:
+  0C03 E4    		CLR A
+  0C04 FF    		MOV R7, A
+L0650:
+  0C05 EF    		MOV A, R7
+  0C06 C3    		CLR C
+  0C07 954A  		SUBB A, 4Ah
+  0C09 500C  		JNC L0642
+  0C0B 120963		LCALL L0553
+  0C0E 7002  		JNZ L0649
+  0C10 0529  		INC 29h
+L0649:
+  0C12 120917		LCALL L0555
+  0C15 80EE  		SJMP L0650
+
+L0642:
+  0C17 854AEB		MOV 0EBh, 4Ah
+  0C1A 1208EC		LCALL L0499
+  0C1D 201211		JB 12h, L0647
+  0C20 8008  		SJMP L0648
+
+L0639:
+  0C22 301109		JNB 11h, L0651
+  0C25 C211  		CLR 11h
+  0C27 E4    		CLR A
+  0C28 F5EB  		MOV 0EBh, A
+L0648:
+  0C2A 43EC01		ORL 0ECh, #1h
+  0C2D 22    		RET
+
+L0651:
+  0C2E 43EC02		ORL 0ECh, #2h
+L0647:
+  0C31 22    		RET
+
 L0448:
   0C32 C2AF  		CLR EA
   0C34 E5EF  		MOV A, 0EFh
@@ -2793,245 +2504,147 @@ L0450:
   0CB0 D2AF  		SETB EA
   0CB2 22    		RET
 
-  0CB3 AF    		DB 0AFh 
-  0CB4 36    		DB 036h ; '6'
-  0CB5 EF    		DB 0EFh 
-  0CB6 FE    		DB 0FEh 
-  0CB7 AD    		DB 0ADh 
-  0CB8 35    		DB 035h ; '5'
-  0CB9 7C    		DB 07Ch ; '|'
-  0CBA 00    		DB 000h 
-  0CBB E4    		DB 0E4h 
-  0CBC 2D    		DB 02Dh ; '-'
-  0CBD FF    		DB 0FFh 
-  0CBE EC    		DB 0ECh 
-  0CBF 3E    		DB 03Eh ; '>'
-  0CC0 FE    		DB 0FEh 
-  0CC1 75    		DB 075h ; 'u'
-  0CC2 49    		DB 049h ; 'I'
-  0CC3 02    		DB 002h 
-  0CC4 F5    		DB 0F5h 
-  0CC5 4D    		DB 04Dh ; 'M'
-  0CC6 8F    		DB 08Fh 
-  0CC7 4E    		DB 04Eh ; 'N'
-  0CC8 E5    		DB 0E5h 
-  0CC9 47    		DB 047h ; 'G'
-  0CCA 60    		DB 060h ; '`'
-  0CCB 0F    		DB 00Fh 
-  0CCC C3    		DB 0C3h 
-  0CCD E5    		DB 0E5h 
-  0CCE 4C    		DB 04Ch ; 'L'
-  0CCF 9F    		DB 09Fh 
-  0CD0 E5    		DB 0E5h 
-  0CD1 4B    		DB 04Bh ; 'K'
-  0CD2 9E    		DB 09Eh 
-  0CD3 50    		DB 050h ; 'P'
-  0CD4 06    		DB 006h 
-  0CD5 85    		DB 085h 
-  0CD6 4B    		DB 04Bh ; 'K'
-  0CD7 4D    		DB 04Dh ; 'M'
-  0CD8 85    		DB 085h 
-  0CD9 4C    		DB 04Ch ; 'L'
-  0CDA 4E    		DB 04Eh ; 'N'
-  0CDB 12    		DB 012h 
-  0CDC 09    		DB 009h 
-  0CDD 22    		DB 022h ; '"'
-  0CDE 40    		DB 040h ; '@'
-  0CDF 0D    		DB 00Dh 
-  0CE0 E5    		DB 0E5h 
-  0CE1 49    		DB 049h ; 'I'
-  0CE2 64    		DB 064h ; 'd'
-  0CE3 02    		DB 002h 
-  0CE4 60    		DB 060h ; '`'
-  0CE5 05    		DB 005h 
-  0CE6 E5    		DB 0E5h 
-  0CE7 49    		DB 049h ; 'I'
-  0CE8 B4    		DB 0B4h 
-  0CE9 04    		DB 004h 
-  0CEA 02    		DB 002h 
-  0CEB 05    		DB 005h 
-  0CEC 49    		DB 049h ; 'I'
-  0CED E5    		DB 0E5h 
-  0CEE 4E    		DB 04Eh ; 'N'
-  0CEF 54    		DB 054h ; 'T'
-  0CF0 07    		DB 007h 
-  0CF1 70    		DB 070h ; 'p'
-  0CF2 04    		DB 004h 
-  0CF3 D2    		DB 0D2h 
-  0CF4 11    		DB 011h 
-  0CF5 80    		DB 080h 
-  0CF6 02    		DB 002h 
-  0CF7 C2    		DB 0C2h 
-  0CF8 11    		DB 011h 
-  0CF9 12    		DB 012h 
-  0CFA 09    		DB 009h 
-  0CFB 22    		DB 022h ; '"'
-  0CFC 40    		DB 040h ; '@'
-  0CFD 05    		DB 005h 
-  0CFE 12    		DB 012h 
-  0CFF 09    		DB 009h 
-  0D00 2C    		DB 02Ch ; ','
-  0D01 80    		DB 080h 
-  0D02 08    		DB 008h 
-  0D03 85    		DB 085h 
-  0D04 4E    		DB 04Eh ; 'N'
-  0D05 4A    		DB 04Ah ; 'J'
-  0D06 E4    		DB 0E4h 
-  0D07 F5    		DB 0F5h 
-  0D08 4D    		DB 04Dh ; 'M'
-  0D09 F5    		DB 0F5h 
-  0D0A 4E    		DB 04Eh ; 'N'
-  0D0B E5    		DB 0E5h 
-  0D0C 4A    		DB 04Ah ; 'J'
-  0D0D 60    		DB 060h ; '`'
-  0D0E 18    		DB 018h 
-  0D0F E5    		DB 0E5h 
-  0D10 47    		DB 047h ; 'G'
-  0D11 60    		DB 060h ; '`'
-  0D12 14    		DB 014h 
-  0D13 E4    		DB 0E4h 
-  0D14 FF    		DB 0FFh 
-  0D15 EF    		DB 0EFh 
-  0D16 C3    		DB 0C3h 
-  0D17 95    		DB 095h 
-  0D18 4A    		DB 04Ah ; 'J'
-  0D19 50    		DB 050h ; 'P'
-  0D1A 0C    		DB 00Ch 
-  0D1B 12    		DB 012h 
-  0D1C 09    		DB 009h 
-  0D1D 63    		DB 063h ; 'c'
-  0D1E 70    		DB 070h ; 'p'
-  0D1F 02    		DB 002h 
-  0D20 05    		DB 005h 
-  0D21 29    		DB 029h ; ')'
-  0D22 12    		DB 012h 
-  0D23 09    		DB 009h 
-  0D24 17    		DB 017h 
-  0D25 80    		DB 080h 
-  0D26 EE    		DB 0EEh 
-  0D27 85    		DB 085h 
-  0D28 4A    		DB 04Ah ; 'J'
-  0D29 EB    		DB 0EBh 
-  0D2A 12    		DB 012h 
-  0D2B 08    		DB 008h 
-  0D2C EC    		DB 0ECh 
-  0D2D 22    		DB 022h ; '"'
-  0D2E 12    		DB 012h 
-  0D2F 19    		DB 019h 
-  0D30 02    		DB 002h 
-  0D31 40    		DB 040h ; '@'
-  0D32 6B    		DB 06Bh ; 'k'
-  0D33 E5    		DB 0E5h 
-  0D34 34    		DB 034h ; '4'
-  0D35 70    		DB 070h ; 'p'
-  0D36 1D    		DB 01Dh 
-  0D37 E5    		DB 0E5h 
-  0D38 33    		DB 033h ; '3'
-  0D39 70    		DB 070h ; 'p'
-  0D3A 19    		DB 019h 
-  0D3B E5    		DB 0E5h 
-  0D3C 31    		DB 031h ; '1'
-  0D3D 70    		DB 070h ; 'p'
-  0D3E 15    		DB 015h 
-  0D3F E5    		DB 0E5h 
-  0D40 32    		DB 032h ; '2'
-  0D41 B4    		DB 0B4h 
-  0D42 02    		DB 002h 
-  0D43 0E    		DB 00Eh 
-  0D44 E5    		DB 0E5h 
-  0D45 2B    		DB 02Bh ; '+'
-  0D46 54    		DB 054h ; 'T'
-  0D47 07    		DB 007h 
-  0D48 F5    		DB 0F5h 
-  0D49 EA    		DB 0EAh 
-  0D4A 75    		DB 075h ; 'u'
-  0D4B 49    		DB 049h ; 'I'
-  0D4C 02    		DB 002h 
-  0D4D 75    		DB 075h ; 'u'
-  0D4E EB    		DB 0EBh 
-  0D4F 01    		DB 001h 
-  0D50 80    		DB 080h 
-  0D51 20    		DB 020h ; ' '
-  0D52 80    		DB 080h 
-  0D53 4A    		DB 04Ah ; 'J'
-  0D54 E5    		DB 0E5h 
-  0D55 31    		DB 031h ; '1'
-  0D56 64    		DB 064h ; 'd'
-  0D57 05    		DB 005h 
-  0D58 70    		DB 070h ; 'p'
-  0D59 1C    		DB 01Ch 
-  0D5A E5    		DB 0E5h 
-  0D5B 32    		DB 032h ; '2'
-  0D5C B4    		DB 0B4h 
-  0D5D 03    		DB 003h 
-  0D5E 17    		DB 017h 
-  0D5F 75    		DB 075h ; 'u'
-  0D60 EA    		DB 0EAh 
-  0D61 05    		DB 005h 
-  0D62 78    		DB 078h ; 'x'
-  0D63 81    		DB 081h 
-  0D64 E6    		DB 0E6h 
-  0D65 F5    		DB 0F5h 
-  0D66 EA    		DB 0EAh 
-  0D67 78    		DB 078h ; 'x'
-  0D68 9A    		DB 09Ah 
-  0D69 E6    		DB 0E6h 
-  0D6A F5    		DB 0F5h 
-  0D6B EA    		DB 0EAh 
-  0D6C 75    		DB 075h ; 'u'
-  0D6D 49    		DB 049h ; 'I'
-  0D6E 02    		DB 002h 
-  0D6F 75    		DB 075h ; 'u'
-  0D70 EB    		DB 0EBh 
-  0D71 03    		DB 003h 
-  0D72 12    		DB 012h 
-  0D73 08    		DB 008h 
-  0D74 EC    		DB 0ECh 
-  0D75 22    		DB 022h ; '"'
-  0D76 E5    		DB 0E5h 
-  0D77 31    		DB 031h ; '1'
-  0D78 B4    		DB 0B4h 
-  0D79 06    		DB 006h 
-  0D7A 21    		DB 021h ; '!'
-  0D7B E5    		DB 0E5h 
-  0D7C 32    		DB 032h ; '2'
-  0D7D B4    		DB 0B4h 
-  0D7E 03    		DB 003h 
-  0D7F 1C    		DB 01Ch 
-  0D80 E5    		DB 0E5h 
-  0D81 35    		DB 035h ; '5'
-  0D82 B4    		DB 0B4h 
-  0D83 10    		DB 010h 
-  0D84 17    		DB 017h 
-  0D85 E5    		DB 0E5h 
-  0D86 36    		DB 036h ; '6'
-  0D87 B4    		DB 0B4h 
-  0D88 04    		DB 004h 
-  0D89 12    		DB 012h 
-  0D8A 75    		DB 075h ; 'u'
-  0D8B 29    		DB 029h ; ')'
-  0D8C 00    		DB 000h 
-  0D8D 75    		DB 075h ; 'u'
-  0D8E 2A    		DB 02Ah ; '*'
-  0D8F D7    		DB 0D7h 
-  0D90 75    		DB 075h ; 'u'
-  0D91 4B    		DB 04Bh ; 'K'
-  0D92 00    		DB 000h 
-  0D93 75    		DB 075h ; 'u'
-  0D94 4C    		DB 04Ch ; 'L'
-  0D95 13    		DB 013h 
-  0D96 75    		DB 075h ; 'u'
-  0D97 47    		DB 047h ; 'G'
-  0D98 08    		DB 008h 
-  0D99 02    		DB 002h 
-  0D9A 0C    		DB 00Ch 
-  0D9B B3    		DB 0B3h 
-  0D9C 80    		DB 080h 
-  0D9D 00    		DB 000h 
-  0D9E 12    		DB 012h 
-  0D9F 1A    		DB 01Ah 
-  0DA0 6C    		DB 06Ch ; 'l'
-  0DA1 22    		DB 022h ; '"'
+L0542:
+  0CB3 AF36  		MOV R7, 36h
+  0CB5 EF    		MOV A, R7
+  0CB6 FE    		MOV R6, A
+  0CB7 AD35  		MOV R5, 35h
+  0CB9 7C00  		MOV R4, #0h
+  0CBB E4    		CLR A
+  0CBC 2D    		ADD A, R5
+  0CBD FF    		MOV R7, A
+  0CBE EC    		MOV A, R4
+  0CBF 3E    		ADDC A, R6
+  0CC0 FE    		MOV R6, A
+  0CC1 754902		MOV 49h, #2h
+  0CC4 F54D  		MOV 4Dh, A
+  0CC6 8F4E  		MOV 4Eh, R7
+  0CC8 E547  		MOV A, 47h
+  0CCA 600F  		JZ L0543
+  0CCC C3    		CLR C
+  0CCD E54C  		MOV A, 4Ch
+  0CCF 9F    		SUBB A, R7
+  0CD0 E54B  		MOV A, 4Bh
+  0CD2 9E    		SUBB A, R6
+  0CD3 5006  		JNC L0543
+  0CD5 854B4D		MOV 4Dh, 4Bh
+  0CD8 854C4E		MOV 4Eh, 4Ch
+L0543:
+  0CDB 120922		LCALL L0544
+  0CDE 400D  		JC L0545
+  0CE0 E549  		MOV A, 49h
+  0CE2 6402  		XRL A, #2h
+  0CE4 6005  		JZ L0546
+  0CE6 E549  		MOV A, 49h
+  0CE8 B40402		CJNE A, #4h, L0545
+L0546:
+  0CEB 0549  		INC 49h
+L0545:
+  0CED E54E  		MOV A, 4Eh
+  0CEF 5407  		ANL A, #7h
+  0CF1 7004  		JNZ L0547
+  0CF3 D211  		SETB 11h
+  0CF5 8002  		SJMP L0548
+
+L0547:
+  0CF7 C211  		CLR 11h
+L0548:
+  0CF9 120922		LCALL L0544
+  0CFC 4005  		JC L0549
+  0CFE 12092C		LCALL L0550
+  0D01 8008  		SJMP L0551
+
+L0549:
+  0D03 854E4A		MOV 4Ah, 4Eh
+  0D06 E4    		CLR A
+  0D07 F54D  		MOV 4Dh, A
+  0D09 F54E  		MOV 4Eh, A
+L0551:
+  0D0B E54A  		MOV A, 4Ah
+  0D0D 6018  		JZ L0552
+  0D0F E547  		MOV A, 47h
+  0D11 6014  		JZ L0552
+  0D13 E4    		CLR A
+  0D14 FF    		MOV R7, A
+L0556:
+  0D15 EF    		MOV A, R7
+  0D16 C3    		CLR C
+  0D17 954A  		SUBB A, 4Ah
+  0D19 500C  		JNC L0552
+  0D1B 120963		LCALL L0553
+  0D1E 7002  		JNZ L0554
+  0D20 0529  		INC 29h
+L0554:
+  0D22 120917		LCALL L0555
+  0D25 80EE  		SJMP L0556
+
+L0552:
+  0D27 854AEB		MOV 0EBh, 4Ah
+  0D2A 1208EC		LCALL L0499
+  0D2D 22    		RET
+
+  0D2E 121902		LCALL L0584
+  0D31 406B  		JC L0585
+  0D33 E534  		MOV A, 34h
+  0D35 701D  		JNZ L0586
+  0D37 E533  		MOV A, 33h
+  0D39 7019  		JNZ L0586
+  0D3B E531  		MOV A, 31h
+  0D3D 7015  		JNZ L0586
+  0D3F E532  		MOV A, 32h
+  0D41 B4020E		CJNE A, #2h, L0587
+  0D44 E52B  		MOV A, 2Bh
+  0D46 5407  		ANL A, #7h
+  0D48 F5EA  		MOV 0EAh, A
+  0D4A 754902		MOV 49h, #2h
+  0D4D 75EB01		MOV 0EBh, #1h
+  0D50 8020  		SJMP L0588
+
+L0587:
+  0D52 804A  		SJMP L0585
+
+L0586:
+  0D54 E531  		MOV A, 31h
+  0D56 6405  		XRL A, #5h
+  0D58 701C  		JNZ L0589
+  0D5A E532  		MOV A, 32h
+  0D5C B40317		CJNE A, #3h, L0589
+  0D5F 75EA05		MOV 0EAh, #5h
+  0D62 7881  		MOV R0, #81h
+  0D64 E6    		MOV A, @R0
+  0D65 F5EA  		MOV 0EAh, A
+  0D67 789A  		MOV R0, #9Ah
+  0D69 E6    		MOV A, @R0
+  0D6A F5EA  		MOV 0EAh, A
+  0D6C 754902		MOV 49h, #2h
+  0D6F 75EB03		MOV 0EBh, #3h
+L0588:
+  0D72 1208EC		LCALL L0499
+  0D75 22    		RET
+
+L0589:
+  0D76 E531  		MOV A, 31h
+  0D78 B40621		CJNE A, #6h, L0590
+  0D7B E532  		MOV A, 32h
+  0D7D B4031C		CJNE A, #3h, L0590
+  0D80 E535  		MOV A, 35h
+  0D82 B41017		CJNE A, #10h, L0590
+  0D85 E536  		MOV A, 36h
+  0D87 B40412		CJNE A, #4h, L0590
+  0D8A 752900		MOV 29h, #0h
+  0D8D 752AD7		MOV 2Ah, #0D7h
+  0D90 754B00		MOV 4Bh, #0h
+  0D93 754C13		MOV 4Ch, #13h
+  0D96 754708		MOV 47h, #8h
+  0D99 020CB3		LJMP L0542
+
+L0590:
+  0D9C 8000  		SJMP L0585
+
+L0585:
+  0D9E 121A6C		LCALL L0453
+  0DA1 22    		RET
+
 L0150:
   0DA2 755764		MOV 57h, #64h
   0DA5 7D82  		MOV R5, #82h
@@ -3133,184 +2746,128 @@ L0475:
   0E5F D2AF  		SETB EA
   0E61 22    		RET
 
-  0E62 E5    		DB 0E5h 
-  0E63 32    		DB 032h ; '2'
-  0E64 70    		DB 070h ; 'p'
-  0E65 52    		DB 052h ; 'R'
-  0E66 E5    		DB 0E5h 
-  0E67 2F    		DB 02Fh ; '/'
-  0E68 24    		DB 024h ; '$'
-  0E69 FE    		DB 0FEh 
-  0E6A 60    		DB 060h ; '`'
-  0E6B 10    		DB 010h 
-  0E6C 24    		DB 024h ; '$'
-  0E6D 02    		DB 002h 
-  0E6E 70    		DB 070h ; 'p'
-  0E6F 46    		DB 046h ; 'F'
-  0E70 E5    		DB 0E5h 
-  0E71 31    		DB 031h ; '1'
-  0E72 B4    		DB 0B4h 
-  0E73 01    		DB 001h 
-  0E74 05    		DB 005h 
-  0E75 75    		DB 075h ; 'u'
-  0E76 48    		DB 048h ; 'H'
-  0E77 03    		DB 003h 
-  0E78 80    		DB 080h 
-  0E79 32    		DB 032h ; '2'
-  0E7A 80    		DB 080h 
-  0E7B 3C    		DB 03Ch ; '<'
-  0E7C E5    		DB 0E5h 
-  0E7D 34    		DB 034h ; '4'
-  0E7E 45    		DB 045h ; 'E'
-  0E7F 31    		DB 031h ; '1'
-  0E80 70    		DB 070h ; 'p'
-  0E81 32    		DB 032h ; '2'
-  0E82 E5    		DB 0E5h 
-  0E83 33    		DB 033h ; '3'
-  0E84 24    		DB 024h ; '$'
-  0E85 80    		DB 080h 
-  0E86 60    		DB 060h ; '`'
-  0E87 0F    		DB 00Fh 
-  0E88 14    		DB 014h 
-  0E89 60    		DB 060h ; '`'
-  0E8A 11    		DB 011h 
-  0E8B 14    		DB 014h 
-  0E8C 60    		DB 060h ; '`'
-  0E8D 18    		DB 018h 
-  0E8E 24    		DB 024h ; '$'
-  0E8F 82    		DB 082h 
-  0E90 70    		DB 070h ; 'p'
-  0E91 20    		DB 020h ; ' '
-  0E92 75    		DB 075h ; 'u'
-  0E93 48    		DB 048h ; 'H'
-  0E94 04    		DB 004h 
-  0E95 80    		DB 080h 
-  0E96 15    		DB 015h 
-  0E97 75    		DB 075h ; 'u'
-  0E98 48    		DB 048h ; 'H'
-  0E99 05    		DB 005h 
-  0E9A 80    		DB 080h 
-  0E9B 10    		DB 010h 
-  0E9C 30    		DB 030h ; '0'
-  0E9D 03    		DB 003h 
-  0E9E 05    		DB 005h 
-  0E9F 75    		DB 075h ; 'u'
-  0EA0 48    		DB 048h ; 'H'
-  0EA1 06    		DB 006h 
-  0EA2 80    		DB 080h 
-  0EA3 08    		DB 008h 
-  0EA4 80    		DB 080h 
-  0EA5 12    		DB 012h 
-  0EA6 30    		DB 030h ; '0'
-  0EA7 03    		DB 003h 
-  0EA8 07    		DB 007h 
-  0EA9 75    		DB 075h ; 'u'
-  0EAA 48    		DB 048h ; 'H'
-  0EAB 0A    		DB 00Ah 
-  0EAC 12    		DB 012h 
-  0EAD 08    		DB 008h 
-  0EAE F6    		DB 0F6h 
-  0EAF 22    		DB 022h ; '"'
-  0EB0 80    		DB 080h 
-  0EB1 06    		DB 006h 
-  0EB2 80    		DB 080h 
-  0EB3 04    		DB 004h 
-  0EB4 80    		DB 080h 
-  0EB5 02    		DB 002h 
-  0EB6 80    		DB 080h 
-  0EB7 00    		DB 000h 
-  0EB8 12    		DB 012h 
-  0EB9 1A    		DB 01Ah 
-  0EBA 6C    		DB 06Ch ; 'l'
-  0EBB 22    		DB 022h ; '"'
-  0EBC 12    		DB 012h 
-  0EBD 19    		DB 019h 
-  0EBE 17    		DB 017h 
-  0EBF 40    		DB 040h ; '@'
-  0EC0 4F    		DB 04Fh ; 'O'
-  0EC1 12    		DB 012h 
-  0EC2 09    		DB 009h 
-  0EC3 5C    		DB 05Ch ; '\'
-  0EC4 70    		DB 070h ; 'p'
-  0EC5 48    		DB 048h ; 'H'
-  0EC6 E5    		DB 0E5h 
-  0EC7 33    		DB 033h ; '3'
-  0EC8 70    		DB 070h ; 'p'
-  0EC9 09    		DB 009h 
-  0ECA E5    		DB 0E5h 
-  0ECB 31    		DB 031h ; '1'
-  0ECC 70    		DB 070h ; 'p'
-  0ECD 42    		DB 042h ; 'B'
-  0ECE 75    		DB 075h ; 'u'
-  0ECF 48    		DB 048h ; 'H'
-  0ED0 0D    		DB 00Dh 
-  0ED1 80    		DB 080h 
-  0ED2 10    		DB 010h 
-  0ED3 E5    		DB 0E5h 
-  0ED4 33    		DB 033h ; '3'
-  0ED5 64    		DB 064h ; 'd'
-  0ED6 01    		DB 001h 
-  0ED7 70    		DB 070h ; 'p'
-  0ED8 33    		DB 033h ; '3'
-  0ED9 E5    		DB 0E5h 
-  0EDA 31    		DB 031h ; '1'
-  0EDB 70    		DB 070h ; 'p'
-  0EDC 0B    		DB 00Bh 
-  0EDD 43    		DB 043h ; 'C'
-  0EDE 4F    		DB 04Fh ; 'O'
-  0EDF 03    		DB 003h 
-  0EE0 75    		DB 075h ; 'u'
-  0EE1 48    		DB 048h ; 'H'
-  0EE2 0F    		DB 00Fh 
-  0EE3 75    		DB 075h ; 'u'
-  0EE4 49    		DB 049h ; 'I'
-  0EE5 01    		DB 001h 
-  0EE6 80    		DB 080h 
-  0EE7 1E    		DB 01Eh 
-  0EE8 90    		DB 090h 
-  0EE9 1A    		DB 01Ah 
-  0EEA 68    		DB 068h ; 'h'
-  0EEB E4    		DB 0E4h 
-  0EEC 93    		DB 093h 
-  0EED B5    		DB 0B5h 
-  0EEE 31    		DB 031h ; '1'
-  0EEF 08    		DB 008h 
-  0EF0 90    		DB 090h 
-  0EF1 1A    		DB 01Ah 
-  0EF2 60    		DB 060h ; '`'
-  0EF3 12    		DB 012h 
-  0EF4 09    		DB 009h 
-  0EF5 49    		DB 049h ; 'I'
-  0EF6 80    		DB 080h 
-  0EF7 0E    		DB 00Eh 
-  0EF8 90    		DB 090h 
-  0EF9 1A    		DB 01Ah 
-  0EFA 69    		DB 069h ; 'i'
-  0EFB E4    		DB 0E4h 
-  0EFC 93    		DB 093h 
-  0EFD B5    		DB 0B5h 
-  0EFE 31    		DB 031h ; '1'
-  0EFF 0A    		DB 00Ah 
-  0F00 90    		DB 090h 
-  0F01 1A    		DB 01Ah 
-  0F02 61    		DB 061h ; 'a'
-  0F03 12    		DB 012h 
-  0F04 09    		DB 009h 
-  0F05 49    		DB 049h ; 'I'
-  0F06 12    		DB 012h 
-  0F07 08    		DB 008h 
-  0F08 FA    		DB 0FAh 
-  0F09 22    		DB 022h ; '"'
-  0F0A 80    		DB 080h 
-  0F0B 04    		DB 004h 
-  0F0C 80    		DB 080h 
-  0F0D 02    		DB 002h 
-  0F0E 80    		DB 080h 
-  0F0F 00    		DB 000h 
-  0F10 12    		DB 012h 
-  0F11 1A    		DB 01Ah 
-  0F12 6C    		DB 06Ch ; 'l'
-  0F13 22    		DB 022h ; '"'
+  0E62 E532  		MOV A, 32h
+  0E64 7052  		JNZ L0511
+  0E66 E52F  		MOV A, 2Fh
+  0E68 24FE  		ADD A, #0FEh
+  0E6A 6010  		JZ L0512
+  0E6C 2402  		ADD A, #2h
+  0E6E 7046  		JNZ L0513
+  0E70 E531  		MOV A, 31h
+  0E72 B40105		CJNE A, #1h, L0514
+  0E75 754803		MOV 48h, #3h
+  0E78 8032  		SJMP L0515
+
+L0514:
+  0E7A 803C  		SJMP L0511
+
+L0512:
+  0E7C E534  		MOV A, 34h
+  0E7E 4531  		ORL A, 31h
+  0E80 7032  		JNZ L0517
+  0E82 E533  		MOV A, 33h
+  0E84 2480  		ADD A, #80h
+  0E86 600F  		JZ L0518
+  0E88 14    		DEC A
+  0E89 6011  		JZ L0519
+  0E8B 14    		DEC A
+  0E8C 6018  		JZ L0520
+  0E8E 2482  		ADD A, #82h
+  0E90 7020  		JNZ L0521
+  0E92 754804		MOV 48h, #4h
+  0E95 8015  		SJMP L0515
+
+L0518:
+  0E97 754805		MOV 48h, #5h
+  0E9A 8010  		SJMP L0515
+
+L0519:
+  0E9C 300305		JNB 3h, L0523
+  0E9F 754806		MOV 48h, #6h
+  0EA2 8008  		SJMP L0515
+
+L0523:
+  0EA4 8012  		SJMP L0511
+
+L0520:
+  0EA6 300307		JNB 3h, L0522
+  0EA9 75480A		MOV 48h, #0Ah
+L0515:
+  0EAC 1208F6		LCALL L0516
+  0EAF 22    		RET
+
+L0522:
+  0EB0 8006  		SJMP L0511
+
+L0521:
+  0EB2 8004  		SJMP L0511
+
+L0517:
+  0EB4 8002  		SJMP L0511
+
+L0513:
+  0EB6 8000  		SJMP L0511
+
+L0511:
+  0EB8 121A6C		LCALL L0453
+  0EBB 22    		RET
+
+  0EBC 121917		LCALL L0605
+  0EBF 404F  		JC L0622
+  0EC1 12095C		LCALL L0580
+  0EC4 7048  		JNZ L0623
+  0EC6 E533  		MOV A, 33h
+  0EC8 7009  		JNZ L0624
+  0ECA E531  		MOV A, 31h
+  0ECC 7042  		JNZ L0622
+  0ECE 75480D		MOV 48h, #0Dh
+  0ED1 8010  		SJMP L0625
+
+L0624:
+  0ED3 E533  		MOV A, 33h
+  0ED5 6401  		XRL A, #1h
+  0ED7 7033  		JNZ L0628
+  0ED9 E531  		MOV A, 31h
+  0EDB 700B  		JNZ L0629
+  0EDD 434F03		ORL 4Fh, #3h
+  0EE0 75480F		MOV 48h, #0Fh
+L0625:
+  0EE3 754901		MOV 49h, #1h
+  0EE6 801E  		SJMP L0626
+
+L0629:
+  0EE8 901A68		MOV DPTR, #01A68h
+  0EEB E4    		CLR A
+  0EEC 93    		MOVC A, @A+DPTR
+  0EED B53108		CJNE A, 31h, L0630
+  0EF0 901A60		MOV DPTR, #01A60h
+  0EF3 120949		LCALL L0631
+  0EF6 800E  		SJMP L0626
+
+L0630:
+  0EF8 901A69		MOV DPTR, #01A69h
+  0EFB E4    		CLR A
+  0EFC 93    		MOVC A, @A+DPTR
+  0EFD B5310A		CJNE A, 31h, L0632
+  0F00 901A61		MOV DPTR, #01A61h
+  0F03 120949		LCALL L0631
+L0626:
+  0F06 1208FA		LCALL L0627
+  0F09 22    		RET
+
+L0632:
+  0F0A 8004  		SJMP L0622
+
+L0628:
+  0F0C 8002  		SJMP L0622
+
+L0623:
+  0F0E 8000  		SJMP L0622
+
+L0622:
+  0F10 121A6C		LCALL L0453
+  0F13 22    		RET
+
 L0167:
   0F14 E4    		CLR A
   0F15 F55B  		MOV 5Bh, A
@@ -3601,158 +3158,106 @@ L0297:
 L0293:
   10AD 22    		RET
 
-  10AE 12    		DB 012h 
-  10AF 19    		DB 019h 
-  10B0 02    		DB 002h 
-  10B1 40    		DB 040h ; '@'
-  10B2 44    		DB 044h ; 'D'
-  10B3 E5    		DB 0E5h 
-  10B4 36    		DB 036h ; '6'
-  10B5 45    		DB 045h ; 'E'
-  10B6 34    		DB 034h ; '4'
-  10B7 70    		DB 070h ; 'p'
-  10B8 3C    		DB 03Ch ; '<'
-  10B9 E5    		DB 0E5h 
-  10BA 35    		DB 035h ; '5'
-  10BB 64    		DB 064h ; 'd'
-  10BC 01    		DB 001h 
-  10BD 70    		DB 070h ; 'p'
-  10BE 36    		DB 036h ; '6'
-  10BF E5    		DB 0E5h 
-  10C0 33    		DB 033h ; '3'
-  10C1 70    		DB 070h ; 'p'
-  10C2 09    		DB 009h 
-  10C3 E5    		DB 0E5h 
-  10C4 31    		DB 031h ; '1'
-  10C5 70    		DB 070h ; 'p'
-  10C6 30    		DB 030h ; '0'
-  10C7 85    		DB 085h 
-  10C8 3C    		DB 03Ch ; '<'
-  10C9 EA    		DB 0EAh 
-  10CA 80    		DB 080h 
-  10CB 21    		DB 021h ; '!'
-  10CC E5    		DB 0E5h 
-  10CD 33    		DB 033h ; '3'
-  10CE 64    		DB 064h ; 'd'
-  10CF 01    		DB 001h 
-  10D0 70    		DB 070h ; 'p'
-  10D1 21    		DB 021h ; '!'
-  10D2 90    		DB 090h 
-  10D3 1A    		DB 01Ah 
-  10D4 68    		DB 068h ; 'h'
-  10D5 93    		DB 093h 
-  10D6 B5    		DB 0B5h 
-  10D7 31    		DB 031h ; '1'
-  10D8 07    		DB 007h 
-  10D9 78    		DB 078h ; 'x'
-  10DA 84    		DB 084h 
-  10DB E6    		DB 0E6h 
-  10DC F5    		DB 0F5h 
-  10DD EA    		DB 0EAh 
-  10DE 80    		DB 080h 
-  10DF 0D    		DB 00Dh 
-  10E0 90    		DB 090h 
-  10E1 1A    		DB 01Ah 
-  10E2 69    		DB 069h ; 'i'
-  10E3 E4    		DB 0E4h 
-  10E4 93    		DB 093h 
-  10E5 B5    		DB 0B5h 
-  10E6 31    		DB 031h ; '1'
-  10E7 09    		DB 009h 
-  10E8 78    		DB 078h ; 'x'
-  10E9 85    		DB 085h 
-  10EA E6    		DB 0E6h 
-  10EB F5    		DB 0F5h 
-  10EC EA    		DB 0EAh 
-  10ED 12    		DB 012h 
-  10EE 08    		DB 008h 
-  10EF E6    		DB 0E6h 
-  10F0 22    		DB 022h ; '"'
-  10F1 80    		DB 080h 
-  10F2 04    		DB 004h 
-  10F3 80    		DB 080h 
-  10F4 02    		DB 002h 
-  10F5 80    		DB 080h 
-  10F6 00    		DB 000h 
-  10F7 12    		DB 012h 
-  10F8 1A    		DB 01Ah 
-  10F9 6C    		DB 06Ch ; 'l'
-  10FA 22    		DB 022h ; '"'
-  10FB E5    		DB 0E5h 
-  10FC 36    		DB 036h ; '6'
-  10FD 45    		DB 045h ; 'E'
-  10FE 35    		DB 035h ; '5'
-  10FF 45    		DB 045h ; 'E'
-  1100 32    		DB 032h ; '2'
-  1101 70    		DB 070h ; 'p'
-  1102 3F    		DB 03Fh ; '?'
-  1103 E5    		DB 0E5h 
-  1104 2F    		DB 02Fh ; '/'
-  1105 70    		DB 070h ; 'p'
-  1106 0C    		DB 00Ch 
-  1107 E5    		DB 0E5h 
-  1108 31    		DB 031h ; '1'
-  1109 B4    		DB 0B4h 
-  110A 01    		DB 001h 
-  110B 05    		DB 005h 
-  110C 75    		DB 075h ; 'u'
-  110D 48    		DB 048h ; 'H'
-  110E 07    		DB 007h 
-  110F 80    		DB 080h 
-  1110 29    		DB 029h ; ')'
-  1111 80    		DB 080h 
-  1112 2F    		DB 02Fh ; '/'
-  1113 E5    		DB 0E5h 
-  1114 2F    		DB 02Fh ; '/'
-  1115 64    		DB 064h ; 'd'
-  1116 02    		DB 002h 
-  1117 70    		DB 070h ; 'p'
-  1118 27    		DB 027h ; '''
-  1119 E5    		DB 0E5h 
-  111A 34    		DB 034h ; '4'
-  111B 45    		DB 045h ; 'E'
-  111C 31    		DB 031h ; '1'
-  111D 70    		DB 070h ; 'p'
-  111E 21    		DB 021h ; '!'
-  111F E5    		DB 0E5h 
-  1120 33    		DB 033h ; '3'
-  1121 54    		DB 054h ; 'T'
-  1122 7F    		DB 07Fh 
-  1123 60    		DB 060h ; '`'
-  1124 1B    		DB 01Bh 
-  1125 30    		DB 030h ; '0'
-  1126 03    		DB 003h 
-  1127 18    		DB 018h 
-  1128 E5    		DB 0E5h 
-  1129 33    		DB 033h ; '3'
-  112A B4    		DB 0B4h 
-  112B 81    		DB 081h 
-  112C 05    		DB 005h 
-  112D 75    		DB 075h ; 'u'
-  112E 48    		DB 048h ; 'H'
-  112F 08    		DB 008h 
-  1130 80    		DB 080h 
-  1131 08    		DB 008h 
-  1132 E5    		DB 0E5h 
-  1133 33    		DB 033h ; '3'
-  1134 B4    		DB 0B4h 
-  1135 82    		DB 082h 
-  1136 07    		DB 007h 
-  1137 75    		DB 075h ; 'u'
-  1138 48    		DB 048h ; 'H'
-  1139 0B    		DB 00Bh 
-  113A 12    		DB 012h 
-  113B 08    		DB 008h 
-  113C F6    		DB 0F6h 
-  113D 22    		DB 022h ; '"'
-  113E 80    		DB 080h 
-  113F 02    		DB 002h 
-  1140 80    		DB 080h 
-  1141 00    		DB 000h 
-  1142 12    		DB 012h 
-  1143 1A    		DB 01Ah 
-  1144 6C    		DB 06Ch ; 'l'
-  1145 22    		DB 022h ; '"'
+  10AE 121902		LCALL L0584
+  10B1 4044  		JC L0593
+  10B3 E536  		MOV A, 36h
+  10B5 4534  		ORL A, 34h
+  10B7 703C  		JNZ L0594
+  10B9 E535  		MOV A, 35h
+  10BB 6401  		XRL A, #1h
+  10BD 7036  		JNZ L0594
+  10BF E533  		MOV A, 33h
+  10C1 7009  		JNZ L0595
+  10C3 E531  		MOV A, 31h
+  10C5 7030  		JNZ L0593
+  10C7 853CEA		MOV 0EAh, 3Ch
+  10CA 8021  		SJMP L0596
+
+L0595:
+  10CC E533  		MOV A, 33h
+  10CE 6401  		XRL A, #1h
+  10D0 7021  		JNZ L0597
+  10D2 901A68		MOV DPTR, #01A68h
+  10D5 93    		MOVC A, @A+DPTR
+  10D6 B53107		CJNE A, 31h, L0598
+  10D9 7884  		MOV R0, #84h
+  10DB E6    		MOV A, @R0
+  10DC F5EA  		MOV 0EAh, A
+  10DE 800D  		SJMP L0596
+
+L0598:
+  10E0 901A69		MOV DPTR, #01A69h
+  10E3 E4    		CLR A
+  10E4 93    		MOVC A, @A+DPTR
+  10E5 B53109		CJNE A, 31h, L0599
+  10E8 7885  		MOV R0, #85h
+  10EA E6    		MOV A, @R0
+  10EB F5EA  		MOV 0EAh, A
+L0596:
+  10ED 1208E6		LCALL L0572
+  10F0 22    		RET
+
+L0599:
+  10F1 8004  		SJMP L0593
+
+L0597:
+  10F3 8002  		SJMP L0593
+
+L0594:
+  10F5 8000  		SJMP L0593
+
+L0593:
+  10F7 121A6C		LCALL L0453
+  10FA 22    		RET
+
+  10FB E536  		MOV A, 36h
+  10FD 4535  		ORL A, 35h
+  10FF 4532  		ORL A, 32h
+  1101 703F  		JNZ L0524
+  1103 E52F  		MOV A, 2Fh
+  1105 700C  		JNZ L0525
+  1107 E531  		MOV A, 31h
+  1109 B40105		CJNE A, #1h, L0526
+  110C 754807		MOV 48h, #7h
+  110F 8029  		SJMP L0527
+
+L0526:
+  1111 802F  		SJMP L0524
+
+L0525:
+  1113 E52F  		MOV A, 2Fh
+  1115 6402  		XRL A, #2h
+  1117 7027  		JNZ L0528
+  1119 E534  		MOV A, 34h
+  111B 4531  		ORL A, 31h
+  111D 7021  		JNZ L0528
+  111F E533  		MOV A, 33h
+  1121 547F  		ANL A, #7Fh
+  1123 601B  		JZ L0528
+  1125 300318		JNB 3h, L0528
+  1128 E533  		MOV A, 33h
+  112A B48105		CJNE A, #81h, L0529
+  112D 754808		MOV 48h, #8h
+  1130 8008  		SJMP L0527
+
+L0529:
+  1132 E533  		MOV A, 33h
+  1134 B48207		CJNE A, #82h, L0530
+  1137 75480B		MOV 48h, #0Bh
+L0527:
+  113A 1208F6		LCALL L0516
+  113D 22    		RET
+
+L0530:
+  113E 8002  		SJMP L0524
+
+L0528:
+  1140 8000  		SJMP L0524
+
+L0524:
+  1142 121A6C		LCALL L0453
+  1145 22    		RET
+
 L0140:
   1146 E5E7  		MOV A, 0E7h
   1148 30E342		JNB ACC.3, L0290
@@ -4101,168 +3606,100 @@ L0248:
   1342 40CB  		JC L0249
   1344 22    		RET
 
-  1345 30    		DB 030h ; '0'
-  1346 03    		DB 003h 
-  1347 2F    		DB 02Fh ; '/'
-  1348 12    		DB 012h 
-  1349 09    		DB 009h 
-  134A 5C    		DB 05Ch ; '\'
-  134B 45    		DB 045h ; 'E'
-  134C 32    		DB 032h ; '2'
-  134D 45    		DB 045h ; 'E'
-  134E 31    		DB 031h ; '1'
-  134F 70    		DB 070h ; 'p'
-  1350 26    		DB 026h ; '&'
-  1351 E5    		DB 0E5h 
-  1352 2F    		DB 02Fh ; '/'
-  1353 64    		DB 064h ; 'd'
-  1354 01    		DB 001h 
-  1355 70    		DB 070h ; 'p'
-  1356 20    		DB 020h ; ' '
-  1357 E5    		DB 0E5h 
-  1358 33    		DB 033h ; '3'
-  1359 70    		DB 070h ; 'p'
-  135A 08    		DB 008h 
-  135B 75    		DB 075h ; 'u'
-  135C 48    		DB 048h ; 'H'
-  135D 09    		DB 009h 
-  135E 75    		DB 075h ; 'u'
-  135F 49    		DB 049h ; 'I'
-  1360 01    		DB 001h 
-  1361 80    		DB 080h 
-  1362 0C    		DB 00Ch 
-  1363 E5    		DB 0E5h 
-  1364 33    		DB 033h ; '3'
-  1365 B4    		DB 0B4h 
-  1366 01    		DB 001h 
-  1367 0D    		DB 00Dh 
-  1368 75    		DB 075h ; 'u'
-  1369 48    		DB 048h ; 'H'
-  136A 0C    		DB 00Ch 
-  136B 75    		DB 075h ; 'u'
-  136C 49    		DB 049h ; 'I'
-  136D 01    		DB 001h 
-  136E E4    		DB 0E4h 
-  136F F5    		DB 0F5h 
-  1370 EB    		DB 0EBh 
-  1371 12    		DB 012h 
-  1372 08    		DB 008h 
-  1373 EC    		DB 0ECh 
-  1374 22    		DB 022h ; '"'
-  1375 80    		DB 080h 
-  1376 00    		DB 000h 
-  1377 12    		DB 012h 
-  1378 1A    		DB 01Ah 
-  1379 6C    		DB 06Ch ; 'l'
-  137A 22    		DB 022h ; '"'
-  137B 85    		DB 085h 
-  137C 31    		DB 031h ; '1'
-  137D 3B    		DB 03Bh ; ';'
-  137E E5    		DB 0E5h 
-  137F 3B    		DB 03Bh ; ';'
-  1380 60    		DB 060h ; '`'
-  1381 14    		DB 014h 
-  1382 53    		DB 053h ; 'S'
-  1383 E4    		DB 0E4h 
-  1384 FD    		DB 0FDh 
-  1385 43    		DB 043h ; 'C'
-  1386 E4    		DB 0E4h 
-  1387 0C    		DB 00Ch 
-  1388 53    		DB 053h ; 'S'
-  1389 E7    		DB 0E7h 
-  138A FD    		DB 0FDh 
-  138B 43    		DB 043h ; 'C'
-  138C E7    		DB 0E7h 
-  138D 0C    		DB 00Ch 
-  138E 53    		DB 053h ; 'S'
-  138F 20    		DB 020h ; ' '
-  1390 F0    		DB 0F0h 
-  1391 43    		DB 043h ; 'C'
-  1392 20    		DB 020h ; ' '
-  1393 88    		DB 088h 
-  1394 80    		DB 080h 
-  1395 18    		DB 018h 
-  1396 53    		DB 053h ; 'S'
-  1397 E4    		DB 0E4h 
-  1398 F7    		DB 0F7h 
-  1399 53    		DB 053h ; 'S'
-  139A E7    		DB 0E7h 
-  139B F7    		DB 0F7h 
-  139C E5    		DB 0E5h 
-  139D F2    		DB 0F2h 
-  139E 60    		DB 060h ; '`'
-  139F 08    		DB 008h 
-  13A0 53    		DB 053h ; 'S'
-  13A1 20    		DB 020h ; ' '
-  13A2 F0    		DB 0F0h 
-  13A3 43    		DB 043h ; 'C'
-  13A4 20    		DB 020h ; ' '
-  13A5 84    		DB 084h 
-  13A6 80    		DB 080h 
-  13A7 06    		DB 006h 
-  13A8 53    		DB 053h ; 'S'
-  13A9 20    		DB 020h ; ' '
-  13AA F0    		DB 0F0h 
-  13AB 43    		DB 043h ; 'C'
-  13AC 20    		DB 020h ; ' '
-  13AD 82    		DB 082h 
-  13AE 02    		DB 002h 
-  13AF 1A    		DB 01Ah 
-  13B0 E5    		DB 0E5h 
-  13B1 E5    		DB 0E5h 
-  13B2 4F    		DB 04Fh ; 'O'
-  13B3 54    		DB 054h ; 'T'
-  13B4 03    		DB 003h 
-  13B5 FF    		DB 0FFh 
-  13B6 BF    		DB 0BFh 
-  13B7 03    		DB 003h 
-  13B8 14    		DB 014h 
-  13B9 E4    		DB 0E4h 
-  13BA FF    		DB 0FFh 
-  13BB 74    		DB 074h ; 't'
-  13BC 84    		DB 084h 
-  13BD 2F    		DB 02Fh ; '/'
-  13BE F8    		DB 0F8h 
-  13BF A6    		DB 0A6h 
-  13C0 32    		DB 032h ; '2'
-  13C1 74    		DB 074h ; 't'
-  13C2 86    		DB 086h 
-  13C3 2F    		DB 02Fh ; '/'
-  13C4 F8    		DB 0F8h 
-  13C5 A6    		DB 0A6h 
-  13C6 32    		DB 032h ; '2'
-  13C7 0F    		DB 00Fh 
-  13C8 BF    		DB 0BFh 
-  13C9 02    		DB 002h 
-  13CA F0    		DB 0F0h 
-  13CB 80    		DB 080h 
-  13CC 17    		DB 017h 
-  13CD E5    		DB 0E5h 
-  13CE 4F    		DB 04Fh ; 'O'
-  13CF 30    		DB 030h ; '0'
-  13D0 E0    		DB 0E0h 
-  13D1 0A    		DB 00Ah 
-  13D2 78    		DB 078h ; 'x'
-  13D3 84    		DB 084h 
-  13D4 A6    		DB 0A6h 
-  13D5 32    		DB 032h ; '2'
-  13D6 78    		DB 078h ; 'x'
-  13D7 86    		DB 086h 
-  13D8 A6    		DB 0A6h 
-  13D9 32    		DB 032h ; '2'
-  13DA 80    		DB 080h 
-  13DB 08    		DB 008h 
-  13DC 78    		DB 078h ; 'x'
-  13DD 85    		DB 085h 
-  13DE A6    		DB 0A6h 
-  13DF 32    		DB 032h ; '2'
-  13E0 78    		DB 078h ; 'x'
-  13E1 87    		DB 087h 
-  13E2 A6    		DB 0A6h 
-  13E3 32    		DB 032h ; '2'
-  13E4 02    		DB 002h 
-  13E5 1A    		DB 01Ah 
-  13E6 E5    		DB 0E5h 
+  1345 30032F		JNB 3h, L0579
+  1348 12095C		LCALL L0580
+  134B 4532  		ORL A, 32h
+  134D 4531  		ORL A, 31h
+  134F 7026  		JNZ L0579
+  1351 E52F  		MOV A, 2Fh
+  1353 6401  		XRL A, #1h
+  1355 7020  		JNZ L0579
+  1357 E533  		MOV A, 33h
+  1359 7008  		JNZ L0581
+  135B 754809		MOV 48h, #9h
+  135E 754901		MOV 49h, #1h
+  1361 800C  		SJMP L0582
+
+L0581:
+  1363 E533  		MOV A, 33h
+  1365 B4010D		CJNE A, #1h, L0583
+  1368 75480C		MOV 48h, #0Ch
+  136B 754901		MOV 49h, #1h
+  136E E4    		CLR A
+L0582:
+  136F F5EB  		MOV 0EBh, A
+  1371 1208EC		LCALL L0499
+  1374 22    		RET
+
+L0583:
+  1375 8000  		SJMP L0579
+
+L0579:
+  1377 121A6C		LCALL L0453
+  137A 22    		RET
+
+  137B 85313B		MOV 3Bh, 31h
+  137E E53B  		MOV A, 3Bh
+  1380 6014  		JZ L0657
+  1382 53E4FD		ANL 0E4h, #0FDh
+  1385 43E40C		ORL 0E4h, #0Ch
+  1388 53E7FD		ANL 0E7h, #0FDh
+  138B 43E70C		ORL 0E7h, #0Ch
+  138E 5320F0		ANL 20h, #0F0h
+  1391 432088		ORL 20h, #88h
+  1394 8018  		SJMP L0658
+
+L0657:
+  1396 53E4F7		ANL 0E4h, #0F7h
+  1399 53E7F7		ANL 0E7h, #0F7h
+  139C E5F2  		MOV A, 0F2h
+  139E 6008  		JZ L0659
+  13A0 5320F0		ANL 20h, #0F0h
+  13A3 432084		ORL 20h, #84h
+  13A6 8006  		SJMP L0658
+
+L0659:
+  13A8 5320F0		ANL 20h, #0F0h
+  13AB 432082		ORL 20h, #82h
+L0658:
+  13AE 021AE5		LJMP L0478
+
+  13B1 E54F  		MOV A, 4Fh
+  13B3 5403  		ANL A, #3h
+  13B5 FF    		MOV R7, A
+  13B6 BF0314		CJNE R7, #3h, L0660
+  13B9 E4    		CLR A
+  13BA FF    		MOV R7, A
+L0661:
+  13BB 7484  		MOV A, #84h
+  13BD 2F    		ADD A, R7
+  13BE F8    		MOV R0, A
+  13BF A632  		MOV @R0, 32h
+  13C1 7486  		MOV A, #86h
+  13C3 2F    		ADD A, R7
+  13C4 F8    		MOV R0, A
+  13C5 A632  		MOV @R0, 32h
+  13C7 0F    		INC R7
+  13C8 BF02F0		CJNE R7, #2h, L0661
+  13CB 8017  		SJMP L0662
+
+L0660:
+  13CD E54F  		MOV A, 4Fh
+  13CF 30E00A		JNB ACC.0, L0663
+  13D2 7884  		MOV R0, #84h
+  13D4 A632  		MOV @R0, 32h
+  13D6 7886  		MOV R0, #86h
+  13D8 A632  		MOV @R0, 32h
+  13DA 8008  		SJMP L0662
+
+L0663:
+  13DC 7885  		MOV R0, #85h
+  13DE A632  		MOV @R0, 32h
+  13E0 7887  		MOV R0, #87h
+  13E2 A632  		MOV @R0, 32h
+L0662:
+  13E4 021AE5		LJMP L0478
+
 L0337:
   13E7 30032E		JNB 3h, L0338
   13EA E4    		CLR A
@@ -4366,100 +3803,68 @@ L0325:
   1476 F524  		MOV 24h, A
   1478 22    		RET
 
-  1479 12    		DB 012h 
-  147A 19    		DB 019h 
-  147B 17    		DB 017h 
-  147C 40    		DB 040h ; '@'
-  147D 27    		DB 027h ; '''
-  147E 12    		DB 012h 
-  147F 09    		DB 009h 
-  1480 5C    		DB 05Ch ; '\'
-  1481 45    		DB 045h ; 'E'
-  1482 32    		DB 032h ; '2'
-  1483 70    		DB 070h ; 'p'
-  1484 1E    		DB 01Eh 
-  1485 E5    		DB 0E5h 
-  1486 33    		DB 033h ; '3'
-  1487 70    		DB 070h ; 'p'
-  1488 08    		DB 008h 
-  1489 75    		DB 075h ; 'u'
-  148A 48    		DB 048h ; 'H'
-  148B 0E    		DB 00Eh 
-  148C 75    		DB 075h ; 'u'
-  148D 49    		DB 049h ; 'I'
-  148E 01    		DB 001h 
-  148F 80    		DB 080h 
-  1490 0C    		DB 00Ch 
-  1491 E5    		DB 0E5h 
-  1492 33    		DB 033h ; '3'
-  1493 B4    		DB 0B4h 
-  1494 01    		DB 001h 
-  1495 0B    		DB 00Bh 
-  1496 75    		DB 075h ; 'u'
-  1497 48    		DB 048h ; 'H'
-  1498 10    		DB 010h 
-  1499 75    		DB 075h ; 'u'
-  149A 49    		DB 049h ; 'I'
-  149B 01    		DB 001h 
-  149C E4    		DB 0E4h 
-  149D 12    		DB 012h 
-  149E 08    		DB 008h 
-  149F FA    		DB 0FAh 
-  14A0 22    		DB 022h ; '"'
-  14A1 80    		DB 080h 
-  14A2 02    		DB 002h 
-  14A3 80    		DB 080h 
-  14A4 00    		DB 000h 
-  14A5 12    		DB 012h 
-  14A6 1A    		DB 01Ah 
-  14A7 6C    		DB 06Ch ; 'l'
-  14A8 22    		DB 022h ; '"'
-  14A9 12    		DB 012h 
-  14AA 19    		DB 019h 
-  14AB 02    		DB 002h 
-  14AC 40    		DB 040h ; '@'
-  14AD 25    		DB 025h ; '%'
-  14AE E5    		DB 0E5h 
-  14AF 36    		DB 036h ; '6'
-  14B0 45    		DB 045h ; 'E'
-  14B1 34    		DB 034h ; '4'
-  14B2 70    		DB 070h ; 'p'
-  14B3 1D    		DB 01Dh 
-  14B4 E5    		DB 0E5h 
-  14B5 35    		DB 035h ; '5'
-  14B6 64    		DB 064h ; 'd'
-  14B7 01    		DB 001h 
-  14B8 70    		DB 070h ; 'p'
-  14B9 17    		DB 017h 
-  14BA E5    		DB 0E5h 
-  14BB 33    		DB 033h ; '3'
-  14BC 70    		DB 070h ; 'p'
-  14BD 05    		DB 005h 
-  14BE 85    		DB 085h 
-  14BF 3E    		DB 03Eh ; '>'
-  14C0 EA    		DB 0EAh 
-  14C1 80    		DB 080h 
-  14C2 08    		DB 008h 
-  14C3 E5    		DB 0E5h 
-  14C4 33    		DB 033h ; '3'
-  14C5 B4    		DB 0B4h 
-  14C6 01    		DB 001h 
-  14C7 07    		DB 007h 
-  14C8 85    		DB 085h 
-  14C9 44    		DB 044h ; 'D'
-  14CA EA    		DB 0EAh 
-  14CB 12    		DB 012h 
-  14CC 08    		DB 008h 
-  14CD E6    		DB 0E6h 
-  14CE 22    		DB 022h ; '"'
-  14CF 80    		DB 080h 
-  14D0 02    		DB 002h 
-  14D1 80    		DB 080h 
-  14D2 00    		DB 000h 
-  14D3 12    		DB 012h 
-  14D4 1A    		DB 01Ah 
-  14D5 6C    		DB 06Ch ; 'l'
-  14D6 22    		DB 022h ; '"'
+  1479 121917		LCALL L0605
+  147C 4027  		JC L0633
+  147E 12095C		LCALL L0580
+  1481 4532  		ORL A, 32h
+  1483 701E  		JNZ L0634
+  1485 E533  		MOV A, 33h
+  1487 7008  		JNZ L0635
+  1489 75480E		MOV 48h, #0Eh
+  148C 754901		MOV 49h, #1h
+  148F 800C  		SJMP L0636
+
+L0635:
+  1491 E533  		MOV A, 33h
+  1493 B4010B		CJNE A, #1h, L0637
+  1496 754810		MOV 48h, #10h
+  1499 754901		MOV 49h, #1h
+  149C E4    		CLR A
+L0636:
+  149D 1208FA		LCALL L0627
+  14A0 22    		RET
+
+L0637:
+  14A1 8002  		SJMP L0633
+
+L0634:
+  14A3 8000  		SJMP L0633
+
+L0633:
+  14A5 121A6C		LCALL L0453
+  14A8 22    		RET
+
+  14A9 121902		LCALL L0584
+  14AC 4025  		JC L0600
+  14AE E536  		MOV A, 36h
+  14B0 4534  		ORL A, 34h
+  14B2 701D  		JNZ L0601
+  14B4 E535  		MOV A, 35h
+  14B6 6401  		XRL A, #1h
+  14B8 7017  		JNZ L0601
+  14BA E533  		MOV A, 33h
+  14BC 7005  		JNZ L0602
+  14BE 853EEA		MOV 0EAh, 3Eh
+  14C1 8008  		SJMP L0603
+
+L0602:
+  14C3 E533  		MOV A, 33h
+  14C5 B40107		CJNE A, #1h, L0604
+  14C8 8544EA		MOV 0EAh, 44h
+L0603:
+  14CB 1208E6		LCALL L0572
+  14CE 22    		RET
+
+L0604:
+  14CF 8002  		SJMP L0600
+
+L0601:
+  14D1 8000  		SJMP L0600
+
+L0600:
+  14D3 121A6C		LCALL L0453
+  14D6 22    		RET
+
 L0287:
   14D7 F6    		MOV @R0, A
   14D8 C2AF  		CLR EA
@@ -4492,51 +3897,36 @@ L0286:
   1503 F6    		MOV @R0, A
   1504 22    		RET
 
-  1505 30    		DB 030h ; '0'
-  1506 03    		DB 003h 
-  1507 26    		DB 026h ; '&'
-  1508 E5    		DB 0E5h 
-  1509 36    		DB 036h ; '6'
-  150A 45    		DB 045h ; 'E'
-  150B 34    		DB 034h ; '4'
-  150C 70    		DB 070h ; 'p'
-  150D 20    		DB 020h ; ' '
-  150E E5    		DB 0E5h 
-  150F 35    		DB 035h ; '5'
-  1510 64    		DB 064h ; 'd'
-  1511 01    		DB 001h 
-  1512 70    		DB 070h ; 'p'
-  1513 1A    		DB 01Ah 
-  1514 E5    		DB 0E5h 
-  1515 2F    		DB 02Fh ; '/'
-  1516 64    		DB 064h ; 'd'
-  1517 81    		DB 081h 
-  1518 70    		DB 070h ; 'p'
-  1519 14    		DB 014h 
-  151A E5    		DB 0E5h 
-  151B 33    		DB 033h ; '3'
-  151C 70    		DB 070h ; 'p'
-  151D 02    		DB 002h 
-  151E 80    		DB 080h 
-  151F 06    		DB 006h 
-  1520 E5    		DB 0E5h 
-  1521 33    		DB 033h ; '3'
-  1522 B4    		DB 0B4h 
-  1523 01    		DB 001h 
-  1524 07    		DB 007h 
-  1525 E4    		DB 0E4h 
-  1526 F5    		DB 0F5h 
-  1527 EA    		DB 0EAh 
-  1528 12    		DB 012h 
-  1529 08    		DB 008h 
-  152A E6    		DB 0E6h 
-  152B 22    		DB 022h ; '"'
-  152C 80    		DB 080h 
-  152D 00    		DB 000h 
-  152E 12    		DB 012h 
-  152F 1A    		DB 01Ah 
-  1530 6C    		DB 06Ch ; 'l'
-  1531 22    		DB 022h ; '"'
+  1505 300326		JNB 3h, L0575
+  1508 E536  		MOV A, 36h
+  150A 4534  		ORL A, 34h
+  150C 7020  		JNZ L0575
+  150E E535  		MOV A, 35h
+  1510 6401  		XRL A, #1h
+  1512 701A  		JNZ L0575
+  1514 E52F  		MOV A, 2Fh
+  1516 6481  		XRL A, #81h
+  1518 7014  		JNZ L0575
+  151A E533  		MOV A, 33h
+  151C 7002  		JNZ L0576
+  151E 8006  		SJMP L0577
+
+L0576:
+  1520 E533  		MOV A, 33h
+  1522 B40107		CJNE A, #1h, L0578
+  1525 E4    		CLR A
+L0577:
+  1526 F5EA  		MOV 0EAh, A
+  1528 1208E6		LCALL L0572
+  152B 22    		RET
+
+L0578:
+  152C 8000  		SJMP L0575
+
+L0575:
+  152E 121A6C		LCALL L0453
+  1531 22    		RET
+
 L0330:
   1532 121AD7		LCALL L0131
   1535 43C067		ORL 0C0h, #67h
@@ -4670,75 +4060,43 @@ L0317:
   1617 F545  		MOV 45h, A
   1619 22    		RET
 
-  161A E5    		DB 0E5h 
-  161B 2F    		DB 02Fh ; '/'
-  161C B4    		DB 0B4h 
-  161D 05    		DB 005h 
-  161E 1B    		DB 01Bh 
-  161F E5    		DB 0E5h 
-  1620 30    		DB 030h ; '0'
-  1621 B4    		DB 0B4h 
-  1622 75    		DB 075h ; 'u'
-  1623 16    		DB 016h 
-  1624 E5    		DB 0E5h 
-  1625 34    		DB 034h ; '4'
-  1626 45    		DB 045h ; 'E'
-  1627 33    		DB 033h ; '3'
-  1628 45    		DB 045h ; 'E'
-  1629 32    		DB 032h ; '2'
-  162A 45    		DB 045h ; 'E'
-  162B 31    		DB 031h ; '1'
-  162C 70    		DB 070h ; 'p'
-  162D 0C    		DB 00Ch 
-  162E C2    		DB 0C2h 
-  162F AF    		DB 0AFh 
-  1630 74    		DB 074h ; 't'
-  1631 5A    		DB 05Ah ; 'Z'
-  1632 75    		DB 075h ; 'u'
-  1633 F0    		DB 0F0h 
-  1634 A5    		DB 0A5h 
-  1635 12    		DB 012h 
-  1636 00    		DB 000h 
-  1637 1E    		DB 01Eh 
-  1638 D2    		DB 0D2h 
-  1639 AF    		DB 0AFh 
-  163A 02    		DB 002h 
-  163B 1A    		DB 01Ah 
-  163C E5    		DB 0E5h 
-  163D E5    		DB 0E5h 
-  163E 36    		DB 036h ; '6'
-  163F 45    		DB 045h ; 'E'
-  1640 35    		DB 035h ; '5'
-  1641 45    		DB 045h ; 'E'
-  1642 32    		DB 032h ; '2'
-  1643 45    		DB 045h ; 'E'
-  1644 2F    		DB 02Fh ; '/'
-  1645 70    		DB 070h ; 'p'
-  1646 14    		DB 014h 
-  1647 E5    		DB 0E5h 
-  1648 F2    		DB 0F2h 
-  1649 60    		DB 060h ; '`'
-  164A 10    		DB 010h 
-  164B E5    		DB 0E5h 
-  164C 31    		DB 031h ; '1'
-  164D 60    		DB 060h ; '`'
-  164E 05    		DB 005h 
-  164F E5    		DB 0E5h 
-  1650 31    		DB 031h ; '1'
-  1651 B4    		DB 0B4h 
-  1652 01    		DB 001h 
-  1653 07    		DB 007h 
-  1654 75    		DB 075h ; 'u'
-  1655 48    		DB 048h ; 'H'
-  1656 02    		DB 002h 
-  1657 12    		DB 012h 
-  1658 08    		DB 008h 
-  1659 F6    		DB 0F6h 
-  165A 22    		DB 022h ; '"'
-  165B 12    		DB 012h 
-  165C 1A    		DB 01Ah 
-  165D 6C    		DB 06Ch ; 'l'
-  165E 22    		DB 022h ; '"'
+  161A E52F  		MOV A, 2Fh
+  161C B4051B		CJNE A, #5h, L0665
+  161F E530  		MOV A, 30h
+  1621 B47516		CJNE A, #75h, L0665
+  1624 E534  		MOV A, 34h
+  1626 4533  		ORL A, 33h
+  1628 4532  		ORL A, 32h
+  162A 4531  		ORL A, 31h
+  162C 700C  		JNZ L0665
+  162E C2AF  		CLR EA
+  1630 745A  		MOV A, #5Ah
+  1632 75F0A5		MOV B, #0A5h
+  1635 12001E		LCALL L0666
+  1638 D2AF  		SETB EA
+L0665:
+  163A 021AE5		LJMP L0478
+
+  163D E536  		MOV A, 36h
+  163F 4535  		ORL A, 35h
+  1641 4532  		ORL A, 32h
+  1643 452F  		ORL A, 2Fh
+  1645 7014  		JNZ L0573
+  1647 E5F2  		MOV A, 0F2h
+  1649 6010  		JZ L0573
+  164B E531  		MOV A, 31h
+  164D 6005  		JZ L0574
+  164F E531  		MOV A, 31h
+  1651 B40107		CJNE A, #1h, L0573
+L0574:
+  1654 754802		MOV 48h, #2h
+  1657 1208F6		LCALL L0516
+  165A 22    		RET
+
+L0573:
+  165B 121A6C		LCALL L0453
+  165E 22    		RET
+
   165F 01    		DB 001h 
   1660 12    		DB 012h 
   1661 00    		DB 000h 
@@ -4796,39 +4154,23 @@ L0309:
   169E 754401		MOV 44h, #1h
   16A1 22    		RET
 
-  16A2 85    		DB 085h 
-  16A3 46    		DB 046h ; 'F'
-  16A4 F2    		DB 0F2h 
-  16A5 E4    		DB 0E4h 
-  16A6 F5    		DB 0F5h 
-  16A7 3B    		DB 03Bh ; ';'
-  16A8 53    		DB 053h ; 'S'
-  16A9 E4    		DB 0E4h 
-  16AA F7    		DB 0F7h 
-  16AB 53    		DB 053h ; 'S'
-  16AC E7    		DB 0E7h 
-  16AD F7    		DB 0F7h 
-  16AE E5    		DB 0E5h 
-  16AF F2    		DB 0F2h 
-  16B0 60    		DB 060h ; '`'
-  16B1 08    		DB 008h 
-  16B2 53    		DB 053h ; 'S'
-  16B3 20    		DB 020h ; ' '
-  16B4 F0    		DB 0F0h 
-  16B5 43    		DB 043h ; 'C'
-  16B6 20    		DB 020h ; ' '
-  16B7 84    		DB 084h 
-  16B8 80    		DB 080h 
-  16B9 06    		DB 006h 
-  16BA 53    		DB 053h ; 'S'
-  16BB 20    		DB 020h ; ' '
-  16BC F0    		DB 0F0h 
-  16BD 43    		DB 043h ; 'C'
-  16BE 20    		DB 020h ; ' '
-  16BF 82    		DB 082h 
-  16C0 02    		DB 002h 
-  16C1 1A    		DB 01Ah 
-  16C2 E5    		DB 0E5h 
+  16A2 8546F2		MOV 0F2h, 46h
+  16A5 E4    		CLR A
+  16A6 F53B  		MOV 3Bh, A
+  16A8 53E4F7		ANL 0E4h, #0F7h
+  16AB 53E7F7		ANL 0E7h, #0F7h
+  16AE E5F2  		MOV A, 0F2h
+  16B0 6008  		JZ L0655
+  16B2 5320F0		ANL 20h, #0F0h
+  16B5 432084		ORL 20h, #84h
+  16B8 8006  		SJMP L0656
+
+L0655:
+  16BA 5320F0		ANL 20h, #0F0h
+  16BD 432082		ORL 20h, #82h
+L0656:
+  16C0 021AE5		LJMP L0478
+
 L0187:
   16C3 E537  		MOV A, 37h
   16C5 30E309		JNB ACC.3, L0230
@@ -4902,37 +4244,24 @@ L0488:
   1720 00    		NOP
   1721 22    		RET
 
-  1722 E5    		DB 0E5h 
-  1723 35    		DB 035h ; '5'
-  1724 45    		DB 045h ; 'E'
-  1725 36    		DB 036h ; '6'
-  1726 45    		DB 045h ; 'E'
-  1727 32    		DB 032h ; '2'
-  1728 45    		DB 045h ; 'E'
-  1729 2F    		DB 02Fh ; '/'
-  172A 70    		DB 070h ; 'p'
-  172B 11    		DB 011h 
-  172C E5    		DB 0E5h 
-  172D 31    		DB 031h ; '1'
-  172E C3    		DB 0C3h 
-  172F 94    		DB 094h 
-  1730 80    		DB 080h 
-  1731 50    		DB 050h ; 'P'
-  1732 0A    		DB 00Ah 
-  1733 85    		DB 085h 
-  1734 31    		DB 031h ; '1'
-  1735 46    		DB 046h ; 'F'
-  1736 75    		DB 075h ; 'u'
-  1737 48    		DB 048h ; 'H'
-  1738 01    		DB 001h 
-  1739 12    		DB 012h 
-  173A 08    		DB 008h 
-  173B F6    		DB 0F6h 
-  173C 22    		DB 022h ; '"'
-  173D 12    		DB 012h 
-  173E 1A    		DB 01Ah 
-  173F 6C    		DB 06Ch ; 'l'
-  1740 22    		DB 022h ; '"'
+  1722 E535  		MOV A, 35h
+  1724 4536  		ORL A, 36h
+  1726 4532  		ORL A, 32h
+  1728 452F  		ORL A, 2Fh
+  172A 7011  		JNZ L0531
+  172C E531  		MOV A, 31h
+  172E C3    		CLR C
+  172F 9480  		SUBB A, #80h
+  1731 500A  		JNC L0531
+  1733 853146		MOV 46h, 31h
+  1736 754801		MOV 48h, #1h
+  1739 1208F6		LCALL L0516
+  173C 22    		RET
+
+L0531:
+  173D 121A6C		LCALL L0453
+  1740 22    		RET
+
 L0442:
   1741 E4    		CLR A
   1742 F594  		MOV 94h, A
@@ -5152,31 +4481,20 @@ L0219:
 L0218:
   18A6 22    		RET
 
-  18A7 E5    		DB 0E5h 
-  18A8 35    		DB 035h ; '5'
-  18A9 B4    		DB 0B4h 
-  18AA 01    		DB 001h 
-  18AB 10    		DB 010h 
-  18AC E5    		DB 0E5h 
-  18AD 36    		DB 036h ; '6'
-  18AE 70    		DB 070h ; 'p'
-  18AF 0C    		DB 00Ch 
-  18B0 E5    		DB 0E5h 
-  18B1 2F    		DB 02Fh ; '/'
-  18B2 B4    		DB 0B4h 
-  18B3 80    		DB 080h 
-  18B4 07    		DB 007h 
-  18B5 85    		DB 085h 
-  18B6 3B    		DB 03Bh ; ';'
-  18B7 EA    		DB 0EAh 
-  18B8 12    		DB 012h 
-  18B9 08    		DB 008h 
-  18BA E6    		DB 0E6h 
-  18BB 22    		DB 022h ; '"'
-  18BC 12    		DB 012h 
-  18BD 1A    		DB 01Ah 
-  18BE 6C    		DB 06Ch ; 'l'
-  18BF 22    		DB 022h ; '"'
+  18A7 E535  		MOV A, 35h
+  18A9 B40110		CJNE A, #1h, L0571
+  18AC E536  		MOV A, 36h
+  18AE 700C  		JNZ L0571
+  18B0 E52F  		MOV A, 2Fh
+  18B2 B48007		CJNE A, #80h, L0571
+  18B5 853BEA		MOV 0EAh, 3Bh
+  18B8 1208E6		LCALL L0572
+  18BB 22    		RET
+
+L0571:
+  18BC 121A6C		LCALL L0453
+  18BF 22    		RET
+
 L0313:
   18C0 E4    		CLR A
   18C1 F5A8  		MOV IE, A
@@ -5231,48 +4549,44 @@ L0166:
   1900 00    		NOP
   1901 22    		RET
 
-  1902 20    		DB 020h ; ' '
-  1903 03    		DB 003h 
-  1904 02    		DB 002h 
-  1905 D3    		DB 0D3h 
-  1906 22    		DB 022h ; '"'
-  1907 E5    		DB 0E5h 
-  1908 2F    		DB 02Fh ; '/'
-  1909 64    		DB 064h ; 'd'
-  190A A1    		DB 0A1h 
-  190B 60    		DB 060h ; '`'
-  190C 08    		DB 008h 
-  190D E5    		DB 0E5h 
-  190E 2F    		DB 02Fh ; '/'
-  190F 64    		DB 064h ; 'd'
-  1910 A2    		DB 0A2h 
-  1911 60    		DB 060h ; '`'
-  1912 02    		DB 002h 
-  1913 D3    		DB 0D3h 
-  1914 22    		DB 022h ; '"'
-  1915 C3    		DB 0C3h 
-  1916 22    		DB 022h ; '"'
-  1917 20    		DB 020h ; ' '
-  1918 03    		DB 003h 
-  1919 02    		DB 002h 
-  191A D3    		DB 0D3h 
-  191B 22    		DB 022h ; '"'
-  191C E5    		DB 0E5h 
-  191D 2F    		DB 02Fh ; '/'
-  191E 64    		DB 064h ; 'd'
-  191F 21    		DB 021h ; '!'
-  1920 60    		DB 060h ; '`'
-  1921 08    		DB 008h 
-  1922 E5    		DB 0E5h 
-  1923 2F    		DB 02Fh ; '/'
-  1924 64    		DB 064h ; 'd'
-  1925 22    		DB 022h ; '"'
-  1926 60    		DB 060h ; '`'
-  1927 02    		DB 002h 
-  1928 D3    		DB 0D3h 
-  1929 22    		DB 022h ; '"'
-  192A C3    		DB 0C3h 
-  192B 22    		DB 022h ; '"'
+L0584:
+  1902 200302		JB 3h, L0591
+  1905 D3    		SETB C
+  1906 22    		RET
+
+L0591:
+  1907 E52F  		MOV A, 2Fh
+  1909 64A1  		XRL A, #0A1h
+  190B 6008  		JZ L0592
+  190D E52F  		MOV A, 2Fh
+  190F 64A2  		XRL A, #0A2h
+  1911 6002  		JZ L0592
+  1913 D3    		SETB C
+  1914 22    		RET
+
+L0592:
+  1915 C3    		CLR C
+  1916 22    		RET
+
+L0605:
+  1917 200302		JB 3h, L0620
+  191A D3    		SETB C
+  191B 22    		RET
+
+L0620:
+  191C E52F  		MOV A, 2Fh
+  191E 6421  		XRL A, #21h
+  1920 6008  		JZ L0621
+  1922 E52F  		MOV A, 2Fh
+  1924 6422  		XRL A, #22h
+  1926 6002  		JZ L0621
+  1928 D3    		SETB C
+  1929 22    		RET
+
+L0621:
+  192A C3    		CLR C
+  192B 22    		RET
+
 L0333:
   192C 121AD7		LCALL L0131
   192F 85C054		MOV 54h, 0C0h
@@ -5305,25 +4619,15 @@ L0270:
   1964 75A0FF		MOV P2, #0FFh
   1967 22    		RET
 
-  1968 75    		DB 075h ; 'u'
-  1969 A4    		DB 0A4h 
-  196A 85    		DB 085h 
-  196B 75    		DB 075h ; 'u'
-  196C A2    		DB 0A2h 
-  196D 48    		DB 048h ; 'H'
-  196E 75    		DB 075h ; 'u'
-  196F A3    		DB 0A3h 
-  1970 32    		DB 032h ; '2'
-  1971 E4    		DB 0E4h 
-  1972 F5    		DB 0F5h 
-  1973 A5    		DB 0A5h 
-  1974 F5    		DB 0F5h 
-  1975 A6    		DB 0A6h 
-  1976 D2    		DB 0D2h 
-  1977 1D    		DB 01Dh 
-  1978 02    		DB 002h 
-  1979 1A    		DB 01Ah 
-  197A E5    		DB 0E5h 
+  1968 75A485		MOV 0A4h, #85h
+  196B 75A248		MOV 0A2h, #48h
+  196E 75A332		MOV 0A3h, #32h
+  1971 E4    		CLR A
+  1972 F5A5  		MOV 0A5h, A
+  1974 F5A6  		MOV 0A6h, A
+  1976 D21D  		SETB 1Dh
+  1978 021AE5		LJMP L0478
+
 L0135:
   197B 752E14		MOV 2Eh, #14h
   197E 75D3CE		MOV 0D3h, #0CEh
@@ -5407,22 +4711,15 @@ L0327:
   19F5 7FCA  		MOV R7, #0CAh
   19F7 02005E		LJMP L0308
 
-  19FA E4    		DB 0E4h 
-  19FB F5    		DB 0F5h 
-  19FC A4    		DB 0A4h 
-  19FD F5    		DB 0F5h 
-  19FE A6    		DB 0A6h 
-  19FF F5    		DB 0F5h 
-  1A00 A5    		DB 0A5h 
-  1A01 F5    		DB 0F5h 
-  1A02 A3    		DB 0A3h 
-  1A03 F5    		DB 0F5h 
-  1A04 A2    		DB 0A2h 
-  1A05 C2    		DB 0C2h 
-  1A06 1D    		DB 01Dh 
-  1A07 02    		DB 002h 
-  1A08 1A    		DB 01Ah 
-  1A09 E5    		DB 0E5h 
+  19FA E4    		CLR A
+  19FB F5A4  		MOV 0A4h, A
+  19FD F5A6  		MOV 0A6h, A
+  19FF F5A5  		MOV 0A5h, A
+  1A01 F5A3  		MOV 0A3h, A
+  1A03 F5A2  		MOV 0A2h, A
+  1A05 C21D  		CLR 1Dh
+  1A07 021AE5		LJMP L0478
+
 L0302:
   1A0A 1218C0		LCALL L0313
   1A0D 121AD7		LCALL L0131
@@ -5431,51 +4728,33 @@ L0302:
   1A14 F595  		MOV 95h, A
   1A16 021586		LJMP L0315
 
-  1A19 E5    		DB 0E5h 
-  1A1A DB    		DB 0DBh 
-  1A1B 30    		DB 030h ; '0'
-  1A1C E4    		DB 0E4h 
-  1A1D 06    		DB 006h 
-  1A1E 12    		DB 012h 
-  1A1F 08    		DB 008h 
-  1A20 C8    		DB 0C8h 
-  1A21 02    		DB 002h 
-  1A22 1B    		DB 01Bh 
-  1A23 2D    		DB 02Dh ; '-'
-  1A24 12    		DB 012h 
-  1A25 1A    		DB 01Ah 
-  1A26 E5    		DB 0E5h 
-  1A27 22    		DB 022h ; '"'
-  1A28 E5    		DB 0E5h 
-  1A29 DB    		DB 0DBh 
-  1A2A 30    		DB 030h ; '0'
-  1A2B E4    		DB 0E4h 
-  1A2C 06    		DB 006h 
-  1A2D 12    		DB 012h 
-  1A2E 08    		DB 008h 
-  1A2F C8    		DB 0C8h 
-  1A30 02    		DB 002h 
-  1A31 1B    		DB 01Bh 
-  1A32 2D    		DB 02Dh ; '-'
-  1A33 12    		DB 012h 
-  1A34 1A    		DB 01Ah 
-  1A35 E5    		DB 0E5h 
-  1A36 22    		DB 022h ; '"'
-  1A37 E5    		DB 0E5h 
-  1A38 49    		DB 049h ; 'I'
-  1A39 B4    		DB 0B4h 
-  1A3A 04    		DB 004h 
-  1A3B 09    		DB 009h 
-  1A3C E5    		DB 0E5h 
-  1A3D 2F    		DB 02Fh ; '/'
-  1A3E 54    		DB 054h ; 'T'
-  1A3F 07    		DB 007h 
-  1A40 F5    		DB 0F5h 
-  1A41 2B    		DB 02Bh ; '+'
-  1A42 12    		DB 012h 
-  1A43 1A    		DB 01Ah 
-  1A44 E5    		DB 0E5h 
-  1A45 22    		DB 022h ; '"'
+  1A19 E5DB  		MOV A, 0DBh
+  1A1B 30E406		JNB ACC.4, L0652
+  1A1E 1208C8		LCALL L0653
+  1A21 021B2D		LJMP L0459
+
+L0652:
+  1A24 121AE5		LCALL L0478
+  1A27 22    		RET
+
+  1A28 E5DB  		MOV A, 0DBh
+  1A2A 30E406		JNB ACC.4, L0654
+  1A2D 1208C8		LCALL L0653
+  1A30 021B2D		LJMP L0459
+
+L0654:
+  1A33 121AE5		LCALL L0478
+  1A36 22    		RET
+
+  1A37 E549  		MOV A, 49h
+  1A39 B40409		CJNE A, #4h, L0664
+  1A3C E52F  		MOV A, 2Fh
+  1A3E 5407  		ANL A, #7h
+  1A40 F52B  		MOV 2Bh, A
+  1A42 121AE5		LCALL L0478
+L0664:
+  1A45 22    		RET
+
 L0467:
   1A46 E549  		MOV A, 49h
   1A48 C3    		CLR C
@@ -5514,28 +4793,18 @@ L0453:
   1A75 F5B9  		MOV 0B9h, A
   1A77 22    		RET
 
-  1A78 53    		DB 053h ; 'S'
-  1A79 DB    		DB 0DBh 
-  1A7A EF    		DB 0EFh 
-  1A7B D2    		DB 0D2h 
-  1A7C 13    		DB 013h 
-  1A7D E4    		DB 0E4h 
-  1A7E F5    		DB 0F5h 
-  1A7F 47    		DB 047h ; 'G'
-  1A80 02    		DB 002h 
-  1A81 1A    		DB 01Ah 
-  1A82 E5    		DB 0E5h 
-  1A83 53    		DB 053h ; 'S'
-  1A84 DB    		DB 0DBh 
-  1A85 EF    		DB 0EFh 
-  1A86 D2    		DB 0D2h 
-  1A87 13    		DB 013h 
-  1A88 E4    		DB 0E4h 
-  1A89 F5    		DB 0F5h 
-  1A8A 47    		DB 047h ; 'G'
-  1A8B 02    		DB 002h 
-  1A8C 1A    		DB 01Ah 
-  1A8D E5    		DB 0E5h 
+  1A78 53DBEF		ANL 0DBh, #0EFh
+  1A7B D213  		SETB 13h
+  1A7D E4    		CLR A
+  1A7E F547  		MOV 47h, A
+  1A80 021AE5		LJMP L0478
+
+  1A83 53DBEF		ANL 0DBh, #0EFh
+  1A86 D213  		SETB 13h
+  1A88 E4    		CLR A
+  1A89 F547  		MOV 47h, A
+  1A8B 021AE5		LJMP L0478
+
 L0157:
   1A8E E53C  		MOV A, 3Ch
   1A90 6006  		JZ L0162
@@ -5559,42 +4828,23 @@ L0314:
   1AA6 1215F7		LCALL L0317
   1AA9 0218D6		LJMP L0318
 
-  1AAC 43    		DB 043h ; 'C'
-  1AAD EC    		DB 0ECh 
-  1AAE 02    		DB 002h 
-  1AAF 53    		DB 053h ; 'S'
-  1AB0 EF    		DB 0EFh 
-  1AB1 FB    		DB 0FBh 
-  1AB2 D2    		DB 0D2h 
-  1AB3 AF    		DB 0AFh 
-  1AB4 22    		DB 022h ; '"'
-  1AB5 53    		DB 053h ; 'S'
-  1AB6 E4    		DB 0E4h 
-  1AB7 FD    		DB 0FDh 
-  1AB8 43    		DB 043h ; 'C'
-  1AB9 E4    		DB 0E4h 
-  1ABA 0C    		DB 00Ch 
-  1ABB 02    		DB 002h 
-  1ABC 1A    		DB 01Ah 
-  1ABD E5    		DB 0E5h 
-  1ABE 53    		DB 053h ; 'S'
-  1ABF E7    		DB 0E7h 
-  1AC0 FD    		DB 0FDh 
-  1AC1 43    		DB 043h ; 'C'
-  1AC2 E7    		DB 0E7h 
-  1AC3 0C    		DB 00Ch 
-  1AC4 02    		DB 002h 
-  1AC5 1A    		DB 01Ah 
-  1AC6 E5    		DB 0E5h 
-  1AC7 85    		DB 085h 
-  1AC8 32    		DB 032h ; '2'
-  1AC9 3C    		DB 03Ch ; '<'
-  1ACA 85    		DB 085h 
-  1ACB 32    		DB 032h ; '2'
-  1ACC 3D    		DB 03Dh ; '='
-  1ACD 02    		DB 002h 
-  1ACE 1A    		DB 01Ah 
-  1ACF E5    		DB 0E5h 
+  1AAC 43EC02		ORL 0ECh, #2h
+  1AAF 53EFFB		ANL 0EFh, #0FBh
+  1AB2 D2AF  		SETB EA
+  1AB4 22    		RET
+
+  1AB5 53E4FD		ANL 0E4h, #0FDh
+  1AB8 43E40C		ORL 0E4h, #0Ch
+  1ABB 021AE5		LJMP L0478
+
+  1ABE 53E7FD		ANL 0E7h, #0FDh
+  1AC1 43E70C		ORL 0E7h, #0Ch
+  1AC4 021AE5		LJMP L0478
+
+  1AC7 85323C		MOV 3Ch, 32h
+  1ACA 85323D		MOV 3Dh, 32h
+  1ACD 021AE5		LJMP L0478
+
 L0304:
   1AD0 75D4A0		MOV 0D4h, #0A0h
   1AD3 75A888		MOV IE, #88h
@@ -5621,66 +4871,37 @@ L0478:
   1AE8 F5B9  		MOV 0B9h, A
   1AEA 22    		RET
 
-  1AEB 53    		DB 053h ; 'S'
-  1AEC EF    		DB 0EFh 
-  1AED FB    		DB 0FBh 
-  1AEE D2    		DB 0D2h 
-  1AEF AF    		DB 0AFh 
-  1AF0 22    		DB 022h ; '"'
-  1AF1 12    		DB 012h 
-  1AF2 08    		DB 008h 
-  1AF3 CD    		DB 0CDh 
-  1AF4 02    		DB 002h 
-  1AF5 1B    		DB 01Bh 
-  1AF6 2D    		DB 02Dh ; '-'
-  1AF7 12    		DB 012h 
-  1AF8 08    		DB 008h 
-  1AF9 CD    		DB 0CDh 
-  1AFA 02    		DB 002h 
-  1AFB 1B    		DB 01Bh 
-  1AFC 2D    		DB 02Dh ; '-'
-  1AFD 12    		DB 012h 
-  1AFE 08    		DB 008h 
-  1AFF CD    		DB 0CDh 
-  1B00 02    		DB 002h 
-  1B01 1B    		DB 01Bh 
-  1B02 2D    		DB 02Dh ; '-'
-  1B03 53    		DB 053h ; 'S'
-  1B04 EF    		DB 0EFh 
-  1B05 FD    		DB 0FDh 
-  1B06 02    		DB 002h 
-  1B07 1A    		DB 01Ah 
-  1B08 E5    		DB 0E5h 
-  1B09 53    		DB 053h ; 'S'
-  1B0A EC    		DB 0ECh 
-  1B0B FD    		DB 0FDh 
-  1B0C 02    		DB 002h 
-  1B0D 1A    		DB 01Ah 
-  1B0E E5    		DB 0E5h 
-  1B0F 43    		DB 043h ; 'C'
-  1B10 E4    		DB 0E4h 
-  1B11 0E    		DB 00Eh 
-  1B12 02    		DB 002h 
-  1B13 1A    		DB 01Ah 
-  1B14 E5    		DB 0E5h 
-  1B15 43    		DB 043h ; 'C'
-  1B16 E7    		DB 0E7h 
-  1B17 0E    		DB 00Eh 
-  1B18 02    		DB 002h 
-  1B19 1A    		DB 01Ah 
-  1B1A E5    		DB 0E5h 
-  1B1B 85    		DB 085h 
-  1B1C 31    		DB 031h ; '1'
-  1B1D 3E    		DB 03Eh ; '>'
-  1B1E 02    		DB 002h 
-  1B1F 1A    		DB 01Ah 
-  1B20 E5    		DB 0E5h 
-  1B21 85    		DB 085h 
-  1B22 31    		DB 031h ; '1'
-  1B23 44    		DB 044h ; 'D'
-  1B24 02    		DB 002h 
-  1B25 1A    		DB 01Ah 
-  1B26 E5    		DB 0E5h 
+  1AEB 53EFFB		ANL 0EFh, #0FBh
+  1AEE D2AF  		SETB EA
+  1AF0 22    		RET
+
+  1AF1 1208CD		LCALL L0638
+  1AF4 021B2D		LJMP L0459
+
+  1AF7 1208CD		LCALL L0638
+  1AFA 021B2D		LJMP L0459
+
+  1AFD 1208CD		LCALL L0638
+  1B00 021B2D		LJMP L0459
+
+  1B03 53EFFD		ANL 0EFh, #0FDh
+  1B06 021AE5		LJMP L0478
+
+  1B09 53ECFD		ANL 0ECh, #0FDh
+  1B0C 021AE5		LJMP L0478
+
+  1B0F 43E40E		ORL 0E4h, #0Eh
+  1B12 021AE5		LJMP L0478
+
+  1B15 43E70E		ORL 0E7h, #0Eh
+  1B18 021AE5		LJMP L0478
+
+  1B1B 85313E		MOV 3Eh, 31h
+  1B1E 021AE5		LJMP L0478
+
+  1B21 853144		MOV 44h, 31h
+  1B24 021AE5		LJMP L0478
+
 L0239:
   1B27 E4    		CLR A
   1B28 F527  		MOV 27h, A
@@ -5827,6 +5048,7 @@ L0004:
   38E4 E596  		MOV A, 96h
   38E6 540A  		ANL A, #0Ah
   38E8 600A  		JZ L0005
+L0669:
   38EA 75F301		MOV 0F3h, #1h
   38ED 114E  		ACALL L0006
   38EF D1CF  		ACALL L0007
@@ -6839,33 +6061,20 @@ L0388:
 L0389:
   3EFF 22    		RET
 
-  3F00 C2    		DB 0C2h 
-  3F01 AF    		DB 0AFh 
-  3F02 53    		DB 053h ; 'S'
-  3F03 F3    		DB 0F3h 
-  3F04 F7    		DB 0F7h 
-  3F05 75    		DB 075h ; 'u'
-  3F06 93    		DB 093h 
-  3F07 55    		DB 055h ; 'U'
-  3F08 75    		DB 075h ; 'u'
-  3F09 81    		DB 081h 
-  3F0A 27    		DB 027h ; '''
-  3F0B B4    		DB 0B4h 
-  3F0C 5A    		DB 05Ah ; 'Z'
-  3F0D FD    		DB 0FDh 
-  3F0E E4    		DB 0E4h 
-  3F0F F5    		DB 0F5h 
-  3F10 D0    		DB 0D0h 
-  3F11 F5    		DB 0F5h 
-  3F12 F3    		DB 0F3h 
-  3F13 75    		DB 075h ; 'u'
-  3F14 9E    		DB 09Eh 
-  3F15 60    		DB 060h ; '`'
-  3F16 75    		DB 075h ; 'u'
-  3F17 C0    		DB 0C0h 
-  3F18 7F    		DB 07Fh 
-  3F19 01    		DB 001h 
-  3F1A EA    		DB 0EAh 
+L0667:
+  3F00 C2AF  		CLR EA
+  3F02 53F3F7		ANL 0F3h, #0F7h
+  3F05 759355		MOV 93h, #55h
+  3F08 758127		MOV SP, #27h
+L0668:
+  3F0B B45AFD		CJNE A, #5Ah, L0668
+  3F0E E4    		CLR A
+  3F0F F5D0  		MOV PSW, A
+  3F11 F5F3  		MOV 0F3h, A
+  3F13 759E60		MOV 9Eh, #60h
+  3F16 75C07F		MOV 0C0h, #7Fh
+  3F19 01EA  		AJMP L0669
+
 L0382:
   3F1B 7438  		MOV A, #38h
 L0383:
