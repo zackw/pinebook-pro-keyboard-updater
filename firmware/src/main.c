@@ -17,7 +17,67 @@
 #include <stdint.h>
 #include "sh68f83.h"
 
-a3FC0 = 
+void ext0(void) __interrupt (IE_0_VECTOR) {
+    // L0610
+    EX0 = 0;
+    return;
+}
+
+void base_timer0(void) __interrupt (IE_1_VECTOR) {
+    // L0611
+    return;
+}
+
+void base_timer1(void) __interrupt (IE_2_VECTOR) {
+    // L0613
+    // similar to _simpleIntrerupt
+    PUSH(ACC);
+    PUSH(B);
+    PUSH(DPH);
+    PUSH(DPL);
+    PUSH(PSW);
+    PSW = 0x08;
+    
+    // L0614
+    PREWDT = 0;
+    CLRWDT = 0x55;
+    r2E--;
+    ACC = r2E;
+    if (ACC != 0)
+        // L0615
+    ACC = r12;
+    C = 1;
+    if (r12 > 0x0) // ish
+        // L0616
+    r11++;
+    ACC = r11;
+    if (r11 == 0) 
+        r10++; 
+
+    // L0617
+    ACC ^= 0x50;
+    ACC |= r10;
+    if (ACC != 0)
+        // L0618
+    r10 = 0;
+    r11 = 0;
+    PREWDT &= 0xFB;
+    R0 = 0x14;
+    R7 = *R0;
+    if (R7 != 0)
+        // L0619
+    PORT4 ^= 0xFF; // cmpl
+    
+    // L0620
+
+    POP(PSW);
+    POP(DPL);
+    POP(DPH);
+    POP(B);
+    POP(ACC);
+    return;
+}
+
 
 void main(void) {
 	B = 0xA5;
@@ -78,6 +138,67 @@ void main(void) {
     } else {
         // L0092
     }   
+
+
+void L0046(void) {
+    IB_CON2 = r1C;
+    r1C = 0x0A;
+    IB_CON3 = r1D;
+    IB_CON4 = r1E;
+    if (IB_CON1 != 0xE6) {
+        L0039();
+        return;
+    }
+    ACC = XPAGE;
+    ACC += 0xC8;
+    if (ACC > 0xC8) {
+        L0040();
+        return;
+    }
+    
+    L0041();
+    return;
+}
+
+void L0039(void) {
+    // L0039
+    if (IB_CON1 != 0x6E) {
+        ACC = XPAGE;
+        if (XPAGE == 0);
+            // L0042
+        ACC += 0xC8;
+        if (ACC > 0xFF) {
+            ACC += 0xF9;
+            if (ACC < 0xF9 || ACC == 0) {
+                L0041();
+                return;
+            }
+            ACC = IB_OFFSET;
+            ACC += 0x41;
+            if (ACC < 0x41) {
+                L0041();
+                return;
+            }
+        }
+    }
+    L0040();
+    return;
+}
+
+void L0040(void) {
+    // L0040
+    IB_CON5 = r1F;
+    // nop x4
+    L0041();
+}
+
+void L0041(void) {
+    IB_CON1 = 0;
+    IB_CON2 = 0;
+    IB_CON3 = 0;
+    IB_CON4 = 0;
+    IB_CON5 = 0;
+}
 
 void L0644(void) {
     EA = 0;
