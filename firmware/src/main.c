@@ -28,7 +28,13 @@ void base_timer0(void) __interrupt (IE_1_VECTOR) {
     return;
 }
 
-void base_timer1(void) __interrupt (IE_2_VECTOR) {
+void reserved_2(void) __interrupt (RES2_VECTOR) {
+    // L0612
+    EX1 = 0;
+    return;
+}
+
+void base_timer1(void) __interrupt (IE_3_VECTOR) {
     // L0613
     // similar to _simpleIntrerupt
     PUSH(ACC);
@@ -78,6 +84,238 @@ void base_timer1(void) __interrupt (IE_2_VECTOR) {
     return;
 }
 
+void time_capture0(void) __interrupt (IE_4_VECTOR) {
+    // L0622
+    ES = 0
+    return;
+}
+
+void setup(void) __interrupt (IE2_0_VECTOR) {
+    // L0625
+    // similar to _simpleIntrerupt
+    PUSH(ACC);
+    PUSH(B);
+    PUSH(DPH);
+    PUSH(DPL);
+    PUSH(PSW);
+    PSW = 0x18;
+
+    L0626();
+
+    POP(PSW);
+    POP(DPL);
+    POP(DPH);
+    POP(B);
+    POP(ACC);
+    return;
+}
+
+void L0626(void) {
+    // L0626
+    EA = 0
+    if (RXFLG0 & 0x18) {
+        if (RXFLG0 & 0x80)
+            goto L0628();
+    } else {
+        // L0627
+        if (RXCNT0 == 0x08) {
+            R7 = RXCNT0;
+            L0632();
+            L0630();
+
+            if (RXFLG0 & 0x80)
+                goto L0628();
+
+            IP2 = 0;
+            IF2 = 0x67;
+            r49 = 0;
+            r48 = 0;
+            r22 &= 0xF0;
+            r47 = 0;
+            CRWCON = 0;
+            r3A = 0;
+            ACC = r2F & 0x60 + 0xE0;
+            if (ACC) {
+                ACC += 0x20;
+                if (ACC)
+                    goto L0634();
+                if (0x0D < r30) // ish
+                    goto L0628();
+                DPTR = r30 * 0x03 + 0x73; // sets up dptr for the address table
+                ACC += 0x4; // use c from last op
+            } else {
+                // L0633
+            }
+            // L0635
+            L0636();
+            L0637();
+        } else {
+            L0269();
+        }
+    }
+L0629:
+    L0630();
+L0634:
+    L0631();
+L0628:
+    RXFLG0 &= 0xFB;
+    EA = 1;
+    return;
+}
+
+
+void lut140D(void) {
+    if (r35 != 0x02)
+        goto L0674();
+    // L0673
+    if (r36 != 0)
+        goto L0674();
+    ACC = r2F + 0x7F;
+    if (ACC) {
+        ACC--;
+        if (ACC) {
+            ACC += 0x02;
+            if (ACC) {
+                // L0677
+                // L0674
+            } else {
+                ACC = P2WK;
+                if (P2WK) {
+                    // L0678
+                    TXDAT0 = 0x02;
+                } else {
+                    TXDAT0 = P2WK; // send 0?
+                }
+                // L0679
+                ACC = 0;
+            }
+        } else {
+            // L0676
+            if (r34)
+                goto L0674();
+            // L0683
+            ACC = r33 + 0x80;
+            if (ACC == 0) {
+                // L0684
+                TXDAT0 = 0;
+                goto L0680();
+            }
+            ACC--;
+            if (ACC = 0) {
+                // L0685
+                if (!b03)
+                    goto L0674();
+                TXDAT0 = (TXFLG1 & 0x02) >> 1;
+                // L0679
+                ACC = 0;
+                goto L0680();
+            }
+            ACC--;
+            if (ACC = 0) {
+                // L0686
+                if (!b03)
+                    goto L0674(); // L0688
+                TXDAT0 = (TXFLG2 & 0x02) >> 1;
+                ACC = 0;
+                goto L0680();
+            }
+            ACC += 0x82;
+            if (ACC)
+                goto L0674(); // L0687
+            // L0684
+            ACC = 0;
+            TXDAT0 = 0;
+        }
+L0680: 
+        L0681();
+        L0682();
+        return;
+    } else {
+        // L0675
+        if (!r34) {
+            // L0690
+            ACC = r33;
+            ACC--;
+            if (ACC == 0) {
+                // L0691
+                if (b03)
+                    // L0684
+                    TXDAT0 = 0;
+                    goto L0680();
+                else
+                    goto L0674(); // L0693
+            }
+            ACC++;
+            if (ACC) {
+               goto L0674(); // L0692
+            }
+            // L0684
+        }
+    }
+L0674:
+    L0631();
+    return;
+} 
+void lut1AA0(void) { } 
+void lut2729(void) { } 
+void lut1D99(void) { } 
+void lut2729(void) { } 
+void lut2421(void) { } 
+void lut0A9D(void) { } 
+void lut2729(void) { } 
+void lut258A(void) { } 
+void lut233F(void) { } 
+void lut21F7(void) { } 
+void lut1FD7(void) { } 
+void lut2729(void) { } 
+void lut2729(void) { } 
+void lut0BB1(void) { } 
+void lut1D4C(void) { } 
+void lut219C(void) { } 
+void lut2729(void) { } 
+void lut2729(void) { } 
+void lut2729(void) { } 
+void lut2729(void) { } 
+void lut2729(void) { } 
+void lut0E8B(void) { } 
+void lut1B52(void) { } 
+void lut213E(void) { } 
+void lut27BC(void) { } 
+void lut27C2(void) { } 
+void lut277D(void) { } 
+void lut1497(void) { } 
+void lut27C8(void) { } 
+void lut27CE(void) { } 
+void lut27BC(void) { } 
+void lut27BC(void) { } 
+void lut2735(void) { } 
+void lut2740(void) { } 
+void lut27D4(void) { } 
+void lut27DA(void) { } 
+void lut27BC(void) { } 
+void lut2382(void) { } 
+void lut200D(void) { } 
+void lut27E0(void) { } 
+void lut27E6(void) { } 
+void lut27EC(void) { } 
+void lut2786(void) { } 
+void lut27F2(void) { } 
+void lut27F8(void) { } 
+void lut0066(void) { } 
+void lut278F(void) { } 
+void lut27FE(void) { } 
+void lut006E(void) { } 
+void lut2798(void) { } 
+void lut2760(void) { } 
+void lut2043(void) { } 
+void lut276A(void) { } 
+void lut27BC(void) { } 
+void lut26B1(void) { } 
+void lut27BC(void) { } 
+void lut27BC(void) { } 
+void lut27BC(void) { } 
+void lut1A45(void) { } 
+void lut137A(void) { }
 
 void main(void) {
 	B = 0xA5;
