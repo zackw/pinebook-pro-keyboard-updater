@@ -1,86 +1,89 @@
-# Pinebook Pro keyboard/touchpad firmware updater
+# PineBook Pro keyboard and touchpad firmware update utility
 
-This application does upgrade firmware of the built-in keyboard and touchpad.
+This utility updates the keyboard and trackpad firmware in the PineBook Pro laptop, made by Pine64.  Both ANSI and ISO variants of the PineBook Pro are supported.
 
-## Compiling
+Please note that updating the firmware carries a small risk of permanently disabling the trackpad and keyboard, effectively bricking them.  Proceed at your own risk.
+
+## Compiling the utility
+
+On Debian:
 
 ```bash
-git clone https://github.com/jackhumbert/pinebook-pro-keyboard-updater
+git clone https://github.com/dragan-simic/pinebook-pro-keyboard-updater
 cd pinebook-pro-keyboard-updater
 sudo apt-get install build-essential libusb-1.0-0-dev xxd
 make
 ```
 
-On Arch/Manjaro:
+On Arch Linux or Manjaro:
 
 ```bash
-git clone https://github.com/jackhumbert/pinebook-pro-keyboard-updater
+git clone https://github.com/dragan-simic/pinebook-pro-keyboard-updater
 cd pinebook-pro-keyboard-updater
 sudo pacman -Syy base-devel libusb vim
 make
 ```
 
-## Pick right keyboard model
+## Pick the right keyboard variant
 
-Pinebook Pro offers two keyboard types: `iso` and `ansi`.
+The PineBook Pro exists in two keyboard variants, ANSI and ISO.  It is easy to determine the variant by the shape of the `Enter` key, for example.
 
-Append your model type after the `step-1` or `step-2` command specifying `iso` or `ansi`.
-
-**In order to update with `ansi` keyboard the external keyboard will be required as for the duration of the process the keyboard will stop working.**
+**To update an ANSI variant of the PineBook Pro, an external USB keyboard will be required because the built-in keyboard will stop working while the firmware update is performed.**
 
 ## Update all firmware images
 
-You need to do all of that in correct order,
-if at any point process fails, start it from point 1.:
+You need to perform all update steps in the correct order; if the update process fails at any point, start it again from `step-1`.
 
-1. Run `step-1 iso` or `step-1 ansi` of update process: `sudo ./updater step-1 iso`,
-1. After `step-1 iso` or `step-1 ansi` touchpad **will not work**, keyboard works as normal (this is true only for **ISO**, the **ANSI** keyboard will not work after `step-1`),
-1. Power your Pinebook Pro off with `sudo poweroff` and then power it on again,
-1. After booting up, run `step-2 iso` or `step-2 ansi` of update process: `sudo ./updater step-2`,
-1. Power your Pinebook Pro off with `sudo poweroff` and then power it on again,
+Append your keyboard variant after the `step-2` command, specifying `ansi` or `iso`.  You will be given a chance to cancel the execution of `step-1` or `step-2`, but all steps must be eventually completed in the correct order.
+
+These are the required steps:
+
+1. Run `step-1` of the update process, which is the same for both keyboard variants: `sudo ./updater step-1`.
+1. After `step-1`, the touchpad **will not work**, but the keyboard will continue to work normally on the **ISO** variant (the **ANSI** keyboard will not work after `step-1`).
+1. Power your PineBook Pro off with `sudo poweroff`, then power it on again.
+1. After booting up, run `step-2 ansi` or `step-2 iso` of the update process, depending on the keyboard variant: `sudo ./updater step-2 ansi` or `sudo ./updater step-2 iso`.
+1. Power your PineBook Pro off with `sudo poweroff`, then power it on again.
 1. After booting up, your keyboard and touchpad firmware should be updated.
 
-### Revised firmware
+### Revised keyboard firmware
 
-There has been some effort in [`firmware/`](firmware/) to reverse engineer and customise the existing firmware, fixing some of the common issues people are facing. **Currently you need to flash this after steps 1 and 2 with a separate command**, `flash-kb` followed by the `.hex` file location. No power cycling is required after flashing, but may be needed if your keyboard/touchpad is unresponsive (currently rare). Source code for each version can be found in [`firmware/src/`](firmware/src/).
+There has been some effort in [`firmware/`](firmware/) to reverse-engineer and customise the existing firmware, fixing some of the common issues people are facing. **Currently you need to flash this after `step-1` and `step-2` with a separate command**, `flash-kb` followed by the `.hex` file location. No power cycling is required after flashing, but may be needed if your keyboard/touchpad is unresponsive (currently rare). Source code for each version can be found in [`firmware/src/`](firmware/src/).
+
+Download and compile the firmware updater using the instructions already available at the start of this documentation.
+
+For the ANSI variant of the PineBook Pro:
 
 ```bash
-# compile
-git clone https://github.com/jackhumbert/pinebook-pro-keyboard-updater
-cd pinebook-pro-keyboard-updater
-sudo apt-get install build-essential libusb-1.0-0-dev xxd 
-make
-
-# For ISO keyboard
-# step-1
-sudo ./updater step-1 iso
+# Execute step-1
+sudo ./updater step-1
 sudo poweroff
 
-# Turn your Pinebook Pro on again, then run step-2
-sudo ./updater step-2 iso
-sudo poweroff
-
-# For ANSI keyboard
-# step-1
-sudo ./updater step-1 ansi
-sudo poweroff
-
-# Turn your Pinebook Pro on again, then run step-2
+# Turn your PineBook Pro on again, then run step-2
 sudo ./updater step-2 ansi
 sudo poweroff
 
-# updating to the revised ansi firmware after steps 1 and 2
+# Turn it on again, then update to the revised ANSI firmware
 sudo ./updater flash-kb firmware/default_ansi.hex
-
-# updating to the revised iso firmware after steps 1 and 2
-sudo ./updater flash-kb firmware/default_iso.hex
-
 ```
 
-### Log from `STEP-1`
+For the ISO variant of the PineBook Pro:
 
 ```bash
-$ sudo ./updater step-1 iso
+# Execute step-1
+sudo ./updater step-1
+sudo poweroff
+
+# Turn your PineBook Pro on again, then run step-2
+sudo ./updater step-2 iso
+sudo poweroff
+
+# Turn it on again, then update to the revised ISO firmware
+sudo ./updater flash-kb firmware/default_iso.hex
+```
+
+### Messages produced by executing `step-1`
+
+```bash
 [x] Running STEP-1...
 [*] Flashing keyboard updater firmware...
 >>> Hex file data fixed
@@ -121,13 +124,12 @@ $ sudo ./updater step-1 iso
 [*] Resetting device...
 [*] Keyboard update completed successfully
 >>> USB device closed
-[x] Power cycle your Pinebook Pro, then run 'step-2'
+[x] Power cycle your PineBook Pro, then run 'step-2'
 ```
 
-### Log from `STEP-2`
+### Messages produced by executing `step-2`
 
 ```bash
-$ sudo ./updater step-2 iso
 [x] Running STEP-2...
 [*] Flashing touchpad firmware...
 [*] Opening USB device in touchpad mode...
