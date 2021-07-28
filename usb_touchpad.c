@@ -2,14 +2,12 @@
 
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
 
-#define SHORTREPOID			0x05
-#define LONGREPOID			0x06
+#define SHORTREPOID		0x05
+#define LONGREPOID		0x06
 #define SHORTDEVLENGHT		6
 #define LONGDEVLENGHT		1040
 
-
-#define STATUSCMD				  0xA1
-
+#define STATUSCMD		0xA1
 
 #define CHECKCHECKSUM             0xF0
 #define ENTERBOOTLOADER           0xF1
@@ -42,7 +40,7 @@
 #define PROGRAMPASS_FAIL                0xD6
 #define ENDPROGRAM_FAIL                 0xD7
 
-#define PROGMODE				  0x0b
+#define PROGMODE			0x0b
 
 static int touchpad_verify(int type, int pass, int sendcmd)
 {
