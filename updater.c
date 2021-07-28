@@ -15,9 +15,40 @@ extern unsigned int firmware_fw_revised_default_ansi_hex_len;
 extern unsigned char firmware_tpfw_bin[];
 extern unsigned int firmware_tpfw_bin_len;
 
+static int usage_warn(int prompt)
+{
+  printf("\nPlease note that updating the firmware carries a small risk\n");
+  printf("of permanently disabling the trackpad and keyboard, effectively\n");
+  printf("bricking them.  Proceed at your own risk.\n\n");
+
+  if (prompt) {
+    printf("Press Ctrl+C within the next five seconds to cancel...");
+
+    for (prompt = 5; prompt >= 0; prompt--) {
+      fflush(stdout);
+      sleep(1);
+      if (prompt > 0)
+        printf(" %d", prompt);
+    }
+
+    printf("\n\n");
+  }
+}
+
 static int usage(const char *cmd)
 {
-  printf("usage: %s <step-1|step-2> <iso|ansi>\n", cmd);
+  printf("\nThis utility updates the keyboard and trackpad firmware\n");
+  printf("in the PineBook Pro, made by Pine64.  Both ANSI and ISO\n");
+  printf("variants are supported.\n\n");
+
+  printf("Usage: %s step-1\n", cmd);
+  printf("       %s step-2 ansi\n", cmd);
+  printf("       %s step-2 iso\n\n", cmd);
+
+  printf("See this URL for more information and detailed instructions:\n");
+  printf("https://github.com/dragan-simic/pinebook-pro-keyboard-updater\n");
+
+  usage_warn(0);
   return -1;
 }
 
@@ -133,7 +164,7 @@ static int step_1()
     return rc;
   }
   
-  printf("[x] Power cycle your Pinebook Pro, then run 'step-2'.\n");
+  printf("[x] Power cycle your PineBook Pro, then run 'step-2'.\n");
   return 0;
 }
 
@@ -168,25 +199,37 @@ int main(int argc, char *argv[])
 {
   int rc = 0;
 
-  if (!strcmp(argv[1], "convert")) {
-    rc = convert();
-  } else if (!strcmp(argv[1], "step-1")) {
-    rc = step_1();
-  } else if (!strcmp(argv[1], "step-2")) {
-    rc = step_2(!strcmp(argv[2], "ansi"));
-  } else if (!strcmp(argv[1], "flash-tp")) {
-    rc = flash_tp();
-  } else if (!strcmp(argv[1], "flash-tp-update")) {
-    rc = flash_tp_update();
-  } else if (!strcmp(argv[1], "flash-kb-iso")) {
-    rc = flash_kb_iso();
-  } else if (!strcmp(argv[1], "flash-kb-ansi")) {
-    rc = flash_kb_ansi();
-  } else if (!strcmp(argv[1], "flash-kb")) {
-    rc = flash_kb(argv[2]);
-  } else {
-    rc = usage(argv[0]);
+  if (argc == 2) {
+    if (!strcmp(argv[1], "convert"))
+      rc = convert();
+    else if (!strcmp(argv[1], "step-1")) {
+      usage_warn(1);
+      rc = step_1();
+    } else if (!strcmp(argv[1], "flash-tp")) {
+      usage_warn(1);
+      rc = flash_tp();
+    } else if (!strcmp(argv[1], "flash-tp-update")) {
+      usage_warn(1);
+      rc = flash_tp_update();
+    } else if (!strcmp(argv[1], "flash-kb-iso")) {
+      usage_warn(1);
+      rc = flash_kb_iso();
+    } else if (!strcmp(argv[1], "flash-kb-ansi")) {
+      usage_warn(1);
+      rc = flash_kb_ansi();
+    }
   }
-  
+  else if (argc == 3) {
+    if (!strcmp(argv[1], "step-2")) {
+      usage_warn(1);
+      rc = step_2(!strcmp(argv[2], "ansi"));
+    } else if (!strcmp(argv[1], "flash-kb")) {
+      usage_warn(1);
+      rc = flash_kb(argv[2]);
+    }
+  }
+  else
+    rc = usage(argv[0]);
+
   return rc;
 }
