@@ -9,7 +9,7 @@ Please note that updating the firmware carries a small risk of permanently disab
 On Debian:
 
 ```bash
-git clone https://github.com/dragan-simic/pinebook-pro-keyboard-updater
+git clone https://github.com/dragan-simic/pinebook-pro-keyboard-updater.git
 cd pinebook-pro-keyboard-updater
 sudo apt-get install build-essential libusb-1.0-0-dev xxd
 make
@@ -18,7 +18,7 @@ make
 On Arch Linux or Manjaro ARM:
 
 ```bash
-git clone https://github.com/dragan-simic/pinebook-pro-keyboard-updater
+git clone https://github.com/dragan-simic/pinebook-pro-keyboard-updater.git
 cd pinebook-pro-keyboard-updater
 sudo pacman -Syy base-devel libusb vim
 make
