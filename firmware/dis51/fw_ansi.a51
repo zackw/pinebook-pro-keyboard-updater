@@ -523,7 +523,7 @@ CSEG AT 007Bh
   021D 07           DB 007h 
   021E B1           DB 0B1h ; feature
   021F 03           DB 003h 
-  0220 06           DB 006h ;  I stopped decoding it here - see the usb_hid_ansi.txt
+  0220 06           DB 006h ;  I stopped decoding it here - see the usb-hid-ansi.txt
   0221 00           DB 000h ;  for all of the info contained in this block
   0222 FF           DB 0FFh
   0223 85           DB 085h 

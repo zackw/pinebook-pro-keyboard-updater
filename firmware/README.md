@@ -61,7 +61,7 @@ the top and bottom:
 * https://wiki.pine64.org/images/3/30/Pinebookpro-v2.1-top-ref.pdf
 * https://wiki.pine64.org/images/b/b7/Pinebookpro-v2.1-bottom-ref.pdf
 
-![Touchpad I2C test points](touchpad-i2c.jpg)
+![Touchpad I2C test points](docs/touchpad-i2c-test-points.jpg)
 
 
 ## Keyboard Connector
