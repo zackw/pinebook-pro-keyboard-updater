@@ -2,7 +2,7 @@
 
 This utility updates the keyboard and trackpad firmware in the PineBook Pro laptop, made by Pine64.  Both ANSI and ISO variants of the PineBook Pro are supported.
 
-Please note that updating the firmware carries a small risk of permanently disabling the trackpad and keyboard, effectively bricking them.  Proceed at your own risk.
+**Please note that updating the firmware carries a small risk of permanently disabling the trackpad and keyboard, effectively bricking them.  Proceed at your own risk.**
 
 ## Compiling the utility
 
@@ -24,7 +24,7 @@ sudo pacman -Syy base-devel libusb vim
 make
 ```
 
-Manjaro ARM provides a package that contains the firmware updater utility.  The name of the package is `pinebook-pro-keyboard-updater`, and the firmware update command is named `pbp-fwupdate`.  Please note that the Manjaro package provides no custom keymaps described later in this documentation.
+Manjaro ARM provides a package that contains the firmware updater utility.  The name of the package is `pinebook-pro-keyboard-updater`, and the firmware update command is named `pbp-fwupdate`; thus, if you use the packaged version, replace `./updater` in the instructions below with `pbp-fwupdate`.  Please note that the Manjaro package provides no custom keymaps described later in this documentation.
 
 ## Pick the right keyboard variant
 
