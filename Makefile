@@ -25,4 +25,4 @@ usbreset: extra/usbreset.c
 	gcc -o $@ $^
 
 clean:
-	rm -f updater usbreset firmware/*.c
+	rm -f updater usbreset firmware/fw_*.c firmware/tpfw_bin.c
