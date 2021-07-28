@@ -30,7 +30,7 @@ and [`src/main.c`](src/main.c) (c pseudo code written by hand) and
 ## Hardware
 
 The PBP uses the SH68F83 made by Sinowealth. The data sheet is the 
-[sinowealth-sh68f83-datasheet-v2.pdf](../docs/sinowealth-sh68f83-datasheet-v2.pdf) file in the `docs` directory. 
+[sinowealth-sh68f83-datasheet-v2.pdf](/firmware/docs/sinowealth-sh68f83-datasheet-v2.pdf) file in the `docs` directory. 
 It has the following test points on the main board that may be useful, taken from the [PBP mainboard 
 schematic, v2.1](http://files.pine64.org/doc/PinebookPro/pinebookpro_v2.1_mainboard_schematic.pdf):
 
