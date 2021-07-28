@@ -1,6 +1,6 @@
-# PineBook Pro keyboard and touchpad firmware update utility
+# Pinebook Pro keyboard and touchpad firmware update utility
 
-This utility updates the keyboard and trackpad firmware in the PineBook Pro laptop, made by Pine64.  Both ANSI and ISO variants of the PineBook Pro are supported.
+This utility updates the keyboard and trackpad firmware in the Pinebook Pro laptop, made by Pine64.  Both ANSI and ISO variants of the Pinebook Pro are supported.
 
 **Please note that updating the firmware carries a small risk of permanently disabling the trackpad and keyboard, effectively bricking them.  Proceed at your own risk.**
 
@@ -28,9 +28,9 @@ Manjaro ARM provides a package that contains the firmware updater utility.  The 
 
 ## Pick the right keyboard variant
 
-The PineBook Pro exists in two keyboard variants, ANSI and ISO.  It is easy to determine the variant by the shape of the `Enter` key, for example.
+The Pinebook Pro exists in two keyboard variants, **ANSI** and **ISO**.  It is easy to determine the variant by the shape of the `Enter` key, for example.
 
-**To update an ANSI variant of the PineBook Pro, an external USB keyboard will be required because the built-in keyboard will stop working while the firmware update is performed.**
+**To update an ANSI variant of the Pinebook Pro, an external USB keyboard will be required because the built-in keyboard will stop working while the firmware update is performed.**
 
 ## Update all firmware images
 
@@ -42,9 +42,9 @@ These are the required steps:
 
 1. Run `step-1` of the update process, which is the same for both keyboard variants: `sudo ./updater step-1`.
 1. After `step-1`, the touchpad **will not work**, but the keyboard will continue to work normally on the **ISO** variant (the **ANSI** keyboard will not work after `step-1`).
-1. Power your PineBook Pro off with `sudo poweroff`, then power it on again.
+1. Power your Pinebook Pro off with `sudo poweroff`, then power it on again.
 1. After booting up, run `step-2 ansi` or `step-2 iso` of the update process, depending on the keyboard variant: `sudo ./updater step-2 ansi` or `sudo ./updater step-2 iso`.
-1. Power your PineBook Pro off with `sudo poweroff`, then power it on again.
+1. Power your Pinebook Pro off with `sudo poweroff`, then power it on again.
 1. After booting up, your keyboard and touchpad firmware should be updated.
 
 ### Revised keyboard firmware
@@ -53,14 +53,14 @@ There has been some effort in [`firmware/`](firmware/) to reverse-engineer and c
 
 Download and compile the firmware updater using the instructions already available at the start of this documentation.
 
-For the ANSI variant of the PineBook Pro:
+For the ANSI variant of the Pinebook Pro:
 
 ```bash
 # Execute step-1
 sudo ./updater step-1
 sudo poweroff
 
-# Turn your PineBook Pro on again, then run step-2
+# Turn your Pinebook Pro on again, then run step-2
 sudo ./updater step-2 ansi
 sudo poweroff
 
@@ -68,14 +68,14 @@ sudo poweroff
 sudo ./updater flash-kb firmware/default_ansi.hex
 ```
 
-For the ISO variant of the PineBook Pro:
+For the ISO variant of the Pinebook Pro:
 
 ```bash
 # Execute step-1
 sudo ./updater step-1
 sudo poweroff
 
-# Turn your PineBook Pro on again, then run step-2
+# Turn your Pinebook Pro on again, then run step-2
 sudo ./updater step-2 iso
 sudo poweroff
 
@@ -126,7 +126,7 @@ sudo ./updater flash-kb firmware/default_iso.hex
 [*] Resetting device...
 [*] Keyboard update completed successfully
 >>> USB device closed
-[x] Power cycle your PineBook Pro, then run 'step-2'
+[x] Power cycle your Pinebook Pro, then run 'step-2'
 ```
 
 ### Messages produced by executing `step-2`

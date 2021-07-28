@@ -1,4 +1,4 @@
-# Custom Keymaps for the PineBook Pro
+# Custom Keymaps for the Pinebook Pro
 
 **It's not currently clear how easy it is (or possible for someone at a hobbyist level) to recover a keyboard controller flashed with bad code (the programming uses USB endpoints), so please be careful when making modifications to the source files. Generally anything staying away from the USB stuff is probably safe. While this is written in C, regular functions cannot be easily inserted into the codebase (at this time) - only the definitions using `ADDR()`.**
 

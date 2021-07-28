@@ -1,6 +1,6 @@
-# PineBook Pro Keyboard Firmware
+# Pinebook Pro Keyboard Firmware
 
-The PineBook Pro's (PBP) keyboard firmware source isn't available, so this is a
+The Pinebook Pro's (PBP) keyboard firmware source isn't available, so this is a
 collection of information and code that may assist in writing something from 
 scratch, with the eventual goal of running QMK.
 

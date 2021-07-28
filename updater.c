@@ -38,7 +38,7 @@ static int usage_warn(int prompt)
 static int usage(const char *cmd)
 {
   printf("\nThis utility updates the keyboard and trackpad firmware\n");
-  printf("in the PineBook Pro, made by Pine64.  Both ANSI and ISO\n");
+  printf("in the Pinebook Pro, made by Pine64.  Both ANSI and ISO\n");
   printf("variants are supported.\n\n");
 
   printf("Usage: %s step-1\n", cmd);
@@ -164,7 +164,7 @@ static int step_1()
     return rc;
   }
   
-  printf("[x] Power cycle your PineBook Pro, then run 'step-2'.\n");
+  printf("[x] Power cycle your Pinebook Pro, then run 'step-2'.\n");
   return 0;
 }
 
