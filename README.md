@@ -15,7 +15,7 @@ sudo apt-get install build-essential libusb-1.0-0-dev xxd
 make
 ```
 
-On Arch Linux or Manjaro:
+On Arch Linux or Manjaro ARM:
 
 ```bash
 git clone https://github.com/dragan-simic/pinebook-pro-keyboard-updater
@@ -23,6 +23,8 @@ cd pinebook-pro-keyboard-updater
 sudo pacman -Syy base-devel libusb vim
 make
 ```
+
+Manjaro ARM provides a package that contains the firmware updater utility.  The name of the package is `pinebook-pro-keyboard-updater`, and the firmware update command is named `pbp-fwupdate`.  Please note that the Manjaro package provides no custom keymaps described later in this documentation.
 
 ## Pick the right keyboard variant
 
@@ -83,7 +85,7 @@ sudo ./updater flash-kb firmware/default_iso.hex
 
 ### Messages produced by executing `step-1`
 
-```bash
+```
 [x] Running STEP-1...
 [*] Flashing keyboard updater firmware...
 >>> Hex file data fixed
@@ -129,7 +131,7 @@ sudo ./updater flash-kb firmware/default_iso.hex
 
 ### Messages produced by executing `step-2`
 
-```bash
+```
 [x] Running STEP-2...
 [*] Flashing touchpad firmware...
 [*] Opening USB device in touchpad mode...
